@@ -1,0 +1,56 @@
+{
+  "controls": [
+    {
+      "sid": "bgColor",
+      "label": "背景色"
+    },
+    {
+      "sid": "inkColor",
+      "label": "核心深色"
+    },
+    {
+      "sid": "accentColor",
+      "label": "图形强调色"
+    },
+    {
+      "sid": "kicker",
+      "label": "页眉"
+    },
+    {
+      "sid": "title",
+      "label": "主标题"
+    },
+    {
+      "sid": "feature1",
+      "label": "功能一"
+    },
+    {
+      "sid": "feature2",
+      "label": "功能二"
+    },
+    {
+      "sid": "feature3",
+      "label": "功能三"
+    },
+    {
+      "sid": "feature4",
+      "label": "功能四"
+    },
+    {
+      "sid": "shellLabel",
+      "label": "产品层标签"
+    },
+    {
+      "sid": "modelTitle",
+      "label": "核心名称"
+    },
+    {
+      "sid": "modelSub",
+      "label": "核心能力"
+    },
+    {
+      "sid": "takeaway",
+      "label": "结论"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "controls": [
+    {
+      "sid": "bgColor",
+      "label": "背景色"
+    },
+    {
+      "sid": "inkColor",
+      "label": "核心深色"
+    },
+    {
+      "sid": "accentColor",
+      "label": "图形强调色"
+    },
+    {
+      "sid": "kicker",
+      "label": "页眉"
+    },
+    {
+      "sid": "title",
+      "label": "主标题"
+    },
+    {
+      "sid": "product1",
+      "label": "产品一"
+    },
+    {
+      "sid": "product2",
+      "label": "产品二"
+    },
+    {
+      "sid": "product3",
+      "label": "产品三"
+    },
+    {
+      "sid": "abilities",
+      "label": "能力列表"
+    },
+    {
+      "sid": "question",
+      "label": "结尾提问"
+    },
+    {
+      "sid": "mark1",
+      "label": "产品一标记"
+    },
+    {
+      "sid": "mark2",
+      "label": "产品二标记"
+    },
+    {
+      "sid": "mark3",
+      "label": "产品三标记"
+    }
+  ]
+}

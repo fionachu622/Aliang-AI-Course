@@ -1,0 +1,44 @@
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Environment files and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# JavaScript dependencies and caches
+node_modules/
+**/node_modules/
+.cache/
+**/.cache/
+
+# Generated builds and rendered output
+build/
+**/build/
+dist/
+**/dist/
+out/
+**/out/
+output/
+**/output/
+.thumbnails/
+**/.thumbnails/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Python and TypeScript generated metadata
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.tsbuildinfo
+
+# IDE settings
+.idea/
+.vscode/

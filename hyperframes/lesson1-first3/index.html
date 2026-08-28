@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "PingFang SC";
+        src: local("PingFang SC");
+      }
+      @font-face {
+        font-family: "Microsoft YaHei";
+        src: local("Microsoft YaHei");
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #f7f5ef;
+      }
+      body {
+        color: #161a22;
+        font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #f7f5ef;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background-color: #f7f5ef;
+      }
+      #scene-1 { z-index: 1; }
+      #scene-2 { z-index: 2; opacity: 0; }
+      #scene-3 { z-index: 3; opacity: 0; }
+      .grid {
+        position: absolute;
+        inset: 0;
+        opacity: .3;
+        background-image:
+          linear-gradient(rgba(22, 26, 34, .055) 1px, rgba(247, 245, 239, 0) 1px),
+          linear-gradient(90deg, rgba(22, 26, 34, .055) 1px, rgba(247, 245, 239, 0) 1px);
+        background-size: 80px 80px;
+        mask-image: radial-gradient(circle at 50% 50%, #000 0%, rgba(0, 0, 0, .85) 42%, rgba(0, 0, 0, 0) 82%);
+      }
+      .glow {
+        position: absolute;
+        left: 50%;
+        top: 51%;
+        width: 880px;
+        height: 640px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(49, 89, 245, .08), rgba(49, 89, 245, 0) 69%);
+      }
+      .frame-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        padding: 72px 122px 92px;
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
+      }
+      .meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #74776f;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: .06em;
+        font-variant-numeric: tabular-nums;
+      }
+      .lesson-name {
+        color: #161a22;
+        font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        font-weight: 760;
+        letter-spacing: .02em;
+      }
+      .lesson-name::before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        margin-right: 15px;
+        display: inline-block;
+        border-radius: 50%;
+        background: #3159f5;
+      }
+      .canvas {
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Scene 1 */
+      .familiar-stage {
+        width: 1560px;
+        height: 740px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 112px;
+      }
+      .brand-zone {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 42px;
+      }
+      .overline {
+        color: #74776f;
+        font-size: 34px;
+        font-weight: 760;
+        letter-spacing: .12em;
+      }
+      .brands {
+        width: 1420px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        text-align: center;
+      }
+      .brand {
+        font-size: 78px;
+        line-height: 1;
+        font-weight: 900;
+        letter-spacing: -.05em;
+      }
+      .brand.deepseek { color: #3159f5; }
+      .brand.doubao { color: #f05a32; }
+      .exchange {
+        width: 1420px;
+        height: 190px;
+        display: grid;
+        grid-template-columns: 300px 1fr 300px;
+        align-items: center;
+        gap: 64px;
+      }
+      .endpoint { text-align: center; }
+      .endpoint small {
+        display: block;
+        margin-bottom: 13px;
+        color: #74776f;
+        font-size: 25px;
+        font-weight: 760;
+        letter-spacing: .1em;
+      }
+      .endpoint strong {
+        display: block;
+        font-size: 76px;
+        line-height: 1;
+        font-weight: 900;
+        letter-spacing: -.055em;
+      }
+      .endpoint.output strong { color: #3159f5; }
+      .flow {
+        position: relative;
+        height: 80px;
+        display: flex;
+        align-items: center;
+      }
+      .flow-line {
+        width: 100%;
+        height: 4px;
+        position: relative;
+        background: #161a22;
+        transform-origin: left center;
+      }
+      .flow-line::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 22px;
+        height: 22px;
+        border-top: 4px solid #161a22;
+        border-right: 4px solid #161a22;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .traveler {
+        position: absolute;
+        left: calc(100% - 56px);
+        top: 50%;
+        width: 28px;
+        height: 28px;
+        margin-top: -14px;
+        border-radius: 50%;
+        background: #f05a32;
+        box-shadow: 0 0 0 14px rgba(240, 90, 50, .13);
+      }
+
+      /* Scene 2 */
+      .gap-stage {
+        width: 1540px;
+        height: 760px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 94px;
+      }
+      .gap-line {
+        width: 1460px;
+        display: grid;
+        grid-template-columns: 300px 1fr 210px 1fr 300px;
+        align-items: center;
+        gap: 30px;
+      }
+      .line-half {
+        height: 4px;
+        background: #c9c7bf;
+        transform-origin: center;
+      }
+      .unknown {
+        width: 210px;
+        height: 210px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: #fff;
+        background: #161a22;
+        box-shadow: 0 0 0 24px rgba(49, 89, 245, .12);
+        font-family: Georgia, serif;
+        font-size: 122px;
+        font-weight: 900;
+        line-height: 1;
+      }
+      .question {
+        max-width: 1400px;
+        font-size: 112px;
+        line-height: 1.05;
+        font-weight: 900;
+        letter-spacing: -.055em;
+        text-align: center;
+      }
+
+      /* Scene 3 */
+      .product-stage {
+        width: 1490px;
+        height: 750px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .product-shell {
+        position: absolute;
+        inset: 28px 26px 20px;
+        border: 5px solid #161a22;
+        border-radius: 92px;
+      }
+      .product-label {
+        position: absolute;
+        left: 50%;
+        top: 3px;
+        transform: translateX(-50%);
+        padding: 15px 44px;
+        color: #161a22;
+        background: #f7f5ef;
+        font-size: 54px;
+        line-height: 1;
+        font-weight: 900;
+        letter-spacing: -.035em;
+      }
+      .feature-rail {
+        position: absolute;
+        left: 50%;
+        top: 160px;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 23px;
+        color: #74776f;
+        font-size: 34px;
+        font-weight: 760;
+        letter-spacing: .04em;
+      }
+      .feature + .feature::before {
+        content: "·";
+        margin-right: 23px;
+        color: #c9c7bf;
+      }
+      .core-halo {
+        width: 470px;
+        height: 292px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-radius: 50%;
+        background: #dfe5ff;
+        box-shadow:
+          0 0 0 24px rgba(49, 89, 245, .08),
+          0 0 0 48px rgba(49, 89, 245, .035);
+      }
+      .core-halo::before,
+      .core-halo::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 150px;
+        height: 5px;
+        background: #3159f5;
+      }
+      .core-halo::before { left: -190px; }
+      .core-halo::after { right: -190px; }
+      .model-core {
+        color: #3159f5;
+        font-size: 104px;
+        line-height: 1;
+        font-weight: 900;
+        letter-spacing: -.06em;
+        white-space: nowrap;
+      }
+      .relation {
+        position: absolute;
+        left: 50%;
+        bottom: 98px;
+        transform: translateX(-50%);
+        color: #f05a32;
+        font-size: 38px;
+        line-height: 1;
+        font-weight: 860;
+        white-space: nowrap;
+      }
+      .relation::before,
+      .relation::after {
+        content: "";
+        width: 62px;
+        height: 5px;
+        margin: 0 17px;
+        display: inline-block;
+        background: #f05a32;
+        vertical-align: .22em;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-askw" id="root" data-composition-id="lesson1-first3" data-start="0" data-duration="28" data-track-index="0" data-width="1920" data-height="1080">
+      <section data-hf-id="hf-znib" id="scene-1" class="scene" data-layout-allow-overflow="">
+        <div data-hf-id="hf-80b5" class="grid" data-layout-ignore=""></div>
+        <div data-hf-id="hf-78qa" class="glow" data-layout-ignore=""></div>
+        <div data-hf-id="hf-dp1b" class="frame-content">
+          <div data-hf-id="hf-hu7u" class="meta scene1-meta">
+            <span data-hf-id="hf-53eu" class="lesson-name">第 1 课 · 从产品追到模型</span><span data-hf-id="hf-3uv8">01 / 03</span>
+          </div>
+          <div data-hf-id="hf-nq1o" class="canvas">
+            <div data-hf-id="hf-mb4c" class="familiar-stage">
+              <div data-hf-id="hf-jviy" class="brand-zone">
+                <div data-hf-id="hf-uy2g" class="overline">我们每天都在用</div>
+                <div data-hf-id="hf-rl8e" class="brands">
+                  <div data-hf-id="hf-3c91" class="brand chatgpt">ChatGPT</div>
+                  <div data-hf-id="hf-6ncd" class="brand deepseek">DeepSeek</div>
+                  <div data-hf-id="hf-iecm" class="brand doubao">豆包</div>
+                </div>
+              </div>
+              <div data-hf-id="hf-cg0f" class="exchange">
+                <div data-hf-id="hf-yn97" class="endpoint input"><small data-hf-id="hf-t8z4">输入</small><strong data-hf-id="hf-y36c">一句话</strong></div>
+                <div data-hf-id="hf-ck2w" class="flow"><div data-hf-id="hf-6phj" class="flow-line"></div><div data-hf-id="hf-9f1d" class="traveler"></div></div>
+                <div data-hf-id="hf-pdlu" class="endpoint output"><small data-hf-id="hf-njkr">得到</small><strong data-hf-id="hf-40kr">一段回答</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-hf-id="hf-v1or" id="scene-2" class="scene">
+        <div data-hf-id="hf-8b9h" class="grid" data-layout-ignore=""></div>
+        <div data-hf-id="hf-dg3a" class="glow" data-layout-ignore=""></div>
+        <div data-hf-id="hf-bu2n" class="frame-content">
+          <div data-hf-id="hf-sbh3" class="meta scene2-meta">
+            <span data-hf-id="hf-unii" class="lesson-name">第 1 课 · 从产品追到模型</span><span data-hf-id="hf-voxv">02 / 03</span>
+          </div>
+          <div data-hf-id="hf-z72s" class="canvas">
+            <div data-hf-id="hf-vtp9" class="gap-stage">
+              <div data-hf-id="hf-7s2j" class="gap-line">
+                <div data-hf-id="hf-ibqz" class="endpoint input"><small data-hf-id="hf-7ers">输入</small><strong data-hf-id="hf-0i3w">一句话</strong></div>
+                <div data-hf-id="hf-ntrv" class="line-half left-half"></div>
+                <div data-hf-id="hf-jgyz" class="unknown">?</div>
+                <div data-hf-id="hf-6glk" class="line-half right-half"></div>
+                <div data-hf-id="hf-1ati" class="endpoint output"><small data-hf-id="hf-f7kr">得到</small><strong data-hf-id="hf-tjgr">一段回答</strong></div>
+              </div>
+              <div data-hf-id="hf-mxim" class="question">中间发生了什么？</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-hf-id="hf-r3kq" id="scene-3" class="scene">
+        <div data-hf-id="hf-9i6k" class="grid" data-layout-ignore=""></div>
+        <div data-hf-id="hf-dueb" class="glow" data-layout-ignore=""></div>
+        <div data-hf-id="hf-bfrm" class="frame-content">
+          <div data-hf-id="hf-xnyg" class="meta scene3-meta">
+            <span data-hf-id="hf-v1tj" class="lesson-name">第 1 课 · 从产品追到模型</span><span data-hf-id="hf-rb42">03 / 03</span>
+          </div>
+          <div data-hf-id="hf-y05p" class="canvas">
+            <div data-hf-id="hf-crt4" class="product-stage">
+              <div data-hf-id="hf-cw68" class="product-shell"></div>
+              <div data-hf-id="hf-ssty" class="product-label">AI 产品</div>
+              <div data-hf-id="hf-stv3" class="feature-rail">
+                <span data-hf-id="hf-l7z4" class="feature">聊天</span><span data-hf-id="hf-wybo" class="feature">文件</span><span data-hf-id="hf-hkyv" class="feature">搜索</span><span data-hf-id="hf-eqe5" class="feature">语音</span>
+              </div>
+              <div data-hf-id="hf-ixe0" class="core-halo"><div data-hf-id="hf-bj1m" class="model-core">大模型</div></div>
+              <div data-hf-id="hf-tuhm" class="relation">核心能力之一</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.from(".scene1-meta", { opacity: 0, y: -22, duration: 0.46, ease: "power2.out" }, 0.2)
+        .from("#scene-1 .overline", { opacity: 0, y: -28, duration: 0.68, ease: "sine.out" }, 0.42)
+        .from("#scene-1 .chatgpt", { opacity: 0, x: -90, duration: 0.62, ease: "expo.out" }, 0.86)
+        .from("#scene-1 .deepseek", { opacity: 0, scale: .72, duration: 0.78, ease: "back.out(1.3)" }, 1.12)
+        .from("#scene-1 .doubao", { opacity: 0, x: 90, duration: 0.54, ease: "power3.out" }, 1.42)
+        .from("#scene-1 .input", { opacity: 0, x: -76, duration: 0.6, ease: "power4.out" }, 2.72)
+        .from("#scene-1 .flow-line", { scaleX: 0, duration: 1.12, ease: "power2.inOut" }, 3.42)
+        .from("#scene-1 .traveler", { opacity: 0, x: -520, duration: 1.08, ease: "power1.inOut" }, 3.58)
+        .from("#scene-1 .output", { opacity: 0, x: 70, duration: 0.64, ease: "expo.out" }, 4.52);
+
+      tl.to("#scene-1", { x: -1920, duration: 0.56, ease: "power3.inOut" }, 8.36)
+        .fromTo("#scene-2", { x: 1920, opacity: 1 }, { x: 0, opacity: 1, duration: 0.56, ease: "power3.inOut" }, 8.36)
+        .from(".scene2-meta", { opacity: 0, y: -24, duration: 0.42, ease: "power2.out" }, 9.02)
+        .from("#scene-2 .input", { opacity: 0, x: -64, duration: 0.54, ease: "expo.out" }, 9.2)
+        .from("#scene-2 .output", { opacity: 0, x: 64, duration: 0.54, ease: "power4.out" }, 9.36)
+        .from("#scene-2 .left-half", { scaleX: 0, transformOrigin: "left center", duration: 0.68, ease: "sine.out" }, 10.0)
+        .from("#scene-2 .right-half", { scaleX: 0, transformOrigin: "right center", duration: 0.68, ease: "power1.out" }, 10.08)
+        .from("#scene-2 .unknown", { opacity: 0, scale: .36, rotation: -8, duration: 0.84, ease: "back.out(1.5)" }, 10.88)
+        .from("#scene-2 .question", { opacity: 0, y: 58, scale: .96, duration: 0.82, ease: "expo.out" }, 11.92);
+
+      tl.set("#scene-3", { opacity: 1 }, 16.34)
+        .fromTo("#scene-3", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(75% at 50% 50%)", duration: 0.62, ease: "power2.out" }, 16.34)
+        .set("#scene-2", { opacity: 0 }, 16.96)
+        .from(".scene3-meta", { opacity: 0, y: -22, duration: 0.44, ease: "power3.out" }, 17.04)
+        .from("#scene-3 .product-shell", { opacity: 0, scaleX: .58, scaleY: .86, duration: 0.92, ease: "expo.out" }, 17.24)
+        .from("#scene-3 .product-label", { opacity: 0, y: -32, duration: 0.5, ease: "power4.out" }, 17.7)
+        .from("#scene-3 .feature", { opacity: 0, y: 28, duration: 0.42, stagger: .11, ease: "sine.out" }, 18.34)
+        .from("#scene-3 .core-halo", { opacity: 0, scale: .38, filter: "blur(18px)", duration: 1.14, ease: "power3.out" }, 20.0)
+        .from("#scene-3 .model-core", { opacity: 0, scale: 1.26, duration: 0.68, ease: "expo.out" }, 20.62)
+        .from("#scene-3 .relation", { opacity: 0, y: 34, duration: 0.58, ease: "back.out(1.25)" }, 21.62);
+
+      window.__timelines["lesson1-first3"] = tl;
+    </script>
+  </body>
+</html>

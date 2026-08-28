@@ -1,0 +1,29 @@
+{
+  "name": "lesson1-token-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "voice:status": "node --env-file-if-exists=.env scripts/check-voice-setup.mjs",
+    "voice:create": "node --env-file=.env scripts/create-elevenlabs-voice.mjs --confirm-owner",
+    "voice:generate": "node --env-file=.env scripts/generate-voiceover.mjs --confirm-cost",
+    "render:silent": "remotion render src/index.ts Lesson1Silent out/第1课-大模型与Token-完整静音版.mp4 --codec=h264 --muted --concurrency=2 --browser-executable='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'",
+    "render:silent-review": "remotion render src/index.ts Lesson1Silent out/第1课-大模型与Token-完整静音审片版.mp4 --scale=0.5 --codec=h264 --muted --concurrency=2 --browser-executable='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'",
+    "render": "remotion render src/index.ts Lesson1Token out/第1课-大模型与Token-Remotion版.mp4 --browser-executable='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'",
+    "preview60": "remotion render src/index.ts Lesson1Token out/第1课-Remotion重设计-60秒样片.mp4 --frames=0-1799 --scale=0.5 --codec=h264 --browser-executable='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'",
+    "still": "remotion still src/index.ts Lesson1Token out/check-frame.png --frame=920 --scale=0.5 --browser-executable='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'"
+  },
+  "dependencies": {
+    "@remotion/media": "4.0.516",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.516"
+  },
+  "devDependencies": {
+    "@remotion/cli": "4.0.516",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "typescript": "5.9.3"
+  }
+}

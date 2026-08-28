@@ -1,0 +1,52 @@
+{
+  "controls": [
+    {
+      "sid": "bgColor",
+      "label": "背景色"
+    },
+    {
+      "sid": "inkColor",
+      "label": "核心深色"
+    },
+    {
+      "sid": "accentColor",
+      "label": "图形强调色"
+    },
+    {
+      "sid": "kicker",
+      "label": "页眉"
+    },
+    {
+      "sid": "title",
+      "label": "主标题"
+    },
+    {
+      "sid": "inputLabel",
+      "label": "输入标签"
+    },
+    {
+      "sid": "inputText",
+      "label": "输入内容"
+    },
+    {
+      "sid": "coreTop",
+      "label": "处理中标签"
+    },
+    {
+      "sid": "coreMain",
+      "label": "处理状态"
+    },
+    {
+      "sid": "outputLabel",
+      "label": "输出标签"
+    },
+    {
+      "sid": "outputText",
+      "label": "输出内容"
+    },
+    {
+      "sid": "question",
+      "label": "结尾提问"
+    }
+  ]
+}
