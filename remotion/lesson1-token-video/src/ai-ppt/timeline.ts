@@ -351,15 +351,15 @@ export const scenes:Scene[] = [
         "file": "03",
         "sourceStart": 41,
         "sourceEnd": null,
-        "zoom": 1.8,
-        "cx": 0.49,
-        "cy": 0.79,
+        "zoom": 1.35,
+        "cx": 0.625,
+        "cy": 0.66,
         "label": "任务",
         "mark": [
-          0.18,
-          0.74,
-          0.58,
-          0.025
+          0.26,
+          0.596,
+          0.73,
+          0.042
         ]
       },
       {
@@ -368,15 +368,15 @@ export const scenes:Scene[] = [
         "file": "03",
         "sourceStart": 41,
         "sourceEnd": null,
-        "zoom": 1.9,
-        "cx": 0.49,
-        "cy": 0.8,
+        "zoom": 1.35,
+        "cx": 0.625,
+        "cy": 0.68,
         "label": "背景",
         "mark": [
-          0.18,
-          0.767,
-          0.58,
-          0.027
+          0.26,
+          0.635,
+          0.73,
+          0.042
         ]
       },
       {
@@ -385,15 +385,15 @@ export const scenes:Scene[] = [
         "file": "03",
         "sourceStart": 41,
         "sourceEnd": null,
-        "zoom": 1.9,
-        "cx": 0.49,
-        "cy": 0.82,
+        "zoom": 1.35,
+        "cx": 0.625,
+        "cy": 0.7,
         "label": "目标",
         "mark": [
-          0.18,
-          0.797,
-          0.58,
-          0.028
+          0.26,
+          0.676,
+          0.73,
+          0.042
         ]
       },
       {
@@ -402,15 +402,15 @@ export const scenes:Scene[] = [
         "file": "03",
         "sourceStart": 41,
         "sourceEnd": null,
-        "zoom": 1.9,
-        "cx": 0.49,
-        "cy": 0.84,
+        "zoom": 1.35,
+        "cx": 0.625,
+        "cy": 0.72,
         "label": "输出",
         "mark": [
-          0.18,
-          0.827,
-          0.58,
-          0.028
+          0.26,
+          0.715,
+          0.73,
+          0.042
         ]
       },
       {
@@ -419,15 +419,15 @@ export const scenes:Scene[] = [
         "file": "03",
         "sourceStart": 41,
         "sourceEnd": null,
-        "zoom": 1.9,
-        "cx": 0.49,
-        "cy": 0.86,
+        "zoom": 1.35,
+        "cx": 0.625,
+        "cy": 0.74,
         "label": "要求",
         "mark": [
-          0.18,
-          0.858,
-          0.58,
-          0.065
+          0.26,
+          0.757,
+          0.73,
+          0.119
         ]
       }
     ],
@@ -980,13 +980,13 @@ export const scenes:Scene[] = [
         "sourceEnd": null,
         "zoom": 1.18,
         "cx": 0.65,
-        "cy": 0.58,
+        "cy": 0.52,
         "label": "照片被截断",
         "mark": [
-          0.58,
-          0.39,
+          0.52,
           0.29,
-          0.48
+          0.365,
+          0.535
         ]
       },
       {
@@ -1186,14 +1186,14 @@ export const scenes:Scene[] = [
         "sourceStart": 43,
         "sourceEnd": null,
         "zoom": 1.6,
-        "cx": 0.49,
-        "cy": 0.83,
+        "cx": 0.52,
+        "cy": 0.78,
         "label": "外形和 logo 不能改",
         "mark": [
-          0.25,
-          0.79,
-          0.62,
-          0.08
+          0.255,
+          0.835,
+          0.56,
+          0.045
         ]
       }
     ],
