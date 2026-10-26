@@ -39,10 +39,10 @@ export const Opening: React.FC<{scene: Scene}> = ({scene}) => {
     <Board>
       <Sequence from={reveal} premountFor={30}>
         <MediaCard x={40} y={250} w={660} h={371} k="op-l" color={C.ink} active={!rightOn} dimmed={rightOn} enter={leftEnter} title="只发一句话" sub="手机原图 · 没有动画">
-          <CropVideo file="opening-left" start={0} crop={[0.585, 0.35, 0.4, 0.435]} />
+          <CropVideo file="opening-left" start={0} crop={[0.585, 0.35, 0.4, 0.435]} rate={Math.min(1, 6.4 / ((scene.durationInFrames - reveal) / FPS))} />
         </MediaCard>
         <MediaCard x={1220} y={250} w={660} h={371} k="op-r" color={C.yellow} active={rightOn} dimmed={!rightOn && rightEnter > 0.99 && f < sourceToFrame(scene, 66.4)} enter={rightEnter} title="一步步提要求" sub="产品大图 · 动画演出重点">
-          <CropVideo file="opening-right" start={0} />
+          <CropVideo file="opening-right" start={0} rate={Math.min(1, 6.35 / ((scene.durationInFrames - reveal) / FPS))} />
         </MediaCard>
       </Sequence>
       <div style={{position: 'absolute', left: stripX, top: 0, width: stripW, height: 1080, overflow: 'hidden', borderRadius: split * 6, boxShadow: split > 0 ? '0 0 50px rgba(0,0,0,.55)' : undefined}}>
@@ -63,7 +63,7 @@ export const Compare: React.FC<{scene: Scene; mode: string}> = ({scene, mode}) =
   const leftActive = power ? t >= 717.4 && t < 723.33 : t >= 643.2 && t < 646.63;
   const both = power ? t >= 734.65 : t >= 652.4;
   const step = Math.floor(f / 120);
-  const rightStart = power ? [17, 27, 32, 37, 47][step % 5] : [24, 59, 67][step % 3];
+  const rightStart = power ? [17, 27, 32, 37, 47][step % 5] : [22, 62.5, 69.5][step % 3];
   const enter = ease(f, 4, 22);
   const title = power ? '同样一句话，要求存在 Skill 里' : '同一份资料，两种做法';
   return (

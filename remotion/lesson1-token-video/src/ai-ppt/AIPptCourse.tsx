@@ -19,12 +19,46 @@ const clampCentre = (c: number, zoom: number) => {
   return Math.min(1 - half, Math.max(half, c));
 };
 
+const MAX_RATE = 2.5; // above this the browser preview stutters / goes black, and the action is unreadable
+const MIN_RATE = 0.9; // never play a recording in slow motion
+const videoStyle: React.CSSProperties = {width: '100%', height: '100%', objectFit: 'fill'};
+/**
+ * Plays [start, end] of a recording inside `duration` frames.
+ * - Too much action for the time: show the beginning and the end at ≤2.5×, joined by a cut.
+ * - Too little action: play at 1× and hold the last frame.
+ * - end === null: a still frame.
+ */
+const ScreenMedia: React.FC<{file: string; start: number; end: number | null; duration: number}> = ({file, start, end, duration}) => {
+  const src = screen(file);
+  if (end == null) return <Freeze frame={0}><OffthreadVideo src={src} muted volume={0} startFrom={Math.round(start * FPS)} style={videoStyle} /></Freeze>;
+  const secs = duration / FPS;
+  const natural = (end - start) / secs;
+  if (natural > MAX_RATE) {
+    const half = Math.floor(duration / 2);
+    const tailStart = end - ((duration - half) / FPS) * MAX_RATE;
+    return (
+      <>
+        <Sequence durationInFrames={half} premountFor={FPS}><OffthreadVideo src={src} muted volume={0} startFrom={Math.round(start * FPS)} playbackRate={MAX_RATE} style={videoStyle} /></Sequence>
+        <Sequence from={half} premountFor={FPS}><OffthreadVideo src={src} muted volume={0} startFrom={Math.round(tailStart * FPS)} playbackRate={MAX_RATE} style={videoStyle} /></Sequence>
+      </>
+    );
+  }
+  if (natural < MIN_RATE) {
+    const play = Math.round((end - start) * FPS);
+    return (
+      <>
+        <Sequence durationInFrames={play} premountFor={FPS}><OffthreadVideo src={src} muted volume={0} startFrom={Math.round(start * FPS)} style={videoStyle} /></Sequence>
+        <Sequence from={play}><Freeze frame={0}><OffthreadVideo src={src} muted volume={0} startFrom={Math.round(end * FPS) - 1} style={videoStyle} /></Freeze></Sequence>
+      </>
+    );
+  }
+  return <OffthreadVideo src={src} muted volume={0} startFrom={Math.round(start * FPS)} playbackRate={natural} style={videoStyle} />;
+};
+
 const ScreenShot: React.FC<{shot: Shot; duration: number; prev?: Shot}> = ({shot, duration, prev}) => {
   const f = useCurrentFrame();
-  const {fps} = useVideoConfig();
   const sourceStart = shot.sourceStart ?? 0;
   const moving = shot.sourceEnd != null;
-  const rate = moving ? Math.max(0.5, Math.min(6, ((shot.sourceEnd ?? sourceStart) - sourceStart) / (duration / fps))) : 1;
   const target = Math.max(1, shot.zoom ?? 1);
   // Camera: settle in from slightly wider, then a slow push for the rest of the shot.
   // Same recording as the previous shot: glide the camera over instead of cutting.
@@ -38,14 +72,14 @@ const ScreenShot: React.FC<{shot: Shot; duration: number; prev?: Shot}> = ({shot
   const tx = (0.5 - cx) * WIN.w * zoom;
   const ty = (0.5 - cy) * WIN.h * zoom;
   const enter = glide ? 1 : ease(f, 0, 8);
-  const video = <OffthreadVideo src={screen(shot.file!)} muted volume={0} startFrom={Math.round(sourceStart * fps)} playbackRate={rate} style={{width: '100%', height: '100%', objectFit: 'fill'}} />;
   const m = shot.mark;
-  const circle = ease(f, 8, 24);
+  // Short shots (e.g. the three quick page cuts in s34) still finish their highlight.
+  const circle = ease(f, Math.min(8, duration * 0.1), Math.min(24, Math.max(6, duration * 0.55)));
   return (
     <Board>
       <div style={{position: 'absolute', left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, borderRadius: 14, overflow: 'hidden', background: '#fff', boxShadow: '0 24px 60px rgba(0,0,0,.5)'}}>
         <div style={{position: 'absolute', inset: 0, transform: `translate(${tx}px, ${ty}px) scale(${zoom})`, transformOrigin: '50% 50%'}}>
-          {moving ? video : <Freeze frame={0}>{video}</Freeze>}
+          <ScreenMedia file={shot.file!} start={sourceStart} end={moving ? shot.sourceEnd! : null} duration={duration} />
           {m && (
             <svg viewBox={`0 0 ${WIN.w} ${WIN.h}`} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
               <rect x={m[0] * WIN.w - 8} y={m[1] * WIN.h - 6} width={m[2] * WIN.w + 16} height={m[3] * WIN.h + 12} rx={8} fill="#F0C85A" opacity={0.2 * circle} />
@@ -55,7 +89,7 @@ const ScreenShot: React.FC<{shot: Shot; duration: number; prev?: Shot}> = ({shot
         </div>
         <AbsoluteFill style={{background: C.board, opacity: 1 - enter}} />
       </div>
-      <Tag text={shot.label ?? ''} progress={ease(f, 6, 20)} x={TAG_POS.x} y={TAG_POS.y} color={m ? '#E8A93A' : C.yellow} />
+      <Tag text={shot.label ?? ''} progress={ease(f, Math.min(6, duration * 0.08), Math.min(20, Math.max(5, duration * 0.4)))} x={TAG_POS.x} y={TAG_POS.y} color={m ? '#E8A93A' : C.yellow} />
     </Board>
   );
 };
@@ -139,7 +173,7 @@ const PresenterTake: React.FC<{start: number; duration: number; close: boolean}>
 
 const Subtitle: React.FC<{sourceTime: number}> = ({sourceTime}) => {
   // Timestamps stay relative to the original narration, even across removed retakes.
-  const c = captions.find((x) => sourceTime * 1000 >= x.startMs && sourceTime * 1000 < x.endMs);
+  const c = captions.find((x) => sourceTime * 1000 >= x.startMs && sourceTime * 1000 < x.endMs - 150);
   if (!c) return null;
   return (
     <div style={{position: 'absolute', bottom: 34, left: 120, right: 120, display: 'flex', justifyContent: 'center', pointerEvents: 'none'}}>
