@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Audio, Freeze, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Scene, Shot, scenes, FPS, frameToSource, sourceToFrame} from './timeline';
 import captions from './captions.json';
-import {Compare, Handbook, InstallCard, Opening, Steps, StepsStrip} from './Animations';
+import {Compare, CropVideo, Handbook, InstallCard, Opening, Steps, StepsStrip} from './Animations';
 import {Board, C, ChalkRect, FONT, Tag, ease, easeInOut, lerp, roughRectPath} from './design';
 
 const screen = (id: string) => staticFile(`ai-ppt/screen-${id}.mp4`);
@@ -90,6 +90,37 @@ const ScreenShot: React.FC<{shot: Shot; duration: number; prev?: Shot}> = ({shot
         <AbsoluteFill style={{background: C.board, opacity: 1 - enter}} />
       </div>
       <Tag text={shot.label ?? ''} progress={ease(f, Math.min(6, duration * 0.08), Math.min(20, Math.max(5, duration * 0.4)))} x={TAG_POS.x} y={TAG_POS.y} color={m ? '#E8A93A' : C.yellow} />
+    </Board>
+  );
+};
+
+/** Several pages side by side (s34: three pages that still use phone photos). */
+const ScreenTrio: React.FC<{shot: Shot; duration: number}> = ({shot, duration}) => {
+  const f = useCurrentFrame();
+  const items = shot.items ?? [];
+  const w = 560, h = 315, gap = 60, x0 = (1920 - (w * items.length + gap * (items.length - 1))) / 2, y0 = 370;
+  const step = Math.min(8, duration / (items.length + 2));
+  return (
+    <Board>
+      <div className="chalk" style={{position: 'absolute', left: 0, right: 0, top: 210, textAlign: 'center', fontSize: 58, opacity: ease(f, 0, 8)}}>{shot.label}</div>
+      {items.map((it, i) => {
+        const p = ease(f, i * step, i * step + 8);
+        const [cx, cy, cw, ch] = it.crop;
+        const [mx, my, mw, mh] = it.mark;
+        const hl = ease(f, i * step + 5, i * step + 14);
+        return (
+          <div key={i} style={{position: 'absolute', left: x0 + i * (w + gap), top: y0, width: w, opacity: p, transform: `translateY(${(1 - p) * 20}px)`}}>
+            <div style={{position: 'relative', width: w, height: h, borderRadius: 8, overflow: 'hidden', boxShadow: '0 18px 40px rgba(0,0,0,.45)'}}>
+              <CropVideo file={it.file} start={it.sourceStart} crop={it.crop} still />
+              <svg viewBox={`0 0 ${w} ${h}`} style={{position: 'absolute', inset: 0}}>
+                <rect x={((mx - cx) / cw) * w - 4} y={((my - cy) / ch) * h - 4} width={(mw / cw) * w + 8} height={(mh / ch) * h + 8} rx={6} fill="#F0C85A" opacity={0.2 * hl} />
+                <path transform={`translate(${((mx - cx) / cw) * w - 6} ${((my - cy) / ch) * h - 6})`} d={roughRectPath((mw / cw) * w + 12, (mh / ch) * h + 12, `trio${i}`, 1.4)} fill="none" stroke="#E8A93A" strokeWidth={3.5} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - hl} />
+              </svg>
+            </div>
+            <div className="chalk" style={{marginTop: 30, textAlign: 'center', fontSize: 42, color: C.yellow}}>{it.label}</div>
+          </div>
+        );
+      })}
     </Board>
   );
 };
@@ -200,6 +231,7 @@ export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, d
         let visual: React.ReactNode;
         if (shot.kind === 'screen') visual = <ScreenShot shot={shot} duration={dur} prev={i > 0 ? scene.shots[i - 1] : undefined} />;
         else if (shot.kind === 'image') visual = <ProductImage shot={shot} duration={dur} />;
+        else if (shot.kind === 'screen-trio') visual = <ScreenTrio shot={shot} duration={dur} />;
         else {
           // These use the scene's own clock so spoken cue anchors survive cuts.
           const inner =

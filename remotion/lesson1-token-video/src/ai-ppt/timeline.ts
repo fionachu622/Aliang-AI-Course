@@ -1,6 +1,6 @@
 // Source selections are in seconds; audio cuts are original 30 fps frames.
 // User chose actual spoken version over the earlier 45-paragraph script.
-export type Shot = {at:number;kind:string;file?:string;sourceStart?:number;sourceEnd?:number|null;zoom?:number;cx?:number;cy?:number;label?:string;mark?:number[]|null};
+export type Shot = {at:number;kind:string;file?:string;sourceStart?:number;sourceEnd?:number|null;zoom?:number;cx?:number;cy?:number;label?:string;mark?:number[]|null;items?:{file:string;sourceStart:number;crop:number[];mark:number[];label:string}[]};
 export type Scene = {id:string;title:string;chapter:string;sourceStart:number;sourceEnd:number;sourceStartFrame:number;sourceEndFrame:number;durationInFrames:number;audio:{sourceStart:number;sourceEnd:number}[];shots:Shot[]};
 export const FPS=30;
 export const scenes:Scene[] = [
@@ -1413,7 +1413,7 @@ export const scenes:Scene[] = [
         "mark": null
       },
       {
-        "at": 514.7,
+        "at": 515.34,
         "kind": "screen",
         "file": "12",
         "sourceStart": 42,
@@ -1428,10 +1428,14 @@ export const scenes:Scene[] = [
     "audio": [
       {
         "sourceStart": 15296,
+        "sourceEnd": 15363
+      },
+      {
+        "sourceStart": 15460,
         "sourceEnd": 15571
       }
     ],
-    "durationInFrames": 275,
+    "durationInFrames": 178,
     "sourceStartFrame": 15296,
     "sourceEndFrame": 15571
   },
@@ -1508,53 +1512,60 @@ export const scenes:Scene[] = [
       },
       {
         "at": 537.36,
-        "kind": "screen",
-        "file": "12",
-        "sourceStart": 102.5,
-        "sourceEnd": null,
-        "zoom": 1.15,
-        "cx": 0.56,
-        "cy": 0.58,
-        "label": "第 4 页：手机原图",
-        "mark": [
-          0.59,
-          0.4,
-          0.29,
-          0.4
-        ]
-      },
-      {
-        "at": 538.05,
-        "kind": "screen",
-        "file": "12",
-        "sourceStart": 93.5,
-        "sourceEnd": null,
-        "zoom": 1.15,
-        "cx": 0.56,
-        "cy": 0.58,
-        "label": "第 8 页：手机原图",
-        "mark": [
-          0.33,
-          0.31,
-          0.43,
-          0.34
-        ]
-      },
-      {
-        "at": 538.72,
-        "kind": "screen",
-        "file": "12",
-        "sourceStart": 90.5,
-        "sourceEnd": null,
-        "zoom": 1.15,
-        "cx": 0.56,
-        "cy": 0.58,
-        "label": "第 9 页：手机原图",
-        "mark": [
-          0.6,
-          0.38,
-          0.28,
-          0.42
+        "kind": "screen-trio",
+        "label": "还有三页用的是手机原图",
+        "items": [
+          {
+            "file": "12",
+            "sourceStart": 102.5,
+            "crop": [
+              0.206,
+              0.178,
+              0.69,
+              0.707
+            ],
+            "mark": [
+              0.59,
+              0.4,
+              0.29,
+              0.4
+            ],
+            "label": "第 4 页"
+          },
+          {
+            "file": "12",
+            "sourceStart": 93.5,
+            "crop": [
+              0.206,
+              0.178,
+              0.69,
+              0.707
+            ],
+            "mark": [
+              0.33,
+              0.31,
+              0.43,
+              0.34
+            ],
+            "label": "第 8 页"
+          },
+          {
+            "file": "12",
+            "sourceStart": 90.5,
+            "crop": [
+              0.206,
+              0.178,
+              0.69,
+              0.707
+            ],
+            "mark": [
+              0.6,
+              0.38,
+              0.28,
+              0.42
+            ],
+            "label": "第 9 页"
+          }
         ]
       },
       {
