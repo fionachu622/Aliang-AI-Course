@@ -1,7 +1,11 @@
 // Source selections are in seconds; audio cuts are original 30 fps frames.
 // User chose actual spoken version over the earlier 45-paragraph script.
 export type Shot = {at:number;kind:string;file?:string;sourceStart?:number;sourceEnd?:number|null;zoom?:number;cx?:number;cy?:number;label?:string;mark?:number[]|null;items?:{file:string;sourceStart:number;crop:number[];mark:number[];label:string}[]};
-export type Scene = {id:string;title:string;chapter:string;sourceStart:number;sourceEnd:number;sourceStartFrame:number;sourceEndFrame:number;durationInFrames:number;audio:{sourceStart:number;sourceEnd:number}[];shots:Shot[]};
+// A dub replaces the spoken words in [sourceStart, sourceEnd) with a re-voiced line (cloned voice) and covers the picture with a chalk card.
+// Until `file` is set, the original audio plays under the card. Card line `at` values are fractions (0–1) of the dub.
+export type Dub = {file?:string|null;frames?:number;text:string;card:{kicker:string;lines:{text:string;at:number;big?:boolean}[]}};
+export type AudioChunk = {sourceStart:number;sourceEnd:number;dub?:Dub};
+export type Scene = {id:string;title:string;chapter:string;sourceStart:number;sourceEnd:number;sourceStartFrame:number;sourceEndFrame:number;durationInFrames:number;audio:AudioChunk[];shots:Shot[]};
 export const FPS=30;
 export const scenes:Scene[] = [
   {
@@ -289,7 +293,30 @@ export const scenes:Scene[] = [
     "audio": [
       {
         "sourceStart": 5032,
-        "sourceEnd": 5292
+        "sourceEnd": 5204
+      },
+      {
+        "sourceStart": 5204,
+        "sourceEnd": 5292,
+        "dub": {
+          "file": null,
+          "frames": null,
+          "text": "这一步做完，整份 PPT 的骨架就搭好了。",
+          "card": {
+            "kicker": "第一步 · 定大纲",
+            "lines": [
+              {
+                "text": "这一步做完",
+                "at": 0
+              },
+              {
+                "text": "整份 PPT 的骨架就搭好了",
+                "at": 0.3,
+                "big": true
+              }
+            ]
+          }
+        }
       }
     ],
     "durationInFrames": 260,
@@ -1029,7 +1056,38 @@ export const scenes:Scene[] = [
     "audio": [
       {
         "sourceStart": 11635,
-        "sourceEnd": 11996
+        "sourceEnd": 11682
+      },
+      {
+        "sourceStart": 11682,
+        "sourceEnd": 11996,
+        "dub": {
+          "file": null,
+          "frames": null,
+          "text": "我们先让 AI 把手机拍的照片，改成背景干净、有质感的产品图，再调整每一页的排版。这一步做完，整份 PPT 就有了设计感。",
+          "card": {
+            "kicker": "第三步 · 调版式",
+            "lines": [
+              {
+                "text": "先让 AI 把手机拍的照片",
+                "at": 0
+              },
+              {
+                "text": "改成背景干净、有质感的产品图",
+                "at": 0.2
+              },
+              {
+                "text": "再调整每一页的排版",
+                "at": 0.45
+              },
+              {
+                "text": "整份 PPT 就有了设计感",
+                "at": 0.68,
+                "big": true
+              }
+            ]
+          }
+        }
       }
     ],
     "durationInFrames": 361,
@@ -2331,6 +2389,13 @@ export const scenes:Scene[] = [
     "sourceEndFrame": 23708
   }
 ];
+export const chunkFrames=(c:AudioChunk)=>c.dub?.file&&c.dub.frames?c.dub.frames:c.sourceEnd-c.sourceStart;
+export const sceneFrames=(scene:Scene)=>scene.audio.reduce((n,c)=>n+chunkFrames(c),0);
+// Keep the stored durations in step with re-voiced chunks (Root reads durationInFrames).
+scenes.forEach((s)=>{s.durationInFrames=sceneFrames(s);});
 export const TOTAL_FRAMES=scenes.reduce((n,s)=>n+s.durationInFrames,0);
-export const sourceToFrame=(scene:Scene,seconds:number)=>{let at=0;for(const c of scene.audio){if(seconds*FPS<c.sourceStart)return at;if(seconds*FPS<c.sourceEnd)return at+Math.round(seconds*FPS)-c.sourceStart;at+=c.sourceEnd-c.sourceStart;}return at;};
-export const frameToSource=(scene:Scene,frame:number)=>{let at=0;for(const c of scene.audio){const d=c.sourceEnd-c.sourceStart;if(frame<at+d)return (c.sourceStart+frame-at)/FPS;at+=d;}return scene.sourceEnd;};
+// Inside a re-voiced chunk, source time maps proportionally onto the new length.
+export const sourceToFrame=(scene:Scene,seconds:number)=>{let at=0;for(const c of scene.audio){const f=seconds*FPS,len=chunkFrames(c),span=c.sourceEnd-c.sourceStart;if(f<c.sourceStart)return at;if(f<c.sourceEnd)return at+Math.round((f-c.sourceStart)*len/span);at+=len;}return at;};
+export const frameToSource=(scene:Scene,frame:number)=>{let at=0;for(const c of scene.audio){const len=chunkFrames(c),span=c.sourceEnd-c.sourceStart;if(frame<at+len)return (c.sourceStart+(frame-at)*span/len)/FPS;at+=len;}return scene.sourceEnd;};
+/** The dub chunk playing at `frame`, with the frame offset inside it. */
+export const dubAt=(scene:Scene,frame:number)=>{let at=0;for(const c of scene.audio){const len=chunkFrames(c);if(frame<at+len)return c.dub?{dub:c.dub,offset:frame-at,length:len}:null;at+=len;}return null;};

@@ -1,9 +1,9 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Freeze, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import {Scene, Shot, scenes, FPS, frameToSource, sourceToFrame} from './timeline';
+import {Scene, Shot, scenes, FPS, chunkFrames, dubAt, frameToSource, sourceToFrame} from './timeline';
 import captions from './captions.json';
 import {Compare, CropVideo, Handbook, InstallCard, Opening, Steps, StepsStrip} from './Animations';
-import {Board, C, ChalkRect, FONT, Tag, ease, easeInOut, lerp, roughRectPath} from './design';
+import {Board, C, ChalkRect, ChalkUnderline, FONT, Tag, ease, easeInOut, lerp, roughRectPath} from './design';
 
 const screen = (id: string) => staticFile(`ai-ppt/screen-${id}.mp4`);
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
@@ -173,7 +173,10 @@ const PresenterVideo: React.FC<{scene: Scene; sceneIndex: number; forceWide?: bo
   let n = sceneIndex;
   return (
     <AbsoluteFill style={{background: '#101917'}}>
-      {scene.audio.flatMap((c, i) =>
+      {scene.audio.flatMap((c, i) => {
+        // Re-voiced lines are covered by a chalk card, so the presenter is not shown there.
+        if (c.dub) { offset += chunkFrames(c); return []; }
+        return (
         takeSegments(c.sourceStart, c.sourceEnd).map(([s, e], k) => {
           const from = offset;
           const d = e - s;
@@ -185,8 +188,8 @@ const PresenterVideo: React.FC<{scene: Scene; sceneIndex: number; forceWide?: bo
               <PresenterTake start={s} duration={d} close={close} />
             </Sequence>
           );
-        }),
-      )}
+        }));
+      })}
     </AbsoluteFill>
   );
 };
@@ -213,6 +216,43 @@ const Subtitle: React.FC<{sourceTime: number}> = ({sourceTime}) => {
   );
 };
 
+/** Full-screen chalk card shown while a re-voiced line plays. */
+const DubCard: React.FC<{dub: NonNullable<ReturnType<typeof dubAt>>['dub']; offset: number; length: number}> = ({dub, offset, length}) => {
+  const p = offset / length;
+  const enter = ease(offset, 0, 10);
+  return (
+    <AbsoluteFill style={{opacity: enter}}>
+      <Board>
+        <div className="chalk" style={{position: 'absolute', left: 260, top: 300, fontSize: 40, color: C.yellow}}>{dub.card.kicker}</div>
+        <div style={{position: 'absolute', left: 260, top: 380}}>
+          {dub.card.lines.map((l, i) => {
+            const q = ease(p * length, l.at * length, l.at * length + 10);
+            return (
+              <div key={i} className="chalk" style={{fontSize: l.big ? 88 : 54, marginTop: l.big ? 46 : 22, color: l.big ? C.ink : C.inkSoft, opacity: q, transform: `translateY(${(1 - q) * 14}px)`}}>
+                {l.text}
+                {l.big && <div style={{position: 'relative', height: 18}}><ChalkUnderline w={Math.min(1200, l.text.length * 80)} color={C.yellow} progress={ease(p * length, l.at * length + 8, l.at * length + 26)} style={{left: 0, top: 0}} /></div>}
+              </div>
+            );
+          })}
+        </div>
+      </Board>
+    </AbsoluteFill>
+  );
+};
+
+/** Subtitles for a re-voiced line: its clauses in turn, paced by character count. */
+const DubSubtitle: React.FC<{text: string; progress: number}> = ({text, progress}) => {
+  const parts = text.split(/(?<=[，。、；])/).map((s) => s.replace(/[，。；]$/, '')).filter(Boolean);
+  const total = parts.reduce((n, s) => n + s.length, 0);
+  let acc = 0;
+  const current = parts.find((s) => (acc += s.length) / total > progress) ?? parts[parts.length - 1];
+  return (
+    <div style={{position: 'absolute', bottom: 34, left: 120, right: 120, display: 'flex', justifyContent: 'center', pointerEvents: 'none'}}>
+      <div style={{fontFamily: FONT.ui, color: '#FFFDF7', fontSize: 46, lineHeight: 1.35, fontWeight: 600, letterSpacing: 1, textAlign: 'center', WebkitTextStroke: '6px rgba(12,14,15,.72)', paintOrder: 'stroke fill', textShadow: '0 3px 14px rgba(0,0,0,.55)'}}>{current}</div>
+    </div>
+  );
+};
+
 const sceneIndexOf = (scene: Scene) => scenes.findIndex((s) => s.id === scene.id);
 
 export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, debug = false}) => {
@@ -220,6 +260,7 @@ export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, d
   const {fps} = useVideoConfig();
   const sourceTime = frameToSource(scene, frame);
   const idx = sceneIndexOf(scene);
+  const dub = dubAt(scene, frame);
   let offset = 0;
   return (
     <AbsoluteFill className="aippt-chalk" style={{fontFamily: FONT.ui, background: C.board}}>
@@ -253,11 +294,13 @@ export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, d
       })}
       {scene.audio.map((c, i) => {
         const from = offset;
-        const d = c.sourceEnd - c.sourceStart;
+        const d = chunkFrames(c);
         offset += d;
+        if (c.dub?.file && c.dub.frames) return <Sequence key={`voice-${i}`} from={from} durationInFrames={d} premountFor={fps} name="补配口播"><Audio src={staticFile(c.dub.file)} volume={1} /></Sequence>;
         return <Sequence key={`voice-${i}`} from={from} durationInFrames={d} premountFor={fps} name={`口播 ${c.sourceStart / fps}s`}><Audio src={staticFile('ai-ppt/presenter.mp4')} startFrom={c.sourceStart} endAt={c.sourceEnd} volume={1} /></Sequence>;
       })}
-      <Subtitle sourceTime={sourceTime} />
+      {dub && <DubCard dub={dub.dub} offset={dub.offset} length={dub.length} />}
+      {dub?.dub.file ? <DubSubtitle text={dub.dub.text} progress={dub.offset / dub.length} /> : <Subtitle sourceTime={sourceTime} />}
       {debug && <div style={{position: 'absolute', right: 24, top: 18, background: '#000a', color: 'white', fontSize: 20, padding: 8, fontFamily: FONT.ui}}>{scene.id} / 源 {sourceTime.toFixed(2)}s</div>}
     </AbsoluteFill>
   );
