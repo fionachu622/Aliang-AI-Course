@@ -293,30 +293,7 @@ export const scenes:Scene[] = [
     "audio": [
       {
         "sourceStart": 5032,
-        "sourceEnd": 5204
-      },
-      {
-        "sourceStart": 5204,
-        "sourceEnd": 5292,
-        "dub": {
-          "file": null,
-          "frames": null,
-          "text": "这一步做完，整份 PPT 的骨架就搭好了。",
-          "card": {
-            "kicker": "第一步 · 定大纲",
-            "lines": [
-              {
-                "text": "这一步做完",
-                "at": 0
-              },
-              {
-                "text": "整份 PPT 的骨架就搭好了",
-                "at": 0.3,
-                "big": true
-              }
-            ]
-          }
-        }
+        "sourceEnd": 5292
       }
     ],
     "durationInFrames": 260,
@@ -1056,38 +1033,7 @@ export const scenes:Scene[] = [
     "audio": [
       {
         "sourceStart": 11635,
-        "sourceEnd": 11682
-      },
-      {
-        "sourceStart": 11682,
-        "sourceEnd": 11996,
-        "dub": {
-          "file": null,
-          "frames": null,
-          "text": "我们先让 AI 把手机拍的照片，改成背景干净、有质感的产品图，再调整每一页的排版。这一步做完，整份 PPT 就有了设计感。",
-          "card": {
-            "kicker": "第三步 · 调版式",
-            "lines": [
-              {
-                "text": "先让 AI 把手机拍的照片",
-                "at": 0
-              },
-              {
-                "text": "改成背景干净、有质感的产品图",
-                "at": 0.2
-              },
-              {
-                "text": "再调整每一页的排版",
-                "at": 0.45
-              },
-              {
-                "text": "整份 PPT 就有了设计感",
-                "at": 0.68,
-                "big": true
-              }
-            ]
-          }
-        }
+        "sourceEnd": 11996
       }
     ],
     "durationInFrames": 361,
