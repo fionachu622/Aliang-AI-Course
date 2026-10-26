@@ -1,0 +1,122 @@
+{
+  "hookEnd": 9.43,
+  "end": 61.76,
+  "hook": "一条视频\n讲明白 Agent",
+  "timeMap": [
+    [
+      10.7,
+      5
+    ],
+    [
+      11.96,
+      64
+    ],
+    [
+      13.48,
+      205
+    ],
+    [
+      14.33,
+      268
+    ],
+    [
+      19.3,
+      390
+    ],
+    [
+      19.5,
+      398
+    ],
+    [
+      20.16,
+      590
+    ],
+    [
+      21.02,
+      615
+    ],
+    [
+      22.92,
+      740
+    ],
+    [
+      29.53,
+      905
+    ],
+    [
+      30.76,
+      1071
+    ],
+    [
+      33.16,
+      1238
+    ],
+    [
+      41,
+      1470
+    ],
+    [
+      45.32,
+      1580
+    ],
+    [
+      46.73,
+      1770
+    ],
+    [
+      48.69,
+      1885
+    ],
+    [
+      51.72,
+      2050
+    ],
+    [
+      52.56,
+      2106
+    ],
+    [
+      53.45,
+      2162
+    ],
+    [
+      58.64,
+      2290
+    ],
+    [
+      61.76,
+      2459
+    ]
+  ],
+  "basis": "Opening visuals use absolute narration cues in opening-text.timeline.json; legacy timeMap retained as historical data only and is not rendered.",
+  "presenterSource": "agent-course/media/presenter-opening.mp4",
+  "hookVisual": "原口播真人 0–9.43 秒；9.43–19.30 秒使用用户确认的漫画场景静帧，连续原音轨不变。",
+  "handoffVisual": {
+    "start": 9.43,
+    "end": 19.3,
+    "asset": "agent-course/media/opening-approved-illustration.png",
+    "mode": "held-scene-delayed-agent",
+    "cropSource": {
+      "x": 0,
+      "y": 0,
+      "width": 1638,
+      "height": 930
+    },
+    "basis": "人物桌面保持静止；“现在”起右上 Agent 淡入 0.4 秒。",
+    "agentReveal": {
+      "startFrame": 507,
+      "endFrame": 519,
+      "startSeconds": 16.9,
+      "cue": "现在，已经有这样的 AI 了，它叫 Agent",
+      "plate": "agent-course/media/opening-no-agent-plate.png"
+    },
+    "reaction": {
+      "startFrame": 523,
+      "endFrame": 541,
+      "asset": "agent-course/media/opening-relieved-look.png",
+      "method": "localized-keyframe-dissolve",
+      "note": "看向右上 Agent，眉头舒展、轻微笑意；关键帧叠化，非连续转头动画。"
+    }
+  },
+  "textTiming": "opening-text.timeline.json"
+}

@@ -1,0 +1,314 @@
+[
+  {
+    "startSeconds": 9.43,
+    "endSeconds": 19.233333333333334,
+    "label": "从麻烦事开始",
+    "sourceScene": "s01"
+  },
+  {
+    "startSeconds": 19.233333333333334,
+    "endSeconds": 41.0,
+    "label": "Agent 与本课路径",
+    "sourceScene": "s02"
+  },
+  {
+    "startSeconds": 41.0,
+    "endSeconds": 61.766666666666666,
+    "label": "Agent 是什么",
+    "sourceScene": "s03"
+  },
+  {
+    "startSeconds": 61.766666666666666,
+    "endSeconds": 117.76666666666667,
+    "label": "文件按项目归位",
+    "sourceScene": "s04"
+  },
+  {
+    "startSeconds": 117.76666666666667,
+    "endSeconds": 166.53333333333333,
+    "label": "从终端到桌面入口",
+    "sourceScene": "s05"
+  },
+  {
+    "startSeconds": 166.53333333333333,
+    "endSeconds": 223.6,
+    "label": "操作电脑：日历安排",
+    "sourceScene": "s06"
+  },
+  {
+    "startSeconds": 223.6,
+    "endSeconds": 288.1333333333333,
+    "label": "连续执行：订单汇总",
+    "sourceScene": "s07"
+  },
+  {
+    "startSeconds": 288.1333333333333,
+    "endSeconds": 344.0,
+    "label": "分工协作：三个结果",
+    "sourceScene": "s08"
+  },
+  {
+    "startSeconds": 344.0,
+    "endSeconds": 364.0,
+    "label": "能力取决于工具与权限",
+    "sourceScene": "s09"
+  },
+  {
+    "startSeconds": 364.0,
+    "endSeconds": 438.4,
+    "label": "四项能力配合",
+    "sourceScene": "s10"
+  },
+  {
+    "startSeconds": 438.4,
+    "endSeconds": 481.93333333333334,
+    "label": "观察、思考、行动与反馈",
+    "sourceScene": "s11"
+  },
+  {
+    "startSeconds": 481.93333333333334,
+    "endSeconds": 502.06666666666666,
+    "label": "从想法走到视频",
+    "sourceScene": "s12"
+  },
+  {
+    "startSeconds": 502.06666666666666,
+    "endSeconds": 508.7,
+    "label": "三条使用原则",
+    "sourceScene": "s13"
+  },
+  {
+    "startSeconds": 508.7,
+    "endSeconds": 525.8,
+    "label": "频道创建与选名",
+    "sourceScene": "s14"
+  },
+  {
+    "startSeconds": 525.8,
+    "endSeconds": 546.5333333333333,
+    "label": "内容目标：看见蜕变",
+    "sourceScene": "s15"
+  },
+  {
+    "startSeconds": 546.5333333333333,
+    "endSeconds": 577.9,
+    "label": "明确形式与表达",
+    "sourceScene": "s16"
+  },
+  {
+    "startSeconds": 577.9,
+    "endSeconds": 596.1333333333333,
+    "label": "知识与确认边界",
+    "sourceScene": "s17"
+  },
+  {
+    "startSeconds": 596.1333333333333,
+    "endSeconds": 639.8666666666667,
+    "label": "让 Agent 推进中间工作",
+    "sourceScene": "s18"
+  },
+  {
+    "startSeconds": 639.8666666666667,
+    "endSeconds": 670.4666666666667,
+    "label": "效果偏差：明确参考",
+    "sourceScene": "s19"
+  },
+  {
+    "startSeconds": 670.4666666666667,
+    "endSeconds": 705.2,
+    "label": "预览先看关键动作",
+    "sourceScene": "s20"
+  },
+  {
+    "startSeconds": 705.2,
+    "endSeconds": 731.1333333333333,
+    "label": "反馈要指向具体效果",
+    "sourceScene": "s21"
+  },
+  {
+    "startSeconds": 731.1333333333333,
+    "endSeconds": 748.6666666666666,
+    "label": "讲解也要核查",
+    "sourceScene": "s22"
+  },
+  {
+    "startSeconds": 748.6666666666666,
+    "endSeconds": 779.3333333333334,
+    "label": "从预览推进到发布",
+    "sourceScene": "s23"
+  },
+  {
+    "startSeconds": 779.3333333333334,
+    "endSeconds": 799.9666666666667,
+    "label": "验收：打开观看链接",
+    "sourceScene": "s24"
+  },
+  {
+    "startSeconds": 799.9666666666667,
+    "endSeconds": 820.9666666666667,
+    "label": "人的判断与 Agent 的执行",
+    "sourceScene": "s25"
+  },
+  {
+    "startSeconds": 820.9666666666667,
+    "endSeconds": 844.7333333333333,
+    "label": "发布与发送：确认最后一步",
+    "sourceScene": "s26"
+  },
+  {
+    "startSeconds": 844.7333333333333,
+    "endSeconds": 861.0,
+    "label": "删除与覆盖：先考虑备份",
+    "sourceScene": "s27"
+  },
+  {
+    "startSeconds": 861.0,
+    "endSeconds": 883.4,
+    "label": "付款与权限：只给必要范围",
+    "sourceScene": "s28"
+  },
+  {
+    "startSeconds": 883.4,
+    "endSeconds": 933.6666666666666,
+    "label": "四种使用入口",
+    "sourceScene": "s29"
+  },
+  {
+    "startSeconds": 933.6666666666666,
+    "endSeconds": 958.9666666666667,
+    "label": "先用现成，再考虑定制",
+    "sourceScene": "s30"
+  },
+  {
+    "startSeconds": 958.9666666666667,
+    "endSeconds": 977.3666666666667,
+    "label": "通用 Agent",
+    "sourceScene": "s31"
+  },
+  {
+    "startSeconds": 977.3666666666667,
+    "endSeconds": 991.2,
+    "label": "搜索调研",
+    "sourceScene": "s32"
+  },
+  {
+    "startSeconds": 991.2,
+    "endSeconds": 1002.9666666666667,
+    "label": "办公文档",
+    "sourceScene": "s33"
+  },
+  {
+    "startSeconds": 1002.9666666666667,
+    "endSeconds": 1014.5666666666667,
+    "label": "数据分析",
+    "sourceScene": "s34"
+  },
+  {
+    "startSeconds": 1014.5666666666667,
+    "endSeconds": 1028.1666666666667,
+    "label": "图片创作",
+    "sourceScene": "s35"
+  },
+  {
+    "startSeconds": 1028.1666666666667,
+    "endSeconds": 1043.4666666666667,
+    "label": "影视创作",
+    "sourceScene": "s36"
+  },
+  {
+    "startSeconds": 1043.4666666666667,
+    "endSeconds": 1059.9333333333334,
+    "label": "编程 Agent",
+    "sourceScene": "s37"
+  },
+  {
+    "startSeconds": 1059.9333333333334,
+    "endSeconds": 1080.3,
+    "label": "工具分类会交叉",
+    "sourceScene": "s38"
+  },
+  {
+    "startSeconds": 1080.3,
+    "endSeconds": 1095.7666666666667,
+    "label": "学生：资料整理",
+    "sourceScene": "s39"
+  },
+  {
+    "startSeconds": 1095.7666666666667,
+    "endSeconds": 1107.8,
+    "label": "上班族：文件处理",
+    "sourceScene": "s40"
+  },
+  {
+    "startSeconds": 1107.8,
+    "endSeconds": 1119.6333333333334,
+    "label": "创作者：批量素材",
+    "sourceScene": "s41"
+  },
+  {
+    "startSeconds": 1119.6333333333334,
+    "endSeconds": 1133.1,
+    "label": "程序员：编程 Agent",
+    "sourceScene": "s42"
+  },
+  {
+    "startSeconds": 1133.1,
+    "endSeconds": 1151.2333333333333,
+    "label": "选一个用熟，再决定付费",
+    "sourceScene": "s43"
+  },
+  {
+    "startSeconds": 1151.2333333333333,
+    "endSeconds": 1158.8,
+    "label": "五种收费模式",
+    "sourceScene": "s44"
+  },
+  {
+    "startSeconds": 1158.8,
+    "endSeconds": 1180.3,
+    "label": "免费与订阅的限制",
+    "sourceScene": "s45"
+  },
+  {
+    "startSeconds": 1180.3,
+    "endSeconds": 1192.3,
+    "label": "Credits：用任务测消耗",
+    "sourceScene": "s46"
+  },
+  {
+    "startSeconds": 1192.3,
+    "endSeconds": 1203.9333333333334,
+    "label": "超额加购：核对有效期与上限",
+    "sourceScene": "s47"
+  },
+  {
+    "startSeconds": 1203.9333333333334,
+    "endSeconds": 1213.8,
+    "label": "API 按调用量计费",
+    "sourceScene": "s48"
+  },
+  {
+    "startSeconds": 1213.8,
+    "endSeconds": 1234.3,
+    "label": "价格之外，还有返工成本",
+    "sourceScene": "s49"
+  },
+  {
+    "startSeconds": 1234.3,
+    "endSeconds": 1249.1333333333334,
+    "label": "回顾：从需求到结果",
+    "sourceScene": "s50"
+  },
+  {
+    "startSeconds": 1249.1333333333334,
+    "endSeconds": 1265.4,
+    "label": "回顾：三条原则",
+    "sourceScene": "s51"
+  },
+  {
+    "startSeconds": 1265.4,
+    "endSeconds": 1282.1333333333334,
+    "label": "按需求选择，再用任务验证",
+    "sourceScene": "s52"
+  }
+]

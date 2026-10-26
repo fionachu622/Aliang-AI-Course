@@ -1,0 +1,579 @@
+{
+  "version": "1",
+  "source": "course.semantic.storyboard.json contract 1.8 and all existing cue files",
+  "editing_outline": {
+    "starting_point": "看过四个实际委托案例和完整实战，知道任务必须明确并检查结果",
+    "main_question": "怎样把任务交给Agent并选对工具，保留人的判断？",
+    "core_judgments": [
+      "Agent把明确需求推进到可检查结果",
+      "能力配合并以结果反馈继续推进",
+      "目标、关键确认和验收由人把关",
+      "按真实任务匹配工具并试用后决定付费"
+    ],
+    "question_chain": [
+      "是什么",
+      "能干什么",
+      "怎么干",
+      "怎样委托和检查",
+      "用什么入口",
+      "按什么任务与费用选"
+    ],
+    "final_memory": "能给出目标、放手执行、守住关键确认，并用真实任务判断工具是否好用"
+  },
+  "policies": {
+    "preserve_v3_v4": true,
+    "preserve_narration_and_cues": true,
+    "fonts": "existing chalk handwriting",
+    "new_knowledge": false,
+    "filled_cards": false,
+    "containers": "only real object identity or necessary boundary",
+    "arrows": "only real branching, feedback, handoff or comparison"
+  },
+  "pages": [
+    {
+      "id": "opening",
+      "task": "课程路径",
+      "component": "OpeningCoursePath",
+      "visual_model": "三条分支连接三个手绘课程模块；原章节标题与加大图标构成单层内容，边框和侧边粉笔笔触随口播高亮",
+      "decision": "changed",
+      "reason": "用户认为三项视觉太单薄；只通过模块边界、字号、图标、留白增强UI分量，不提前暴露课程内容。",
+      "review_frames": [
+        {
+          "key": "overview",
+          "frame": 657,
+          "output_seconds": 21.9
+        },
+        {
+          "key": "practice-highlight",
+          "frame": 742,
+          "output_seconds": 24.733333333333334
+        },
+        {
+          "key": "all-highlighted",
+          "frame": 930,
+          "output_seconds": 31.0
+        }
+      ],
+      "review_result": "候选和正式V5原尺寸、960×540与逐项高亮关键帧通过视觉复核。文案与口播锚点一致，未增加具体细目。"
+    },
+    {
+      "id": "definition",
+      "task": "定义",
+      "component": "AgentIdentity",
+      "visual_model": "大字命名、黄笔定义、单一系统边界",
+      "decision": "preserved",
+      "reason": "正式定义与系统类别需要稳定中心，已确认黄笔保留",
+      "review_frames": [
+        {
+          "key": "definition",
+          "frame": 1367,
+          "output_seconds": 45.56666666666667
+        },
+        {
+          "key": "identity-flow",
+          "frame": 1643,
+          "output_seconds": 54.766666666666666
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "entry",
+      "task": "入口演变",
+      "component": "AgentEntryEvolution",
+      "visual_model": "终端到桌面真实截图对照，短核心流程",
+      "decision": "preserved",
+      "reason": "入口形态必须看真实界面；核心流程说明能力不变",
+      "review_frames": [
+        {
+          "key": "entry-terminal",
+          "frame": 3677,
+          "output_seconds": 122.56666666666666
+        },
+        {
+          "key": "entry-desktop",
+          "frame": 4217,
+          "output_seconds": 140.56666666666666
+        },
+        {
+          "key": "entry-core",
+          "frame": 4475,
+          "output_seconds": 149.16666666666666
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "computer",
+      "task": "操作电脑",
+      "component": "ComputerOperationIntro",
+      "visual_model": "四个动作图标横排",
+      "decision": "preserved",
+      "reason": "四种操作属于同一能力，图标动作已有差异且没有套框",
+      "review_frames": [
+        {
+          "key": "computer-stable",
+          "frame": 5177,
+          "output_seconds": 172.56666666666666
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "continuous",
+      "task": "连续任务",
+      "component": "ContinuousWorkIntro",
+      "visual_model": "步骤数字、完成勾与单条进度轨道",
+      "decision": "changed",
+      "reason": "连续推进适合共同时间参照，不需要三个独立卡框",
+      "review_frames": [
+        {
+          "key": "continuous-track-first",
+          "frame": 6974,
+          "output_seconds": 232.46666666666667
+        },
+        {
+          "key": "continuous-step",
+          "frame": 7019,
+          "output_seconds": 233.96666666666667
+        },
+        {
+          "key": "continuous-stable",
+          "frame": 7157,
+          "output_seconds": 238.56666666666666
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "parallel",
+      "task": "并行分工",
+      "component": "ParallelWorkIntro",
+      "visual_model": "开放树状分支与三份产物",
+      "decision": "changed",
+      "reason": "分工确实需要一对多关系，去掉主/子Agent外框，保留必要分支",
+      "review_frames": [
+        {
+          "key": "parallel-split",
+          "frame": 8765,
+          "output_seconds": 292.1666666666667
+        },
+        {
+          "key": "parallel-output",
+          "frame": 8939,
+          "output_seconds": 297.96666666666664
+        },
+        {
+          "key": "parallel-stable",
+          "frame": 9107,
+          "output_seconds": 303.56666666666666
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "capabilities",
+      "task": "四项能力",
+      "component": "MechanismPage",
+      "visual_model": "大脑、记忆、工具和规划图标展开",
+      "decision": "preserved",
+      "reason": "辨认能力职责需要图形替身，现有无框图标序列适用",
+      "review_frames": [
+        {
+          "key": "capabilities-stable",
+          "frame": 13064,
+          "output_seconds": 435.46666666666664
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "feedback",
+      "task": "反馈",
+      "component": "MechanismPage",
+      "visual_model": "有明确方向的结果回流",
+      "decision": "preserved",
+      "reason": "真实循环关系需要返回线，删线会丢失新结果参与下一轮的含义",
+      "review_frames": [
+        {
+          "key": "feedback-return",
+          "frame": 13547,
+          "output_seconds": 451.56666666666666
+        },
+        {
+          "key": "feedback-stable",
+          "frame": 13877,
+          "output_seconds": 462.56666666666666
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "practice",
+      "task": "实战引入",
+      "component": "PracticeIntroKeywords",
+      "visual_model": "真人口播加逐项关键词",
+      "decision": "preserved",
+      "reason": "承接真实案例，保持原叙述与观察重点",
+      "review_frames": [
+        {
+          "key": "keyword-task",
+          "frame": 14828,
+          "output_seconds": 494.26666666666665
+        },
+        {
+          "key": "keyword-principles",
+          "frame": 15080,
+          "output_seconds": 502.6666666666667
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "recordings",
+      "task": "实战录屏",
+      "component": "RecordingSequence/AgentFullCourse",
+      "visual_model": "真实操作与结果证据",
+      "decision": "preserved",
+      "reason": "不覆盖真实操作、不给录屏再套教学图框",
+      "review_frames": [
+        {
+          "key": "sort-recording-result",
+          "frame": 3284,
+          "output_seconds": 109.46666666666667
+        },
+        {
+          "key": "calendar-recording-end",
+          "frame": 6167,
+          "output_seconds": 205.56666666666666
+        },
+        {
+          "key": "orders-recording-result",
+          "frame": 8531,
+          "output_seconds": 284.3666666666667
+        },
+        {
+          "key": "parallel-recording-result",
+          "frame": 10202,
+          "output_seconds": 340.06666666666666
+        },
+        {
+          "key": "case-demand",
+          "frame": 16220,
+          "output_seconds": 540.6666666666666
+        },
+        {
+          "key": "case-feedback",
+          "frame": 17550,
+          "output_seconds": 585.0
+        },
+        {
+          "key": "case-result",
+          "frame": 19000,
+          "output_seconds": 633.3333333333334
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "safety",
+      "task": "安全关口",
+      "component": "SafetyCheckpoints",
+      "visual_model": "三个垂直确认关口：操作图标与对应要求",
+      "decision": "changed",
+      "reason": "操作与要求按列直接对应；无需两层框加箭头",
+      "review_frames": [
+        {
+          "key": "safety-icon",
+          "frame": 20156,
+          "output_seconds": 671.8666666666667
+        },
+        {
+          "key": "safety-detail",
+          "frame": 20437,
+          "output_seconds": 681.2333333333333
+        },
+        {
+          "key": "safety-stable",
+          "frame": 20725,
+          "output_seconds": 690.8333333333334
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "forms",
+      "task": "四种入口",
+      "component": "ScriptScreenshotArtwork",
+      "visual_model": "单图阅读后归位成截图对照",
+      "decision": "preserved",
+      "reason": "界面证据优于抽象图，保持真实比例与留白",
+      "review_frames": [
+        {
+          "key": "forms-web",
+          "frame": 21451,
+          "output_seconds": 715.0333333333333
+        },
+        {
+          "key": "forms-mobile",
+          "frame": 21640,
+          "output_seconds": 721.3333333333334
+        },
+        {
+          "key": "forms-desktop",
+          "frame": 21892,
+          "output_seconds": 729.7333333333333
+        },
+        {
+          "key": "forms-terminal",
+          "frame": 22192,
+          "output_seconds": 739.7333333333333
+        },
+        {
+          "key": "forms-all",
+          "frame": 22381,
+          "output_seconds": 746.0333333333333
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "tools",
+      "task": "工具地图",
+      "component": "SyncedToolMap",
+      "visual_model": "同维度表格，类别用色与短线标记",
+      "decision": "changed",
+      "reason": "任务/国内/海外需要同列对齐，类别套框没有信息增量",
+      "review_frames": [
+        {
+          "key": "tools-row",
+          "frame": 23610,
+          "output_seconds": 787.0
+        },
+        {
+          "key": "tools-highlight",
+          "frame": 23833,
+          "output_seconds": 794.4333333333333
+        },
+        {
+          "key": "tools-all",
+          "frame": 26590,
+          "output_seconds": 886.3333333333334
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "audience",
+      "task": "任务选工具",
+      "component": "AudienceRecommendations",
+      "visual_model": "四列固定纵向对应：角色图标／人群／选择标准／短手绘箭头／工具框",
+      "decision": "changed",
+      "reason": "按用户附件改为一列一条对应链；将三行任务收为一句选择标准，统一图标、文字和工具框基线，增加外缘留白；保留原角色和工具口播锚点。",
+      "review_frames": [
+        {
+          "key": "audience-first-tool",
+          "frame": 27496,
+          "output_seconds": 916.5333333333333
+        },
+        {
+          "key": "audience-second-tool",
+          "frame": 27805,
+          "output_seconds": 926.8333333333334
+        },
+        {
+          "key": "audience-codex-entrance",
+          "frame": 28444,
+          "output_seconds": 948.1333333333333
+        },
+        {
+          "key": "audience-all",
+          "frame": 28591,
+          "output_seconds": 953.0333333333333
+        }
+      ],
+      "review_result": "候选与正式 AgentTeachingV5 均已复核：1920×1080 完整画面、960×540 阅读尺寸和关键出场帧通过；四列固定对齐，工具标签单行，无裁切或重叠。"
+    },
+    {
+      "id": "fees",
+      "task": "五种收费",
+      "component": "FeeOverview",
+      "visual_model": "已确认的线框环形概览",
+      "decision": "preserved",
+      "reason": "用户明确恢复的线框和公转保留",
+      "review_frames": [
+        {
+          "key": "fees-start",
+          "frame": 29371,
+          "output_seconds": 979.0333333333333
+        },
+        {
+          "key": "fees-all",
+          "frame": 29530,
+          "output_seconds": 984.3333333333334
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "fee-shots",
+      "task": "收费证据",
+      "component": "ScriptScreenshotArtwork",
+      "visual_model": "真实收费截图",
+      "decision": "preserved",
+      "reason": "金额、额度和套餐信息依赖真实界面",
+      "review_frames": [
+        {
+          "key": "free-stable",
+          "frame": 29641,
+          "output_seconds": 988.0333333333333
+        },
+        {
+          "key": "subscription-stable",
+          "frame": 29926,
+          "output_seconds": 997.5333333333333
+        },
+        {
+          "key": "credits-stable",
+          "frame": 30250,
+          "output_seconds": 1008.3333333333334
+        },
+        {
+          "key": "topup-stable",
+          "frame": 30550,
+          "output_seconds": 1018.3333333333334
+        },
+        {
+          "key": "api-stable",
+          "frame": 30961,
+          "output_seconds": 1032.0333333333333
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "closing-mechanism",
+      "task": "能力收束",
+      "component": "ClosingSummary",
+      "visual_model": "中央Agent名与四能力图标组合；需求/结果两端",
+      "decision": "changed",
+      "reason": "移除嵌套七个文字框，保留两条真实交付关系和小反馈循环",
+      "review_frames": [
+        {
+          "key": "closing-results",
+          "frame": 31909,
+          "output_seconds": 1063.6333333333334
+        },
+        {
+          "key": "closing-brain",
+          "frame": 31936,
+          "output_seconds": 1064.5333333333333
+        },
+        {
+          "key": "closing-mechanism",
+          "frame": 32167,
+          "output_seconds": 1072.2333333333333
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "closing-principles",
+      "task": "职责收束",
+      "component": "ClosingSummary",
+      "visual_model": "三栏职责：需求、自主执行、关键确认；下方要求/结果验收对照",
+      "decision": "changed",
+      "reason": "职责对照优于串联三个抽象盒，验收保留唯一必要比较参照",
+      "review_frames": [
+        {
+          "key": "closing-principles",
+          "frame": 32320,
+          "output_seconds": 1077.3333333333333
+        },
+        {
+          "key": "closing-principles-all",
+          "frame": 32521,
+          "output_seconds": 1084.0333333333333
+        },
+        {
+          "key": "closing-acceptance",
+          "frame": 32656,
+          "output_seconds": 1088.5333333333333
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "closing-choice",
+      "task": "行动收束",
+      "component": "ClosingSummary",
+      "visual_model": "四种任务小对照；试用/付费两句大字分层",
+      "decision": "changed",
+      "reason": "最后应记住判断标准，避免四箭头加两张按钮状卡",
+      "review_frames": [
+        {
+          "key": "closing-roles",
+          "frame": 32971,
+          "output_seconds": 1099.0333333333333
+        },
+        {
+          "key": "closing-trial",
+          "frame": 33063,
+          "output_seconds": 1102.1
+        },
+        {
+          "key": "closing-final",
+          "frame": 33090,
+          "output_seconds": 1103.0
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    },
+    {
+      "id": "presenters",
+      "task": "章节与真人",
+      "component": "ChapterTransition/AgentFullCourse",
+      "visual_model": "保留当前实际真人承接",
+      "decision": "preserved",
+      "reason": "实际全课章节时段不显示ChapterArtwork，不把隐藏组件算改动",
+      "review_frames": [
+        {
+          "key": "chapter-practice-enter",
+          "frame": 14294,
+          "output_seconds": 476.46666666666664
+        },
+        {
+          "key": "chapter-tools-enter",
+          "frame": 21370,
+          "output_seconds": 712.3333333333334
+        },
+        {
+          "key": "closing-presenter",
+          "frame": 33271,
+          "output_seconds": 1109.0333333333333
+        },
+        {
+          "key": "end-frame",
+          "frame": 33599,
+          "output_seconds": 1119.9666666666667
+        }
+      ],
+      "review_result": "实际画面可读，关系与原文一致；本轮静态/关键过渡视觉检查通过"
+    }
+  ],
+  "review": {
+    "status": "static_and_transition_keyframes_reviewed",
+    "actual_composition": "AgentTeachingV5",
+    "actual_duration_frames": 33600,
+    "fps": 30,
+    "frame_count": 94,
+    "full_resolution_frames": 9,
+    "published_candidate_matching_frames": 9,
+    "scope": "20组实际画面逐项判断；94帧含稳定态、出场、归位与真人/录屏切换；没有声明整片音频重新逐词核对或连续播放审核。",
+    "fixed_during_review": [
+      "首组任务推荐改为居中；首两栏共同归位避免文字靠近",
+      "验收标记上移12px，增加底部安全边距"
+    ],
+    "source_preservation": "V3 64文件和V4 69文件哈希完全一致；旁白、录屏、运行时cue及标签保持不变"
+  }
+}

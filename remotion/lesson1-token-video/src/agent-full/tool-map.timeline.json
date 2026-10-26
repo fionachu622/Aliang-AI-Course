@@ -1,0 +1,174 @@
+[
+  {
+    "label": "通用任务",
+    "at": 959.8,
+    "domestic": [
+      {
+        "text": "豆包工作",
+        "at": 961.4
+      },
+      {
+        "text": " · 腾讯 WorkBuddy",
+        "at": 962.17
+      },
+      {
+        "text": "\n千问办公",
+        "at": 963.33
+      }
+    ],
+    "overseas": [
+      {
+        "text": "ChatGPT Work",
+        "at": 965.2
+      },
+      {
+        "text": " / Codex",
+        "at": 966.9
+      }
+    ]
+  },
+  {
+    "label": "搜索调研",
+    "at": 978.18,
+    "domestic": [
+      {
+        "text": "Kimi 深度研究",
+        "at": 979.8
+      }
+    ],
+    "overseas": [
+      {
+        "text": "Gemini Deep Research",
+        "at": 982.1
+      },
+      {
+        "text": "\nPerplexity Deep Research",
+        "at": 983.47
+      }
+    ]
+  },
+  {
+    "label": "办公文档",
+    "at": 992.08,
+    "domestic": [
+      {
+        "text": "WPS 灵犀",
+        "at": 994.5
+      },
+      {
+        "text": " · 千问办公",
+        "at": 996
+      }
+    ],
+    "overseas": [
+      {
+        "text": "Microsoft 365 Copilot Agents",
+        "at": 997
+      }
+    ]
+  },
+  {
+    "label": "数据分析",
+    "at": 1003.71,
+    "domestic": [
+      {
+        "text": "Kimi Work",
+        "at": 1005.23
+      }
+    ],
+    "overseas": [
+      {
+        "text": "ChatGPT Work",
+        "at": 1006.77
+      },
+      {
+        "text": " · 微软 Copilot",
+        "at": 1007.57
+      }
+    ]
+  },
+  {
+    "label": "图片创作",
+    "at": 1015.21,
+    "domestic": [
+      {
+        "text": "Lovart 中文版",
+        "at": 1016.87
+      },
+      {
+        "text": " · 豆包",
+        "at": 1018.12
+      },
+      {
+        "text": " · 即梦",
+        "at": 1019.52
+      }
+    ],
+    "overseas": [
+      {
+        "text": "Midjourney",
+        "at": 1020.67
+      },
+      {
+        "text": " · ChatGPT Image2",
+        "at": 1021
+      },
+      {
+        "text": "\nNanoBanana",
+        "at": 1022.4
+      }
+    ]
+  },
+  {
+    "label": "影视创作",
+    "at": 1029,
+    "domestic": [
+      {
+        "text": "小云雀",
+        "at": 1032.27
+      },
+      {
+        "text": " · LibTV",
+        "at": 1032.84
+      },
+      {
+        "text": " · 即梦",
+        "at": 1033.92
+      }
+    ],
+    "overseas": [
+      {
+        "text": "Runway Agent",
+        "at": 1035.1
+      }
+    ]
+  },
+  {
+    "label": "编程开发",
+    "at": 1044.08,
+    "domestic": [
+      {
+        "text": "TRAE",
+        "at": 1046.5
+      },
+      {
+        "text": " · Qcoder",
+        "at": 1046.88
+      }
+    ],
+    "overseas": [
+      {
+        "text": "Codex",
+        "at": 1047.9
+      },
+      {
+        "text": " · Claude Code",
+        "at": 1048.72
+      },
+      {
+        "text": " · Cursor",
+        "at": 1049.6
+      }
+    ]
+  }
+]

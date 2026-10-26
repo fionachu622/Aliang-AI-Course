@@ -1,0 +1,112 @@
+{
+  "start": 1234.3,
+  "end": 1276.6,
+  "learningGoal": "把需求交给 Agent，让能力与反馈循环完成任务；人控制边界并验收，按实际任务选择和验证工具。",
+  "reference": "学习笔记：从已知对象展开关系；第一课：稳定锚点、彩色分组、输入到输出的完整路径。",
+  "syncLevel": "ASR语义时间；保留口播，不声明逐帧精确。",
+  "sections": [
+    {
+      "id": "mechanism",
+      "start": 1234.3,
+      "end": 1246.56,
+      "title": "Agent：从需求到结果",
+      "proof": "需求与结果两端，四能力图标聚合在中央Agent下方；下层保留观察、思考、行动的反馈回路。"
+    },
+    {
+      "id": "principles",
+      "start": 1246.56,
+      "end": 1262.24,
+      "title": "交给 Agent，关键处由人把关",
+      "proof": "三栏分别对应目标、授权与关键确认；下方要求与结果对照验收。"
+    },
+    {
+      "id": "choice",
+      "start": 1262.24,
+      "end": 1276.6,
+      "title": "从自己的任务出发",
+      "proof": "四栏按人群对应任务，大字突出真实任务试用与好用再付费。"
+    }
+  ],
+  "cues": {
+    "demand": 1234.3,
+    "agent": 1235.08,
+    "result": 1236.14,
+    "brain": 1237.16,
+    "memory": 1237.72,
+    "tools": 1238.2,
+    "plan": 1238.84,
+    "observe": 1241.76,
+    "think": 1242.5,
+    "act": 1243.45,
+    "loop": 1244.24,
+    "clear": 1249.12,
+    "release": 1250.2,
+    "gate": 1251.2,
+    "limits": 1252.48,
+    "autonomy": 1254.44,
+    "approval": 1256.52,
+    "compare": 1258.8,
+    "accept": 1260.32,
+    "choose": 1263.6,
+    "student": 1265.4,
+    "office": 1267.12,
+    "creator": 1268.92,
+    "developer": 1271.16,
+    "price": 1273,
+    "trial": 1274.56,
+    "pay": 1275.48
+  },
+  "labels": {
+    "demand": "需求",
+    "agent": "Agent",
+    "result": "结果",
+    "brain": "大脑",
+    "memory": "记忆",
+    "tools": "工具",
+    "plan": "规划与调整",
+    "observe": "观察",
+    "think": "思考",
+    "act": "行动",
+    "loop": "反馈",
+    "clear": "结果说清",
+    "release": "中间放手",
+    "gate": "关键把关",
+    "limits": "目标 · 限制",
+    "autonomy": "自主执行",
+    "approval": "登录 · 发布 · 付款",
+    "compare": "对照要求",
+    "accept": "验收完成",
+    "choose": "按需选择",
+    "student": "学生",
+    "office": "上班族",
+    "creator": "创作者",
+    "developer": "程序员",
+    "trial": "真实任务试用",
+    "pay": "好用再付费",
+    "critical": "关键操作",
+    "criteria": "要求"
+  },
+  "needs": [
+    {
+      "role": "student",
+      "text": "资料整理",
+      "color": "#F0D26A"
+    },
+    {
+      "role": "office",
+      "text": "文件处理",
+      "color": "#7CC8EA"
+    },
+    {
+      "role": "creator",
+      "text": "批量处理",
+      "color": "#A4D486"
+    },
+    {
+      "role": "developer",
+      "text": "编程 Agent",
+      "color": "#F18D9E"
+    }
+  ],
+  "review": "只对已有课程知识重组，不新增人物插画，不新增收费类别，不删改原口播。"
+}

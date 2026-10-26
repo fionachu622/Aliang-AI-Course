@@ -1,0 +1,37 @@
+{
+  "revision": "2026-10-09 上移并按实际字形缩短横线",
+  "font": "fonts/AgentTeachingHanzi-Bold.woff2",
+  "layout": {
+    "left": 260,
+    "baseline": 145,
+    "size": 62,
+    "ruleY": 182,
+    "rulePadding": 18
+  },
+  "titleMetrics": {
+    "1. 直接操作电脑": {
+      "leftEm": 0.094,
+      "rightEm": 7.358,
+      "advanceEm": 7.403
+    },
+    "2. 围绕目标，连续干活": {
+      "leftEm": 0.09,
+      "rightEm": 10.414,
+      "advanceEm": 10.493
+    },
+    "3. 多 Agent 分头干活": {
+      "leftEm": 0.082,
+      "rightEm": 9.458,
+      "advanceEm": 9.537
+    }
+  },
+  "review": {
+    "status": "已核对正式V5三个标题",
+    "frames": [
+      5190,
+      7155,
+      9105
+    ],
+    "result": "三个标题统一上移50px；横线按实际粗体字形边界两端各延伸18px。实际半尺寸合成无裁切或碰撞。"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "scope": [
+    "web",
+    "mobile",
+    "desktop",
+    "terminal"
+  ],
+  "pattern": "讲解区展示→缩小归位→保留累积→四项总览",
+  "dockSeconds": 0.6,
+  "nextRevealDelay": 0.6,
+  "nextRevealSeconds": 0.3,
+  "finalDockBeforeEnd": 2.6,
+  "summaryRecenterDelay": 0.65,
+  "summaryRecenterSeconds": 0.6,
+  "opacityPolicy": "出现后始终全亮，仅新内容入场淡入",
+  "timingSource": "script-screenshots.timeline.json",
+  "mobileViewport": {
+    "x": 0,
+    "y": 0,
+    "width": 870,
+    "height": 1808,
+    "note": "首次与归位均保留完整竖屏，归位高度330，保留导航和底部输入栏。"
+  },
+  "layout": "两行两列：网页版、电脑客户端 / 手机App、编辑器终端；口播顺序不变，按对应位置累积"
+}

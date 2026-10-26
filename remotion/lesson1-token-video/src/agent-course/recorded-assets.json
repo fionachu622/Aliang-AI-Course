@@ -1,0 +1,32 @@
+[
+  {
+    "sourceName": "口播精剪.mp4",
+    "file": "agent-course/recorded/presenter.mp4",
+    "durationSeconds": 1291.586757
+  },
+  {
+    "sourceName": "01 整理电脑文件夹.mp4",
+    "file": "agent-course/recorded/case-01.mp4",
+    "durationSeconds": 53.733333
+  },
+  {
+    "sourceName": "02 创建日程.mp4",
+    "file": "agent-course/recorded/case-02.mp4",
+    "durationSeconds": 39.866667
+  },
+  {
+    "sourceName": "03 合并订单.mp4",
+    "file": "agent-course/recorded/case-03.mp4",
+    "durationSeconds": 44.666667
+  },
+  {
+    "sourceName": "04 多Agent 分工干活.mp4",
+    "file": "agent-course/recorded/case-04.mp4",
+    "durationSeconds": 34.166667
+  },
+  {
+    "sourceName": "05 创建频道并制作视频.mp4",
+    "file": "agent-course/recorded/case-05.mp4",
+    "durationSeconds": 301.720091
+  }
+]

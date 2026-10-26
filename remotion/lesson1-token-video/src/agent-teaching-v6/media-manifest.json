@@ -1,0 +1,61 @@
+{
+  "narration": {
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/口播精剪.mp4",
+    "path": "agent-course/recorded/presenter.mp4",
+    "durationSeconds": 1291.586757,
+    "editMap": "narration-edit.json",
+    "previousPath": "agent-course/media/narration.m4a",
+    "playback": "Complete original video and its own audio, untrimmed; diagrams are overlays."
+  },
+  "recordings": [
+    {
+      "id": "demo-01",
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例成片/01 整理电脑文件夹.mp4",
+      "path": "agent-course/media/demo-01.mp4",
+      "audio": "muted in course; original file preserved",
+      "sizeBytes": 24082611
+    },
+    {
+      "id": "demo-02",
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例成片/02 创建日程.mp4",
+      "path": "agent-course/media/demo-02.mp4",
+      "audio": "muted in course; original file preserved",
+      "sizeBytes": 28890687
+    },
+    {
+      "id": "demo-03",
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例成片/03 合并订单.mp4",
+      "path": "agent-course/media/demo-03.mp4",
+      "audio": "muted in course; original file preserved",
+      "sizeBytes": 43932631
+    },
+    {
+      "id": "demo-04",
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例成片/04 多Agent 分工干活.mp4",
+      "path": "agent-course/media/demo-04.mp4",
+      "audio": "muted in course; original file preserved",
+      "sizeBytes": 35618176
+    },
+    {
+      "id": "demo-05",
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例成片/05 创建频道并制作视频.mp4",
+      "path": "agent-course/media/demo-05.mp4",
+      "audio": "muted in course; original file preserved",
+      "sizeBytes": 183950814
+    }
+  ],
+  "presenterOpening": {
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/口播精剪.mp4",
+    "path": "agent-course/media/presenter-opening.mp4",
+    "start": 0,
+    "end": 10.7,
+    "audio": "muted; continuous narration retained"
+  },
+  "reviewDetail": {
+    "source": "/Users/sniper/Documents/Codex/YouTube 内容制作/butterfly-preview/export/化茧成蝶-机械3D-审片版.mp4",
+    "path": "agent-course/media/butterfly-preview-export.mp4",
+    "durationSeconds": 110,
+    "audio": "muted in course; original preserved",
+    "purpose": "Same case existing preview export: pupation, emergence, wing spreading and slower replay. No new animation generated."
+  }
+}

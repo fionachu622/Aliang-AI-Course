@@ -1,0 +1,99 @@
+diff --git a/node_modules/@remotion/studio-codemods/dist/index.cjs b/node_modules/@remotion/studio-codemods/dist/index.cjs
+index 78c9531..2dec86f 100644
+--- a/node_modules/@remotion/studio-codemods/dist/index.cjs
++++ b/node_modules/@remotion/studio-codemods/dist/index.cjs
+@@ -20213,6 +20213,13 @@ var applyCodemod = ({
+       changesMade
+     });
+   }
++  if (codeMod.type === "reorder-sidebar-item") {
++    return reorderSidebarItem({
++      file,
++      transformation: codeMod,
++      changesMade
++    });
++  }
+   const body = file.program.body.map((node) => {
+     return mapAll(node, codeMod, changesMade, null);
+   });
+@@ -20432,6 +20439,80 @@ var getChildFolderParentName = ({
+ }) => {
+   return [parentFolderName, folderName].filter(Boolean).join("/");
+ };
++var reorderSidebarItem = ({
++  file,
++  transformation,
++  changesMade
++}) => {
++  let reordered = false;
++  const getItemId = (child, parentName) => {
++    if (child.type !== "JSXElement") {
++      return null;
++    }
++    if (transformation.itemType === "composition") {
++      return getCompositionIdFromJSXElement(child);
++    }
++    const folderName = getFolderNameFromJSXElement(child);
++    return folderName === null ? null : [parentName, folderName].filter(Boolean).join("/");
++  };
++  const reorderChildren = (children, parentName) => {
++    if (reordered || parentName !== transformation.parentName) {
++      return;
++    }
++    const sourceIndex = children.findIndex((child) => getItemId(child, parentName) === transformation.itemId);
++    const initialTargetIndex = children.findIndex((child) => getItemId(child, parentName) === transformation.targetId);
++    if (sourceIndex === -1 || initialTargetIndex === -1) {
++      return;
++    }
++    const [source] = children.splice(sourceIndex, 1);
++    const targetIndex = children.findIndex((child) => getItemId(child, parentName) === transformation.targetId);
++    const insertAt = transformation.position === "after" ? targetIndex + 1 : targetIndex;
++    children.splice(insertAt, 0, source);
++    reordered = true;
++    changesMade.push({ description: "Reordered sidebar item" });
++  };
++  const visitNode = (node, parentName) => {
++    if (reordered) {
++      return;
++    }
++    if (node.type === "JSXFragment") {
++      reorderChildren(node.children, parentName);
++      for (const child of node.children) {
++        if (child.type === "JSXElement" || child.type === "JSXFragment") {
++          visitNode(child, parentName);
++        }
++      }
++      return;
++    }
++    if (node.type !== "JSXElement") {
++      return;
++    }
++    const folderName = getFolderNameFromJSXElement(node);
++    const childParentName = folderName === null ? parentName : [parentName, folderName].filter(Boolean).join("/");
++    if (folderName !== null) {
++      reorderChildren(node.children, childParentName);
++    }
++    for (const child of node.children) {
++      if (child.type === "JSXElement" || child.type === "JSXFragment") {
++        visitNode(child, childParentName);
++      }
++    }
++  };
++  recast16.types.visit(file, {
++    visitJSXFragment(astPath) {
++      visitNode(astPath.node, null);
++      return false;
++    },
++    visitJSXElement(astPath) {
++      visitNode(astPath.node, null);
++      return false;
++    }
++  });
++  if (!reordered) {
++    throw new Error(`Could not reorder ${transformation.itemType} "${transformation.itemId}" relative to "${transformation.targetId}"`);
++  }
++  return { newAst: file, changesMade };
++};
+ var appendCompositionToFolder = ({
+   compositionElement,
+   folderElement

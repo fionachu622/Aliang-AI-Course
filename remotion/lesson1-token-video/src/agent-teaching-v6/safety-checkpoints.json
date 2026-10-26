@@ -1,0 +1,44 @@
+{
+  "title": "三个关键关口",
+  "start": 829.8,
+  "end": 864.68,
+  "timingSource": "全课文案口播对照 P075–P077；legacy visual clock",
+  "principle": "参考第一课编码解码页：稳定手绘框组合操作与把关要求，以短箭头表明对应关系；三行并列编号，按口播揭示后保持全亮。",
+  "items": [
+    {
+      "number": "1",
+      "label": "发布",
+      "at": 829.8,
+      "detailAt": 842.36,
+      "icon": "upload",
+      "lines": [
+        "最后一下",
+        "先确认"
+      ]
+    },
+    {
+      "number": "2",
+      "label": "删除和覆盖",
+      "at": 844.68,
+      "detailAt": 854.04,
+      "icon": "folder",
+      "lines": [
+        "操作之前",
+        "问备份"
+      ]
+    },
+    {
+      "number": "3",
+      "label": "花钱",
+      "at": 856.44,
+      "detailAt": 860.68,
+      "icon": "wallet",
+      "lines": [
+        "金额 · 地址 · 账号",
+        "自己确认"
+      ]
+    }
+  ],
+  "recapAt": 862.92,
+  "handoff": "864.68秒起的检查、权限及登录提醒交由真人口播承接，不并入第三项。"
+}

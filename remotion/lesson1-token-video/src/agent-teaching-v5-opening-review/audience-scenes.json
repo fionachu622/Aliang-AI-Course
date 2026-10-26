@@ -1,0 +1,129 @@
+{
+  "question": "不同人群如何按日常任务选择工具？",
+  "throughline": "从人群识别其选择标准，再指向对应工具；典型任务仍由口播交代，画面保留一句选择标准降低阅读负担。",
+  "reference": "用户附件 codex-clipboard-dc706949-f3d3-48a1-8050-5cbd6aeb8c44.png；保留四列、彩色角色、短箭头和底部工具框。",
+  "timingNote": "人群与工具沿用已校对口播锚点；任务、结果参考 output/第2课-Agent音画对齐/transcript.json 的语义段时间。ASR估计，不声称逐帧精确。",
+  "scenes": [
+    {
+      "id": "student",
+      "who": "学生",
+      "start": 1083.5,
+      "end": 1095.76,
+      "toolAt": 1088.7,
+      "tool": "Kimi",
+      "tasks": [
+        "查资料",
+        "写作业",
+        "整理复习材料"
+      ],
+      "color": "#7CC8EA",
+      "taskAts": [
+        1083.8,
+        1084.96,
+        1085.7
+      ],
+      "displayWho": "学生",
+      "icon": "🎓",
+      "criterion": "资料整理强",
+      "criterionAt": 1087.6
+    },
+    {
+      "id": "office",
+      "who": "上班族",
+      "start": 1095.76,
+      "end": 1107.8,
+      "toolAt": 1100.24,
+      "tool": "豆包工作",
+      "tasks": [
+        "处理文档",
+        "整理表格",
+        "处理邮件"
+      ],
+      "color": "#A4D486",
+      "taskAts": [
+        1096.3,
+        1097,
+        1097.7
+      ],
+      "displayWho": "上班族",
+      "icon": "💼",
+      "criterion": "文件处理强",
+      "criterionAt": 1099.87
+    },
+    {
+      "id": "creator",
+      "who": "内容创作者",
+      "start": 1107.8,
+      "end": 1119.61,
+      "toolAt": 1114.08,
+      "tool": "Lovart 中文版",
+      "tasks": [
+        "图片改尺寸",
+        "加水印",
+        "素材分类"
+      ],
+      "color": "#F18D9E",
+      "taskAts": [
+        1110,
+        1110.7,
+        1111.4
+      ],
+      "displayWho": "创作者",
+      "icon": "🎨",
+      "criterion": "批量处理强",
+      "criterionAt": 1113.27
+    },
+    {
+      "id": "programmer",
+      "who": "程序员",
+      "start": 1119.61,
+      "end": 1129.92,
+      "toolAt": 1120.84,
+      "tool": "Codex",
+      "tasks": [
+        "写脚本",
+        "制作自动化工具",
+        "重复编码"
+      ],
+      "color": "#F0D26A",
+      "taskAts": [
+        1123.32,
+        1123.9,
+        1124.92
+      ],
+      "displayWho": "程序员",
+      "icon": "👨‍💻",
+      "criterion": "编程 Agent",
+      "criterionAt": 1120
+    }
+  ],
+  "layout": "附件式四栏纵向对应：统一大小角色图标、角色、选择标准、短手绘箭头、推荐工具框；四栏固定不移动，沿原口播逐项建立，已讲内容保持可读。",
+  "title": "四类人群，怎么选",
+  "layoutMetrics": {
+    "columnCenters": [
+      300,
+      740,
+      1180,
+      1620
+    ],
+    "iconBox": [
+      148,
+      148
+    ],
+    "roleBaseline": 478,
+    "criterionBaseline": 574,
+    "arrowRange": [
+      627,
+      731
+    ],
+    "toolBox": [
+      400,
+      150
+    ],
+    "toolBoxTop": 785,
+    "toolLabelBaseline": 879,
+    "outerMargin": 100,
+    "cardGap": 40
+  },
+  "voiceoverOnly": "各人群三项典型任务保留在原音轨中；画面集中于选择标准。"
+}

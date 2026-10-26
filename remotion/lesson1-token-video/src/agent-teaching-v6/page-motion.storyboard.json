@@ -1,0 +1,155 @@
+{
+  "version": "1",
+  "basis": "course.semantic.storyboard.json (validated contract 1.8), existing confirmed cue JSON; no narration edit",
+  "learning_path": "认识委托执行 → 看清操作、连续和并行 → 理解判断/记忆/工具/调整与反馈 → 用实战验证 → 关键处确认 → 根据任务及费用选择",
+  "policies": {
+    "keep_v3": true,
+    "fonts": "existing chalk handwriting",
+    "colors": "existing bright chalk accents",
+    "unspoken_elements": "hidden",
+    "old_items": "remain readable",
+    "one_active_motion": "per cue",
+    "cue_clock": "existing per-component clock; no cue moved"
+  },
+  "references": [
+    "local motion-library: emphasis, numbered sequence, progressive relations (metadata research)",
+    "shotcraft marker-underline-title: read exact recipe and demo; use once in final trial emphasis"
+  ],
+  "pages": [
+    {
+      "id": "opening-route",
+      "component": "OpeningCoursePath",
+      "task": "课程路径按口播建立",
+      "motion": "未讲到的路线和标签隐藏；连接再揭示内容；删除循环呼吸",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "identity",
+      "component": "AgentIdentity",
+      "task": "定义和需求→执行→结果",
+      "motion": "保留已确认定义黄笔；核查关系线与口播",
+      "status": "reviewed-preserved"
+    },
+    {
+      "id": "entry",
+      "component": "AgentEntryEvolution",
+      "task": "入口改变、核心流程不变",
+      "motion": "两段核心关系线随已有cue描线；修正错误弯曲箭头；标题和截图/外框间保持64px以上实际留白",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "computer",
+      "component": "ComputerOperationIntro",
+      "task": "看、点、输入、切换动作可辨",
+      "motion": "图标描线和点击位移；输入光标短暂闪动后静止",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "continuous",
+      "component": "ContinuousWorkIntro",
+      "task": "连续步骤建立整体完成",
+      "motion": "材料到计划描线；步骤连线在下一步cue到达后画出；整体工作括线按原cue描线",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "parallel",
+      "component": "ParallelWorkIntro",
+      "task": "三分支同时执行、各自产出",
+      "motion": "输出连线和结果描线；同时运动一次后停住，避免结果出来后仍循环",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "capabilities",
+      "component": "MechanismPage",
+      "task": "能力逐项建立并保留",
+      "motion": "能力图标按 cue 描线、对应标签短线强调；工具子项按已有 cue 出场",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "feedback",
+      "component": "MechanismPage",
+      "task": "新结果沿反馈线回到观察",
+      "motion": "保留返回路径；单次返回标记，说明与走线同时建立",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "practice-keywords",
+      "component": "PracticeIntroKeywords",
+      "task": "真人引入中按动作换关键词",
+      "motion": "关键词局部横向揭示；三原则依次扫入，已有项不褪色",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "recordings",
+      "component": "RecordingSequence/AgentFullCourse",
+      "task": "观察真实执行证据",
+      "motion": "保留实际录屏及精剪动作；检查切点与遮挡，避免额外遮挡操作",
+      "status": "reviewed-preserved"
+    },
+    {
+      "id": "safety",
+      "component": "SafetyCheckpoints",
+      "task": "操作→必须确认的边界",
+      "motion": "操作框随原cue描线，确认关系线随后建立；加大详情框内边距、两行间距和三条要求的行距",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "forms",
+      "component": "ScriptScreenshotArtwork",
+      "task": "四种入口保持对照",
+      "motion": "保持截图中心归位；标签与对应截图建立，已讲项不重排",
+      "status": "reviewed-preserved"
+    },
+    {
+      "id": "tools",
+      "component": "SyncedToolMap",
+      "task": "按类别识别工具",
+      "motion": "类别轮廓随类别 cue 描线；既有工具扫黄保留",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "audience",
+      "component": "AudienceRecommendations",
+      "task": "日常任务对应工具",
+      "motion": "任务按 cue 平移落定；连线保留，不再插入新容器",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "fees",
+      "component": "FeeOverview",
+      "task": "五种收费方式概览",
+      "motion": "保持恢复的线框、公转和黄笔标题；核查边界",
+      "status": "reviewed-preserved"
+    },
+    {
+      "id": "fee-screenshots",
+      "component": "ScriptScreenshotArtwork",
+      "task": "概览转真实收费界面",
+      "motion": "标题先落定，界面18px短距进入；下划线一次后静止；截图左右至少80px，含线标题区到截图至少64px",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "closing",
+      "component": "ClosingSummary",
+      "task": "已有机制→人把关→任务试用",
+      "motion": "保持原则 cue；最后真实任务试用使用一笔马克线强调",
+      "status": "implemented-reviewed"
+    },
+    {
+      "id": "chapters-presenter",
+      "component": "ChapterTransition",
+      "task": "进入章节与真人承接",
+      "motion": "核查真实路径：章节时段由真人承接，ChapterArtwork在当前全课路径中不显示；保持现有衔接",
+      "status": "reviewed-preserved"
+    }
+  ],
+  "review": {
+    "mode": "whole-course keyframe and source-path audit",
+    "keyframes": 86,
+    "transition_diagnostics": 6,
+    "full_resolution_checks": 7,
+    "audio": "unchanged; not newly mastered or listened end-to-end",
+    "reference_limit": "marker recipe/demo inspected, no claim of gallery video pixel parity",
+    "evidence_directory": "outputs/agent-course-video/full-page-optimization-20261008"
+  }
+}

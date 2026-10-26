@@ -1,0 +1,261 @@
+{
+  "id": "p032",
+  "start": 11231,
+  "duration": 87,
+  "startSeconds": 374.38,
+  "css": ".agent-html-scene{\n --bg-0:#F5F2EF; --bg-1:#EDE9E5; --bg-2:#FFFFFF;\n --text:#202833; --text-dim:#67717E; --text-muted:#8B929B;\n --accent:#2563EB; --accent-soft:#E4EDFF; --accent-border:#A8C2FB;\n --accent-glow:rgba(37,99,235,.13); --signal:#2563EB; --warn:#95682E; --ok:#2563EB;\n --line:#D8DCE1; --line-soft:rgba(55,70,88,.055); --card-bg:#FFFFFF;\n --bg-radial:radial-gradient(ellipse at 72% 42%,#E8EDF8 0%,#F5F2EF 63%);\n --mg-sub-fg:#202833; --mg-sub-stroke:#F5F2EF; --mg-track:#D8DCE1; --mg-tick:#8B929B;\n}.agent-html-scene *{box-sizing:border-box;margin:0;padding:0}.agent-html-scene{width:1920px;height:1080px;overflow:hidden;background:var(--bg-0);color:var(--text);font-family:'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;-webkit-font-smoothing:antialiased}.agent-html-scene .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);background-size:96px 96px}.agent-html-scene .top{position:absolute;left:112px;right:112px;top:64px;display:flex;justify-content:space-between;align-items:center;font-size:24px;letter-spacing:2px;color:var(--text-dim)}.agent-html-scene .top b{color:var(--accent);font-weight:600}.agent-html-scene .rule{position:absolute;left:112px;right:112px;top:116px;height:2px;background:var(--line)}.agent-html-scene .eyebrow{font-size:26px;letter-spacing:4px;color:var(--accent);font-weight:600}.agent-html-scene .stage{position:absolute;left:112px;right:112px;top:180px;height:660px}.agent-html-scene h1{font-size:100px;line-height:1.2;letter-spacing:-3px;font-weight:650}.agent-html-scene h2{font-size:64px;line-height:1.25;font-weight:600;letter-spacing:-1px}.agent-html-scene em{font-style:normal;color:var(--accent)}.agent-html-scene .dim{color:var(--text-dim)}.agent-html-scene .foot{position:absolute;left:112px;right:112px;top:851px;display:flex;justify-content:space-between;font-size:22px;color:var(--text-dim)}.agent-html-scene .focus{border:2px solid var(--accent-border);background:var(--accent-soft);box-shadow:0 10px 60px var(--accent-glow)}.agent-html-scene .panel{background:var(--card-bg);border:1px solid var(--line);border-radius:20px;padding:38px}.agent-html-scene .label{font-size:26px;color:var(--text-dim);line-height:1.5}.agent-html-scene .large{font-size:96px;font-weight:650;line-height:1.2}.agent-html-scene .body{font-size:36px;line-height:1.6}.agent-html-scene .pill{padding:10px 22px;border:1px solid var(--line);border-radius:40px;font-size:24px;color:var(--text-dim)}.agent-html-scene{width:1920px;height:1080px;font-family:'PingFang SC','Microsoft YaHei',sans-serif}.agent-html-scene .heading{position:relative}.agent-html-scene .heading h1{color:var(--accent);text-shadow:0 8px 45px var(--accent-glow)}.agent-html-scene .heading h1{margin-top:18px}.agent-html-scene .diagram{width:1696px;height:470px;margin-top:30px;overflow:visible}.agent-html-scene svg rect{fill:var(--card-bg);stroke:var(--line);stroke-width:2}.agent-html-scene svg text{fill:var(--text);font-family:'PingFang SC','Microsoft YaHei',sans-serif}.agent-html-scene .nt{font-size:42px;font-weight:600}.agent-html-scene .ns{font-size:26px;fill:var(--text-dim)}.agent-html-scene .conn{fill:none;stroke:var(--accent);stroke-width:3}.agent-html-scene .big{font-size:120px;font-weight:650;fill:var(--accent)}.agent-html-scene .key rect{fill:var(--accent-soft);stroke:var(--accent-border)}.agent-html-scene .hero{font-size:100px;font-weight:650;fill:var(--accent)}.agent-html-scene .tiny{font-size:24px;fill:var(--text-dim)} ",
+  "nodes": [
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "grid"
+      },
+      "children": [],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "top"
+      },
+      "children": [
+        {
+          "tag": "b",
+          "attrs": {},
+          "children": [
+            "AGENT 专题课"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "02 / 核心工作原理"
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "rule"
+      },
+      "children": [],
+      "tracks": []
+    },
+    {
+      "tag": "main",
+      "attrs": {
+        "class": "stage"
+      },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "heading"
+          },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "eyebrow"
+              },
+              "children": [
+                "CHAPTER 02"
+              ],
+              "tracks": []
+            },
+            {
+              "tag": "h1",
+              "attrs": {},
+              "children": [
+                "Agent 核心工作原理"
+              ],
+              "tracks": []
+            }
+          ],
+          "tracks": [
+            {
+              "kind": "from",
+              "from": {
+                "opacity": 0,
+                "y": 18,
+                "duration": 0.65
+              },
+              "to": {},
+              "at": 0,
+              "duration": 0.65,
+              "ease": "power1.out"
+            }
+          ]
+        },
+        {
+          "tag": "svg",
+          "attrs": {
+            "viewbox": "0 0 1696 470",
+            "class": "diagram"
+          },
+          "children": [
+            {
+              "tag": "defs",
+              "attrs": {},
+              "children": [
+                {
+                  "tag": "marker",
+                  "attrs": {
+                    "id": "arrow",
+                    "markerwidth": "10",
+                    "markerheight": "10",
+                    "refx": "7",
+                    "refy": "3",
+                    "orient": "auto"
+                  },
+                  "children": [
+                    {
+                      "tag": "path",
+                      "attrs": {
+                        "d": "M0 0 L7 3 L0 6",
+                        "fill": "var(--accent)"
+                      },
+                      "children": [],
+                      "tracks": []
+                    }
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": []
+            },
+            {
+              "tag": "text",
+              "attrs": {
+                "x": "0",
+                "y": "285",
+                "class": "big",
+                "id": "num"
+              },
+              "children": [
+                "02"
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 14,
+                    "duration": 0.65
+                  },
+                  "to": {},
+                  "at": 0,
+                  "duration": 0.65,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "path",
+              "attrs": {
+                "d": "M260 190 H1590",
+                "class": "conn",
+                "id": "bar"
+              },
+              "children": [],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 14,
+                    "duration": 0.65
+                  },
+                  "to": {},
+                  "at": 0.885,
+                  "duration": 0.65,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "text",
+              "attrs": {
+                "x": "300",
+                "y": "278",
+                "class": "nt",
+                "id": "intro"
+              },
+              "children": [
+                "从“能办事”，到“如何办成事”"
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 14,
+                    "duration": 0.65
+                  },
+                  "to": {},
+                  "at": 0.885,
+                  "duration": 0.65,
+                  "ease": "power1.out"
+                }
+              ]
+            }
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "foot"
+      },
+      "children": [
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "大模型 · 记忆 · 工具 · 规划与调整"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "032 / 039"
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    }
+  ],
+  "blocks": [
+    {
+      "text": "第2章",
+      "spoken": "第 2 章：",
+      "from": 1,
+      "to": 27,
+      "local_start_sec": 0.0,
+      "global_start_sec": 374.38,
+      "global_end_sec": 375.265,
+      "size": 44
+    },
+    {
+      "text": "Agent核心工作原理",
+      "spoken": "Agent 核心工作原理",
+      "from": 28,
+      "to": 74,
+      "local_start_sec": 0.885,
+      "global_start_sec": 375.265,
+      "global_end_sec": 376.844,
+      "size": 44
+    }
+  ]
+}

@@ -1,0 +1,3208 @@
+[
+  {
+    "text": "Hello 大家好,我是阿亮。这节课我们学习如何制作 PPT。",
+    "startMs": 140,
+    "endMs": 3520,
+    "timestampMs": 140,
+    "confidence": null
+  },
+  {
+    "text": "Hello 大家好,我是阿亮。这节课我们学习如何制作 PPT。",
+    "startMs": 9630,
+    "endMs": 12390,
+    "timestampMs": 9630,
+    "confidence": null
+  },
+  {
+    "text": "然后这节课我们用的工具是Hello 大家好,我是阿亮。",
+    "startMs": 12910,
+    "endMs": 19480,
+    "timestampMs": 12910,
+    "confidence": null
+  },
+  {
+    "text": "这节课我们学习如何制作 PPT。",
+    "startMs": 19900,
+    "endMs": 22100,
+    "timestampMs": 19900,
+    "confidence": null
+  },
+  {
+    "text": "Hello 大家好,我是阿亮。这节课我们学习如何制作 PPT。",
+    "startMs": 23140,
+    "endMs": 26580,
+    "timestampMs": 23140,
+    "confidence": null
+  },
+  {
+    "text": "Hello 大家好,我是阿亮。这节课我们学习如何制作 PPT。",
+    "startMs": 27600,
+    "endMs": 31280,
+    "timestampMs": 27600,
+    "confidence": null
+  },
+  {
+    "text": "然后这节课我们用的工具是豆包工作。",
+    "startMs": 31740,
+    "endMs": 34360,
+    "timestampMs": 31740,
+    "confidence": null
+  },
+  {
+    "text": "目前大部分的AI工具",
+    "startMs": 34360,
+    "endMs": 36280,
+    "timestampMs": 34360,
+    "confidence": null
+  },
+  {
+    "text": "都有这种生成PPT的功能",
+    "startMs": 36280,
+    "endMs": 38340,
+    "timestampMs": 36280,
+    "confidence": null
+  },
+  {
+    "text": "但是做出来的效果",
+    "startMs": 38340,
+    "endMs": 39780,
+    "timestampMs": 38340,
+    "confidence": null
+  },
+  {
+    "text": "千差万别",
+    "startMs": 39780,
+    "endMs": 40560,
+    "timestampMs": 39780,
+    "confidence": null
+  },
+  {
+    "text": "另外做PPT的方法",
+    "startMs": 40560,
+    "endMs": 42280,
+    "timestampMs": 40560,
+    "confidence": null
+  },
+  {
+    "text": "其实也有很多种",
+    "startMs": 42280,
+    "endMs": 43460,
+    "timestampMs": 42280,
+    "confidence": null
+  },
+  {
+    "text": "比如说是",
+    "startMs": 43460,
+    "endMs": 44240,
+    "timestampMs": 43460,
+    "confidence": null
+  },
+  {
+    "text": "我们可以直接做成这种PPT格式的",
+    "startMs": 44240,
+    "endMs": 47620,
+    "timestampMs": 44240,
+    "confidence": null
+  },
+  {
+    "text": "也可以做成是LTML格式的",
+    "startMs": 47620,
+    "endMs": 49900,
+    "timestampMs": 47620,
+    "confidence": null
+  },
+  {
+    "text": "还可以用一些专门的PPT Skill来制作PPT",
+    "startMs": 49900,
+    "endMs": 53640,
+    "timestampMs": 49900,
+    "confidence": null
+  },
+  {
+    "text": "然后这节课我们就讲这个",
+    "startMs": 53640,
+    "endMs": 55720,
+    "timestampMs": 53640,
+    "confidence": null
+  },
+  {
+    "text": "最容易上手操作的",
+    "startMs": 55720,
+    "endMs": 57180,
+    "timestampMs": 55720,
+    "confidence": null
+  },
+  {
+    "text": "也是最常见的制作PPT的方式",
+    "startMs": 57180,
+    "endMs": 59700,
+    "timestampMs": 57180,
+    "confidence": null
+  },
+  {
+    "text": "好了",
+    "startMs": 59700,
+    "endMs": 60240,
+    "timestampMs": 59700,
+    "confidence": null
+  },
+  {
+    "text": "我们现在开始",
+    "startMs": 60240,
+    "endMs": 60880,
+    "timestampMs": 60240,
+    "confidence": null
+  },
+  {
+    "text": "我们先看一下",
+    "startMs": 62020,
+    "endMs": 62880,
+    "timestampMs": 62020,
+    "confidence": null
+  },
+  {
+    "text": "很多人用 AI 做的 PPT 是这个样子的",
+    "startMs": 63300,
+    "endMs": 65560,
+    "timestampMs": 63300,
+    "confidence": null
+  },
+  {
+    "text": "但是同一份的资料",
+    "startMs": 66560,
+    "endMs": 67640,
+    "timestampMs": 66560,
+    "confidence": null
+  },
+  {
+    "text": "换一个方法已经能做成这样子了",
+    "startMs": 67640,
+    "endMs": 69800,
+    "timestampMs": 67640,
+    "confidence": null
+  },
+  {
+    "text": "差别不在工具",
+    "startMs": 69800,
+    "endMs": 71260,
+    "timestampMs": 69800,
+    "confidence": null
+  },
+  {
+    "text": "就在于这个方法",
+    "startMs": 71260,
+    "endMs": 72920,
+    "timestampMs": 71260,
+    "confidence": null
+  },
+  {
+    "text": "这节课我们把它一步步拆开",
+    "startMs": 72920,
+    "endMs": 74600,
+    "timestampMs": 72920,
+    "confidence": null
+  },
+  {
+    "text": "学会了你也能做出这样的效果",
+    "startMs": 74600,
+    "endMs": 76820,
+    "timestampMs": 74600,
+    "confidence": null
+  },
+  {
+    "text": "这次的任务是给一款蓝牙耳机",
+    "startMs": 77740,
+    "endMs": 79860,
+    "timestampMs": 77740,
+    "confidence": null
+  },
+  {
+    "text": "这次的任务是给一款蓝牙降噪耳机",
+    "startMs": 80840,
+    "endMs": 83920,
+    "timestampMs": 80840,
+    "confidence": null
+  },
+  {
+    "text": "做一份新品宣传PPT",
+    "startMs": 83920,
+    "endMs": 85540,
+    "timestampMs": 83920,
+    "confidence": null
+  },
+  {
+    "text": "这节课我们通过给一款蓝牙降噪耳机",
+    "startMs": 90220,
+    "endMs": 92680,
+    "timestampMs": 90220,
+    "confidence": null
+  },
+  {
+    "text": "来做一份新品宣传PPT",
+    "startMs": 92680,
+    "endMs": 94260,
+    "timestampMs": 92680,
+    "confidence": null
+  },
+  {
+    "text": "这节课我们来给一款",
+    "startMs": 97410,
+    "endMs": 99090,
+    "timestampMs": 97410,
+    "confidence": null
+  },
+  {
+    "text": "这节课我们通过给一款蓝牙降噪耳机",
+    "startMs": 100310,
+    "endMs": 102630,
+    "timestampMs": 100310,
+    "confidence": null
+  },
+  {
+    "text": "做一份新品宣传PPT",
+    "startMs": 102630,
+    "endMs": 104130,
+    "timestampMs": 102630,
+    "confidence": null
+  },
+  {
+    "text": "来上手给大家演示制作PPT的过程",
+    "startMs": 104130,
+    "endMs": 107130,
+    "timestampMs": 104130,
+    "confidence": null
+  },
+  {
+    "text": "我手上现在有三份产品资料",
+    "startMs": 107130,
+    "endMs": 109390,
+    "timestampMs": 107130,
+    "confidence": null
+  },
+  {
+    "text": "几张手机拍的产品照片",
+    "startMs": 109390,
+    "endMs": 111330,
+    "timestampMs": 109390,
+    "confidence": null
+  },
+  {
+    "text": "还有公司的PPT模板",
+    "startMs": 111330,
+    "endMs": 113210,
+    "timestampMs": 111330,
+    "confidence": null
+  },
+  {
+    "text": "我们先用最简单的方式试一下",
+    "startMs": 113210,
+    "endMs": 115150,
+    "timestampMs": 113210,
+    "confidence": null
+  },
+  {
+    "text": "打开一个常用的Agent的工具",
+    "startMs": 115570,
+    "endMs": 117130,
+    "timestampMs": 115570,
+    "confidence": null
+  },
+  {
+    "text": "我这里用的是豆包工作",
+    "startMs": 117130,
+    "endMs": 118550,
+    "timestampMs": 117130,
+    "confidence": null
+  },
+  {
+    "text": "在更多技能里选PPT",
+    "startMs": 118950,
+    "endMs": 120790,
+    "timestampMs": 118950,
+    "confidence": null
+  },
+  {
+    "text": "把资料都传上去",
+    "startMs": 120790,
+    "endMs": 122450,
+    "timestampMs": 120790,
+    "confidence": null
+  },
+  {
+    "text": "然后发一句",
+    "startMs": 122450,
+    "endMs": 123470,
+    "timestampMs": 122450,
+    "confidence": null
+  },
+  {
+    "text": "帮我做个产品宣传PPT",
+    "startMs": 123470,
+    "endMs": 125290,
+    "timestampMs": 123470,
+    "confidence": null
+  },
+  {
+    "text": "几分钟后就生成好了",
+    "startMs": 126330,
+    "endMs": 127530,
+    "timestampMs": 126330,
+    "confidence": null
+  },
+  {
+    "text": "我们打开看看",
+    "startMs": 127530,
+    "endMs": 128290,
+    "timestampMs": 127530,
+    "confidence": null
+  },
+  {
+    "text": "这就是开头左边那一版",
+    "startMs": 128670,
+    "endMs": 130310,
+    "timestampMs": 128670,
+    "confidence": null
+  },
+  {
+    "text": "整体看上去还行",
+    "startMs": 130310,
+    "endMs": 131630,
+    "timestampMs": 130310,
+    "confidence": null
+  },
+  {
+    "text": "内容也基本准确",
+    "startMs": 131630,
+    "endMs": 133130,
+    "timestampMs": 131630,
+    "confidence": null
+  },
+  {
+    "text": "但一眼就能看出来",
+    "startMs": 133130,
+    "endMs": 134550,
+    "timestampMs": 133130,
+    "confidence": null
+  },
+  {
+    "text": "做的还是很粗糙的",
+    "startMs": 134550,
+    "endMs": 136130,
+    "timestampMs": 134550,
+    "confidence": null
+  },
+  {
+    "text": "产品图都是手机随手拍的",
+    "startMs": 136130,
+    "endMs": 138110,
+    "timestampMs": 136130,
+    "confidence": null
+  },
+  {
+    "text": "整份PPT也没有动画",
+    "startMs": 138110,
+    "endMs": 139970,
+    "timestampMs": 138110,
+    "confidence": null
+  },
+  {
+    "text": "这样的 PPT 用来做新品宣传",
+    "startMs": 139970,
+    "endMs": 141970,
+    "timestampMs": 139970,
+    "confidence": null
+  },
+  {
+    "text": "那肯定是不够的",
+    "startMs": 141970,
+    "endMs": 143150,
+    "timestampMs": 141970,
+    "confidence": null
+  },
+  {
+    "text": "那开头右边那一版是怎么做出来的",
+    "startMs": 149730,
+    "endMs": 152130,
+    "timestampMs": 149730,
+    "confidence": null
+  },
+  {
+    "text": "不是一句话丢给 AI",
+    "startMs": 152130,
+    "endMs": 153410,
+    "timestampMs": 152130,
+    "confidence": null
+  },
+  {
+    "text": "而是一步一步跟它把要求说清楚",
+    "startMs": 153410,
+    "endMs": 155850,
+    "timestampMs": 153410,
+    "confidence": null
+  },
+  {
+    "text": "具体一共五步",
+    "startMs": 155850,
+    "endMs": 157310,
+    "timestampMs": 155850,
+    "confidence": null
+  },
+  {
+    "text": "定大纲套模板",
+    "startMs": 157310,
+    "endMs": 158870,
+    "timestampMs": 157310,
+    "confidence": null
+  },
+  {
+    "text": "具体一共是五步",
+    "startMs": 160350,
+    "endMs": 161990,
+    "timestampMs": 160350,
+    "confidence": null
+  },
+  {
+    "text": "定大纲套模板",
+    "startMs": 161990,
+    "endMs": 163750,
+    "timestampMs": 161990,
+    "confidence": null
+  },
+  {
+    "text": "调版式加动画",
+    "startMs": 163750,
+    "endMs": 165210,
+    "timestampMs": 163750,
+    "confidence": null
+  },
+  {
+    "text": "最后做一个自己的Skill",
+    "startMs": 165210,
+    "endMs": 167070,
+    "timestampMs": 165210,
+    "confidence": null
+  },
+  {
+    "text": "我们先开始第一步",
+    "startMs": 167730,
+    "endMs": 168850,
+    "timestampMs": 167730,
+    "confidence": null
+  },
+  {
+    "text": "定大纲",
+    "startMs": 168850,
+    "endMs": 169370,
+    "timestampMs": 168850,
+    "confidence": null
+  },
+  {
+    "text": "先把内容理清楚",
+    "startMs": 169370,
+    "endMs": 171010,
+    "timestampMs": 169370,
+    "confidence": null
+  },
+  {
+    "text": "想好一共做几页",
+    "startMs": 171010,
+    "endMs": 172410,
+    "timestampMs": 171010,
+    "confidence": null
+  },
+  {
+    "text": "每页讲什么",
+    "startMs": 172410,
+    "endMs": 173470,
+    "timestampMs": 172410,
+    "confidence": null
+  },
+  {
+    "text": "这一步做完",
+    "startMs": 173470,
+    "endMs": 174490,
+    "timestampMs": 173470,
+    "confidence": null
+  },
+  {
+    "text": "我们会得到一份PPT的文字稿",
+    "startMs": 174490,
+    "endMs": 176410,
+    "timestampMs": 174490,
+    "confidence": null
+  },
+  {
+    "text": "还是在豆包工作里",
+    "startMs": 176410,
+    "endMs": 178110,
+    "timestampMs": 176410,
+    "confidence": null
+  },
+  {
+    "text": "新开一个对话",
+    "startMs": 178110,
+    "endMs": 179030,
+    "timestampMs": 178110,
+    "confidence": null
+  },
+  {
+    "text": "同样先选PPT",
+    "startMs": 179030,
+    "endMs": 180450,
+    "timestampMs": 179030,
+    "confidence": null
+  },
+  {
+    "text": "把资料传上去",
+    "startMs": 180450,
+    "endMs": 181410,
+    "timestampMs": 180450,
+    "confidence": null
+  },
+  {
+    "text": "这次先不做PPT",
+    "startMs": 181410,
+    "endMs": 183210,
+    "timestampMs": 181410,
+    "confidence": null
+  },
+  {
+    "text": "让 AI 出大纲",
+    "startMs": 183210,
+    "endMs": 184150,
+    "timestampMs": 183210,
+    "confidence": null
+  },
+  {
+    "text": "我把提示词发给它",
+    "startMs": 184570,
+    "endMs": 185850,
+    "timestampMs": 184570,
+    "confidence": null
+  },
+  {
+    "text": "一共五块",
+    "startMs": 185850,
+    "endMs": 186750,
+    "timestampMs": 185850,
+    "confidence": null
+  },
+  {
+    "text": "任务做一份新品宣传PPT",
+    "startMs": 187390,
+    "endMs": 189470,
+    "timestampMs": 187390,
+    "confidence": null
+  },
+  {
+    "text": "背景我是市场部的",
+    "startMs": 189470,
+    "endMs": 191010,
+    "timestampMs": 189470,
+    "confidence": null
+  },
+  {
+    "text": "要在新品",
+    "startMs": 191010,
+    "endMs": 191890,
+    "timestampMs": 191010,
+    "confidence": null
+  },
+  {
+    "text": "要在新品体验会上讲五分钟",
+    "startMs": 192830,
+    "endMs": 194950,
+    "timestampMs": 192830,
+    "confidence": null
+  },
+  {
+    "text": "目标让用户记住三个卖点",
+    "startMs": 194950,
+    "endMs": 197050,
+    "timestampMs": 194950,
+    "confidence": null
+  },
+  {
+    "text": "还有价格和上市时间",
+    "startMs": 197050,
+    "endMs": 198710,
+    "timestampMs": 197050,
+    "confidence": null
+  },
+  {
+    "text": "输出先交一份大纲",
+    "startMs": 199170,
+    "endMs": 201050,
+    "timestampMs": 199170,
+    "confidence": null
+  },
+  {
+    "text": "要求内容都以资料为准",
+    "startMs": 201050,
+    "endMs": 203310,
+    "timestampMs": 201050,
+    "confidence": null
+  },
+  {
+    "text": "先给大纲等我确认",
+    "startMs": 203310,
+    "endMs": 205010,
+    "timestampMs": 203310,
+    "confidence": null
+  },
+  {
+    "text": "你看它没有直接做PPT",
+    "startMs": 205790,
+    "endMs": 207470,
+    "timestampMs": 205790,
+    "confidence": null
+  },
+  {
+    "text": "而是生成了大纲等我确认",
+    "startMs": 207470,
+    "endMs": 209330,
+    "timestampMs": 207470,
+    "confidence": null
+  },
+  {
+    "text": "我看了一遍",
+    "startMs": 209330,
+    "endMs": 210430,
+    "timestampMs": 209330,
+    "confidence": null
+  },
+  {
+    "text": "没什么要改的就直接确认了",
+    "startMs": 210430,
+    "endMs": 212450,
+    "timestampMs": 210430,
+    "confidence": null
+  },
+  {
+    "text": "如果有要改的地方",
+    "startMs": 212450,
+    "endMs": 213710,
+    "timestampMs": 212450,
+    "confidence": null
+  },
+  {
+    "text": "那就直接告诉它改就行了",
+    "startMs": 213710,
+    "endMs": 215290,
+    "timestampMs": 213710,
+    "confidence": null
+  },
+  {
+    "text": "大纲定了以后",
+    "startMs": 216090,
+    "endMs": 217170,
+    "timestampMs": 216090,
+    "confidence": null
+  },
+  {
+    "text": "后面做PPT",
+    "startMs": 217170,
+    "endMs": 218090,
+    "timestampMs": 217170,
+    "confidence": null
+  },
+  {
+    "text": "心里就有底了",
+    "startMs": 218090,
+    "endMs": 219630,
+    "timestampMs": 218090,
+    "confidence": null
+  },
+  {
+    "text": "记住先定大纲再动手",
+    "startMs": 219630,
+    "endMs": 221870,
+    "timestampMs": 219630,
+    "confidence": null
+  },
+  {
+    "text": "第二步套模板",
+    "startMs": 222850,
+    "endMs": 224390,
+    "timestampMs": 222850,
+    "confidence": null
+  },
+  {
+    "text": "我们给大纲套上模板",
+    "startMs": 224390,
+    "endMs": 226370,
+    "timestampMs": 224390,
+    "confidence": null
+  },
+  {
+    "text": "把整份PPT的风格统一起来",
+    "startMs": 226370,
+    "endMs": 228850,
+    "timestampMs": 226370,
+    "confidence": null
+  },
+  {
+    "text": "有公司模板就用公司的",
+    "startMs": 231700,
+    "endMs": 233520,
+    "timestampMs": 231700,
+    "confidence": null
+  },
+  {
+    "text": "没有的话就借用别人做好的模板",
+    "startMs": 233520,
+    "endMs": 235800,
+    "timestampMs": 233520,
+    "confidence": null
+  },
+  {
+    "text": "这一步做完我们会得到第一版的PPT",
+    "startMs": 235800,
+    "endMs": 238260,
+    "timestampMs": 235800,
+    "confidence": null
+  },
+  {
+    "text": "先看第一种情况",
+    "startMs": 238260,
+    "endMs": 239460,
+    "timestampMs": 238260,
+    "confidence": null
+  },
+  {
+    "text": "公司有模板",
+    "startMs": 239460,
+    "endMs": 240740,
+    "timestampMs": 239460,
+    "confidence": null
+  },
+  {
+    "text": "我把模板传上去",
+    "startMs": 240740,
+    "endMs": 241720,
+    "timestampMs": 240740,
+    "confidence": null
+  },
+  {
+    "text": "再把要求发给它",
+    "startMs": 241720,
+    "endMs": 243220,
+    "timestampMs": 241720,
+    "confidence": null
+  },
+  {
+    "text": "LOGO位置配色字体和版式",
+    "startMs": 243220,
+    "endMs": 245900,
+    "timestampMs": 243220,
+    "confidence": null
+  },
+  {
+    "text": "都按模板来",
+    "startMs": 245900,
+    "endMs": 246940,
+    "timestampMs": 245900,
+    "confidence": null
+  },
+  {
+    "text": "不要自己改",
+    "startMs": 246940,
+    "endMs": 247880,
+    "timestampMs": 246940,
+    "confidence": null
+  },
+  {
+    "text": "生成好了",
+    "startMs": 248600,
+    "endMs": 249160,
+    "timestampMs": 248600,
+    "confidence": null
+  },
+  {
+    "text": "来看看LOGO配色字体",
+    "startMs": 249160,
+    "endMs": 251420,
+    "timestampMs": 249160,
+    "confidence": null
+  },
+  {
+    "text": "都保留了",
+    "startMs": 251420,
+    "endMs": 252120,
+    "timestampMs": 251420,
+    "confidence": null
+  },
+  {
+    "text": "点一下文字能直接改",
+    "startMs": 252120,
+    "endMs": 253760,
+    "timestampMs": 252120,
+    "confidence": null
+  },
+  {
+    "text": "说明它不是一张照片",
+    "startMs": 253760,
+    "endMs": 255560,
+    "timestampMs": 253760,
+    "confidence": null
+  },
+  {
+    "text": "第二种情况",
+    "startMs": 256200,
+    "endMs": 257060,
+    "timestampMs": 256200,
+    "confidence": null
+  },
+  {
+    "text": "如果公司没有模板",
+    "startMs": 257060,
+    "endMs": 258340,
+    "timestampMs": 257060,
+    "confidence": null
+  },
+  {
+    "text": "我们就借用Skill里带的模板",
+    "startMs": 258340,
+    "endMs": 260840,
+    "timestampMs": 258340,
+    "confidence": null
+  },
+  {
+    "text": "Skill是什么",
+    "startMs": 260840,
+    "endMs": 261840,
+    "timestampMs": 260840,
+    "confidence": null
+  },
+  {
+    "text": "打个比方",
+    "startMs": 261840,
+    "endMs": 262660,
+    "timestampMs": 261840,
+    "confidence": null
+  },
+  {
+    "text": "它就像给新同事的一本工作手册",
+    "startMs": 262660,
+    "endMs": 265020,
+    "timestampMs": 262660,
+    "confidence": null
+  },
+  {
+    "text": "活儿怎么干",
+    "startMs": 265020,
+    "endMs": 266260,
+    "timestampMs": 265020,
+    "confidence": null
+  },
+  {
+    "text": "按什么要求干",
+    "startMs": 266260,
+    "endMs": 267320,
+    "timestampMs": 266260,
+    "confidence": null
+  },
+  {
+    "text": "都写在里面",
+    "startMs": 267320,
+    "endMs": 268700,
+    "timestampMs": 267320,
+    "confidence": null
+  },
+  {
+    "text": "有的还附带模板",
+    "startMs": 268700,
+    "endMs": 270240,
+    "timestampMs": 268700,
+    "confidence": null
+  },
+  {
+    "text": "AI 调用 Skill",
+    "startMs": 270240,
+    "endMs": 271180,
+    "timestampMs": 270240,
+    "confidence": null
+  },
+  {
+    "text": "就像新同事",
+    "startMs": 271180,
+    "endMs": 272400,
+    "timestampMs": 271180,
+    "confidence": null
+  },
+  {
+    "text": "翻开这个操作手册",
+    "startMs": 272400,
+    "endMs": 273980,
+    "timestampMs": 272400,
+    "confidence": null
+  },
+  {
+    "text": "照着做就行了",
+    "startMs": 273980,
+    "endMs": 275140,
+    "timestampMs": 273980,
+    "confidence": null
+  },
+  {
+    "text": "其实我们一开始就用过Skill了",
+    "startMs": 275700,
+    "endMs": 278680,
+    "timestampMs": 275700,
+    "confidence": null
+  },
+  {
+    "text": "前面的对话框里的更多",
+    "startMs": 278680,
+    "endMs": 280160,
+    "timestampMs": 278680,
+    "confidence": null
+  },
+  {
+    "text": "技能里选PPT",
+    "startMs": 280160,
+    "endMs": 281240,
+    "timestampMs": 280160,
+    "confidence": null
+  },
+  {
+    "text": "就是豆包自带的 PPT Skill",
+    "startMs": 281240,
+    "endMs": 283180,
+    "timestampMs": 281240,
+    "confidence": null
+  },
+  {
+    "text": "Skill不一定",
+    "startMs": 283700,
+    "endMs": 284620,
+    "timestampMs": 283700,
+    "confidence": null
+  },
+  {
+    "text": "Skill不一定非要用自带的",
+    "startMs": 285740,
+    "endMs": 287720,
+    "timestampMs": 285740,
+    "confidence": null
+  },
+  {
+    "text": "我们还能装别人做好的",
+    "startMs": 287720,
+    "endMs": 289460,
+    "timestampMs": 287720,
+    "confidence": null
+  },
+  {
+    "text": "你当然也可以自己做一个",
+    "startMs": 289460,
+    "endMs": 291480,
+    "timestampMs": 289460,
+    "confidence": null
+  },
+  {
+    "text": "这里我给大家推荐一个",
+    "startMs": 291480,
+    "endMs": 293080,
+    "timestampMs": 291480,
+    "confidence": null
+  },
+  {
+    "text": "做PPT的Skill",
+    "startMs": 293080,
+    "endMs": 294000,
+    "timestampMs": 293080,
+    "confidence": null
+  },
+  {
+    "text": "叫这个 guizang PPT Skill",
+    "startMs": 294000,
+    "endMs": 295920,
+    "timestampMs": 294000,
+    "confidence": null
+  },
+  {
+    "text": "安装很简单",
+    "startMs": 295920,
+    "endMs": 297200,
+    "timestampMs": 295920,
+    "confidence": null
+  },
+  {
+    "text": "我们在输入框里输入",
+    "startMs": 297200,
+    "endMs": 298380,
+    "timestampMs": 297200,
+    "confidence": null
+  },
+  {
+    "text": "安装这个Skill",
+    "startMs": 298380,
+    "endMs": 299500,
+    "timestampMs": 298380,
+    "confidence": null
+  },
+  {
+    "text": "guizang PPT Skill",
+    "startMs": 299500,
+    "endMs": 300700,
+    "timestampMs": 299500,
+    "confidence": null
+  },
+  {
+    "text": "发出去",
+    "startMs": 300700,
+    "endMs": 301500,
+    "timestampMs": 300700,
+    "confidence": null
+  },
+  {
+    "text": "它就能自己安装好了",
+    "startMs": 301500,
+    "endMs": 303240,
+    "timestampMs": 301500,
+    "confidence": null
+  },
+  {
+    "text": "我电脑上就直接装好了",
+    "startMs": 303640,
+    "endMs": 305220,
+    "timestampMs": 303640,
+    "confidence": null
+  },
+  {
+    "text": "我电脑上已经装过了",
+    "startMs": 307030,
+    "endMs": 308510,
+    "timestampMs": 307030,
+    "confidence": null
+  },
+  {
+    "text": "就可以直接用",
+    "startMs": 308510,
+    "endMs": 309210,
+    "timestampMs": 308510,
+    "confidence": null
+  },
+  {
+    "text": "调用也很简单",
+    "startMs": 309210,
+    "endMs": 310850,
+    "timestampMs": 309210,
+    "confidence": null
+  },
+  {
+    "text": "我们在提示词开头",
+    "startMs": 311410,
+    "endMs": 312350,
+    "timestampMs": 311410,
+    "confidence": null
+  },
+  {
+    "text": "调用也很简单",
+    "startMs": 313650,
+    "endMs": 314770,
+    "timestampMs": 313650,
+    "confidence": null
+  },
+  {
+    "text": "我们在提示词开头写上",
+    "startMs": 314770,
+    "endMs": 316150,
+    "timestampMs": 314770,
+    "confidence": null
+  },
+  {
+    "text": "用这个 guizang PPT Skill 就行",
+    "startMs": 316150,
+    "endMs": 318430,
+    "timestampMs": 316150,
+    "confidence": null
+  },
+  {
+    "text": "我把提示词发给它",
+    "startMs": 318850,
+    "endMs": 319830,
+    "timestampMs": 318850,
+    "confidence": null
+  },
+  {
+    "text": "让它用Skill里的模板来做",
+    "startMs": 319830,
+    "endMs": 321850,
+    "timestampMs": 319830,
+    "confidence": null
+  },
+  {
+    "text": "大纲里的内容",
+    "startMs": 321850,
+    "endMs": 323270,
+    "timestampMs": 321850,
+    "confidence": null
+  },
+  {
+    "text": "一个字都不用改",
+    "startMs": 323270,
+    "endMs": 324170,
+    "timestampMs": 323270,
+    "confidence": null
+  },
+  {
+    "text": "它现在定好了整体风格",
+    "startMs": 325030,
+    "endMs": 326730,
+    "timestampMs": 325030,
+    "confidence": null
+  },
+  {
+    "text": "是电子杂志风",
+    "startMs": 326730,
+    "endMs": 328070,
+    "timestampMs": 326730,
+    "confidence": null
+  },
+  {
+    "text": "克制 留白多",
+    "startMs": 328070,
+    "endMs": 329370,
+    "timestampMs": 328070,
+    "confidence": null
+  },
+  {
+    "text": "然后列了五套主题色",
+    "startMs": 329830,
+    "endMs": 331530,
+    "timestampMs": 329830,
+    "confidence": null
+  },
+  {
+    "text": "让我挑",
+    "startMs": 331530,
+    "endMs": 332030,
+    "timestampMs": 331530,
+    "confidence": null
+  },
+  {
+    "text": "我选了墨水经典",
+    "startMs": 332030,
+    "endMs": 333890,
+    "timestampMs": 332030,
+    "confidence": null
+  },
+  {
+    "text": "墨黑配暖米白",
+    "startMs": 336540,
+    "endMs": 338200,
+    "timestampMs": 336540,
+    "confidence": null
+  },
+  {
+    "text": "墨黑配暖米白",
+    "startMs": 338200,
+    "endMs": 339200,
+    "timestampMs": 338200,
+    "confidence": null
+  },
+  {
+    "text": "杂志感最强",
+    "startMs": 339200,
+    "endMs": 340060,
+    "timestampMs": 339200,
+    "confidence": null
+  },
+  {
+    "text": "做科技产品的也合适",
+    "startMs": 340060,
+    "endMs": 341520,
+    "timestampMs": 340060,
+    "confidence": null
+  },
+  {
+    "text": "生成好了",
+    "startMs": 341920,
+    "endMs": 342580,
+    "timestampMs": 341920,
+    "confidence": null
+  },
+  {
+    "text": "这个Skill做的是网页版",
+    "startMs": 342580,
+    "endMs": 344180,
+    "timestampMs": 342580,
+    "confidence": null
+  },
+  {
+    "text": "下载下来的是一个压缩包",
+    "startMs": 344180,
+    "endMs": 345600,
+    "timestampMs": 344180,
+    "confidence": null
+  },
+  {
+    "text": "我们解压之后",
+    "startMs": 345600,
+    "endMs": 346860,
+    "timestampMs": 345600,
+    "confidence": null
+  },
+  {
+    "text": "双击里面的index.html",
+    "startMs": 346860,
+    "endMs": 348860,
+    "timestampMs": 346860,
+    "confidence": null
+  },
+  {
+    "text": "就能在浏览器里翻页看了",
+    "startMs": 348860,
+    "endMs": 351340,
+    "timestampMs": 348860,
+    "confidence": null
+  },
+  {
+    "text": "我们主页看下来",
+    "startMs": 353360,
+    "endMs": 355040,
+    "timestampMs": 353360,
+    "confidence": null
+  },
+  {
+    "text": "它比第一种情况做出来的那种板是",
+    "startMs": 355040,
+    "endMs": 357160,
+    "timestampMs": 355040,
+    "confidence": null
+  },
+  {
+    "text": "我们看下来",
+    "startMs": 358140,
+    "endMs": 359280,
+    "timestampMs": 358140,
+    "confidence": null
+  },
+  {
+    "text": "我们可以看出来",
+    "startMs": 359820,
+    "endMs": 360800,
+    "timestampMs": 359820,
+    "confidence": null
+  },
+  {
+    "text": "它比第一种情况做出来的那种",
+    "startMs": 360800,
+    "endMs": 362780,
+    "timestampMs": 360800,
+    "confidence": null
+  },
+  {
+    "text": "我们可以看到",
+    "startMs": 364060,
+    "endMs": 364900,
+    "timestampMs": 364060,
+    "confidence": null
+  },
+  {
+    "text": "它比第一种情况做出来的",
+    "startMs": 364900,
+    "endMs": 366440,
+    "timestampMs": 364900,
+    "confidence": null
+  },
+  {
+    "text": "那版能更有设计感",
+    "startMs": 366440,
+    "endMs": 367880,
+    "timestampMs": 366440,
+    "confidence": null
+  },
+  {
+    "text": "标题和数字更大",
+    "startMs": 367880,
+    "endMs": 369220,
+    "timestampMs": 367880,
+    "confidence": null
+  },
+  {
+    "text": "深浅页交替",
+    "startMs": 369220,
+    "endMs": 370640,
+    "timestampMs": 369220,
+    "confidence": null
+  },
+  {
+    "text": "留白也更多",
+    "startMs": 370640,
+    "endMs": 371520,
+    "timestampMs": 370640,
+    "confidence": null
+  },
+  {
+    "text": "更像新品宣传了",
+    "startMs": 371520,
+    "endMs": 372980,
+    "timestampMs": 371520,
+    "confidence": null
+  },
+  {
+    "text": "但问题也很明显",
+    "startMs": 372980,
+    "endMs": 374340,
+    "timestampMs": 372980,
+    "confidence": null
+  },
+  {
+    "text": "照片被截断了",
+    "startMs": 374340,
+    "endMs": 375540,
+    "timestampMs": 374340,
+    "confidence": null
+  },
+  {
+    "text": "配色也换成了它自己的",
+    "startMs": 375540,
+    "endMs": 377100,
+    "timestampMs": 375540,
+    "confidence": null
+  },
+  {
+    "text": "我们是给公司做新品宣传",
+    "startMs": 377100,
+    "endMs": 379280,
+    "timestampMs": 377100,
+    "confidence": null
+  },
+  {
+    "text": "颜色还得用公司的",
+    "startMs": 379280,
+    "endMs": 380760,
+    "timestampMs": 379280,
+    "confidence": null
+  },
+  {
+    "text": "所以接下来",
+    "startMs": 380760,
+    "endMs": 381560,
+    "timestampMs": 380760,
+    "confidence": null
+  },
+  {
+    "text": "我们还是回到前面那一版",
+    "startMs": 381560,
+    "endMs": 382940,
+    "timestampMs": 381560,
+    "confidence": null
+  },
+  {
+    "text": "把这种设计感做进去",
+    "startMs": 382940,
+    "endMs": 384820,
+    "timestampMs": 382940,
+    "confidence": null
+  },
+  {
+    "text": "那这就到了第三步",
+    "startMs": 384820,
+    "endMs": 386060,
+    "timestampMs": 384820,
+    "confidence": null
+  },
+  {
+    "text": "第三步调板",
+    "startMs": 386680,
+    "endMs": 387820,
+    "timestampMs": 386680,
+    "confidence": null
+  },
+  {
+    "text": "第三步调版式",
+    "startMs": 387820,
+    "endMs": 389420,
+    "timestampMs": 387820,
+    "confidence": null
+  },
+  {
+    "text": "我们先把PPT里的图片",
+    "startMs": 389420,
+    "endMs": 391240,
+    "timestampMs": 389420,
+    "confidence": null
+  },
+  {
+    "text": "换成更好的素材",
+    "startMs": 391240,
+    "endMs": 392380,
+    "timestampMs": 391240,
+    "confidence": null
+  },
+  {
+    "text": "再调整每一页的版式",
+    "startMs": 392380,
+    "endMs": 394040,
+    "timestampMs": 392380,
+    "confidence": null
+  },
+  {
+    "text": "这一步做完",
+    "startMs": 394540,
+    "endMs": 395380,
+    "timestampMs": 394540,
+    "confidence": null
+  },
+  {
+    "text": "我们会得到一份",
+    "startMs": 395380,
+    "endMs": 396360,
+    "timestampMs": 395380,
+    "confidence": null
+  },
+  {
+    "text": "图更大 字更少",
+    "startMs": 396360,
+    "endMs": 398060,
+    "timestampMs": 396360,
+    "confidence": null
+  },
+  {
+    "text": "重点 更醒目的PPT",
+    "startMs": 398060,
+    "endMs": 399880,
+    "timestampMs": 398060,
+    "confidence": null
+  },
+  {
+    "text": "还是在刚才的对话里",
+    "startMs": 402840,
+    "endMs": 404080,
+    "timestampMs": 402840,
+    "confidence": null
+  },
+  {
+    "text": "动手改PPT之前",
+    "startMs": 404080,
+    "endMs": 405180,
+    "timestampMs": 404080,
+    "confidence": null
+  },
+  {
+    "text": "我们先让AI帮忙",
+    "startMs": 405180,
+    "endMs": 406320,
+    "timestampMs": 405180,
+    "confidence": null
+  },
+  {
+    "text": "把方向定下来",
+    "startMs": 406320,
+    "endMs": 407620,
+    "timestampMs": 406320,
+    "confidence": null
+  },
+  {
+    "text": "我把提示词发给它",
+    "startMs": 407620,
+    "endMs": 408900,
+    "timestampMs": 407620,
+    "confidence": null
+  },
+  {
+    "text": "让它先回答几个问题",
+    "startMs": 408900,
+    "endMs": 411460,
+    "timestampMs": 408900,
+    "confidence": null
+  },
+  {
+    "text": "看完要让人记住什么",
+    "startMs": 411460,
+    "endMs": 413300,
+    "timestampMs": 411460,
+    "confidence": null
+  },
+  {
+    "text": "风格参考谁",
+    "startMs": 413300,
+    "endMs": 414720,
+    "timestampMs": 413300,
+    "confidence": null
+  },
+  {
+    "text": "哪几页是重点",
+    "startMs": 414720,
+    "endMs": 415840,
+    "timestampMs": 414720,
+    "confidence": null
+  },
+  {
+    "text": "它写好了",
+    "startMs": 415840,
+    "endMs": 416840,
+    "timestampMs": 415840,
+    "confidence": null
+  },
+  {
+    "text": "我看了一遍",
+    "startMs": 416840,
+    "endMs": 417500,
+    "timestampMs": 416840,
+    "confidence": null
+  },
+  {
+    "text": "没问题",
+    "startMs": 417500,
+    "endMs": 418100,
+    "timestampMs": 417500,
+    "confidence": null
+  },
+  {
+    "text": "方向定了",
+    "startMs": 418100,
+    "endMs": 418940,
+    "timestampMs": 418100,
+    "confidence": null
+  },
+  {
+    "text": "后面才不会越改越乱",
+    "startMs": 418940,
+    "endMs": 420780,
+    "timestampMs": 418940,
+    "confidence": null
+  },
+  {
+    "text": "方向有了",
+    "startMs": 421680,
+    "endMs": 422340,
+    "timestampMs": 421680,
+    "confidence": null
+  },
+  {
+    "text": "接下来准备素材",
+    "startMs": 422340,
+    "endMs": 423380,
+    "timestampMs": 422340,
+    "confidence": null
+  },
+  {
+    "text": "我把提示词发给它",
+    "startMs": 423380,
+    "endMs": 424620,
+    "timestampMs": 423380,
+    "confidence": null
+  },
+  {
+    "text": "让它先列一份素材清单",
+    "startMs": 424620,
+    "endMs": 426760,
+    "timestampMs": 424620,
+    "confidence": null
+  },
+  {
+    "text": "写清楚每页用什么图",
+    "startMs": 426760,
+    "endMs": 428320,
+    "timestampMs": 426760,
+    "confidence": null
+  },
+  {
+    "text": "我确定了",
+    "startMs": 428320,
+    "endMs": 429380,
+    "timestampMs": 428320,
+    "confidence": null
+  },
+  {
+    "text": "它再动手做",
+    "startMs": 429380,
+    "endMs": 432960,
+    "timestampMs": 429380,
+    "confidence": null
+  },
+  {
+    "text": "先做最重要的主视觉",
+    "startMs": 433560,
+    "endMs": 435300,
+    "timestampMs": 433560,
+    "confidence": null
+  },
+  {
+    "text": "手机拍的照片背景乱",
+    "startMs": 435300,
+    "endMs": 437420,
+    "timestampMs": 435300,
+    "confidence": null
+  },
+  {
+    "text": "光线平 显得廉价",
+    "startMs": 437420,
+    "endMs": 439020,
+    "timestampMs": 437420,
+    "confidence": null
+  },
+  {
+    "text": "我把要求发给它",
+    "startMs": 439020,
+    "endMs": 440560,
+    "timestampMs": 439020,
+    "confidence": null
+  },
+  {
+    "text": "换成纯黑背景",
+    "startMs": 440560,
+    "endMs": 442260,
+    "timestampMs": 440560,
+    "confidence": null
+  },
+  {
+    "text": "从侧面打一道光",
+    "startMs": 442260,
+    "endMs": 443620,
+    "timestampMs": 442260,
+    "confidence": null
+  },
+  {
+    "text": "再加一条耳机的外形和logo",
+    "startMs": 443620,
+    "endMs": 446080,
+    "timestampMs": 443620,
+    "confidence": null
+  },
+  {
+    "text": "一点都不能改",
+    "startMs": 446080,
+    "endMs": 447040,
+    "timestampMs": 446080,
+    "confidence": null
+  },
+  {
+    "text": "生成好了",
+    "startMs": 447540,
+    "endMs": 448020,
+    "timestampMs": 447540,
+    "confidence": null
+  },
+  {
+    "text": "我们来看一下",
+    "startMs": 448020,
+    "endMs": 448640,
+    "timestampMs": 448020,
+    "confidence": null
+  },
+  {
+    "text": "跟刚才手机拍的原图比",
+    "startMs": 449120,
+    "endMs": 451180,
+    "timestampMs": 449120,
+    "confidence": null
+  },
+  {
+    "text": "背景干净了",
+    "startMs": 451180,
+    "endMs": 452320,
+    "timestampMs": 451180,
+    "confidence": null
+  },
+  {
+    "text": "产品有了质感",
+    "startMs": 452320,
+    "endMs": 453240,
+    "timestampMs": 452320,
+    "confidence": null
+  },
+  {
+    "text": "外形和logo也没变",
+    "startMs": 453240,
+    "endMs": 454940,
+    "timestampMs": 453240,
+    "confidence": null
+  },
+  {
+    "text": "主视觉看的是整体",
+    "startMs": 455420,
+    "endMs": 457040,
+    "timestampMs": 455420,
+    "confidence": null
+  },
+  {
+    "text": "细节还得靠特写",
+    "startMs": 457040,
+    "endMs": 458540,
+    "timestampMs": 457040,
+    "confidence": null
+  },
+  {
+    "text": "我们把提示词发给它",
+    "startMs": 458540,
+    "endMs": 460060,
+    "timestampMs": 458540,
+    "confidence": null
+  },
+  {
+    "text": "让它做几张特写",
+    "startMs": 460060,
+    "endMs": 461620,
+    "timestampMs": 460060,
+    "confidence": null
+  },
+  {
+    "text": "比如盒子上的logo",
+    "startMs": 461620,
+    "endMs": 463040,
+    "timestampMs": 461620,
+    "confidence": null
+  },
+  {
+    "text": "耳机的麦克风孔耳塞",
+    "startMs": 463040,
+    "endMs": 465080,
+    "timestampMs": 463040,
+    "confidence": null
+  },
+  {
+    "text": "提示词里还要特意的写一句",
+    "startMs": 465080,
+    "endMs": 467620,
+    "timestampMs": 465080,
+    "confidence": null
+  },
+  {
+    "text": "细节必须和原图一模一样",
+    "startMs": 467620,
+    "endMs": 469460,
+    "timestampMs": 467620,
+    "confidence": null
+  },
+  {
+    "text": "原图上没有的",
+    "startMs": 469460,
+    "endMs": 470720,
+    "timestampMs": 469460,
+    "confidence": null
+  },
+  {
+    "text": "一点都不能加",
+    "startMs": 470720,
+    "endMs": 471620,
+    "timestampMs": 470720,
+    "confidence": null
+  },
+  {
+    "text": "这个非常重要",
+    "startMs": 471620,
+    "endMs": 472560,
+    "timestampMs": 471620,
+    "confidence": null
+  },
+  {
+    "text": "我们看到特写也做好了",
+    "startMs": 474460,
+    "endMs": 475960,
+    "timestampMs": 474460,
+    "confidence": null
+  },
+  {
+    "text": "不过到这做出来的图",
+    "startMs": 475960,
+    "endMs": 477840,
+    "timestampMs": 475960,
+    "confidence": null
+  },
+  {
+    "text": "都带着黑色背景",
+    "startMs": 477840,
+    "endMs": 479400,
+    "timestampMs": 477840,
+    "confidence": null
+  },
+  {
+    "text": "只适合拿来当整页的大图",
+    "startMs": 479400,
+    "endMs": 481940,
+    "timestampMs": 479400,
+    "confidence": null
+  },
+  {
+    "text": "可有些页面只想",
+    "startMs": 481940,
+    "endMs": 483700,
+    "timestampMs": 481940,
+    "confidence": null
+  },
+  {
+    "text": "单独放一副耳机",
+    "startMs": 483700,
+    "endMs": 484840,
+    "timestampMs": 483700,
+    "confidence": null
+  },
+  {
+    "text": "我们再传一张要黑",
+    "startMs": 485220,
+    "endMs": 487480,
+    "timestampMs": 485220,
+    "confidence": null
+  },
+  {
+    "text": "我们再传一张",
+    "startMs": 488040,
+    "endMs": 489040,
+    "timestampMs": 488040,
+    "confidence": null
+  },
+  {
+    "text": "要时黑耳机的照片",
+    "startMs": 489040,
+    "endMs": 490680,
+    "timestampMs": 489040,
+    "confidence": null
+  },
+  {
+    "text": "我们再传一张耳机的照片",
+    "startMs": 492000,
+    "endMs": 494000,
+    "timestampMs": 492000,
+    "confidence": null
+  },
+  {
+    "text": "把提示词发给它",
+    "startMs": 494000,
+    "endMs": 495000,
+    "timestampMs": 494000,
+    "confidence": null
+  },
+  {
+    "text": "让它把背景抠掉",
+    "startMs": 495000,
+    "endMs": 496360,
+    "timestampMs": 495000,
+    "confidence": null
+  },
+  {
+    "text": "抠好了边缘很干净",
+    "startMs": 496900,
+    "endMs": 498400,
+    "timestampMs": 496900,
+    "confidence": null
+  },
+  {
+    "text": "最后我把提示词发给它",
+    "startMs": 498400,
+    "endMs": 499900,
+    "timestampMs": 498400,
+    "confidence": null
+  },
+  {
+    "text": "让它再补两张使用场景图",
+    "startMs": 499900,
+    "endMs": 502420,
+    "timestampMs": 499900,
+    "confidence": null
+  },
+  {
+    "text": "一张地铁通勤",
+    "startMs": 502420,
+    "endMs": 503960,
+    "timestampMs": 502420,
+    "confidence": null
+  },
+  {
+    "text": "一张办公室开会",
+    "startMs": 503960,
+    "endMs": 505100,
+    "timestampMs": 503960,
+    "confidence": null
+  },
+  {
+    "text": "放在痛点页",
+    "startMs": 505100,
+    "endMs": 506600,
+    "timestampMs": 505100,
+    "confidence": null
+  },
+  {
+    "text": "一看场景就知道",
+    "startMs": 506980,
+    "endMs": 508200,
+    "timestampMs": 506980,
+    "confidence": null
+  },
+  {
+    "text": "这副耳机用在哪",
+    "startMs": 508200,
+    "endMs": 509140,
+    "timestampMs": 508200,
+    "confidence": null
+  },
+  {
+    "text": "素材齐了",
+    "startMs": 509880,
+    "endMs": 510800,
+    "timestampMs": 509880,
+    "confidence": null
+  },
+  {
+    "text": "开始重新排版",
+    "startMs": 510800,
+    "endMs": 512080,
+    "timestampMs": 510800,
+    "confidence": null
+  },
+  {
+    "text": "我们先另存一版",
+    "startMs": 512080,
+    "endMs": 513700,
+    "timestampMs": 512080,
+    "confidence": null
+  },
+  {
+    "text": "留条后路",
+    "startMs": 513700,
+    "endMs": 514700,
+    "timestampMs": 513700,
+    "confidence": null
+  },
+  {
+    "text": "然后再把要求发给它",
+    "startMs": 514700,
+    "endMs": 516300,
+    "timestampMs": 514700,
+    "confidence": null
+  },
+  {
+    "text": "一页讲一件事",
+    "startMs": 516300,
+    "endMs": 517720,
+    "timestampMs": 516300,
+    "confidence": null
+  },
+  {
+    "text": "图要大字要少",
+    "startMs": 517720,
+    "endMs": 519020,
+    "timestampMs": 517720,
+    "confidence": null
+  },
+  {
+    "text": "生成好了",
+    "startMs": 526260,
+    "endMs": 526840,
+    "timestampMs": 526260,
+    "confidence": null
+  },
+  {
+    "text": "我们从头检查一遍",
+    "startMs": 526840,
+    "endMs": 527840,
+    "timestampMs": 526840,
+    "confidence": null
+  },
+  {
+    "text": "大部分页面都变了样",
+    "startMs": 527840,
+    "endMs": 529240,
+    "timestampMs": 527840,
+    "confidence": null
+  },
+  {
+    "text": "图大了",
+    "startMs": 529240,
+    "endMs": 530200,
+    "timestampMs": 529240,
+    "confidence": null
+  },
+  {
+    "text": "字少了 一页就讲一件事",
+    "startMs": 530200,
+    "endMs": 532160,
+    "timestampMs": 530200,
+    "confidence": null
+  },
+  {
+    "text": "不过有几页还是不对",
+    "startMs": 532160,
+    "endMs": 533420,
+    "timestampMs": 532160,
+    "confidence": null
+  },
+  {
+    "text": "地铁那张场景图被压扁了",
+    "startMs": 533420,
+    "endMs": 535500,
+    "timestampMs": 533420,
+    "confidence": null
+  },
+  {
+    "text": "办公室那张没放进来",
+    "startMs": 535500,
+    "endMs": 537360,
+    "timestampMs": 535500,
+    "confidence": null
+  },
+  {
+    "text": "还有几页用的是手机拍的原图",
+    "startMs": 537360,
+    "endMs": 539360,
+    "timestampMs": 537360,
+    "confidence": null
+  },
+  {
+    "text": "不用推倒重来",
+    "startMs": 539360,
+    "endMs": 540680,
+    "timestampMs": 539360,
+    "confidence": null
+  },
+  {
+    "text": "我们把问题一页一页",
+    "startMs": 540680,
+    "endMs": 542160,
+    "timestampMs": 540680,
+    "confidence": null
+  },
+  {
+    "text": "写清楚发给它",
+    "startMs": 542160,
+    "endMs": 542980,
+    "timestampMs": 542160,
+    "confidence": null
+  },
+  {
+    "text": "哪一页哪儿不对",
+    "startMs": 542980,
+    "endMs": 544360,
+    "timestampMs": 542980,
+    "confidence": null
+  },
+  {
+    "text": "要改成什么样",
+    "startMs": 544360,
+    "endMs": 545340,
+    "timestampMs": 544360,
+    "confidence": null
+  },
+  {
+    "text": "都写明白",
+    "startMs": 545340,
+    "endMs": 546300,
+    "timestampMs": 545340,
+    "confidence": null
+  },
+  {
+    "text": "改好了",
+    "startMs": 547160,
+    "endMs": 547680,
+    "timestampMs": 547160,
+    "confidence": null
+  },
+  {
+    "text": "刚才那几处都对了",
+    "startMs": 547680,
+    "endMs": 548860,
+    "timestampMs": 547680,
+    "confidence": null
+  },
+  {
+    "text": "最后一页字也少了",
+    "startMs": 548860,
+    "endMs": 550080,
+    "timestampMs": 548860,
+    "confidence": null
+  },
+  {
+    "text": "清爽多了",
+    "startMs": 550080,
+    "endMs": 550880,
+    "timestampMs": 550080,
+    "confidence": null
+  },
+  {
+    "text": "还剩一处",
+    "startMs": 551280,
+    "endMs": 552000,
+    "timestampMs": 551280,
+    "confidence": null
+  },
+  {
+    "text": "就是页面的顺序",
+    "startMs": 552000,
+    "endMs": 553180,
+    "timestampMs": 552000,
+    "confidence": null
+  },
+  {
+    "text": "参数表信息太多",
+    "startMs": 553180,
+    "endMs": 554860,
+    "timestampMs": 553180,
+    "confidence": null
+  },
+  {
+    "text": "放在中间",
+    "startMs": 554860,
+    "endMs": 555660,
+    "timestampMs": 554860,
+    "confidence": null
+  },
+  {
+    "text": "观众也记不住",
+    "startMs": 555660,
+    "endMs": 556880,
+    "timestampMs": 555660,
+    "confidence": null
+  },
+  {
+    "text": "我们跟它随用",
+    "startMs": 556880,
+    "endMs": 557880,
+    "timestampMs": 556880,
+    "confidence": null
+  },
+  {
+    "text": "我们跟它说一声",
+    "startMs": 558740,
+    "endMs": 559700,
+    "timestampMs": 558740,
+    "confidence": null
+  },
+  {
+    "text": "把这一页弄到最后",
+    "startMs": 559700,
+    "endMs": 560800,
+    "timestampMs": 559700,
+    "confidence": null
+  },
+  {
+    "text": "当作附录",
+    "startMs": 560800,
+    "endMs": 561760,
+    "timestampMs": 560800,
+    "confidence": null
+  },
+  {
+    "text": "到这图和排版都调好了",
+    "startMs": 562460,
+    "endMs": 564340,
+    "timestampMs": 562460,
+    "confidence": null
+  },
+  {
+    "text": "就差动画了",
+    "startMs": 564340,
+    "endMs": 565400,
+    "timestampMs": 564340,
+    "confidence": null
+  },
+  {
+    "text": "那我们第四步加动画",
+    "startMs": 565400,
+    "endMs": 567100,
+    "timestampMs": 565400,
+    "confidence": null
+  },
+  {
+    "text": "动画不是为了热闹",
+    "startMs": 567600,
+    "endMs": 568960,
+    "timestampMs": 567600,
+    "confidence": null
+  },
+  {
+    "text": "而是把重点演出来",
+    "startMs": 568960,
+    "endMs": 570380,
+    "timestampMs": 568960,
+    "confidence": null
+  },
+  {
+    "text": "让观众一眼看到就能记住",
+    "startMs": 570380,
+    "endMs": 572480,
+    "timestampMs": 570380,
+    "confidence": null
+  },
+  {
+    "text": "这一步做完",
+    "startMs": 572480,
+    "endMs": 573380,
+    "timestampMs": 572480,
+    "confidence": null
+  },
+  {
+    "text": "我们会得到一份",
+    "startMs": 573380,
+    "endMs": 574200,
+    "timestampMs": 573380,
+    "confidence": null
+  },
+  {
+    "text": "能直接拿去讲的PPT",
+    "startMs": 574200,
+    "endMs": 575620,
+    "timestampMs": 574200,
+    "confidence": null
+  },
+  {
+    "text": "PPT的动画分两种",
+    "startMs": 576020,
+    "endMs": 577540,
+    "timestampMs": 576020,
+    "confidence": null
+  },
+  {
+    "text": "一种是页面之间怎么切换",
+    "startMs": 577540,
+    "endMs": 579640,
+    "timestampMs": 577540,
+    "confidence": null
+  },
+  {
+    "text": "也就是我们的转场",
+    "startMs": 579640,
+    "endMs": 581180,
+    "timestampMs": 579640,
+    "confidence": null
+  },
+  {
+    "text": "一种是翻页后",
+    "startMs": 581180,
+    "endMs": 582620,
+    "timestampMs": 581180,
+    "confidence": null
+  },
+  {
+    "text": "页面里的内容怎么登场",
+    "startMs": 582620,
+    "endMs": 584560,
+    "timestampMs": 582620,
+    "confidence": null
+  },
+  {
+    "text": "页面里的内容怎么动",
+    "startMs": 584560,
+    "endMs": 585820,
+    "timestampMs": 584560,
+    "confidence": null
+  },
+  {
+    "text": "我们先做页面切换",
+    "startMs": 585820,
+    "endMs": 587380,
+    "timestampMs": 585820,
+    "confidence": null
+  },
+  {
+    "text": "我把要求发给它",
+    "startMs": 587740,
+    "endMs": 588840,
+    "timestampMs": 587740,
+    "confidence": null
+  },
+  {
+    "text": "三色耳机那页",
+    "startMs": 588840,
+    "endMs": 590180,
+    "timestampMs": 588840,
+    "confidence": null
+  },
+  {
+    "text": "叠着的三个盒子慢慢滑开",
+    "startMs": 590180,
+    "endMs": 591960,
+    "timestampMs": 590180,
+    "confidence": null
+  },
+  {
+    "text": "排成一排",
+    "startMs": 591960,
+    "endMs": 592660,
+    "timestampMs": 591960,
+    "confidence": null
+  },
+  {
+    "text": "其他页就简单地淡入淡出",
+    "startMs": 592660,
+    "endMs": 594900,
+    "timestampMs": 592660,
+    "confidence": null
+  },
+  {
+    "text": "页面切换做好了",
+    "startMs": 595820,
+    "endMs": 596860,
+    "timestampMs": 595820,
+    "confidence": null
+  },
+  {
+    "text": "接着做页面里面的内容怎么动",
+    "startMs": 596860,
+    "endMs": 599300,
+    "timestampMs": 596860,
+    "confidence": null
+  },
+  {
+    "text": "先从重点页开始",
+    "startMs": 599800,
+    "endMs": 601420,
+    "timestampMs": 599800,
+    "confidence": null
+  },
+  {
+    "text": "我把要求发给它",
+    "startMs": 601420,
+    "endMs": 602760,
+    "timestampMs": 601420,
+    "confidence": null
+  },
+  {
+    "text": "封面上耳机",
+    "startMs": 602760,
+    "endMs": 604000,
+    "timestampMs": 602760,
+    "confidence": null
+  },
+  {
+    "text": "从近处慢慢往后退",
+    "startMs": 604000,
+    "endMs": 605860,
+    "timestampMs": 604000,
+    "confidence": null
+  },
+  {
+    "text": "一道光从它身上扫过",
+    "startMs": 605860,
+    "endMs": 607560,
+    "timestampMs": 605860,
+    "confidence": null
+  },
+  {
+    "text": "价格页上",
+    "startMs": 607560,
+    "endMs": 608820,
+    "timestampMs": 607560,
+    "confidence": null
+  },
+  {
+    "text": "原价先出来",
+    "startMs": 608820,
+    "endMs": 609980,
+    "timestampMs": 608820,
+    "confidence": null
+  },
+  {
+    "text": "再被一笔划掉",
+    "startMs": 609980,
+    "endMs": 611160,
+    "timestampMs": 609980,
+    "confidence": null
+  },
+  {
+    "text": "停一下",
+    "startMs": 611160,
+    "endMs": 611820,
+    "timestampMs": 611160,
+    "confidence": null
+  },
+  {
+    "text": "新价格重重的落下来",
+    "startMs": 611820,
+    "endMs": 613960,
+    "timestampMs": 611820,
+    "confidence": null
+  },
+  {
+    "text": "重点页做完",
+    "startMs": 614520,
+    "endMs": 615740,
+    "timestampMs": 614520,
+    "confidence": null
+  },
+  {
+    "text": "再处理其他页面",
+    "startMs": 615740,
+    "endMs": 616900,
+    "timestampMs": 615740,
+    "confidence": null
+  },
+  {
+    "text": "我们把要求发给它",
+    "startMs": 616900,
+    "endMs": 618080,
+    "timestampMs": 616900,
+    "confidence": null
+  },
+  {
+    "text": "动作要放轻松一点",
+    "startMs": 618080,
+    "endMs": 619800,
+    "timestampMs": 618080,
+    "confidence": null
+  },
+  {
+    "text": "不能抢了重点",
+    "startMs": 619800,
+    "endMs": 621440,
+    "timestampMs": 619800,
+    "confidence": null
+  },
+  {
+    "text": "生成好了",
+    "startMs": 623290,
+    "endMs": 624050,
+    "timestampMs": 623290,
+    "confidence": null
+  },
+  {
+    "text": "我们来看看效果",
+    "startMs": 624050,
+    "endMs": 625350,
+    "timestampMs": 624050,
+    "confidence": null
+  },
+  {
+    "text": "在编辑页面里面",
+    "startMs": 625350,
+    "endMs": 626790,
+    "timestampMs": 625350,
+    "confidence": null
+  },
+  {
+    "text": "看不到动画",
+    "startMs": 626790,
+    "endMs": 627530,
+    "timestampMs": 626790,
+    "confidence": null
+  },
+  {
+    "text": "得点这个放映",
+    "startMs": 627530,
+    "endMs": 628890,
+    "timestampMs": 627530,
+    "confidence": null
+  },
+  {
+    "text": "从头看一遍",
+    "startMs": 628890,
+    "endMs": 629850,
+    "timestampMs": 628890,
+    "confidence": null
+  },
+  {
+    "text": "整体看下来",
+    "startMs": 629850,
+    "endMs": 631030,
+    "timestampMs": 629850,
+    "confidence": null
+  },
+  {
+    "text": "封面三色耳机和价格这些页",
+    "startMs": 631030,
+    "endMs": 632990,
+    "timestampMs": 631030,
+    "confidence": null
+  },
+  {
+    "text": "重点都出来了",
+    "startMs": 632990,
+    "endMs": 634470,
+    "timestampMs": 632990,
+    "confidence": null
+  },
+  {
+    "text": "其他页的动画点到为止",
+    "startMs": 634470,
+    "endMs": 636510,
+    "timestampMs": 634470,
+    "confidence": null
+  },
+  {
+    "text": "看着也不怎么花哨",
+    "startMs": 636510,
+    "endMs": 637750,
+    "timestampMs": 636510,
+    "confidence": null
+  },
+  {
+    "text": "最后我们把开头一句话做出来的",
+    "startMs": 638810,
+    "endMs": 640770,
+    "timestampMs": 638810,
+    "confidence": null
+  },
+  {
+    "text": "那版也打开",
+    "startMs": 640770,
+    "endMs": 641650,
+    "timestampMs": 640770,
+    "confidence": null
+  },
+  {
+    "text": "和这一版放在一起",
+    "startMs": 641650,
+    "endMs": 642770,
+    "timestampMs": 641650,
+    "confidence": null
+  },
+  {
+    "text": "同一份资料",
+    "startMs": 643270,
+    "endMs": 644070,
+    "timestampMs": 643270,
+    "confidence": null
+  },
+  {
+    "text": "那版是手机随手拍的照片",
+    "startMs": 644070,
+    "endMs": 645710,
+    "timestampMs": 644070,
+    "confidence": null
+  },
+  {
+    "text": "也没有动画",
+    "startMs": 645710,
+    "endMs": 646630,
+    "timestampMs": 645710,
+    "confidence": null
+  },
+  {
+    "text": "这一版做出来的图有质感",
+    "startMs": 646630,
+    "endMs": 648570,
+    "timestampMs": 646630,
+    "confidence": null
+  },
+  {
+    "text": "图大了",
+    "startMs": 649050,
+    "endMs": 649670,
+    "timestampMs": 649050,
+    "confidence": null
+  },
+  {
+    "text": "字少",
+    "startMs": 649670,
+    "endMs": 650550,
+    "timestampMs": 649670,
+    "confidence": null
+  },
+  {
+    "text": "重点一个一个都出来了",
+    "startMs": 650550,
+    "endMs": 651970,
+    "timestampMs": 650550,
+    "confidence": null
+  },
+  {
+    "text": "拿去做新品宣传",
+    "startMs": 652410,
+    "endMs": 653710,
+    "timestampMs": 652410,
+    "confidence": null
+  },
+  {
+    "text": "应该是拿得出手",
+    "startMs": 653710,
+    "endMs": 654930,
+    "timestampMs": 653710,
+    "confidence": null
+  },
+  {
+    "text": "重点一个一个都出来了",
+    "startMs": 654930,
+    "endMs": 659470,
+    "timestampMs": 654930,
+    "confidence": null
+  },
+  {
+    "text": "这样的效果靠的是前面",
+    "startMs": 660230,
+    "endMs": 661510,
+    "timestampMs": 660230,
+    "confidence": null
+  },
+  {
+    "text": "一条条提的要求",
+    "startMs": 661510,
+    "endMs": 662590,
+    "timestampMs": 661510,
+    "confidence": null
+  },
+  {
+    "text": "下次换个产品重新做宣传",
+    "startMs": 662590,
+    "endMs": 664330,
+    "timestampMs": 662590,
+    "confidence": null
+  },
+  {
+    "text": "那我们还得重新再说一遍吗",
+    "startMs": 664330,
+    "endMs": 666170,
+    "timestampMs": 664330,
+    "confidence": null
+  },
+  {
+    "text": "当然不用了",
+    "startMs": 666970,
+    "endMs": 667690,
+    "timestampMs": 666970,
+    "confidence": null
+  },
+  {
+    "text": "我们就看第五步",
+    "startMs": 667690,
+    "endMs": 668610,
+    "timestampMs": 667690,
+    "confidence": null
+  },
+  {
+    "text": "做Skill",
+    "startMs": 668610,
+    "endMs": 669290,
+    "timestampMs": 668610,
+    "confidence": null
+  },
+  {
+    "text": "把这些要求存下来",
+    "startMs": 669830,
+    "endMs": 671110,
+    "timestampMs": 669830,
+    "confidence": null
+  },
+  {
+    "text": "以后直接调用就行了",
+    "startMs": 671110,
+    "endMs": 672470,
+    "timestampMs": 671110,
+    "confidence": null
+  },
+  {
+    "text": "这一步做完",
+    "startMs": 672890,
+    "endMs": 673650,
+    "timestampMs": 672890,
+    "confidence": null
+  },
+  {
+    "text": "我们会得到一个自己的Skill",
+    "startMs": 673650,
+    "endMs": 675350,
+    "timestampMs": 673650,
+    "confidence": null
+  },
+  {
+    "text": "还是在做耳机的这个对话里",
+    "startMs": 675350,
+    "endMs": 677830,
+    "timestampMs": 675350,
+    "confidence": null
+  },
+  {
+    "text": "我把提示发给它",
+    "startMs": 677830,
+    "endMs": 678810,
+    "timestampMs": 677830,
+    "confidence": null
+  },
+  {
+    "text": "让它把我们一路提的要求",
+    "startMs": 679250,
+    "endMs": 681010,
+    "timestampMs": 679250,
+    "confidence": null
+  },
+  {
+    "text": "整理成一个Skill",
+    "startMs": 681010,
+    "endMs": 682110,
+    "timestampMs": 681010,
+    "confidence": null
+  },
+  {
+    "text": "Skill里存的是做法",
+    "startMs": 682770,
+    "endMs": 684610,
+    "timestampMs": 682770,
+    "confidence": null
+  },
+  {
+    "text": "不是这份PPT本身",
+    "startMs": 684610,
+    "endMs": 686130,
+    "timestampMs": 684610,
+    "confidence": null
+  },
+  {
+    "text": "换个产品",
+    "startMs": 686610,
+    "endMs": 687430,
+    "timestampMs": 686610,
+    "confidence": null
+  },
+  {
+    "text": "页面怎么排",
+    "startMs": 687430,
+    "endMs": 688170,
+    "timestampMs": 687430,
+    "confidence": null
+  },
+  {
+    "text": "动画怎么做",
+    "startMs": 688170,
+    "endMs": 689250,
+    "timestampMs": 688170,
+    "confidence": null
+  },
+  {
+    "text": "它都会按照",
+    "startMs": 689250,
+    "endMs": 690110,
+    "timestampMs": 689250,
+    "confidence": null
+  },
+  {
+    "text": "我们原来的这个思路往下做",
+    "startMs": 690110,
+    "endMs": 692210,
+    "timestampMs": 690110,
+    "confidence": null
+  },
+  {
+    "text": "Skill 存好了",
+    "startMs": 692850,
+    "endMs": 693730,
+    "timestampMs": 692850,
+    "confidence": null
+  },
+  {
+    "text": "我们来试一下",
+    "startMs": 693730,
+    "endMs": 694590,
+    "timestampMs": 693730,
+    "confidence": null
+  },
+  {
+    "text": "新开一个对话",
+    "startMs": 695010,
+    "endMs": 695990,
+    "timestampMs": 695010,
+    "confidence": null
+  },
+  {
+    "text": "换个完全不同的产品",
+    "startMs": 695990,
+    "endMs": 697470,
+    "timestampMs": 695990,
+    "confidence": null
+  },
+  {
+    "text": "磁吸充电宝",
+    "startMs": 697470,
+    "endMs": 698570,
+    "timestampMs": 697470,
+    "confidence": null
+  },
+  {
+    "text": "我调用这个Skill",
+    "startMs": 698570,
+    "endMs": 699630,
+    "timestampMs": 698570,
+    "confidence": null
+  },
+  {
+    "text": "把充电宝的资料传上去",
+    "startMs": 699630,
+    "endMs": 701190,
+    "timestampMs": 699630,
+    "confidence": null
+  },
+  {
+    "text": "发的还是那一句",
+    "startMs": 701190,
+    "endMs": 702690,
+    "timestampMs": 701190,
+    "confidence": null
+  },
+  {
+    "text": "帮我做个产品宣传PPT",
+    "startMs": 702850,
+    "endMs": 704310,
+    "timestampMs": 702850,
+    "confidence": null
+  },
+  {
+    "text": "跟开头那次一模一样",
+    "startMs": 704310,
+    "endMs": 705810,
+    "timestampMs": 704310,
+    "confidence": null
+  },
+  {
+    "text": "充电宝的PPT生成好了",
+    "startMs": 706450,
+    "endMs": 707870,
+    "timestampMs": 706450,
+    "confidence": null
+  },
+  {
+    "text": "我们打开看一下",
+    "startMs": 707870,
+    "endMs": 708730,
+    "timestampMs": 707870,
+    "confidence": null
+  },
+  {
+    "text": "整体看下来",
+    "startMs": 709330,
+    "endMs": 710210,
+    "timestampMs": 709330,
+    "confidence": null
+  },
+  {
+    "text": "大纲 模板 版式和动画",
+    "startMs": 710210,
+    "endMs": 711890,
+    "timestampMs": 710210,
+    "confidence": null
+  },
+  {
+    "text": "都是按照我们的要求来做的",
+    "startMs": 711890,
+    "endMs": 713710,
+    "timestampMs": 711890,
+    "confidence": null
+  },
+  {
+    "text": "我们再把开头那版拿出来",
+    "startMs": 714230,
+    "endMs": 715630,
+    "timestampMs": 714230,
+    "confidence": null
+  },
+  {
+    "text": "放在一起看",
+    "startMs": 715630,
+    "endMs": 716310,
+    "timestampMs": 715630,
+    "confidence": null
+  },
+  {
+    "text": "同样是一句话",
+    "startMs": 716310,
+    "endMs": 717470,
+    "timestampMs": 716310,
+    "confidence": null
+  },
+  {
+    "text": "开头那次",
+    "startMs": 717470,
+    "endMs": 718270,
+    "timestampMs": 717470,
+    "confidence": null
+  },
+  {
+    "text": "AI 不知道我们要什么",
+    "startMs": 718270,
+    "endMs": 719470,
+    "timestampMs": 718270,
+    "confidence": null
+  },
+  {
+    "text": "只能自己随意发挥",
+    "startMs": 719470,
+    "endMs": 720870,
+    "timestampMs": 719470,
+    "confidence": null
+  },
+  {
+    "text": "做出来的效果很粗糙",
+    "startMs": 721270,
+    "endMs": 722910,
+    "timestampMs": 721270,
+    "confidence": null
+  },
+  {
+    "text": "这次要求都存在了",
+    "startMs": 723330,
+    "endMs": 724870,
+    "timestampMs": 723330,
+    "confidence": null
+  },
+  {
+    "text": "Skill里",
+    "startMs": 724870,
+    "endMs": 725430,
+    "timestampMs": 724870,
+    "confidence": null
+  },
+  {
+    "text": "它就能照着做",
+    "startMs": 725430,
+    "endMs": 726370,
+    "timestampMs": 725430,
+    "confidence": null
+  },
+  {
+    "text": "一出来图大字少",
+    "startMs": 726370,
+    "endMs": 728290,
+    "timestampMs": 726370,
+    "confidence": null
+  },
+  {
+    "text": "带动画的新品宣传PPT",
+    "startMs": 728290,
+    "endMs": 730030,
+    "timestampMs": 728290,
+    "confidence": null
+  },
+  {
+    "text": "有没有Skill差别都特别大",
+    "startMs": 734650,
+    "endMs": 736730,
+    "timestampMs": 734650,
+    "confidence": null
+  },
+  {
+    "text": "到这里这节课就讲完了",
+    "startMs": 737310,
+    "endMs": 738830,
+    "timestampMs": 737310,
+    "confidence": null
+  },
+  {
+    "text": "我们简单的回顾一下",
+    "startMs": 738830,
+    "endMs": 739850,
+    "timestampMs": 738830,
+    "confidence": null
+  },
+  {
+    "text": "今天用5步做了一份新品宣传PPT",
+    "startMs": 739850,
+    "endMs": 742390,
+    "timestampMs": 739850,
+    "confidence": null
+  },
+  {
+    "text": "第一步定大纲",
+    "startMs": 742390,
+    "endMs": 743430,
+    "timestampMs": 742390,
+    "confidence": null
+  },
+  {
+    "text": "先把内容理清楚",
+    "startMs": 743430,
+    "endMs": 744690,
+    "timestampMs": 743430,
+    "confidence": null
+  },
+  {
+    "text": "第二步套模板把风格统一起来",
+    "startMs": 744690,
+    "endMs": 747250,
+    "timestampMs": 744690,
+    "confidence": null
+  },
+  {
+    "text": "第三步",
+    "startMs": 747250,
+    "endMs": 748190,
+    "timestampMs": 747250,
+    "confidence": null
+  },
+  {
+    "text": "调版式 提升设计感",
+    "startMs": 748190,
+    "endMs": 750250,
+    "timestampMs": 748190,
+    "confidence": null
+  },
+  {
+    "text": "第四步加动画",
+    "startMs": 750250,
+    "endMs": 751450,
+    "timestampMs": 750250,
+    "confidence": null
+  },
+  {
+    "text": "把重点都突出出来",
+    "startMs": 751450,
+    "endMs": 753270,
+    "timestampMs": 751450,
+    "confidence": null
+  },
+  {
+    "text": "第五步做Skill",
+    "startMs": 753270,
+    "endMs": 754870,
+    "timestampMs": 753270,
+    "confidence": null
+  },
+  {
+    "text": "把要求存下来",
+    "startMs": 754870,
+    "endMs": 756230,
+    "timestampMs": 754870,
+    "confidence": null
+  },
+  {
+    "text": "下次直接调用",
+    "startMs": 756230,
+    "endMs": 757230,
+    "timestampMs": 756230,
+    "confidence": null
+  },
+  {
+    "text": "所以一份有质感",
+    "startMs": 758110,
+    "endMs": 759190,
+    "timestampMs": 758110,
+    "confidence": null
+  },
+  {
+    "text": "拿得着是",
+    "startMs": 759190,
+    "endMs": 759830,
+    "timestampMs": 759190,
+    "confidence": null
+  },
+  {
+    "text": "统一的新品宣传PPT",
+    "startMs": 759830,
+    "endMs": 760010,
+    "timestampMs": 759830,
+    "confidence": null
+  },
+  {
+    "text": "所以一份有质感",
+    "startMs": 760010,
+    "endMs": 761270,
+    "timestampMs": 760010,
+    "confidence": null
+  },
+  {
+    "text": "拿得出手的PPT",
+    "startMs": 761270,
+    "endMs": 762310,
+    "timestampMs": 761270,
+    "confidence": null
+  },
+  {
+    "text": "不是一句话就能生成的",
+    "startMs": 762310,
+    "endMs": 763750,
+    "timestampMs": 762310,
+    "confidence": null
+  },
+  {
+    "text": "而是需要我们一步一步的打磨",
+    "startMs": 763750,
+    "endMs": 765830,
+    "timestampMs": 763750,
+    "confidence": null
+  },
+  {
+    "text": "这套方法除了做新品宣传",
+    "startMs": 766270,
+    "endMs": 767990,
+    "timestampMs": 766270,
+    "confidence": null
+  },
+  {
+    "text": "做工作汇报",
+    "startMs": 767990,
+    "endMs": 768730,
+    "timestampMs": 767990,
+    "confidence": null
+  },
+  {
+    "text": "做课件也是一样的",
+    "startMs": 768730,
+    "endMs": 770510,
+    "timestampMs": 768730,
+    "confidence": null
+  },
+  {
+    "text": "想把PPT做好",
+    "startMs": 770510,
+    "endMs": 771830,
+    "timestampMs": 770510,
+    "confidence": null
+  },
+  {
+    "text": "也可以用国外的 Claude 或 Codex 来做",
+    "startMs": 771830,
+    "endMs": 774330,
+    "timestampMs": 771830,
+    "confidence": null
+  },
+  {
+    "text": "然后关于 Claude Codex 的使用方法",
+    "startMs": 774330,
+    "endMs": 776750,
+    "timestampMs": 774330,
+    "confidence": null
+  },
+  {
+    "text": "可以看我们的其他课程",
+    "startMs": 776750,
+    "endMs": 778250,
+    "timestampMs": 776750,
+    "confidence": null
+  },
+  {
+    "text": "最后今天用到的素材和提示词",
+    "startMs": 780100,
+    "endMs": 781820,
+    "timestampMs": 780100,
+    "confidence": null
+  },
+  {
+    "text": "我们都在资料包里",
+    "startMs": 781820,
+    "endMs": 783120,
+    "timestampMs": 781820,
+    "confidence": null
+  },
+  {
+    "text": "大家可以按照里面的步骤",
+    "startMs": 783120,
+    "endMs": 785620,
+    "timestampMs": 783120,
+    "confidence": null
+  },
+  {
+    "text": "一步一步的自己动手试一试",
+    "startMs": 785620,
+    "endMs": 787040,
+    "timestampMs": 785620,
+    "confidence": null
+  },
+  {
+    "text": "好了 这节课我们就到这里",
+    "startMs": 787040,
+    "endMs": 788600,
+    "timestampMs": 787040,
+    "confidence": null
+  },
+  {
+    "text": "我是阿亮",
+    "startMs": 788600,
+    "endMs": 789280,
+    "timestampMs": 788600,
+    "confidence": null
+  },
+  {
+    "text": "我们下节课再见",
+    "startMs": 789280,
+    "endMs": 789960,
+    "timestampMs": 789280,
+    "confidence": null
+  },
+  {
+    "text": "拜拜",
+    "startMs": 789960,
+    "endMs": 790280,
+    "timestampMs": 789960,
+    "confidence": null
+  }
+]

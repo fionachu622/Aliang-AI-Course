@@ -1,0 +1,781 @@
+{
+  "version": "1.8",
+  "sync_level": "semantic",
+  "core_learning_outcome": "一个Agent可以把不同任务分派给多个子Agent同时处理，三项任务分别对应自己的子Agent。",
+  "paragraph_semantics": [
+    {
+      "id": "p01",
+      "source_text": "一起交给 Agent，它像给员工派活一样，分给好几个子 Agent，同时干。做一份汇报 PPT、设计一张团建海报、把一段会议录音整理成纪要。",
+      "main_idea": "同一Agent分派、多个子Agent并行承担不同交付任务",
+      "objects": [
+        "agent",
+        "sub-a",
+        "sub-b",
+        "sub-c",
+        "ppt",
+        "poster",
+        "minutes"
+      ],
+      "relations": [
+        {
+          "id": "delegate-a",
+          "type": "correspondence",
+          "from": "agent",
+          "relation": "分派工作",
+          "to": "sub-a"
+        },
+        {
+          "id": "delegate-b",
+          "type": "correspondence",
+          "from": "agent",
+          "relation": "分派工作",
+          "to": "sub-b"
+        },
+        {
+          "id": "delegate-c",
+          "type": "correspondence",
+          "from": "agent",
+          "relation": "分派工作",
+          "to": "sub-c"
+        },
+        {
+          "id": "work-a",
+          "type": "correspondence",
+          "from": "sub-a",
+          "relation": "承担任务",
+          "to": "ppt"
+        },
+        {
+          "id": "work-b",
+          "type": "correspondence",
+          "from": "sub-b",
+          "relation": "承担任务",
+          "to": "poster"
+        },
+        {
+          "id": "work-c",
+          "type": "correspondence",
+          "from": "sub-c",
+          "relation": "承担任务",
+          "to": "minutes"
+        }
+      ],
+      "actions": [],
+      "supporting_evidence": [
+        "汇报PPT、团建海报、会议纪要"
+      ],
+      "voiceover_only": [],
+      "narrative_subject_exceptions": []
+    }
+  ],
+  "semantic_axis": {
+    "throughline": "从一个Agent承接工作，看到三路分派，再逐项认识三路任务，理解并行分工。",
+    "start": "已知道Agent能连续处理工作",
+    "end": "能区分单Agent连续工作与多Agent并行分工",
+    "steps": [
+      {
+        "id": "a01",
+        "understanding": "同一来源的三路分工，各自承担不同任务"
+      }
+    ],
+    "stable_anchors": [
+      {
+        "element_id": "agent",
+        "from_step": "a01",
+        "to_step": "a01"
+      }
+    ]
+  },
+  "cues": [
+    {
+      "id": "cue-agent",
+      "paragraph_id": "p01",
+      "source_text": "一起交给 Agent",
+      "new_information": [
+        "一起交给 Agent"
+      ],
+      "information_role": "core",
+      "screen_strategy": "visualize",
+      "ordered_beats": [
+        {
+          "id": "cue-agent-b01",
+          "source_excerpt": "一起交给 Agent",
+          "understanding": "一起交给 Agent",
+          "first_elements": [
+            "agent"
+          ],
+          "first_relations": []
+        }
+      ]
+    },
+    {
+      "id": "cue-split",
+      "paragraph_id": "p01",
+      "source_text": "分给好几个子 Agent",
+      "new_information": [
+        "分给好几个子 Agent"
+      ],
+      "information_role": "core",
+      "screen_strategy": "visualize",
+      "ordered_beats": [
+        {
+          "id": "cue-split-b01",
+          "source_excerpt": "分给好几个子 Agent",
+          "understanding": "分给好几个子 Agent",
+          "first_elements": [
+            "sub-a",
+            "sub-b",
+            "sub-c"
+          ],
+          "first_relations": [
+            "delegate-a",
+            "delegate-b",
+            "delegate-c"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cue-parallel",
+      "paragraph_id": "p01",
+      "source_text": "同时干",
+      "new_information": [
+        "同时干"
+      ],
+      "information_role": "core",
+      "screen_strategy": "visualize",
+      "ordered_beats": [
+        {
+          "id": "cue-parallel-b01",
+          "source_excerpt": "同时干",
+          "understanding": "同时干",
+          "first_elements": [],
+          "first_relations": []
+        }
+      ]
+    },
+    {
+      "id": "cue-ppt",
+      "paragraph_id": "p01",
+      "source_text": "做一份汇报 PPT",
+      "new_information": [
+        "做一份汇报 PPT"
+      ],
+      "information_role": "support",
+      "screen_strategy": "visualize",
+      "ordered_beats": [
+        {
+          "id": "cue-ppt-b01",
+          "source_excerpt": "做一份汇报 PPT",
+          "understanding": "做一份汇报 PPT",
+          "first_elements": [
+            "ppt"
+          ],
+          "first_relations": [
+            "work-a"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cue-poster",
+      "paragraph_id": "p01",
+      "source_text": "设计一张团建海报",
+      "new_information": [
+        "设计一张团建海报"
+      ],
+      "information_role": "support",
+      "screen_strategy": "visualize",
+      "ordered_beats": [
+        {
+          "id": "cue-poster-b01",
+          "source_excerpt": "设计一张团建海报",
+          "understanding": "设计一张团建海报",
+          "first_elements": [
+            "poster"
+          ],
+          "first_relations": [
+            "work-b"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cue-minutes",
+      "paragraph_id": "p01",
+      "source_text": "把一段会议录音整理成纪要",
+      "new_information": [
+        "把一段会议录音整理成纪要"
+      ],
+      "information_role": "support",
+      "screen_strategy": "visualize",
+      "ordered_beats": [
+        {
+          "id": "cue-minutes-b01",
+          "source_excerpt": "把一段会议录音整理成纪要",
+          "understanding": "把一段会议录音整理成纪要",
+          "first_elements": [
+            "minutes"
+          ],
+          "first_relations": [
+            "work-c"
+          ]
+        }
+      ]
+    }
+  ],
+  "element_first_cue": {
+    "agent": "cue-agent",
+    "sub-a": "cue-split",
+    "sub-b": "cue-split",
+    "sub-c": "cue-split",
+    "ppt": "cue-ppt",
+    "poster": "cue-poster",
+    "minutes": "cue-minutes"
+  },
+  "relation_first_cue": {
+    "delegate-a": "cue-split",
+    "delegate-b": "cue-split",
+    "delegate-c": "cue-split",
+    "work-a": "cue-ppt",
+    "work-b": "cue-poster",
+    "work-c": "cue-minutes"
+  },
+  "scene_count_plan": {
+    "candidate_scene_count": 1,
+    "final_scene_count": 1,
+    "merges": [],
+    "splits": []
+  },
+  "scenes": [
+    {
+      "id": "parallel-intro",
+      "learning_goal": "看懂一对多分派与三项任务的对应",
+      "core_question": "多Agent如何分头干活？",
+      "visual_thesis": "左侧主Agent发出三路分派，中间子Agent与右侧任务一一同排对应；三行并列，不相互连接。",
+      "cue_range": [
+        "cue-agent",
+        "cue-minutes"
+      ],
+      "axis_step_range": [
+        "a01",
+        "a01"
+      ],
+      "visual_model": "橙色实体主Agent→加粗三路分派箭头→蓝粉绿粗线框子Agent→同色并行进度条→任务示意与名称。无子Agent文字标签。",
+      "primary_topology": "hierarchy",
+      "anchor": [
+        "agent"
+      ],
+      "relation_ids": [
+        "delegate-a",
+        "delegate-b",
+        "delegate-c",
+        "work-a",
+        "work-b",
+        "work-c"
+      ],
+      "final_evidence": [
+        "agent",
+        "sub-a",
+        "sub-b",
+        "sub-c",
+        "ppt",
+        "poster",
+        "minutes"
+      ],
+      "final_relations": [
+        "delegate-a",
+        "delegate-b",
+        "delegate-c",
+        "work-a",
+        "work-b",
+        "work-c"
+      ],
+      "temporary_elements": [],
+      "visual_proof": {
+        "relation_ids": [
+          "delegate-a",
+          "delegate-b",
+          "delegate-c",
+          "work-a",
+          "work-b",
+          "work-c"
+        ],
+        "mode": "static-structure",
+        "inference_without_explanatory_text": "主Agent橙色实体与子Agent三色线框体现主从样式差异，共同来源的分派箭头、同排进度条与任务图示明确并行分工。",
+        "conclusion_text_policy": "omit",
+        "change_type": "grouping",
+        "established_state_id": "state-minutes",
+        "visual_change": "三路分派从左侧共同源展开到三行，右侧任务依次在对应行显现。"
+      },
+      "screen_text": [
+        {
+          "text": "Agent",
+          "role": "object-label",
+          "cue_ids": [
+            "cue-agent"
+          ],
+          "source_excerpt": "一起交给 Agent",
+          "provenance": "faithful-compression",
+          "relation_ids": [],
+          "claim_relation_types": []
+        },
+        {
+          "text": "汇报 PPT",
+          "role": "object-label",
+          "cue_ids": [
+            "cue-ppt"
+          ],
+          "source_excerpt": "做一份汇报 PPT",
+          "provenance": "faithful-compression",
+          "relation_ids": [],
+          "claim_relation_types": []
+        },
+        {
+          "text": "团建海报",
+          "role": "object-label",
+          "cue_ids": [
+            "cue-poster"
+          ],
+          "source_excerpt": "设计一张团建海报",
+          "provenance": "faithful-compression",
+          "relation_ids": [],
+          "claim_relation_types": []
+        },
+        {
+          "text": "会议纪要",
+          "role": "object-label",
+          "cue_ids": [
+            "cue-minutes"
+          ],
+          "source_excerpt": "把一段会议录音整理成纪要",
+          "provenance": "faithful-compression",
+          "relation_ids": [],
+          "claim_relation_types": []
+        }
+      ],
+      "visual_encodings": [
+        {
+          "target_type": "element",
+          "target_id": "agent",
+          "form": "illustration",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": []
+        },
+        {
+          "target_type": "element",
+          "target_id": "sub-a",
+          "form": "illustration",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": []
+        },
+        {
+          "target_type": "element",
+          "target_id": "sub-b",
+          "form": "illustration",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": []
+        },
+        {
+          "target_type": "element",
+          "target_id": "sub-c",
+          "form": "illustration",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": []
+        },
+        {
+          "target_type": "element",
+          "target_id": "ppt",
+          "form": "illustration",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": []
+        },
+        {
+          "target_type": "element",
+          "target_id": "poster",
+          "form": "illustration",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": []
+        },
+        {
+          "target_type": "element",
+          "target_id": "minutes",
+          "form": "illustration",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": []
+        },
+        {
+          "target_type": "relation",
+          "target_id": "delegate-a",
+          "form": "connector",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": [
+            "delegate-a"
+          ]
+        },
+        {
+          "target_type": "relation",
+          "target_id": "delegate-b",
+          "form": "connector",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": [
+            "delegate-b"
+          ]
+        },
+        {
+          "target_type": "relation",
+          "target_id": "delegate-c",
+          "form": "connector",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": [
+            "delegate-c"
+          ]
+        },
+        {
+          "target_type": "relation",
+          "target_id": "work-a",
+          "form": "connector",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": [
+            "work-a"
+          ]
+        },
+        {
+          "target_type": "relation",
+          "target_id": "work-b",
+          "form": "connector",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": [
+            "work-b"
+          ]
+        },
+        {
+          "target_type": "relation",
+          "target_id": "work-c",
+          "form": "connector",
+          "bounded": false,
+          "instances": 1,
+          "relation_ids": [
+            "work-c"
+          ]
+        }
+      ],
+      "states": [
+        {
+          "id": "state-agent",
+          "cue_ids": [
+            "cue-agent"
+          ],
+          "beat_id": "cue-agent-b01",
+          "axis_step_id": "a01",
+          "at": 290.6,
+          "semantic_delta": "一起交给 Agent",
+          "visual_delta": "左侧大Agent形象与下方Agent名称出现",
+          "understanding_evidence": "从左到右读分派与承担关系；每行同轴、同色，三个分支共享来源且互不串联。",
+          "focus": "agent",
+          "visible_elements": [
+            "agent"
+          ],
+          "visible_relations": [],
+          "persist": [],
+          "exit": []
+        },
+        {
+          "id": "state-split",
+          "cue_ids": [
+            "cue-split"
+          ],
+          "beat_id": "cue-split-b01",
+          "axis_step_id": "a01",
+          "at": 293.3333333333,
+          "semantic_delta": "分给好几个子 Agent",
+          "visual_delta": "主Agent向三行展开7px分派线，三只5.5px粗线框子Agent出现，按行分别为蓝粉绿。",
+          "understanding_evidence": "从左到右读分派与承担关系；每行同轴、同色，三个分支共享来源且互不串联。",
+          "focus": "split",
+          "visible_elements": [
+            "agent",
+            "sub-a",
+            "sub-b",
+            "sub-c"
+          ],
+          "visible_relations": [
+            "delegate-a",
+            "delegate-b",
+            "delegate-c"
+          ],
+          "persist": [
+            "agent"
+          ],
+          "exit": []
+        },
+        {
+          "id": "state-parallel",
+          "cue_ids": [
+            "cue-parallel"
+          ],
+          "beat_id": "cue-parallel-b01",
+          "axis_step_id": "a01",
+          "at": 295.0,
+          "semantic_delta": "同时干",
+          "visual_delta": "三条圆角进度条在同一口播点启动，沿共同时间轴以不同速率持续前进，之后的任务名称仍按各自口播揭示。",
+          "understanding_evidence": "任意两个后续时点，三条填充都同时增长但长度不同，直接证明并行而非串行；均不提前到100%。",
+          "focus": "parallel",
+          "visible_elements": [
+            "agent",
+            "sub-a",
+            "sub-b",
+            "sub-c"
+          ],
+          "visible_relations": [
+            "delegate-a",
+            "delegate-b",
+            "delegate-c"
+          ],
+          "persist": [
+            "agent",
+            "sub-a",
+            "sub-b",
+            "sub-c"
+          ],
+          "exit": []
+        },
+        {
+          "id": "state-ppt",
+          "cue_ids": [
+            "cue-ppt"
+          ],
+          "beat_id": "cue-ppt-b01",
+          "axis_step_id": "a01",
+          "at": 298.2,
+          "semantic_delta": "做一份汇报 PPT",
+          "visual_delta": "第一行右侧显现PPT图示和名称",
+          "understanding_evidence": "从左到右读分派与承担关系；每行同轴、同色，三个分支共享来源且互不串联。",
+          "focus": "ppt",
+          "visible_elements": [
+            "agent",
+            "sub-a",
+            "sub-b",
+            "sub-c",
+            "ppt"
+          ],
+          "visible_relations": [
+            "delegate-a",
+            "delegate-b",
+            "delegate-c",
+            "work-a"
+          ],
+          "persist": [
+            "agent",
+            "sub-a",
+            "sub-b",
+            "sub-c"
+          ],
+          "exit": []
+        },
+        {
+          "id": "state-poster",
+          "cue_ids": [
+            "cue-poster"
+          ],
+          "beat_id": "cue-poster-b01",
+          "axis_step_id": "a01",
+          "at": 300.0,
+          "semantic_delta": "设计一张团建海报",
+          "visual_delta": "第二行右侧显现海报图示和名称，第一行保留",
+          "understanding_evidence": "从左到右读分派与承担关系；每行同轴、同色，三个分支共享来源且互不串联。",
+          "focus": "poster",
+          "visible_elements": [
+            "agent",
+            "sub-a",
+            "sub-b",
+            "sub-c",
+            "ppt",
+            "poster"
+          ],
+          "visible_relations": [
+            "delegate-a",
+            "delegate-b",
+            "delegate-c",
+            "work-a",
+            "work-b"
+          ],
+          "persist": [
+            "agent",
+            "sub-a",
+            "sub-b",
+            "sub-c",
+            "ppt"
+          ],
+          "exit": []
+        },
+        {
+          "id": "state-minutes",
+          "cue_ids": [
+            "cue-minutes"
+          ],
+          "beat_id": "cue-minutes-b01",
+          "axis_step_id": "a01",
+          "at": 302.1333333333,
+          "semantic_delta": "把一段会议录音整理成纪要",
+          "visual_delta": "第三行右侧显现纪要图示和名称，三行完整保留",
+          "understanding_evidence": "从左到右读分派与承担关系；每行同轴、同色，三个分支共享来源且互不串联。",
+          "focus": "minutes",
+          "visible_elements": [
+            "agent",
+            "sub-a",
+            "sub-b",
+            "sub-c",
+            "ppt",
+            "poster",
+            "minutes"
+          ],
+          "visible_relations": [
+            "delegate-a",
+            "delegate-b",
+            "delegate-c",
+            "work-a",
+            "work-b",
+            "work-c"
+          ],
+          "persist": [
+            "agent",
+            "sub-a",
+            "sub-b",
+            "sub-c",
+            "ppt",
+            "poster"
+          ],
+          "exit": []
+        }
+      ]
+    }
+  ],
+  "presentation": {
+    "title": "3. 多 Agent 分头干活",
+    "start": 285.5666666667,
+    "end": 310.2,
+    "dockAt": 288.6,
+    "legacyOffsetSeconds": 1.4333333333333333,
+    "colors": [
+      "#7CC8EA",
+      "#F18D9E",
+      "#A4D486"
+    ],
+    "tasks": [
+      {
+        "label": "汇报 PPT",
+        "at": 298.2
+      },
+      {
+        "label": "团建海报",
+        "at": 300.0
+      },
+      {
+        "label": "会议纪要",
+        "at": 302.1333333333
+      }
+    ],
+    "labels": [
+      "Agent",
+      "汇报 PPT",
+      "团建海报",
+      "会议纪要"
+    ],
+    "rows": [
+      390,
+      610,
+      830
+    ],
+    "progress": {
+      "start": 295,
+      "end": 310.2,
+      "initial": 0.025,
+      "gains": [
+        0.75,
+        0.82,
+        0.9
+      ],
+      "exponents": [
+        1.65,
+        1,
+        0.6
+      ],
+      "track": {
+        "x": 964,
+        "width": 280,
+        "height": 30
+      },
+      "source": "用户提供图2：同起点、多条圆角进度条，示意各子Agent同时处理；不显示真实百分比或已完成状态。"
+    },
+    "agentForm": {
+      "asset": "agent-course/agent-pet-cream-v8.png",
+      "inkViewBox": [
+        270,
+        271,
+        714,
+        777
+      ],
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "main": {
+        "x": 355,
+        "top": 430,
+        "height": 260,
+        "labelY": 800,
+        "fontSize": 82
+      },
+      "sub": {
+        "x": 871,
+        "height": 128,
+        "style": "outline",
+        "strokeWidth": 5.5
+      }
+    }
+  },
+  "timing_note": "主体与三份任务按当前course-subtitles.json句首校准；同时工作点列295s为“同时干”所在句内估计。输出帧=at×30，组件仍接收旧时钟再减43/30。",
+  "motion_reference": {
+    "id": "talkcraft:still-layout-relay",
+    "nameZh": "多图排版 + 焦点接力",
+    "recipe": "motion-library/matching/sources/talkcraft/cards/still-layout-relay.md",
+    "review": "已看原卡与012.jpg抽帧记录，未完整审听",
+    "adaptation": "保留talkcraft:still-layout-relay的位置保持与逐项揭示；用户图2提供主从布局和并行进度条。按最新反馈去掉子Agent标签，三只子Agent改为蓝粉绿粗线框，分派箭头加粗至7px。",
+    "sequence": "主Agent290.6s→三路分派293.3333s→同步进度条295s→298.2/300/302.1333s分别揭示任务→保持至310.2s",
+    "reading_hold": "图形0.55秒揭示；第一项1.25秒、第二项1.58秒稳定阅读后新增下一项，完整结构保持约7.5秒。",
+    "continuity": "同一标题和左侧Agent锚点贯穿本页。下接真实并行操作录屏，保留既有切点。",
+    "rejected": "quad-split-parallel-scenes只借并行关系判断，不采用其四象限高密度错拍；Awesome完整作品无更合适已核对片段。",
+    "user_reference": {
+      "path": "/var/folders/6h/gn0mvmws2gb53byp37jvhlkm0000gp/T/codex-clipboard-86e1d825-6b11-4e20-98ac-8fcf4f2ea541.png",
+      "adaptation": "大主Agent保留橙色实体与下方名称，三只小Agent改用同行颜色的粗线框且不加文字标签；进度条同步启动，不同速率。",
+      "library_check": "三库检索未发现比用户图2更直接的已核对机制，采用用户提供参考；不套用编号步骤堆入，以免暗示顺序。"
+    }
+  },
+  "review": {
+    "status": "正式合成已核对",
+    "frames": [
+      9105,
+      9270
+    ],
+    "sizes": [
+      "960×540全部关键状态",
+      "1920×1080完整任务状态"
+    ],
+    "findings": "三条进度条从354px缩短到280px，左端964保持，保留与小Agent的紧凑间距。已检查正式完整状态原尺寸和后续缩小状态，无碰撞，填充保持相同比例和并行时序。",
+    "structure": "validate_storyboard.py通过",
+    "typecheck": "npm run typecheck通过",
+    "limits": "正式合成定点抽帧检查，未连续完整审听。"
+  }
+}

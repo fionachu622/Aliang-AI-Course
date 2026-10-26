@@ -1,0 +1,270 @@
+{
+  "source": "agent-course/preview-proxies/practice-recording-only-v1.mp4",
+  "fromFrame": 14426,
+  "durationInFrames": 10202,
+  "clock": "legacy frames; original narration unchanged",
+  "policy": "整个案例只展示实际录屏；正常速度，关键结果保留供讲解",
+  "segments": [
+    {
+      "fromFrame": 14426,
+      "frames": 919,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/创建频道 2.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 7,
+      "rate": 1,
+      "label": "创建频道：任务输入与需求"
+    },
+    {
+      "fromFrame": 15345,
+      "frames": 110,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-19-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 3.0,
+      "rate": 1,
+      "label": "提出频道命名任务"
+    },
+    {
+      "fromFrame": 15455,
+      "frames": 109,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-20-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 3.6000000000000014,
+      "rate": 1,
+      "label": "查看候选名称"
+    },
+    {
+      "fromFrame": 15564,
+      "frames": 73,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-21-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 2.43333333333333,
+      "rate": 1,
+      "label": "选定万物说并创建"
+    },
+    {
+      "fromFrame": 15637,
+      "frames": 137,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-21-result-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 3.0,
+      "rate": 1,
+      "label": "确认万物说频道创建成功"
+    },
+    {
+      "fromFrame": 15774,
+      "frames": 486,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+      "sourceStart": 5,
+      "sourceEnd": 10,
+      "rate": 1,
+      "label": "讲解任务要求：保留实际输入内容"
+    },
+    {
+      "fromFrame": 16260,
+      "frames": 420,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-22-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 6.0,
+      "rate": 1,
+      "label": "发送视频要求与参考链接"
+    },
+    {
+      "fromFrame": 16680,
+      "frames": 1204,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+      "sourceStart": 5,
+      "sourceEnd": 10,
+      "rate": 1,
+      "label": "风格、讲解和审核要求：停留实际任务输入"
+    },
+    {
+      "fromFrame": 17884,
+      "frames": 141,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-23-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 4.5,
+      "rate": 1,
+      "label": "提交任务让Agent继续执行"
+    },
+    {
+      "fromFrame": 18025,
+      "frames": 1047,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+      "sourceStart": 60,
+      "sourceEnd": 94.9,
+      "rate": 1,
+      "label": "放手执行：查看实际处理过程"
+    },
+    {
+      "fromFrame": 19072,
+      "frames": 278,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-23-preview-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 5.0,
+      "rate": 1,
+      "label": "查看第一版普通蛹预览"
+    },
+    {
+      "fromFrame": 19350,
+      "frames": 166,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-24-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 5.0,
+      "rate": 1,
+      "label": "反馈机械3D效果"
+    },
+    {
+      "fromFrame": 19516,
+      "frames": 199,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+      "sourceStart": 540,
+      "sourceEnd": 546.633333,
+      "rate": 1,
+      "label": "检查与反馈：保留原预览和反馈"
+    },
+    {
+      "fromFrame": 19715,
+      "frames": 372,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-25-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 10.0,
+      "rate": 1,
+      "label": "查看重做后的模型"
+    },
+    {
+      "fromFrame": 20087,
+      "frames": 117,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-25-pupation-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 3.8999999999999986,
+      "rate": 1,
+      "label": "查看化蛹动作细节"
+    },
+    {
+      "fromFrame": 20204,
+      "frames": 84,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-26-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 2.799999999999997,
+      "rate": 1,
+      "label": "查看羽化动作细节"
+    },
+    {
+      "fromFrame": 20288,
+      "frames": 84,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-26-wings-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 2.799999999999997,
+      "rate": 1,
+      "label": "查看翅膀展开"
+    },
+    {
+      "fromFrame": 20372,
+      "frames": 152,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-26-replay-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 3.799999999999997,
+      "rate": 0.75,
+      "label": "放慢回看羽化过程"
+    },
+    {
+      "fromFrame": 20524,
+      "frames": 482,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/butterfly-preview-export.mp4",
+      "sourceStart": 58,
+      "sourceEnd": 74.066667,
+      "rate": 1,
+      "label": "预览检查：继续查看动作"
+    },
+    {
+      "fromFrame": 21006,
+      "frames": 403,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/butterfly-preview-export.mp4",
+      "sourceStart": 58,
+      "sourceEnd": 68.08,
+      "rate": 0.75,
+      "label": "具体反馈：以较慢动作供观察"
+    },
+    {
+      "fromFrame": 21409,
+      "frames": 435,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+      "sourceStart": 1340,
+      "sourceEnd": 1354.48,
+      "rate": 1,
+      "label": "说明反馈：保留实际对话与预览"
+    },
+    {
+      "fromFrame": 21844,
+      "frames": 441,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+      "sourceStart": 1354.48,
+      "sourceEnd": 1369.193333,
+      "rate": 1,
+      "label": "核对依据：查看实际任务记录"
+    },
+    {
+      "fromFrame": 22285,
+      "frames": 173,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-27-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 5.0,
+      "rate": 1,
+      "label": "确认效果后继续制作"
+    },
+    {
+      "fromFrame": 22458,
+      "frames": 245,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-28-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 7.0,
+      "rate": 1,
+      "label": "导出中文讲解与字幕"
+    },
+    {
+      "fromFrame": 22703,
+      "frames": 348,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-29-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 11.0,
+      "rate": 1,
+      "label": "上传与填写发布信息"
+    },
+    {
+      "fromFrame": 23051,
+      "frames": 204,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-30-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 6.0,
+      "rate": 1,
+      "label": "发布前最后确认"
+    },
+    {
+      "fromFrame": 23255,
+      "frames": 288,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-31-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 8.0,
+      "rate": 1,
+      "label": "检查发布结果与观看链接"
+    },
+    {
+      "fromFrame": 23543,
+      "frames": 408,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/recording-32-original-v1.mp4",
+      "sourceStart": 0,
+      "sourceEnd": 13.599999999999909,
+      "rate": 1,
+      "label": "播放频道内的成片"
+    },
+    {
+      "fromFrame": 23951,
+      "frames": 677,
+      "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+      "sourceStart": 3080,
+      "sourceEnd": 3102.553333,
+      "rate": 1,
+      "label": "收束案例：保留已发布作品播放"
+    }
+  ]
+}

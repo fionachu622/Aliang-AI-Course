@@ -1,0 +1,23 @@
+{
+  "source": "agent-course/preview-proxies/orders-full-continuous-v5-reveal-v1.mp4",
+  "from": 7240,
+  "durationInFrames": 1370,
+  "cutIds": [
+    "orders-intro-files",
+    "orders-intro-dates",
+    "orders-intro-overlap",
+    "orders-intro-work",
+    "orders-intro-task",
+    "orders-detail-request",
+    "orders-detail-submit",
+    "orders-detail-inspect",
+    "orders-detail-process",
+    "orders-detail-chart-first",
+    "orders-detail-autonomy",
+    "orders-detail-open",
+    "orders-detail-duplicates",
+    "orders-detail-total",
+    "orders-detail-chart-final"
+  ],
+  "basis": "V5结果揭示修正：276.4667秒之前保持Agent；打开后留在成果工作簿；预览从与渲染相同的原片区间重建，画面等比铺满。"
+}

@@ -1,5 +1,6 @@
 import {createContext, useContext} from 'react';
 import type {CSSProperties, ReactNode} from 'react';
+import {useMotionTreatment} from './MotionTreatment';
 import {
   AbsoluteFill,
   Easing,
@@ -24,54 +25,62 @@ export const v9Colors = {
 
 export const v9Fonts = {
   hand: '"HanziPen SC", "Kaiti SC", "STKaiti", serif',
+  geometric: '"Songti SC", "STSong", "SimSun", serif',
+  utility: '"IBM Plex Mono", "SFMono-Regular", monospace',
 };
+
+export type V9VisualStyle = 'hand' | 'geometric';
 
 const VisualBackgroundContext = createContext({
   backgroundFile: 'shared-visual/backgrounds/chalkboard/chalkboard.png',
   contentScale: 1,
+  contentTransformOrigin: 'top center',
+  contentTranslate: '116.8px 75.6px',
+  suppressZeroProgressStrokes: false,
+  handFontFamily: v9Fonts.hand,
   showBoxFinePrint: true,
   showContextRecap: true,
   showSceneNumbers: true,
+  visualStyle: 'hand' as V9VisualStyle,
 });
-
-export type V9MotionStyle = 'legacy' | 'apple';
-
-const VisualMotionContext = createContext<V9MotionStyle>('legacy');
-
-export const VisualMotionProvider = ({
-  style,
-  children,
-}: {
-  style: V9MotionStyle;
-  children: ReactNode;
-}) => (
-  <VisualMotionContext.Provider value={style}>
-    {children}
-  </VisualMotionContext.Provider>
-);
 
 export const VisualBackgroundProvider = ({
   backgroundFile,
   contentScale = 1,
+  contentTransformOrigin = 'top center',
+  contentTranslate = '116.8px 75.6px',
+  suppressZeroProgressStrokes = false,
+  handFontFamily = v9Fonts.hand,
   showBoxFinePrint = true,
   showContextRecap = true,
   showSceneNumbers = true,
+  visualStyle = 'hand',
   children,
 }: {
   backgroundFile: string;
   contentScale?: number;
+  contentTransformOrigin?: string;
+  contentTranslate?: string;
+  suppressZeroProgressStrokes?: boolean;
+  handFontFamily?: string;
   showBoxFinePrint?: boolean;
   showContextRecap?: boolean;
   showSceneNumbers?: boolean;
+  visualStyle?: V9VisualStyle;
   children: ReactNode;
 }) => (
   <VisualBackgroundContext.Provider
     value={{
       backgroundFile,
       contentScale,
+      contentTransformOrigin,
+      contentTranslate,
+      suppressZeroProgressStrokes,
+      handFontFamily,
       showBoxFinePrint,
       showContextRecap,
       showSceneNumbers,
+      visualStyle,
     }}
   >
     {children}
@@ -90,22 +99,30 @@ const clamp = {
   extrapolateRight: 'clamp' as const,
 };
 
+export type V9SceneTimingAnchor = {
+  frame: number;
+  designFrame: number;
+};
+
 const SceneTimingContext = createContext<{
   designDurationInFrames: number;
   durationInFrames: number;
+  timingAnchors?: readonly V9SceneTimingAnchor[];
 } | null>(null);
 
 export const V9SceneTimingProvider = ({
   designDurationInFrames,
   durationInFrames,
+  timingAnchors,
   children,
 }: {
   designDurationInFrames: number;
   durationInFrames: number;
+  timingAnchors?: readonly V9SceneTimingAnchor[];
   children: ReactNode;
 }) => (
   <SceneTimingContext.Provider
-    value={{designDurationInFrames, durationInFrames}}
+    value={{designDurationInFrames, durationInFrames, timingAnchors}}
   >
     {children}
   </SceneTimingContext.Provider>
@@ -116,6 +133,26 @@ export const useV9SceneFrame = () => {
   const timing = useContext(SceneTimingContext);
 
   if (!timing) return frame;
+
+  if (timing.timingAnchors && timing.timingAnchors.length >= 2) {
+    const anchors = timing.timingAnchors;
+    const first = anchors[0];
+    const last = anchors[anchors.length - 1];
+
+    if (frame <= first.frame) return first.designFrame;
+    if (frame >= last.frame) return last.designFrame;
+
+    const nextIndex = anchors.findIndex((anchor) => frame <= anchor.frame);
+    const previous = anchors[Math.max(0, nextIndex - 1)];
+    const next = anchors[nextIndex];
+
+    return interpolate(
+      frame,
+      [previous.frame, next.frame],
+      [previous.designFrame, next.designFrame],
+      clamp,
+    );
+  }
 
   return interpolate(
     frame,
@@ -291,19 +328,32 @@ export const fadeOut = (frame: number, from: number, duration = 16) =>
   1 - ease(frame, from, duration);
 
 export const Paper = ({children}: {children: ReactNode}) => {
-  const {backgroundFile, contentScale} = useContext(VisualBackgroundContext);
+  const motion = useMotionTreatment();
+  const {
+    backgroundFile,
+    contentScale,
+    contentTransformOrigin,
+    contentTranslate,
+    handFontFamily,
+    visualStyle,
+  } = useContext(VisualBackgroundContext);
 
   return (
     <AbsoluteFill
-      style={{
-        overflow: 'hidden',
-        color: v9Colors.ink,
-        fontFamily: v9Fonts.hand,
-        backgroundColor: v9Colors.paper,
-        textShadow: '0 0 .5px rgba(255,255,255,.45)',
-      }}
-    >
-      <Img
+  style={{
+    overflow: 'hidden',
+    color: v9Colors.ink,
+    fontFamily:
+      visualStyle === 'geometric' ? v9Fonts.geometric : handFontFamily,
+    fontWeight: visualStyle === 'geometric' ? 600 : undefined,
+    backgroundColor: motion?.externalBackground ? 'transparent' : v9Colors.paper,
+    textShadow:
+      visualStyle === 'geometric'
+        ? '0 1px 16px rgba(0,0,0,.16)'
+        : '0 0 .5px rgba(255,255,255,.45)',
+  }}
+  from={-730}>
+      {!motion?.externalBackground ? <Img
         src={staticFile(backgroundFile)}
         style={{
           position: 'absolute',
@@ -312,19 +362,20 @@ export const Paper = ({children}: {children: ReactNode}) => {
           height: '100%',
           objectFit: 'cover',
         }}
-      />
+      /> : null}
+      {!motion?.externalBackground ? <AbsoluteFill
+  style={{
+    background:
+      'radial-gradient(circle at 50% 48%, rgba(0,0,0,0) 30%, rgba(0,0,0,.11) 100%)',
+  }}
+  from={-1140} /> : null}
       <AbsoluteFill
-        style={{
-          background:
-            'radial-gradient(circle at 50% 48%, rgba(0,0,0,0) 30%, rgba(0,0,0,.11) 100%)',
-        }}
-      />
-      <AbsoluteFill
-        style={{
-          transform: `scale(${contentScale})`,
-          transformOrigin: 'top center',
-        }}
-      >
+style={{
+transform: `scale(${contentScale})`,
+transformOrigin: contentTransformOrigin,
+translate: contentTranslate
+}}
+ >
         {children}
       </AbsoluteFill>
     </AbsoluteFill>
@@ -335,6 +386,7 @@ export const Layer = ({
   amount,
   children,
   style,
+  motionVisibility,
   fromX = 0,
   fromY = 22,
   fromScale = 0.96,
@@ -342,26 +394,27 @@ export const Layer = ({
   amount: number;
   children: ReactNode;
   style?: CSSProperties;
+  /** Independent dim/exit multiplier; used only by an opt-in motion treatment. */
+  motionVisibility?: number;
   fromX?: number;
   fromY?: number;
   fromScale?: number;
 }) => {
-  const motionStyle = useContext(VisualMotionContext);
-  const motionRestraint = motionStyle === 'apple' ? 0.46 : 1;
-  const restrainedFromScale =
-    1 - (1 - fromScale) * motionRestraint;
-
-  return (
-    <div
-      style={{
-        opacity: amount,
-        transform: `translate(${(1 - amount) * fromX * motionRestraint}px, ${(1 - amount) * fromY * motionRestraint}px) scale(${restrainedFromScale + amount * (1 - restrainedFromScale)})`,
-        ...style,
-      }}
-    >
-      {children}
-    </div>
-  );
+  const motion = useMotionTreatment();
+  const motionStyle = motion?.layerStyle({amount, fromX, fromY, fromScale});
+  return <div
+    style={{
+      opacity: amount,
+      transform: `translate(${(1 - amount) * fromX}px, ${(1 - amount) * fromY}px) scale(${fromScale + amount * (1 - fromScale)})`,
+      ...motionStyle,
+      ...style,
+      ...(motion && motionVisibility !== undefined
+        ? {opacity: Number(motionStyle?.opacity ?? amount) * motionVisibility}
+        : {}),
+    }}
+  >
+    {children}
+  </div>;
 };
 
 export const RoughBox = ({
@@ -385,6 +438,52 @@ export const RoughBox = ({
   style?: CSSProperties;
   children?: ReactNode;
 }) => {
+  const {visualStyle, suppressZeroProgressStrokes} = useContext(
+    VisualBackgroundContext,
+  );
+  const strokeVisible = !suppressZeroProgressStrokes || progress > 0.001;
+
+  if (visualStyle === 'geometric') {
+    const inset = 12;
+    const corner = 38;
+    const frameStroke = Math.max(2.4, strokeWidth * 0.76);
+    return (
+      <div style={{position: 'relative', width, height, ...style}}>
+        <svg
+          viewBox={`0 0 ${width} ${height}`}
+          width={width}
+          height={height}
+          style={{position: 'absolute', inset: 0, overflow: 'visible'}}
+        >
+          <rect
+            x={inset}
+            y={inset}
+            width={width - inset * 2}
+            height={height - inset * 2}
+            rx={Math.max(8, radius)}
+            fill="rgba(245,241,232,.018)"
+            stroke={color}
+            strokeWidth={frameStroke}
+            pathLength={1}
+            strokeDasharray={1}
+            strokeDashoffset={1 - progress}
+          />
+          <path
+            d={`M ${inset} ${inset + corner} V ${inset} H ${inset + corner} M ${width - inset - corner} ${inset} H ${width - inset} V ${inset + corner} M ${width - inset} ${height - inset - corner} V ${height - inset} H ${width - inset - corner} M ${inset + corner} ${height - inset} H ${inset} V ${height - inset - corner}`}
+            fill="none"
+            stroke={color}
+            strokeWidth={frameStroke + 1.8}
+            pathLength={1}
+            strokeDasharray={1}
+            strokeDashoffset={1 - progress}
+            opacity={0.72}
+          />
+        </svg>
+        {children}
+      </div>
+    );
+  }
+
   const seed = stableSeed(seedKey);
   const primaryAmplitude = 2.62 + (seed % 7) * 0.13;
   const returnAmplitude = 1.76 + (seed % 5) * 0.12;
@@ -422,6 +521,7 @@ export const RoughBox = ({
           pathLength={1}
           strokeDasharray={1}
           strokeDashoffset={1 - progress}
+          opacity={strokeVisible ? 1 : 0}
         />
         <path
           d={returnStroke}
@@ -433,7 +533,7 @@ export const RoughBox = ({
           pathLength={1}
           strokeDasharray={1}
           strokeDashoffset={1 - progress}
-          opacity={0.24 + (seed % 4) * 0.02}
+          opacity={strokeVisible ? 0.24 + (seed % 4) * 0.02 : 0}
         />
       </svg>
       {children}
@@ -443,7 +543,7 @@ export const RoughBox = ({
 
 export const HandArrow = ({
   width,
-  progress,
+  progress: originalProgress,
   color = v9Colors.blue,
   style,
   bend = 0,
@@ -454,8 +554,56 @@ export const HandArrow = ({
   style?: CSSProperties;
   bend?: number;
 }) => {
+  const motion = useMotionTreatment();
+  const progress = motion?.strokeProgress(originalProgress) ?? originalProgress;
+  const {visualStyle, suppressZeroProgressStrokes} = useContext(
+    VisualBackgroundContext,
+  );
+  const strokeVisible = !suppressZeroProgressStrokes || progress > 0.001;
   const h = 100;
   const mid = h / 2;
+
+  if (visualStyle === 'geometric') {
+    const end = width - 30;
+    const controlY = mid + bend * 0.45;
+    return (
+      <svg
+        width={width}
+        height={h}
+        viewBox={`0 0 ${width} ${h}`}
+        style={{overflow: 'visible', ...style}}
+      >
+        <rect
+          x="7"
+          y={mid - 4}
+          width="8"
+          height="8"
+          fill={color}
+          opacity={progress}
+        />
+        <path
+          d={`M 15 ${mid} Q ${width / 2} ${controlY} ${end} ${mid}`}
+          fill="none"
+          stroke={color}
+          strokeWidth={3.2}
+          strokeLinecap="square"
+          pathLength={1}
+          strokeDasharray={1}
+          strokeDashoffset={1 - progress}
+        />
+        <path
+          d={`M ${end - 17} ${mid - 13} L ${end} ${mid} L ${end - 17} ${mid + 13}`}
+          fill="none"
+          stroke={color}
+          strokeWidth={3.2}
+          strokeLinecap="square"
+          strokeLinejoin="miter"
+          opacity={ease(progress, 0.72, 0.2)}
+        />
+      </svg>
+    );
+  }
+
   return (
     <svg
       width={width}
@@ -472,6 +620,7 @@ export const HandArrow = ({
         pathLength={1}
         strokeDasharray={1}
         strokeDashoffset={1 - progress}
+        opacity={strokeVisible ? 1 : 0}
       />
       <path
         d={roughArrowPath(width - 8, bend + 2, 43, 1.15)}
@@ -482,8 +631,20 @@ export const HandArrow = ({
         pathLength={1}
         strokeDasharray={1}
         strokeDashoffset={1 - progress}
-        opacity={0.28}
+        opacity={strokeVisible ? 0.28 : 0}
       />
+      {motion?.tracePen && progress > 0.03 && progress < 0.97 ? (
+        <path
+          d={roughArrowPath(width, bend, 17, 1.65)}
+          fill="none"
+          stroke={color}
+          strokeWidth={7}
+          strokeLinecap="round"
+          pathLength={1}
+          strokeDasharray="0.09 0.91"
+          strokeDashoffset={0.09 - progress}
+        />
+      ) : null}
       <path
         d={`M ${width - 58 + seededNoise(1, 61) * 2} ${mid - 18 + seededNoise(2, 61) * 2} L ${width - 27} ${mid + 1} L ${width - 57 + seededNoise(3, 61) * 2} ${mid + 19 + seededNoise(4, 61) * 2}`}
         fill="none"
@@ -499,7 +660,7 @@ export const HandArrow = ({
 
 export const HandUnderline = ({
   width,
-  progress,
+  progress: originalProgress,
   color = v9Colors.magenta,
   style,
 }: {
@@ -507,8 +668,56 @@ export const HandUnderline = ({
   progress: number;
   color?: string;
   style?: CSSProperties;
-}) => (
-  <svg width={width} height={30} viewBox={`0 0 ${width} 30`} style={style}>
+}) => {
+  const motion = useMotionTreatment();
+  const progress = motion?.strokeProgress(originalProgress) ?? originalProgress;
+  const {visualStyle, suppressZeroProgressStrokes} = useContext(
+    VisualBackgroundContext,
+  );
+  const strokeVisible = !suppressZeroProgressStrokes || progress > 0.001;
+
+  if (visualStyle === 'geometric') {
+    const end = width - 15;
+    return (
+      <svg width={width} height={30} viewBox={`0 0 ${width} 30`} style={style}>
+        <rect x="4" y="12" width="8" height="8" fill={color} opacity={progress} />
+        <path
+          d={`M 12 16 H ${end}`}
+          fill="none"
+          stroke={color}
+          strokeWidth={6}
+          strokeLinecap="butt"
+          pathLength={1}
+          strokeDasharray={1}
+          strokeDashoffset={1 - progress}
+        />
+        <rect
+          x={end - 5}
+          y="11"
+          width="10"
+          height="10"
+          fill={color}
+          opacity={ease(progress, 0.76, 0.18)}
+          transform={`rotate(45 ${end} 16)`}
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg width={width} height={30} viewBox={`0 0 ${width} 30`} style={style}>
+      {motion?.tracePen && progress > 0.03 && progress < 0.97 ? (
+        <path
+          d={roughUnderlinePath(width, 23, 1.85, 16)}
+          fill="none"
+          stroke={color}
+          strokeWidth={7}
+          strokeLinecap="round"
+          pathLength={1}
+          strokeDasharray="0.09 0.91"
+          strokeDashoffset={0.09 - progress}
+        />
+      ) : null}
       <path
       d={roughUnderlinePath(width, 23, 1.85, 16)}
       fill="none"
@@ -518,6 +727,7 @@ export const HandUnderline = ({
       pathLength={1}
       strokeDasharray={1}
       strokeDashoffset={1 - progress}
+      opacity={strokeVisible ? 1 : 0}
     />
     <path
       d={roughUnderlinePath(width, 47, 1.25, 19)}
@@ -528,10 +738,11 @@ export const HandUnderline = ({
       pathLength={1}
       strokeDasharray={1}
       strokeDashoffset={1 - progress}
-      opacity={0.28}
+      opacity={strokeVisible ? 0.28 : 0}
     />
-  </svg>
-);
+    </svg>
+  );
+};
 
 export const Highlight = ({
   progress,
@@ -541,26 +752,34 @@ export const Highlight = ({
   progress: number;
   color?: string;
   style?: CSSProperties;
-}) => (
-  <div
-    style={{
-      position: 'absolute',
-      left: 0,
-      top: '50%',
-      width: `${progress * 100}%`,
-      height: '64%',
-      borderRadius: '45% 54% 43% 51%',
-      background: color,
-      opacity: 0.26,
-      transform: 'translateY(-42%) rotate(-1deg)',
-      transformOrigin: 'left center',
-      filter: 'blur(1px)',
-      clipPath:
-        'polygon(0 19%, 7% 8%, 19% 15%, 31% 4%, 44% 13%, 57% 7%, 70% 16%, 84% 5%, 100% 18%, 98% 84%, 85% 91%, 72% 83%, 58% 94%, 43% 86%, 29% 95%, 14% 84%, 2% 91%)',
-      ...style,
-    }}
-  />
-);
+}) => {
+  const {visualStyle} = useContext(VisualBackgroundContext);
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: 0,
+        top: '50%',
+        width: `${progress * 100}%`,
+        height: visualStyle === 'geometric' ? '58%' : '64%',
+        borderRadius: visualStyle === 'geometric' ? 4 : '45% 54% 43% 51%',
+        background: color,
+        opacity: visualStyle === 'geometric' ? 0.18 : 0.26,
+        transform:
+          visualStyle === 'geometric'
+            ? 'translateY(-42%)'
+            : 'translateY(-42%) rotate(-1deg)',
+        transformOrigin: 'left center',
+        filter: visualStyle === 'geometric' ? undefined : 'blur(1px)',
+        clipPath:
+          visualStyle === 'geometric'
+            ? 'polygon(0 0, 96% 0, 100% 50%, 96% 100%, 0 100%)'
+            : 'polygon(0 19%, 7% 8%, 19% 15%, 31% 4%, 44% 13%, 57% 7%, 70% 16%, 84% 5%, 100% 18%, 98% 84%, 85% 91%, 72% 83%, 58% 94%, 43% 86%, 29% 95%, 14% 84%, 2% 91%)',
+        ...style,
+      }}
+    />
+  );
+};
 
 export const SceneNumber = ({current, total = 14}: {current: number; total?: number}) => {
   const {showSceneNumbers} = useContext(VisualBackgroundContext);
@@ -586,6 +805,7 @@ export const SceneNumber = ({current, total = 14}: {current: number; total?: num
 
 export const PaperWipe = () => {
   const frame = useCurrentFrame();
+  const {visualStyle} = useContext(VisualBackgroundContext);
   const x = interpolate(frame, [0, 11, 23], [-2100, 0, 2100], {
     ...clamp,
     easing: Easing.inOut(Easing.cubic),
@@ -599,10 +819,18 @@ export const PaperWipe = () => {
           top: -180,
           width: 2400,
           height: 1440,
-          background: v9Colors.paperDeep,
-          transform: `translateX(${x}px) rotate(-4deg)`,
+          background:
+            visualStyle === 'geometric'
+              ? 'linear-gradient(90deg, #1D2023 0%, #24272A 52%, #1D2023 100%)'
+              : v9Colors.paperDeep,
+          transform:
+            visualStyle === 'geometric'
+              ? `translateX(${x}px)`
+              : `translateX(${x}px) rotate(-4deg)`,
           boxShadow:
-            '-28px 0 42px rgba(235,235,225,.08), 28px 0 54px rgba(0,0,0,.38)',
+            visualStyle === 'geometric'
+              ? '-28px 0 58px rgba(124,200,234,.08), 28px 0 58px rgba(0,0,0,.42)'
+              : '-28px 0 42px rgba(235,235,225,.08), 28px 0 54px rgba(0,0,0,.38)',
         }}
       />
       <div
@@ -613,10 +841,12 @@ export const PaperWipe = () => {
           width: 24,
           height: '100%',
           background:
-            'repeating-linear-gradient(90deg, rgba(245,241,232,.04) 0 2px, rgba(245,241,232,.22) 3px 5px, transparent 6px 10px)',
+            visualStyle === 'geometric'
+              ? v9Colors.blue
+              : 'repeating-linear-gradient(90deg, rgba(245,241,232,.04) 0 2px, rgba(245,241,232,.22) 3px 5px, transparent 6px 10px)',
           opacity: 0.8,
-          filter: 'blur(2px)',
-          transform: 'rotate(-4deg)',
+          filter: visualStyle === 'geometric' ? 'blur(.5px)' : 'blur(2px)',
+          transform: visualStyle === 'geometric' ? undefined : 'rotate(-4deg)',
         }}
       />
     </AbsoluteFill>

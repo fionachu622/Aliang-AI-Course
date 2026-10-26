@@ -1,0 +1,29 @@
+[
+  {
+    "id": "concept",
+    "number": "01",
+    "title": "认识 Agent",
+    "start": 41.0666666667,
+    "end": 42.53,
+    "cue": "真人说完进入正题后，正文Agent定义开始",
+    "color": "#7CC8EA"
+  },
+  {
+    "id": "practice",
+    "number": "02",
+    "title": "使用实战",
+    "start": 477.52,
+    "end": 480.88,
+    "cue": "接下来我们通过一个实际的任务，一起来看一遍。",
+    "color": "#F18D9E"
+  },
+  {
+    "id": "tools",
+    "number": "03",
+    "title": "工具上手",
+    "start": 884.84,
+    "end": 887.16,
+    "cue": "日常想用 Agent 去哪找？",
+    "color": "#A4D486"
+  }
+]

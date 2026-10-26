@@ -1,0 +1,63 @@
+[
+  {
+    "source": "agent-course/preview-proxies/remaining-original-0-v1.mp4",
+    "durationInFrames": 429,
+    "cutIds": [
+      "recording-19",
+      "recording-20",
+      "recording-21",
+      "recording-21-result"
+    ],
+    "from": 15345
+  },
+  {
+    "source": "agent-course/preview-proxies/remaining-original-1-v1.mp4",
+    "durationInFrames": 420,
+    "cutIds": [
+      "recording-22"
+    ],
+    "from": 16260
+  },
+  {
+    "source": "agent-course/preview-proxies/remaining-original-2-v1.mp4",
+    "durationInFrames": 141,
+    "cutIds": [
+      "recording-23"
+    ],
+    "from": 17884
+  },
+  {
+    "source": "agent-course/preview-proxies/remaining-original-3-v1.mp4",
+    "durationInFrames": 444,
+    "cutIds": [
+      "recording-23-preview",
+      "recording-24"
+    ],
+    "from": 19072
+  },
+  {
+    "source": "agent-course/preview-proxies/remaining-original-4-v1.mp4",
+    "durationInFrames": 809,
+    "cutIds": [
+      "recording-25",
+      "recording-25-pupation",
+      "recording-26",
+      "recording-26-wings",
+      "recording-26-replay"
+    ],
+    "from": 19715
+  },
+  {
+    "source": "agent-course/preview-proxies/remaining-original-5-v1.mp4",
+    "durationInFrames": 1666,
+    "cutIds": [
+      "recording-27",
+      "recording-28",
+      "recording-29",
+      "recording-30",
+      "recording-31",
+      "recording-32"
+    ],
+    "from": 22285
+  }
+]

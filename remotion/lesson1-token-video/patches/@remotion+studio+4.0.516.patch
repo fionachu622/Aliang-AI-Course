@@ -1,0 +1,231 @@
+diff --git a/node_modules/@remotion/studio/dist/components/CompositionSelectorItem.js b/node_modules/@remotion/studio/dist/components/CompositionSelectorItem.js
+index 29c80d2..e0f404f 100644
+--- a/node_modules/@remotion/studio/dist/components/CompositionSelectorItem.js
++++ b/node_modules/@remotion/studio/dist/components/CompositionSelectorItem.js
+@@ -57,6 +57,30 @@ const iconStyle = {
+     height: 18,
+     flexShrink: 0,
+ };
++const sidebarItemMimeType = 'application/x-remotion-sidebar-item';
++let activeSidebarDrag = null;
++const getCompositionParentName = (composition) => {
++    if (composition.folderName === null || composition.folderName === undefined) {
++        return null;
++    }
++    return [composition.parentFolderName, composition.folderName]
++        .filter(Boolean)
++        .join('/');
++};
++const getSidebarItemDescriptor = (item) => {
++    if (item.type === 'folder') {
++        return {
++            itemType: 'folder',
++            itemId: [item.parentName, item.folderName].filter(Boolean).join('/'),
++            parentName: item.parentName,
++        };
++    }
++    return {
++        itemType: 'composition',
++        itemId: item.composition.id,
++        parentName: getCompositionParentName(item.composition),
++    };
++};
+ const CompositionSelectorItem = ({ item, level, currentComposition, tabIndex, selectComposition, toggleFolder, clearRootDragHover, }) => {
+     const selected = (0, react_1.useMemo)(() => {
+         if (item.type === 'composition') {
+@@ -73,6 +97,7 @@ const CompositionSelectorItem = ({ item, level, currentComposition, tabIndex, se
+     }, []);
+     const [isDragging, setIsDragging] = (0, react_1.useState)(false);
+     const [dragHovered, setDragHovered] = (0, react_1.useState)(false);
++    const [reorderDropPosition, setReorderDropPosition] = (0, react_1.useState)(null);
+     const compositionRowRef = (0, react_1.useRef)(null);
+     const compositionId = item.type === 'composition' ? item.composition.id : null;
+     (0, react_1.useLayoutEffect)(() => {
+@@ -93,9 +118,14 @@ const CompositionSelectorItem = ({ item, level, currentComposition, tabIndex, se
+                 : hovered || selected
+                     ? colors_1.WHITE_ALPHA_06
+                     : colors_1.TRANSPARENT,
++            boxShadow: reorderDropPosition === 'before'
++                ? `inset 0 2px 0 ${colors_1.BLUE}`
++                : reorderDropPosition === 'after'
++                    ? `inset 0 -2px 0 ${colors_1.BLUE}`
++                    : undefined,
+             paddingLeft: 12 + level * 8,
+         };
+-    }, [dragHovered, hovered, level, selected]);
++    }, [dragHovered, hovered, level, reorderDropPosition, selected]);
+     const label = (0, react_1.useMemo)(() => {
+         return {
+             ...labelStyle,
+@@ -155,26 +185,118 @@ const CompositionSelectorItem = ({ item, level, currentComposition, tabIndex, se
+         setSelectedModal,
+     ]);
+     const onCompositionDragStart = (0, react_1.useCallback)((event) => {
+-        var _a, _b, _c, _d;
+-        if (item.type !== 'composition' || window.remotion_isReadOnlyStudio) {
++        var _a, _b, _c, _d, _e;
++        if (window.remotion_isReadOnlyStudio) {
+             event.preventDefault();
+             return;
+         }
+         setIsDragging(true);
++        const sidebarItem = {
++            ...getSidebarItemDescriptor(item),
++            sourceFile: (_a = resolvedLocation === null || resolvedLocation === void 0 ? void 0 : resolvedLocation.source) !== null && _a !== void 0 ? _a : null,
++        };
++        activeSidebarDrag = sidebarItem;
++        event.dataTransfer.setData(sidebarItemMimeType, JSON.stringify(sidebarItem));
++        if (item.type === 'folder') {
++            event.dataTransfer.effectAllowed = 'move';
++            return;
++        }
+         event.dataTransfer.effectAllowed = 'copyMove';
+         const dragData = studio_protocol_1.StudioProtocolInternals.makeDragData({
+             type: 'composition',
+-            compositionFile: (_a = resolvedLocation === null || resolvedLocation === void 0 ? void 0 : resolvedLocation.source) !== null && _a !== void 0 ? _a : null,
++            compositionFile: (_b = resolvedLocation === null || resolvedLocation === void 0 ? void 0 : resolvedLocation.source) !== null && _b !== void 0 ? _b : null,
+             compositionId: item.composition.id,
+-            width: (_b = item.composition.width) !== null && _b !== void 0 ? _b : null,
+-            height: (_c = item.composition.height) !== null && _c !== void 0 ? _c : null,
+-            durationInFrames: (_d = item.composition.durationInFrames) !== null && _d !== void 0 ? _d : null,
++            width: (_c = item.composition.width) !== null && _c !== void 0 ? _c : null,
++            height: (_d = item.composition.height) !== null && _d !== void 0 ? _d : null,
++            durationInFrames: (_e = item.composition.durationInFrames) !== null && _e !== void 0 ? _e : null,
+         });
+         event.dataTransfer.setData(dragData.mimeType, dragData.payload);
+     }, [item, resolvedLocation === null || resolvedLocation === void 0 ? void 0 : resolvedLocation.source]);
+     const onCompositionDragEnd = (0, react_1.useCallback)(() => {
++        activeSidebarDrag = null;
+         setIsDragging(false);
++        setReorderDropPosition(null);
+     }, []);
++    const onSidebarItemDragOver = (0, react_1.useCallback)((event) => {
++        if (window.remotion_isReadOnlyStudio ||
++            !Array.from(event.dataTransfer.types).includes(sidebarItemMimeType)) {
++            return;
++        }
++        const target = getSidebarItemDescriptor(item);
++        if (activeSidebarDrag === null ||
++            activeSidebarDrag.itemType !== target.itemType ||
++            activeSidebarDrag.parentName !== target.parentName ||
++            activeSidebarDrag.itemId === target.itemId) {
++            return;
++        }
++        event.preventDefault();
++        event.stopPropagation();
++        event.dataTransfer.dropEffect = 'move';
++        const bounds = event.currentTarget.getBoundingClientRect();
++        setReorderDropPosition(event.clientY < bounds.top + bounds.height / 2 ? 'before' : 'after');
++        clearRootDragHover();
++    }, [clearRootDragHover, item]);
++    const onSidebarItemDragLeave = (0, react_1.useCallback)(() => {
++        setReorderDropPosition(null);
++    }, []);
++    const onSidebarItemDrop = (0, react_1.useCallback)(async (event) => {
++        const serialized = event.dataTransfer.getData(sidebarItemMimeType);
++        if (!serialized) {
++            return false;
++        }
++        let source;
++        try {
++            source = JSON.parse(serialized);
++        }
++        catch (_a) {
++            return true;
++        }
++        const target = getSidebarItemDescriptor(item);
++        if (source.itemType !== target.itemType ||
++            source.parentName !== target.parentName ||
++            source.itemId === target.itemId) {
++            return false;
++        }
++        event.preventDefault();
++        event.stopPropagation();
++        const position = reorderDropPosition !== null && reorderDropPosition !== void 0 ? reorderDropPosition : 'before';
++        setReorderDropPosition(null);
++        const notification = (0, NotificationCenter_1.showNotification)(`Reordering ${source.itemId}...`, null);
++        const controller = new AbortController();
++        try {
++            const result = await (0, actions_1.applyCodemod)({
++                codemod: {
++                    type: 'reorder-sidebar-item',
++                    itemType: source.itemType,
++                    itemId: source.itemId,
++                    targetId: target.itemId,
++                    parentName: target.parentName,
++                    position,
++                },
++                dryRun: false,
++                signal: controller.signal,
++                symbolicatedStack: source.sourceFile
++                    ? {
++                        originalColumnNumber: null,
++                        originalFileName: source.sourceFile,
++                        originalFunctionName: null,
++                        originalLineNumber: null,
++                        originalScriptCode: null,
++                    }
++                    : null,
++            });
++            if (result.success) {
++                notification.dismiss();
++            }
++            else {
++                notification.replaceContent(result.reason, 4000);
++            }
++        }
++        catch (err) {
++            notification.replaceContent(err instanceof Error ? err.message : String(err), 4000);
++        }
++        return true;
++    }, [item, reorderDropPosition]);
+     const onFolderDragOver = (0, react_1.useCallback)((event) => {
+         var _a;
+         if (item.type !== 'folder' ||
+@@ -253,12 +375,14 @@ const CompositionSelectorItem = ({ item, level, currentComposition, tabIndex, se
+     }, [clearRootDragHover, item, toggleFolder]);
+     if (item.type === 'folder') {
+         return (jsx_runtime_1.jsxs(jsx_runtime_1.Fragment, { children: [
+-                jsx_runtime_1.jsx(ContextMenu_1.ContextMenu, { getItems: getContextMenuItems, children: jsx_runtime_1.jsx(layout_1.Row, { align: "center", children: jsx_runtime_1.jsxs("div", { style: style, className: "__remotion-composition-selector-item", onPointerEnter: onPointerEnter, onPointerLeave: onPointerLeave, tabIndex: tabIndex, onClick: onClick, onKeyDown: onKeyDown, onDragOver: onFolderDragOver, onDragLeave: onFolderDragLeave, onDrop: onFolderDrop, title: item.folderName, role: "button", children: [item.expanded ? (jsx_runtime_1.jsx(folder_1.ExpandedFolderIcon, { style: iconStyle, color: hovered || selected ? colors_1.WHITE : colors_1.LIGHT_TEXT })) : (jsx_runtime_1.jsx(folder_1.CollapsedFolderIcon, { color: hovered || selected ? colors_1.WHITE : colors_1.LIGHT_TEXT, style: iconStyle })), jsx_runtime_1.jsx(layout_1.Spacing, { x: 1 }), jsx_runtime_1.jsx("div", { style: label, children: item.folderName }), jsx_runtime_1.jsx(layout_1.Spacing, { x: 0.5 }), jsx_runtime_1.jsx(CompositionContextButton_1.CompositionContextButton, { getItems: getContextMenuItems, visible: hovered })
++                jsx_runtime_1.jsx(ContextMenu_1.ContextMenu, { getItems: getContextMenuItems, children: jsx_runtime_1.jsx(layout_1.Row, { align: "center", children: jsx_runtime_1.jsxs("div", { style: style, className: "__remotion-composition-selector-item", onPointerEnter: onPointerEnter, onPointerLeave: onPointerLeave, tabIndex: tabIndex, onClick: onClick, onKeyDown: onKeyDown, draggable: !window.remotion_isReadOnlyStudio, onDragStart: onCompositionDragStart, onDragEnd: onCompositionDragEnd, onDragOver: (event) => { onSidebarItemDragOver(event); onFolderDragOver(event); }, onDragLeave: () => { onSidebarItemDragLeave(); onFolderDragLeave(); }, onDrop: async (event) => { const handled = await onSidebarItemDrop(event); if (!handled) {
++                            await onFolderDrop(event);
++                        } }, title: item.folderName, role: "button", children: [item.expanded ? (jsx_runtime_1.jsx(folder_1.ExpandedFolderIcon, { style: iconStyle, color: hovered || selected ? colors_1.WHITE : colors_1.LIGHT_TEXT })) : (jsx_runtime_1.jsx(folder_1.CollapsedFolderIcon, { color: hovered || selected ? colors_1.WHITE : colors_1.LIGHT_TEXT, style: iconStyle })), jsx_runtime_1.jsx(layout_1.Spacing, { x: 1 }), jsx_runtime_1.jsx("div", { style: label, children: item.folderName }), jsx_runtime_1.jsx(layout_1.Spacing, { x: 0.5 }), jsx_runtime_1.jsx(CompositionContextButton_1.CompositionContextButton, { getItems: getContextMenuItems, visible: hovered })
+                             ] }) }) }), item.expanded ? (jsx_runtime_1.jsx("div", { onDragOver: onFolderChildListDragOver, onDrop: onFolderDrop, children: item.items.map((childItem) => {
+                         return (jsx_runtime_1.jsx(exports.CompositionSelectorItem, { currentComposition: currentComposition, selectComposition: selectComposition, item: childItem, tabIndex: tabIndex, level: level + 1, toggleFolder: toggleFolder, clearRootDragHover: clearRootDragHover }, childItem.key + childItem.type));
+                     }) })) : null] }));
+     }
+-    return (jsx_runtime_1.jsx(ContextMenu_1.ContextMenu, { getItems: getContextMenuItems, children: jsx_runtime_1.jsx(layout_1.Row, { align: "center", children: jsx_runtime_1.jsxs("a", { ref: compositionRowRef, style: style, onPointerEnter: onPointerEnter, onPointerLeave: onPointerLeave, tabIndex: tabIndex, onClick: onClick, onKeyDown: onKeyDown, draggable: !window.remotion_isReadOnlyStudio, onDragStart: onCompositionDragStart, onDragEnd: onCompositionDragEnd, type: "button", title: item.composition.id, className: "__remotion-composition __remotion-composition-selector-item", "data-compname": item.composition.id, children: [
++    return (jsx_runtime_1.jsx(ContextMenu_1.ContextMenu, { getItems: getContextMenuItems, children: jsx_runtime_1.jsx(layout_1.Row, { align: "center", children: jsx_runtime_1.jsxs("a", { ref: compositionRowRef, style: style, onPointerEnter: onPointerEnter, onPointerLeave: onPointerLeave, tabIndex: tabIndex, onClick: onClick, onKeyDown: onKeyDown, draggable: !window.remotion_isReadOnlyStudio, onDragStart: onCompositionDragStart, onDragEnd: onCompositionDragEnd, onDragOver: onSidebarItemDragOver, onDragLeave: onSidebarItemDragLeave, onDrop: onSidebarItemDrop, type: "button", title: item.composition.id, className: "__remotion-composition __remotion-composition-selector-item", "data-compname": item.composition.id, children: [
+                     jsx_runtime_1.jsx(CompositionOrStillIcon_1.CompositionOrStillIcon, { composition: item.composition, color: hovered || selected ? colors_1.WHITE : colors_1.LIGHT_TEXT, style: iconStyle }), jsx_runtime_1.jsx(layout_1.Spacing, { x: 1 }), jsx_runtime_1.jsx("div", { style: label, children: item.composition.id }), jsx_runtime_1.jsx(layout_1.Spacing, { x: 0.5 }), jsx_runtime_1.jsx(CompositionContextButton_1.CompositionContextButton, { getItems: getContextMenuItems, visible: hovered && !isDragging }), jsx_runtime_1.jsx(SidebarRenderButton_1.SidebarRenderButton, { visible: hovered && !isDragging, composition: item.composition })
+                 ] }) }) }));
+ };
+diff --git a/node_modules/@remotion/studio/dist/components/folder-menu-items.js b/node_modules/@remotion/studio/dist/components/folder-menu-items.js
+index fa93caf..cbeaada 100644
+--- a/node_modules/@remotion/studio/dist/components/folder-menu-items.js
++++ b/node_modules/@remotion/studio/dist/components/folder-menu-items.js
+@@ -96,6 +96,25 @@ const getFolderMenuItems = ({ closeMenu, connectionStatus, folder, readOnlyStudi
+             value: 'new-composition-in-folder',
+             disabled: codemodDisabled,
+         },
++        {
++            id: 'new-subfolder-in-folder',
++            keyHint: null,
++            label: `New subfolder...`,
++            leftItem: null,
++            onClick: () => {
++                closeMenu();
++                setSelectedModal({
++                    type: 'new-folder',
++                    parentName: folderId,
++                    stack: folder.stack,
++                });
++            },
++            quickSwitcherLabel: 'New subfolder in folder...',
++            subMenu: null,
++            type: 'item',
++            value: 'new-subfolder-in-folder',
++            disabled: codemodDisabled,
++        },
+         {
+             id: 'rename-folder',
+             keyHint: null,

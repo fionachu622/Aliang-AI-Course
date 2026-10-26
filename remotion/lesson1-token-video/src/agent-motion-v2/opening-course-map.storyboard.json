@@ -1,0 +1,66 @@
+{
+  "purpose": "课程学习路线：左侧Agent作为主节点，右侧纵向三部分",
+  "subtitle_safe_top": 900,
+  "clock": "原口播时钟；本段位于删标题之前",
+  "cues": [
+    {
+      "frame": 663,
+      "spoken": "最基础的概念",
+      "visual": "认识Agent分支；不展示定义或结果关系"
+    },
+    {
+      "frame": 718,
+      "spoken": "完整实战",
+      "visual": "使用实战标题与分支"
+    },
+    {
+      "frame": 897,
+      "spoken": "实用工具",
+      "visual": "Agent 工具介绍标题、工具箱图标与分支"
+    },
+    {
+      "frame": 918,
+      "spoken": "可以上手",
+      "visual": "认识实用工具，上手使用说明"
+    }
+  ],
+  "constraints": [
+    "所有未来元素opacity=0",
+    "不出现品牌、具体案例、编造步骤",
+    "保留开场Agent移动与下一页承接"
+  ],
+  "voiceover_only": [
+    "不会编程，也能跟着学"
+  ],
+  "layout": "左侧小Agent；右侧三行图标+标题，各置于蓝/粉/绿13%透明底色的手绘轮廓框内；5px圆端曲线分支；无实战子流程、无底部对话",
+  "horizontal_offset": 90,
+  "layout_note": "整组可见内容向右90px，按Agent实际像素边界与右侧框边界居中；随入场move完成，下一页初始Agent x530承接",
+  "layout_metrics": {
+    "row_centers_y": [
+      230,
+      450,
+      670
+    ],
+    "frame_height_approx": 140,
+    "clear_gap_approx": 80,
+    "subtitle_safe_top": 900
+  },
+  "chapter_labels": [
+    {
+      "title": "认识 Agent",
+      "detail": "从基础概念讲起",
+      "detail_frame": 672
+    },
+    {
+      "title": "Agent 使用实战",
+      "detail": "从提出需求到把事情做成",
+      "detail_frame": 831
+    },
+    {
+      "title": "Agent 工具介绍",
+      "detail": "认识实用工具，上手使用",
+      "detail_frame": 918
+    }
+  ],
+  "scope_note": "目录参考正式章节名；不提前展示能力、原理、风险把关、选型或收费等口播尚未展开的细目"
+}

@@ -1,0 +1,496 @@
+{
+  "source": "agent-course/media/butterfly-case-aligned-v6.mp4",
+  "fromFrame": 15731,
+  "durationInFrames": 3708,
+  "endFrame": 19439,
+  "originalEndFrame": 24585,
+  "removedFrames": 5146,
+  "clock": "edited presenter v2, 30 fps",
+  "policy": "Only the paired real screen recording is visible during this case. It is muted; the full presenter master supplies all narration. Creation-channel footage and all other course content remain on their original cue clock.",
+  "recordingSource": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+  "segments": [
+    {
+      "id": 0,
+      "label": "说清结果",
+      "sourceStartFrame": 15731,
+      "sourceEndFrame": 15885,
+      "outputStartFrame": 0,
+      "frames": 154,
+      "shots": [
+        {
+          "sourceStart": 0.0,
+          "frames": 154,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "label": "效果参考",
+      "sourceStartFrame": 16216,
+      "sourceEndFrame": 16311,
+      "outputStartFrame": 154,
+      "frames": 95,
+      "shots": [
+        {
+          "sourceStart": 5.133333333333334,
+          "frames": 95,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "时长、中文讲解与字幕",
+      "sourceStartFrame": 16488,
+      "sourceEndFrame": 16602,
+      "outputStartFrame": 249,
+      "frames": 114,
+      "shots": [
+        {
+          "sourceStart": 8.3,
+          "frames": 114,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "先预览、确认后成片和发布",
+      "sourceStartFrame": 17335,
+      "sourceEndFrame": 17536,
+      "outputStartFrame": 363,
+      "frames": 201,
+      "shots": [
+        {
+          "sourceStart": 12.1,
+          "frames": 201,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "中间放手、让 Agent 自主推进",
+      "sourceStartFrame": 17841,
+      "sourceEndFrame": 18177,
+      "outputStartFrame": 564,
+      "frames": 336,
+      "shots": [
+        {
+          "sourceStart": 85,
+          "frames": 336,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "开始制作动画",
+      "sourceStartFrame": 18618,
+      "sourceEndFrame": 18690,
+      "outputStartFrame": 900,
+      "frames": 72,
+      "shots": [
+        {
+          "sourceStart": 96.2,
+          "frames": 72,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "label": "查看初版",
+      "sourceStartFrame": 19029,
+      "sourceEndFrame": 19144,
+      "outputStartFrame": 972,
+      "frames": 115,
+      "shots": [
+        {
+          "sourceStart": 474,
+          "frames": 115,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "label": "普通模型与机械质感存在差距",
+      "sourceStartFrame": 19144,
+      "sourceEndFrame": 19307,
+      "outputStartFrame": 1087,
+      "frames": 163,
+      "shots": [
+        {
+          "sourceStart": 525,
+          "frames": 163,
+          "crop": [
+            676.73343605547,
+            212.01848998459167,
+            862.8659476117103,
+            485.67026194144836
+          ],
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "label": "真实反馈指令",
+      "sourceStartFrame": 19307,
+      "sourceEndFrame": 19473,
+      "outputStartFrame": 1250,
+      "frames": 166,
+      "shots": [
+        {
+          "sourceStart": 793,
+          "frames": 166,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "label": "放手不等于不检查",
+      "sourceStartFrame": 19473,
+      "sourceEndFrame": 19672,
+      "outputStartFrame": 1416,
+      "frames": 199,
+      "shots": [
+        {
+          "sourceStart": 812,
+          "frames": 199,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "label": "说清具体问题",
+      "sourceStartFrame": 21366,
+      "sourceEndFrame": 21469,
+      "outputStartFrame": 1615,
+      "frames": 103,
+      "shots": [
+        {
+          "sourceStart": 819,
+          "frames": 103,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "label": "说明期望效果、无需教代码",
+      "sourceStartFrame": 21621,
+      "sourceEndFrame": 21801,
+      "outputStartFrame": 1718,
+      "frames": 180,
+      "shots": [
+        {
+          "sourceStart": 822.44,
+          "frames": 180,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "label": "重做后的蓝金机械模型",
+      "sourceStartFrame": 19672,
+      "sourceEndFrame": 19885,
+      "outputStartFrame": 1898,
+      "frames": 213,
+      "shots": [
+        {
+          "sourceStart": 1408,
+          "frames": 213,
+          "crop": [
+            640,
+            90,
+            950,
+            534
+          ],
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "label": "第三步：关键把关",
+      "sourceStartFrame": 20481,
+      "sourceEndFrame": 20632,
+      "outputStartFrame": 2111,
+      "frames": 151,
+      "shots": [
+        {
+          "sourceStart": 1415.12,
+          "frames": 151,
+          "crop": [
+            640,
+            90,
+            950,
+            534
+          ],
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "label": "导出成片、准备讲解字幕和发布信息",
+      "sourceStartFrame": 22324,
+      "sourceEndFrame": 22561,
+      "outputStartFrame": 2262,
+      "frames": 237,
+      "shots": [
+        {
+          "sourceStart": 1450,
+          "frames": 91,
+          "crop": null,
+          "rate": 1
+        },
+        {
+          "sourceStart": 2643,
+          "frames": 146,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "label": "检查成片与化蛹过程",
+      "sourceStartFrame": 19989,
+      "sourceEndFrame": 20161,
+      "outputStartFrame": 2499,
+      "frames": 172,
+      "shots": [
+        {
+          "sourceStart": 2689,
+          "frames": 172,
+          "crop": [
+            250,
+            130,
+            900,
+            506
+          ],
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "label": "检查羽化",
+      "sourceStartFrame": 20161,
+      "sourceEndFrame": 20245,
+      "outputStartFrame": 2671,
+      "frames": 84,
+      "shots": [
+        {
+          "sourceStart": 2731,
+          "frames": 84,
+          "crop": [
+            250,
+            130,
+            900,
+            506
+          ],
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "label": "检查展翅",
+      "sourceStartFrame": 20245,
+      "sourceEndFrame": 20286,
+      "outputStartFrame": 2755,
+      "frames": 41,
+      "shots": [
+        {
+          "sourceStart": 2748,
+          "frames": 41,
+          "crop": [
+            250,
+            130,
+            900,
+            506
+          ],
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "label": "看过成片后同意发布",
+      "sourceStartFrame": 22242,
+      "sourceEndFrame": 22324,
+      "outputStartFrame": 2796,
+      "frames": 82,
+      "shots": [
+        {
+          "sourceStart": 2800,
+          "frames": 82,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "label": "开始操作发布网页",
+      "sourceStartFrame": 22660,
+      "sourceEndFrame": 22698,
+      "outputStartFrame": 2878,
+      "frames": 38,
+      "shots": [
+        {
+          "sourceStart": 3019,
+          "frames": 38,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "label": "从制作推进到发布",
+      "sourceStartFrame": 22905,
+      "sourceEndFrame": 23008,
+      "outputStartFrame": 2916,
+      "frames": 103,
+      "shots": [
+        {
+          "sourceStart": 3020.28,
+          "frames": 103,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "label": "发布回执、核对频道与标题",
+      "sourceStartFrame": 23212,
+      "sourceEndFrame": 23457,
+      "outputStartFrame": 3019,
+      "frames": 245,
+      "shots": [
+        {
+          "sourceStart": 3051,
+          "frames": 245,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "label": "打开观看链接",
+      "sourceStartFrame": 23457,
+      "sourceEndFrame": 23500,
+      "outputStartFrame": 3264,
+      "frames": 43,
+      "shots": [
+        {
+          "sourceStart": 3060,
+          "frames": 43,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "label": "确认正常播放",
+      "sourceStartFrame": 23500,
+      "sourceEndFrame": 23605,
+      "outputStartFrame": 3307,
+      "frames": 105,
+      "shots": [
+        {
+          "sourceStart": 3075,
+          "frames": 105,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "label": "收束三步方法与交付检查",
+      "sourceStartFrame": 24289,
+      "sourceEndFrame": 24585,
+      "outputStartFrame": 3412,
+      "frames": 296,
+      "shots": [
+        {
+          "sourceStart": 3103,
+          "frames": 296,
+          "crop": null,
+          "rate": 1
+        }
+      ]
+    }
+  ],
+  "openingFix": "前154帧停留原片第1秒频道创建结果（输入框空白）；随后一次切入第7秒完整指令页面，停留410帧至中间放手。删除提前露出的输入内容，口播及后续镜头不变。",
+  "feedbackFix": "初版效果镜头只展示右侧动画，避免提前露出尚未提交的机械3D反馈；下一段完整保留一次指令输入，后续已发送消息和执行过程保持不变。",
+  "openingVisualOverride": {
+    "fps": 30,
+    "endFrame": 564,
+    "holds": [
+      {
+        "sourceFrame": 30,
+        "frames": 154
+      },
+      {
+        "sourceFrame": 210,
+        "frames": 410
+      }
+    ]
+  },
+  "progressVisualOverride": {
+    "fromFrame": 564,
+    "durationInFrames": 408,
+    "shots": [
+      {
+        "sourceStart": 108,
+        "frames": 100,
+        "rate": 1,
+        "crop": null
+      },
+      {
+        "sourceStart": 168,
+        "frames": 104,
+        "rate": 1,
+        "crop": null
+      },
+      {
+        "sourceStart": 298,
+        "frames": 104,
+        "rate": 1,
+        "crop": null
+      },
+      {
+        "sourceStart": 375,
+        "frames": 100,
+        "rate": 1,
+        "crop": null
+      }
+    ],
+    "policy": "按原录屏时间顺序跳过等待，呈现实际新增说明和文件执行进展；正常速度，不循环，不变更口播。"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "Agent03": [
+    {
+      "from": 0,
+      "to": 337,
+      "paragraphs": [
+        "P009",
+        "P010",
+        "P011"
+      ]
+    }
+  ],
+  "Agent05": [
+    {
+      "from": 98,
+      "to": 390,
+      "paragraphs": [
+        "P018",
+        "P019",
+        "P020"
+      ]
+    }
+  ],
+  "Agent06": [
+    {
+      "from": 115,
+      "to": 390,
+      "paragraphs": [
+        "P022",
+        "P023",
+        "P024"
+      ]
+    }
+  ],
+  "Agent07": [
+    {
+      "from": 61,
+      "to": 276,
+      "paragraphs": [
+        "P026",
+        "P027",
+        "P028",
+        "P029"
+      ]
+    }
+  ],
+  "Agent10": [
+    {
+      "from": 237,
+      "to": 360,
+      "paragraphs": [
+        "P045"
+      ]
+    }
+  ],
+  "Agent11": [
+    {
+      "from": 33,
+      "to": 399,
+      "paragraphs": [
+        "P047",
+        "P048",
+        "P049",
+        "P050"
+      ]
+    }
+  ],
+  "Agent12": [
+    {
+      "from": 19,
+      "to": 360,
+      "paragraphs": [
+        "P053",
+        "P054",
+        "P055"
+      ]
+    }
+  ],
+  "Agent13": [
+    {
+      "from": 0,
+      "to": 360,
+      "paragraphs": [
+        "P056",
+        "P057"
+      ]
+    }
+  ],
+  "Agent14": [
+    {
+      "from": 0,
+      "to": 79,
+      "paragraphs": [
+        "P058"
+      ]
+    }
+  ],
+  "Agent15": [
+    {
+      "from": 0,
+      "to": 374,
+      "paragraphs": [
+        "P064",
+        "P065",
+        "P066"
+      ]
+    }
+  ],
+  "Agent16": [
+    {
+      "from": 23,
+      "to": 100,
+      "paragraphs": [
+        "P069"
+      ]
+    }
+  ]
+}

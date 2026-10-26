@@ -1,0 +1,306 @@
+{
+  "id": "p008",
+  "start": 654,
+  "duration": 238,
+  "startSeconds": 21.79,
+  "css": ".agent-html-scene{\n --bg-0:#F5F2EF; --bg-1:#EDE9E5; --bg-2:#FFFFFF;\n --text:#202833; --text-dim:#67717E; --text-muted:#8B929B;\n --accent:#2563EB; --accent-soft:#E4EDFF; --accent-border:#A8C2FB;\n --accent-glow:rgba(37,99,235,.13); --signal:#2563EB; --warn:#95682E; --ok:#2563EB;\n --line:#D8DCE1; --line-soft:rgba(55,70,88,.055); --card-bg:#FFFFFF;\n --bg-radial:radial-gradient(ellipse at 72% 42%,#E8EDF8 0%,#F5F2EF 63%);\n --mg-sub-fg:#202833; --mg-sub-stroke:#F5F2EF; --mg-track:#D8DCE1; --mg-tick:#8B929B;\n}.agent-html-scene *{box-sizing:border-box;margin:0;padding:0}.agent-html-scene{width:1920px;height:1080px;overflow:hidden;background:var(--bg-0);color:var(--text);font-family:'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;-webkit-font-smoothing:antialiased}.agent-html-scene .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);background-size:96px 96px}.agent-html-scene .top{position:absolute;left:112px;right:112px;top:64px;display:flex;justify-content:space-between;align-items:center;font-size:24px;letter-spacing:2px;color:var(--text-dim)}.agent-html-scene .top b{color:var(--accent);font-weight:600}.agent-html-scene .rule{position:absolute;left:112px;right:112px;top:116px;height:2px;background:var(--line)}.agent-html-scene .eyebrow{font-size:26px;letter-spacing:4px;color:var(--accent);font-weight:600}.agent-html-scene .stage{position:absolute;left:112px;right:112px;top:180px;height:660px}.agent-html-scene h1{font-size:100px;line-height:1.2;letter-spacing:-3px;font-weight:650}.agent-html-scene h2{font-size:64px;line-height:1.25;font-weight:600;letter-spacing:-1px}.agent-html-scene em{font-style:normal;color:var(--accent)}.agent-html-scene .dim{color:var(--text-dim)}.agent-html-scene .foot{position:absolute;left:112px;right:112px;top:851px;display:flex;justify-content:space-between;font-size:22px;color:var(--text-dim)}.agent-html-scene .focus{border:2px solid var(--accent-border);background:var(--accent-soft);box-shadow:0 10px 60px var(--accent-glow)}.agent-html-scene .panel{background:var(--card-bg);border:1px solid var(--line);border-radius:20px;padding:38px}.agent-html-scene .label{font-size:26px;color:var(--text-dim);line-height:1.5}.agent-html-scene .large{font-size:96px;font-weight:650;line-height:1.2}.agent-html-scene .body{font-size:36px;line-height:1.6}.agent-html-scene .pill{padding:10px 22px;border:1px solid var(--line);border-radius:40px;font-size:24px;color:var(--text-dim)}.agent-html-scene{width:1920px;height:1080px;font-family:'PingFang SC','Microsoft YaHei',sans-serif}.agent-html-scene .stage h1{margin-top:90px;font-size:102px;line-height:1.35}.agent-html-scene .folder{position:absolute;right:40px;top:55px;width:580px;height:490px;border-radius:28px;display:flex;flex-direction:column;align-items:center;justify-content:center}.agent-html-scene .folder div{font-size:34px;margin-top:4px;color:var(--accent)}.agent-html-scene .example-label{margin-top:64px;font-size:30px;color:var(--text-dim)}",
+  "nodes": [
+    "\n",
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "grid"
+      },
+      "children": [],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "top"
+      },
+      "children": [
+        {
+          "tag": "b",
+          "attrs": {},
+          "children": [
+            "AGENT / 专题课"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "01　认识 Agent"
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "rule"
+      },
+      "children": [],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "stage"
+      },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "eyebrow"
+          },
+          "children": [
+            "接下来 / 看它怎么做"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "h1",
+          "attrs": {},
+          "children": [
+            "让 Agent",
+            {
+              "tag": "br",
+              "attrs": {},
+              "children": [],
+              "tracks": []
+            },
+            {
+              "tag": "em",
+              "attrs": {},
+              "children": [
+                "整理电脑文件夹"
+              ],
+              "tracks": []
+            }
+          ],
+          "tracks": [
+            {
+              "kind": "fromTo",
+              "from": {
+                "opacity": 0,
+                "y": 20
+              },
+              "to": {
+                "opacity": 1,
+                "y": 0,
+                "duration": 0.5
+              },
+              "at": 0,
+              "duration": 0.5,
+              "ease": "power1.out"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "folder focus"
+          },
+          "children": [
+            {
+              "tag": "svg",
+              "attrs": {
+                "width": "470",
+                "height": "350",
+                "viewbox": "0 0 470 350"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M50 96 L50 65 Q50 43 74 43 L190 43 L228 85 L398 85 Q422 85 422 110 L422 290 Q422 316 398 316 L74 316 Q50 316 50 292 Z",
+                    "fill": "var(--accent-soft)",
+                    "stroke": "var(--accent)",
+                    "stroke-width": "5"
+                  },
+                  "children": [],
+                  "tracks": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M50 126 L422 126",
+                    "fill": "none",
+                    "stroke": "var(--accent)",
+                    "stroke-width": "4"
+                  },
+                  "children": [],
+                  "tracks": []
+                },
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M204 210 L230 236 L285 177",
+                    "fill": "none",
+                    "stroke": "var(--accent)",
+                    "stroke-width": "10",
+                    "stroke-linecap": "round",
+                    "stroke-linejoin": "round"
+                  },
+                  "children": [],
+                  "tracks": [
+                    {
+                      "kind": "fromTo",
+                      "from": {
+                        "opacity": 0
+                      },
+                      "to": {
+                        "opacity": 1,
+                        "duration": 0.4
+                      },
+                      "at": 4.405,
+                      "duration": 0.4,
+                      "ease": "power1.out"
+                    }
+                  ]
+                }
+              ],
+              "tracks": []
+            },
+            {
+              "tag": "div",
+              "attrs": {},
+              "children": [
+                "临时文件夹"
+              ],
+              "tracks": []
+            }
+          ],
+          "tracks": [
+            {
+              "kind": "fromTo",
+              "from": {
+                "opacity": 0,
+                "scale": 0.94,
+                "x": 25
+              },
+              "to": {
+                "opacity": 1,
+                "scale": 1,
+                "x": 0,
+                "duration": 0.7
+              },
+              "at": 2.855,
+              "duration": 0.7,
+              "ease": "power1.out"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "example-label"
+          },
+          "children": [
+            "交代任务　→　执行操作　→　检查结果"
+          ],
+          "tracks": [
+            {
+              "kind": "fromTo",
+              "from": {
+                "opacity": 0
+              },
+              "to": {
+                "opacity": 1,
+                "duration": 0.4
+              },
+              "at": 6.543,
+              "duration": 0.4,
+              "ease": "power1.out"
+            }
+          ]
+        }
+      ],
+      "tracks": []
+    },
+    "\n",
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "foot"
+      },
+      "children": [
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "从提出需求，到交付结果"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "第一章 / 第二章"
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    },
+    "\n"
+  ],
+  "blocks": [
+    {
+      "text": "它到底怎么替你干活",
+      "spoken": "它到底怎么替你干活？",
+      "from": 1,
+      "to": 58,
+      "local_start_sec": 0.0,
+      "global_start_sec": 21.79,
+      "global_end_sec": 23.732,
+      "size": 44
+    },
+    {
+      "text": "别急",
+      "spoken": "别急，",
+      "from": 59,
+      "to": 86,
+      "local_start_sec": 1.942,
+      "global_start_sec": 23.732,
+      "global_end_sec": 24.645,
+      "size": 44
+    },
+    {
+      "text": "我给大家演示一下",
+      "spoken": "我给大家演示一下，",
+      "from": 87,
+      "to": 132,
+      "local_start_sec": 2.855,
+      "global_start_sec": 24.645,
+      "global_end_sec": 26.195,
+      "size": 44
+    },
+    {
+      "text": "让Agent整理电脑文件夹",
+      "spoken": "让 Agent 整理电脑文件夹，",
+      "from": 133,
+      "to": 196,
+      "local_start_sec": 4.405,
+      "global_start_sec": 26.195,
+      "global_end_sec": 28.332,
+      "size": 44
+    },
+    {
+      "text": "看完你就懂了",
+      "spoken": "看完你就懂了。",
+      "from": 197,
+      "to": 225,
+      "local_start_sec": 6.543,
+      "global_start_sec": 28.332,
+      "global_end_sec": 29.297,
+      "size": 44
+    }
+  ]
+}

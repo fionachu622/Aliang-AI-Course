@@ -1,3 +1,16 @@
 .env
 node_modules/
 out/
+build/
+checks/
+.DS_Store
+*.log
+
+public/ai-ppt/*.mp4
+handoff/ai-ppt/downloads/
+handoff/ai-ppt/originals/
+work/
+
+public/fonts/*.otf
+public/fonts/*.ttf
+public/fonts/*.woff2

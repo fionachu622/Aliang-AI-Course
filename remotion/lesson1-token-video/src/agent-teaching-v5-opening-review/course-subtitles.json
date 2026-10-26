@@ -1,0 +1,5314 @@
+[
+  {
+    "text": "一条视频带你彻底讲",
+    "startMs": 466.667,
+    "endMs": 1666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "明白关于Agent的一切",
+    "startMs": 1933.333,
+    "endMs": 3266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "视频很长",
+    "startMs": 3666.667,
+    "endMs": 4066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "可以先点赞收藏加关注",
+    "startMs": 4266.667,
+    "endMs": 5666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "划走了就找不回来了",
+    "startMs": 6066.667,
+    "endMs": 7333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "好了开始",
+    "startMs": 7600.0,
+    "endMs": 8466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "有没有一些事",
+    "startMs": 9666.667,
+    "endMs": 10400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "不是你做不了",
+    "startMs": 10533.333,
+    "endMs": 11400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "而是嫌麻烦",
+    "startMs": 11666.667,
+    "endMs": 12600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "要是你说一句AI就能帮你去做",
+    "startMs": 12866.667,
+    "endMs": 15266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你想不想试试",
+    "startMs": 15533.333,
+    "endMs": 16533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "现在已经有这样的AI了",
+    "startMs": 16933.333,
+    "endMs": 18400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它叫Agent",
+    "startMs": 18666.667,
+    "endMs": 19466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这节课我们会从最基础的概念讲起",
+    "startMs": 19933.333,
+    "endMs": 22066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "再通过一次完整的实战",
+    "startMs": 22266.667,
+    "endMs": 23533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "带你看看提出需求以后",
+    "startMs": 23866.667,
+    "endMs": 25133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent是怎么一步步把事情做完的",
+    "startMs": 25400.0,
+    "endMs": 27666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "最后再看看有哪些",
+    "startMs": 28000.0,
+    "endMs": 29000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "实用工具可以上手",
+    "startMs": 29000.0,
+    "endMs": 30133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "不会编程也能跟着学",
+    "startMs": 30400.0,
+    "endMs": 31866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "看完这节课",
+    "startMs": 32333.333,
+    "endMs": 32933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你也可以把手头上",
+    "startMs": 32933.333,
+    "endMs": 33733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "的麻烦事交给Agent",
+    "startMs": 33866.667,
+    "endMs": 34933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "让它帮你干",
+    "startMs": 35400.0,
+    "endMs": 36266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "那Agent到底是什么",
+    "startMs": 36466.667,
+    "endMs": 37800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我们直接进入正题",
+    "startMs": 38133.333,
+    "endMs": 39266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent中文通常叫智能体",
+    "startMs": 39600.0,
+    "endMs": 41433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你可以先把它理解成",
+    "startMs": 41700.0,
+    "endMs": 42700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "一种能替你办事的AI",
+    "startMs": 42833.333,
+    "endMs": 44700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它不是某一个软件的名字",
+    "startMs": 45033.333,
+    "endMs": 46500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "也不是一种新的大模型",
+    "startMs": 46633.333,
+    "endMs": 48300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "而是一类AI系统",
+    "startMs": 48500.0,
+    "endMs": 49700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你提需求它干活",
+    "startMs": 50300.0,
+    "endMs": 51566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "最后交付结果",
+    "startMs": 51566.667,
+    "endMs": 52633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它到底是怎么替你干活的",
+    "startMs": 53033.333,
+    "endMs": 54900.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "别急我给大家演示一下",
+    "startMs": 55100.0,
+    "endMs": 56566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "让Agent整理电脑文件夹",
+    "startMs": 56833.333,
+    "endMs": 58566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "看完你就懂了",
+    "startMs": 58966.667,
+    "endMs": 59966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "好我们先打开桌面的临时文件夹",
+    "startMs": 60566.667,
+    "endMs": 62833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "文档图片安装包表格全混在一起",
+    "startMs": 63300.0,
+    "endMs": 66766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "乱糟糟的",
+    "startMs": 67033.333,
+    "endMs": 67966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "如果问AI怎么整理",
+    "startMs": 68366.667,
+    "endMs": 69633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它会给我一套方法",
+    "startMs": 69833.333,
+    "endMs": 70966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "但还是得我自己上手",
+    "startMs": 71366.667,
+    "endMs": 73300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这次我直接让Agent来做",
+    "startMs": 73633.333,
+    "endMs": 75500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "打开桌面的临时文件夹",
+    "startMs": 75700.0,
+    "endMs": 77233.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "把里面的文件按项目整理好",
+    "startMs": 77633.333,
+    "endMs": 79966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你看它开始查看文件夹里的文件",
+    "startMs": 80100.0,
+    "endMs": 82133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "自己判断哪些文件是一起的",
+    "startMs": 82266.667,
+    "endMs": 84200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "然后创建文件夹",
+    "startMs": 84400.0,
+    "endMs": 85533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "再把文件一个个放进去",
+    "startMs": 86133.333,
+    "endMs": 87800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "中间这些操作我不用一步一步指挥",
+    "startMs": 88000.0,
+    "endMs": 90333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我们打开看看",
+    "startMs": 91466.667,
+    "endMs": 92200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "现在这个文件夹里就",
+    "startMs": 92600.0,
+    "endMs": 93733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "剩几个项目文件夹了",
+    "startMs": 94000.0,
+    "endMs": 95466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "文件都被放进了各自的项目里",
+    "startMs": 95600.0,
+    "endMs": 97600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我打开两个看看",
+    "startMs": 97866.667,
+    "endMs": 98933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "活动项目里",
+    "startMs": 99400.0,
+    "endMs": 100266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "海报背景和报名名单放在了一起",
+    "startMs": 100466.667,
+    "endMs": 102866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "正好是一个活动的材料",
+    "startMs": 103200.0,
+    "endMs": 104533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "财务项目里",
+    "startMs": 105200.0,
+    "endMs": 105800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "报销单据也归对了",
+    "startMs": 106066.667,
+    "endMs": 107266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "确认没问题",
+    "startMs": 107533.333,
+    "endMs": 108266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "任务完成",
+    "startMs": 108466.667,
+    "endMs": 109133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你交代任务",
+    "startMs": 109400.0,
+    "endMs": 110133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它动手去做",
+    "startMs": 110400.0,
+    "endMs": 111200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "最后由你检查结果",
+    "startMs": 111333.333,
+    "endMs": 112666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这种能帮你办事的AI就是Agent",
+    "startMs": 113066.667,
+    "endMs": 115600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "其实这样的Agent不是",
+    "startMs": 116200.0,
+    "endMs": 117066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "一开始就人人能用的",
+    "startMs": 117333.333,
+    "endMs": 118600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "最早只有程序员能用它",
+    "startMs": 118800.0,
+    "endMs": 120266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "在一个黑屏的终端里敲命令",
+    "startMs": 120966.667,
+    "endMs": 122800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "让它写代码跑程序",
+    "startMs": 122800.0,
+    "endMs": 124266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这类工具通称Coding Agent",
+    "startMs": 124400.0,
+    "endMs": 126533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "代表就是Claude Code",
+    "startMs": 127000.0,
+    "endMs": 128466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "那时候普通人根本用不了",
+    "startMs": 128933.333,
+    "endMs": 130666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "因为呢得会用终端",
+    "startMs": 130933.333,
+    "endMs": 132600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "后来事情变了",
+    "startMs": 133133.333,
+    "endMs": 134400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "产品把这一套能力",
+    "startMs": 134600.0,
+    "endMs": 135666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "套上了一个桌面壳",
+    "startMs": 136000.0,
+    "endMs": 137133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "像Codex豆包工作千问办公WorkBuddy这些",
+    "startMs": 137400.0,
+    "endMs": 140333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你不用敲命令",
+    "startMs": 140600.0,
+    "endMs": 141400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "用大白话聊天就能指挥它",
+    "startMs": 141600.0,
+    "endMs": 143533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "但核心其实是没有变的",
+    "startMs": 143733.333,
+    "endMs": 145466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "听懂需求",
+    "startMs": 145666.667,
+    "endMs": 146400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "调用工具",
+    "startMs": 146733.333,
+    "endMs": 147266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "交付结果",
+    "startMs": 147533.333,
+    "endMs": 148266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "变的只是外壳",
+    "startMs": 148466.667,
+    "endMs": 149333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "普通人终于用得上了",
+    "startMs": 150000.0,
+    "endMs": 151333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "所以别再说我不会编程了",
+    "startMs": 151733.333,
+    "endMs": 153666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "会编程的人只是早用上而已",
+    "startMs": 153800.0,
+    "endMs": 155733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "现在人人都能用了",
+    "startMs": 156066.667,
+    "endMs": 158066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "讲到这里",
+    "startMs": 158233.333,
+    "endMs": 158566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你可能会问",
+    "startMs": 158900.0,
+    "endMs": 159700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "今天的Agent到底能干什么",
+    "startMs": 159966.667,
+    "endMs": 161700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "接下来我用几个真实",
+    "startMs": 162033.333,
+    "endMs": 163100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "的案例带你看一看",
+    "startMs": 163300.0,
+    "endMs": 164500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第一个是直接操作电脑",
+    "startMs": 164900.0,
+    "endMs": 166633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这类Agent能看屏幕点按钮",
+    "startMs": 166900.0,
+    "endMs": 169166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "输入文字",
+    "startMs": 169300.0,
+    "endMs": 169833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "在网页和软件之间来回切换",
+    "startMs": 170166.667,
+    "endMs": 172166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "像我平时安排事情",
+    "startMs": 172566.667,
+    "endMs": 173833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "都是自己打开日历",
+    "startMs": 174033.333,
+    "endMs": 175166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "一条一条地加",
+    "startMs": 175366.667,
+    "endMs": 176433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "加完呢还要设提醒",
+    "startMs": 176766.667,
+    "endMs": 178233.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "写备注挺麻烦的",
+    "startMs": 178500.0,
+    "endMs": 180100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这次我直接把两天的安排交给它",
+    "startMs": 180366.667,
+    "endMs": 183033.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "帮我把这两天的安排",
+    "startMs": 184100.0,
+    "endMs": 185300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "加进iCloud日历的生活日历",
+    "startMs": 185566.667,
+    "endMs": 187566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "后面跟着一张表",
+    "startMs": 187700.0,
+    "endMs": 188766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "哪天几点做什么",
+    "startMs": 189033.333,
+    "endMs": 190300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "准备什么都写好了",
+    "startMs": 190500.0,
+    "endMs": 191766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我点一下允许你看",
+    "startMs": 191900.0,
+    "endMs": 193366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它自己打开浏览器",
+    "startMs": 193833.333,
+    "endMs": 195100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "进到iCloud日历",
+    "startMs": 195300.0,
+    "endMs": 196566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "弹出添加日程的窗口",
+    "startMs": 196900.0,
+    "endMs": 198633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "选好生活日历",
+    "startMs": 198900.0,
+    "endMs": 199966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "添上时间",
+    "startMs": 200366.667,
+    "endMs": 201100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "提醒和备注也都设好了",
+    "startMs": 201633.333,
+    "endMs": 203166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "然后一条一条把日程加进去",
+    "startMs": 203300.0,
+    "endMs": 205566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "加完了我们打开看看",
+    "startMs": 206233.333,
+    "endMs": 207566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "接孩子陪阅读录视频",
+    "startMs": 208100.0,
+    "endMs": 210100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "线上家长会剪视频",
+    "startMs": 210300.0,
+    "endMs": 211900.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "6条安排都进了生活日历",
+    "startMs": 212433.333,
+    "endMs": 214500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "时间也对得上",
+    "startMs": 214900.0,
+    "endMs": 215900.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "提醒都是提前30分钟",
+    "startMs": 216166.667,
+    "endMs": 217766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "备注当然也没有落下",
+    "startMs": 218233.333,
+    "endMs": 219500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "确认没问题",
+    "startMs": 219900.0,
+    "endMs": 220566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "任务完成",
+    "startMs": 220833.333,
+    "endMs": 221633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "再来第二个啊",
+    "startMs": 222833.333,
+    "endMs": 223500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "是围绕一个目标连续干活",
+    "startMs": 223700.0,
+    "endMs": 225700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "有些任务呢",
+    "startMs": 226100.0,
+    "endMs": 227033.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "要查很多的资料",
+    "startMs": 227300.0,
+    "endMs": 228433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "处理很多文件",
+    "startMs": 228566.667,
+    "endMs": 229366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "一两步做不完",
+    "startMs": 229700.0,
+    "endMs": 230766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent会自己安排步骤",
+    "startMs": 231100.0,
+    "endMs": 232433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "做完一部分",
+    "startMs": 232766.667,
+    "endMs": 233366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "接着处理下一部分",
+    "startMs": 233700.0,
+    "endMs": 234700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "也就是说",
+    "startMs": 234766.667,
+    "endMs": 235366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你可以把一段完整的工作交给它",
+    "startMs": 235700.0,
+    "endMs": 237700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "让它自己往前推进",
+    "startMs": 237833.333,
+    "endMs": 239300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "比如我电脑桌面上有三份订单表",
+    "startMs": 239700.0,
+    "endMs": 241966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "日期格式不一样",
+    "startMs": 242233.333,
+    "endMs": 243233.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "还有重复数据",
+    "startMs": 243500.0,
+    "endMs": 244500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "自己弄的话",
+    "startMs": 244900.0,
+    "endMs": 245700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "合并去重算金额",
+    "startMs": 245966.667,
+    "endMs": 247766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "再汇总成整张表",
+    "startMs": 247966.667,
+    "endMs": 249966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这个个把小时肯定是下不来的",
+    "startMs": 250366.667,
+    "endMs": 252366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这次我直接让Agent来做",
+    "startMs": 252766.667,
+    "endMs": 254433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "帮我把这三份订单",
+    "startMs": 255033.333,
+    "endMs": 256233.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "合并成一张汇总表",
+    "startMs": 256366.667,
+    "endMs": 257433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "按商品汇总净销售额做一张柱状图",
+    "startMs": 257633.333,
+    "endMs": 260633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "原始表格保留",
+    "startMs": 260966.667,
+    "endMs": 262033.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你看它自己先看三份表",
+    "startMs": 262666.667,
+    "endMs": 264666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "发现重复的订单",
+    "startMs": 265000.0,
+    "endMs": 266000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "然后合并去重",
+    "startMs": 266266.667,
+    "endMs": 267466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "统一日期",
+    "startMs": 267600.0,
+    "endMs": 268000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "算好金额",
+    "startMs": 268333.333,
+    "endMs": 268866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "按商品汇总",
+    "startMs": 269000.0,
+    "endMs": 270000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "最后做了这张柱状图",
+    "startMs": 270400.0,
+    "endMs": 272066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "中间这些步骤它自己都安排好了",
+    "startMs": 272333.333,
+    "endMs": 274333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "不用我一步一步的指挥",
+    "startMs": 274666.667,
+    "endMs": 275866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "做完了我们打开看看",
+    "startMs": 276466.667,
+    "endMs": 277600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "重复的订单被它找出来排除了",
+    "startMs": 278000.0,
+    "endMs": 280266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "总额对得上",
+    "startMs": 280533.333,
+    "endMs": 281600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "柱状图也出来了",
+    "startMs": 281866.667,
+    "endMs": 283200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "确认没问题",
+    "startMs": 283400.0,
+    "endMs": 284266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "任务完成",
+    "startMs": 284466.667,
+    "endMs": 285200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "好了第三个是多个Agent分头干活",
+    "startMs": 285866.667,
+    "endMs": 288733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你有几件事要干",
+    "startMs": 289000.0,
+    "endMs": 290266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "一起交给Agent",
+    "startMs": 290600.0,
+    "endMs": 291400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它像给员工派活一样",
+    "startMs": 291600.0,
+    "endMs": 293066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "分给好几个子Agent同时干",
+    "startMs": 293333.333,
+    "endMs": 295666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "比如我今天有三件事",
+    "startMs": 296266.667,
+    "endMs": 297733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "做一份汇报PPT",
+    "startMs": 298200.0,
+    "endMs": 299800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "设计一张团建海报",
+    "startMs": 300000.0,
+    "endMs": 301733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "把一段会议录音整理成纪要",
+    "startMs": 302133.333,
+    "endMs": 304133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "自己弄的话",
+    "startMs": 304666.667,
+    "endMs": 305400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "一样一样来得折腾半天",
+    "startMs": 305600.0,
+    "endMs": 307133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "那这三件事我全部交给Agent了",
+    "startMs": 307333.333,
+    "endMs": 309800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "帮我同时处理三件事",
+    "startMs": 310266.667,
+    "endMs": 311400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "把这份材料做成汇报PPT",
+    "startMs": 311600.0,
+    "endMs": 313333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "设计一张团建宣传海报",
+    "startMs": 313666.667,
+    "endMs": 315666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "把这段会议录音整理成纪要",
+    "startMs": 315866.667,
+    "endMs": 317666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你看它把三件事分开",
+    "startMs": 318066.667,
+    "endMs": 319733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "同时开始干",
+    "startMs": 320066.667,
+    "endMs": 320933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "做完我们依次看一看啊",
+    "startMs": 321866.667,
+    "endMs": 323066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "PPT做好了能翻页",
+    "startMs": 323400.0,
+    "endMs": 324733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "海报也出来了纪要呢",
+    "startMs": 325000.0,
+    "endMs": 326533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它不只是把声音转成了文字",
+    "startMs": 326733.333,
+    "endMs": 328466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "而是结论和行动事项呢",
+    "startMs": 328800.0,
+    "endMs": 330800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "都挑了出来",
+    "startMs": 331066.667,
+    "endMs": 331800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "谁负责什么时候截止",
+    "startMs": 332133.333,
+    "endMs": 333533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "都列清楚了",
+    "startMs": 333733.333,
+    "endMs": 334600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "没说明白的它就标成待确认不瞎猜",
+    "startMs": 335400.0,
+    "endMs": 337933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "三件事都办完了",
+    "startMs": 338266.667,
+    "endMs": 339266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "确认没问题",
+    "startMs": 339400.0,
+    "endMs": 340133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "当然这些案例展示的是不同Agent在",
+    "startMs": 340466.667,
+    "endMs": 343333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "各自的工具和权限支持下的能力",
+    "startMs": 343600.0,
+    "endMs": 345933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "具体到你用的产品能做什么",
+    "startMs": 346200.0,
+    "endMs": 347933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "能做到什么程度",
+    "startMs": 348200.0,
+    "endMs": 349200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "还得实际试了才知道",
+    "startMs": 349466.667,
+    "endMs": 350933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "但有一点已经很直观了",
+    "startMs": 351466.667,
+    "endMs": 353000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent能操作电脑",
+    "startMs": 353266.667,
+    "endMs": 354333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "能连续执行任务把活干完",
+    "startMs": 354533.333,
+    "endMs": 356600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "还能分工协作",
+    "startMs": 356800.0,
+    "endMs": 358066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我们能交给Agent去办的",
+    "startMs": 358400.0,
+    "endMs": 359933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "事正在变得越来越多",
+    "startMs": 360200.0,
+    "endMs": 361866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "看完了这些",
+    "startMs": 362333.333,
+    "endMs": 362800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你可能会很好奇Agent",
+    "startMs": 362866.667,
+    "endMs": 364400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "到底是怎么做到的",
+    "startMs": 364800.0,
+    "endMs": 365933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "其实真正能落地干活的Agent",
+    "startMs": 366133.333,
+    "endMs": 367666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "不是靠一个大模型单打独斗",
+    "startMs": 368200.0,
+    "endMs": 370000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它靠的是四项能力",
+    "startMs": 370200.0,
+    "endMs": 371800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "互相配合才能运转起来",
+    "startMs": 372133.333,
+    "endMs": 373733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "先看第一部分大模型",
+    "startMs": 374000.0,
+    "endMs": 375666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "也就是它的大脑",
+    "startMs": 376400.0,
+    "endMs": 377733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "所有的任务的起点都是",
+    "startMs": 378133.333,
+    "endMs": 379400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "大脑先读懂你的需求",
+    "startMs": 379600.0,
+    "endMs": 381333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "看清当下的情况",
+    "startMs": 381600.0,
+    "endMs": 382866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "想好下一步该怎么走",
+    "startMs": 383266.667,
+    "endMs": 384733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "所有的重要判断都由它来拿主意",
+    "startMs": 384866.667,
+    "endMs": 387466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第二部分呢是记忆",
+    "startMs": 388133.333,
+    "endMs": 389066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "一件事情往往不止做一步",
+    "startMs": 389466.667,
+    "endMs": 391066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent呢需要知道前面发生了什么",
+    "startMs": 391333.333,
+    "endMs": 393333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "已经拿到了什么样的信息",
+    "startMs": 393666.667,
+    "endMs": 394933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "事情做到了哪一步",
+    "startMs": 395133.333,
+    "endMs": 396200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这样后面才能继续的往下做",
+    "startMs": 396400.0,
+    "endMs": 398066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "而不是每一步都重新开始",
+    "startMs": 398400.0,
+    "endMs": 400666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "那第三部分呢",
+    "startMs": 401333.333,
+    "endMs": 402066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "就是工具",
+    "startMs": 402200.0,
+    "endMs": 403000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "光会想还不够",
+    "startMs": 403400.0,
+    "endMs": 404533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "还得能动手",
+    "startMs": 404733.333,
+    "endMs": 405733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent可以借助搜索文件",
+    "startMs": 406066.667,
+    "endMs": 408466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "代码浏览器等各种的工具",
+    "startMs": 408800.0,
+    "endMs": 410800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "把大模型做出来的判断",
+    "startMs": 411066.667,
+    "endMs": 412666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "真正变成了行动",
+    "startMs": 412933.333,
+    "endMs": 414600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "工具越丰富",
+    "startMs": 415400.0,
+    "endMs": 416066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它能搞定的事情呢",
+    "startMs": 416400.0,
+    "endMs": 417266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "当然也就越多",
+    "startMs": 417533.333,
+    "endMs": 418400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "那第四部分",
+    "startMs": 418666.667,
+    "endMs": 419533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "规划和调整",
+    "startMs": 419866.667,
+    "endMs": 420733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "复杂任务往往要分成很多步",
+    "startMs": 421066.667,
+    "endMs": 422933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent需要先想接下来怎么做",
+    "startMs": 423200.0,
+    "endMs": 425200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "先做什么",
+    "startMs": 425400.0,
+    "endMs": 426133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "后做什么",
+    "startMs": 426266.667,
+    "endMs": 426866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "而且计划呢也不是定下来就不变了",
+    "startMs": 427133.333,
+    "endMs": 429333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "执行过程中如果发现信息不够",
+    "startMs": 429466.667,
+    "endMs": 431000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "方法不对",
+    "startMs": 431400.0,
+    "endMs": 432066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "或者说结果和预期的不一样",
+    "startMs": 432200.0,
+    "endMs": 434133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它也会及时的调整",
+    "startMs": 434333.333,
+    "endMs": 435200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "再继续往下做",
+    "startMs": 435466.667,
+    "endMs": 436333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这四项能力凑在一起就形成",
+    "startMs": 436866.667,
+    "endMs": 438800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "了Agent最核心的工作循环",
+    "startMs": 439000.0,
+    "endMs": 441000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它先观察现在有什么信息",
+    "startMs": 441533.333,
+    "endMs": 443533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "然后思考下一步该做什么",
+    "startMs": 443733.333,
+    "endMs": 445666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "接着调用工具去执行",
+    "startMs": 445866.667,
+    "endMs": 447466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "行动以后会得到新的结果",
+    "startMs": 447866.667,
+    "endMs": 449600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这些结果又会成为",
+    "startMs": 450000.0,
+    "endMs": 451000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "下一轮判断的依据",
+    "startMs": 451200.0,
+    "endMs": 452400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "所以Agent的核心工作原理",
+    "startMs": 452800.0,
+    "endMs": 454733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "是可以浓缩成一句话的",
+    "startMs": 454866.667,
+    "endMs": 456400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "大模型当大脑",
+    "startMs": 456800.0,
+    "endMs": 458066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "记忆存信息",
+    "startMs": 458266.667,
+    "endMs": 459133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "工具去行动",
+    "startMs": 459400.0,
+    "endMs": 460266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "再根据反馈不断调整",
+    "startMs": 460533.333,
+    "endMs": 462466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "循环往复",
+    "startMs": 462600.0,
+    "endMs": 463266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "直到完成目标",
+    "startMs": 463533.333,
+    "endMs": 464533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "前面我们讲了Agent可以围绕",
+    "startMs": 465700.0,
+    "endMs": 467300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "一个目标自己判断使用工具",
+    "startMs": 467566.667,
+    "endMs": 469566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "再根据工具结果继续往下做",
+    "startMs": 469966.667,
+    "endMs": 471966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "那么真正用起来",
+    "startMs": 472433.333,
+    "endMs": 473700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我们应该怎么把任务交给它",
+    "startMs": 473900.0,
+    "endMs": 475500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "接下来我们通过一个",
+    "startMs": 475966.667,
+    "endMs": 476900.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "实际的任务一起来看一遍",
+    "startMs": 477166.667,
+    "endMs": 478833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我平时喜欢看动物冷知识",
+    "startMs": 479233.333,
+    "endMs": 480966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "也想做一个自己的账号",
+    "startMs": 481433.333,
+    "endMs": 482700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "把这些有意思的内容",
+    "startMs": 482900.0,
+    "endMs": 483900.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "做成视频分享给别人",
+    "startMs": 484033.333,
+    "endMs": 485366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "但从一个想法到一条视频",
+    "startMs": 485966.667,
+    "endMs": 487966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "中间有不少事情要做",
+    "startMs": 488100.0,
+    "endMs": 489566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "创建频道查资料写讲解",
+    "startMs": 489566.667,
+    "endMs": 491833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "制作画面",
+    "startMs": 492100.0,
+    "endMs": 492566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "还要上传",
+    "startMs": 492833.333,
+    "endMs": 493433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "填标题和简介",
+    "startMs": 493900.0,
+    "endMs": 494966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这次我想把这些工作全部交给Agent",
+    "startMs": 495166.667,
+    "endMs": 497633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "用Agent做这种事",
+    "startMs": 497733.333,
+    "endMs": 499166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "其实就三句话",
+    "startMs": 499166.667,
+    "endMs": 500033.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "结果说清",
+    "startMs": 500433.333,
+    "endMs": 501166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "中间放手",
+    "startMs": 501433.333,
+    "endMs": 502233.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "关键把关",
+    "startMs": 502433.333,
+    "endMs": 503500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "接下来我们就照着这三步来做一下",
+    "startMs": 503700.0,
+    "endMs": 505700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这里用到的工具是Codex",
+    "startMs": 506100.0,
+    "endMs": 507233.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "还有平台是Youtube",
+    "startMs": 507366.667,
+    "endMs": 508500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "账号我已经登录好了",
+    "startMs": 509300.0,
+    "endMs": 510433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "接下来我们先让Agent",
+    "startMs": 510766.667,
+    "endMs": 511833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "帮我设计频道名称",
+    "startMs": 511900.0,
+    "endMs": 513166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它一下子给了我好几个选择",
+    "startMs": 513566.667,
+    "endMs": 514900.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "比如万物说动物冷知识馆之类的",
+    "startMs": 515100.0,
+    "endMs": 517833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我选择了万物说",
+    "startMs": 518233.333,
+    "endMs": 519500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它再帮我把频道创建好",
+    "startMs": 519633.333,
+    "endMs": 521300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "频道有了",
+    "startMs": 521633.333,
+    "endMs": 522033.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我们就来做第一条视频",
+    "startMs": 522300.0,
+    "endMs": 523833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "做视频之前呢",
+    "startMs": 524166.667,
+    "endMs": 524833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "得先把要什么说清楚了",
+    "startMs": 524966.667,
+    "endMs": 526566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这就是第一步",
+    "startMs": 526766.667,
+    "endMs": 527633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "结果说清",
+    "startMs": 527900.0,
+    "endMs": 528633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这次我想做的主题是化茧成蝶",
+    "startMs": 528900.0,
+    "endMs": 529500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我找到了一段三维动画做效果参考",
+    "startMs": 529500.0,
+    "endMs": 532133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "视频控制到1到2分钟",
+    "startMs": 532666.667,
+    "endMs": 534433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "配上中文讲解和字幕",
+    "startMs": 534566.667,
+    "endMs": 535833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第二先给我预览",
+    "startMs": 536466.667,
+    "endMs": 537333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "不要着急导出视频",
+    "startMs": 537666.667,
+    "endMs": 538533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我确认效果后再做成成片",
+    "startMs": 538800.0,
+    "endMs": 540800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "发布之前还要让我确认",
+    "startMs": 541000.0,
+    "endMs": 542666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这就是第二步",
+    "startMs": 543233.333,
+    "endMs": 544100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "中间放手",
+    "startMs": 544100.0,
+    "endMs": 544966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "任务交给它",
+    "startMs": 545366.667,
+    "endMs": 546100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "就让它自己往下做",
+    "startMs": 546233.333,
+    "endMs": 547500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我们可以让它去查",
+    "startMs": 547833.333,
+    "endMs": 549100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "有什么资料",
+    "startMs": 549166.667,
+    "endMs": 550000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "准备什么、怎么安排任务",
+    "startMs": 550000.0,
+    "endMs": 551333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "但不用呢",
+    "startMs": 551600.0,
+    "endMs": 552133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它做一步我们就指挥一步",
+    "startMs": 552266.667,
+    "endMs": 553800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "接着它开始做三维动画",
+    "startMs": 554633.333,
+    "endMs": 556566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第一版预览出来了",
+    "startMs": 556766.667,
+    "endMs": 557466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我们打开看一下",
+    "startMs": 557733.333,
+    "endMs": 558466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "说实话效果不太理想",
+    "startMs": 559000.0,
+    "endMs": 560266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "就是普通的毛毛虫和蛹",
+    "startMs": 560533.333,
+    "endMs": 561800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "没有我参考链接里的",
+    "startMs": 562133.333,
+    "endMs": 563666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "那种机械3D的质感",
+    "startMs": 563933.333,
+    "endMs": 565600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我跟它说",
+    "startMs": 565866.667,
+    "endMs": 566600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我想要参考链接里的",
+    "startMs": 566866.667,
+    "endMs": 568133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "那种机械3D的效果",
+    "startMs": 568333.333,
+    "endMs": 569466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "现在这版效果差距很大",
+    "startMs": 569733.333,
+    "endMs": 571266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你看",
+    "startMs": 571866.667,
+    "endMs": 572200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "中间放手也不是说就完全不管了",
+    "startMs": 572600.0,
+    "endMs": 574933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "发现效果不对",
+    "startMs": 575066.667,
+    "endMs": 575800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我们指出来",
+    "startMs": 576066.667,
+    "endMs": 576800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它呢就接着改",
+    "startMs": 576933.333,
+    "endMs": 578000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "改的时候呢",
+    "startMs": 578933.333,
+    "endMs": 579400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "得说清楚具体是什么问题",
+    "startMs": 579600.0,
+    "endMs": 581200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "不需要我们教它改哪一行代码",
+    "startMs": 581633.333,
+    "endMs": 583366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "但是要告诉它",
+    "startMs": 583766.667,
+    "endMs": 584633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "改完以后应该是什么效果",
+    "startMs": 584833.333,
+    "endMs": 586833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这次它把整个模型重做了",
+    "startMs": 587700.0,
+    "endMs": 589700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "蓝色机身",
+    "startMs": 590033.333,
+    "endMs": 590900.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "黄铜齿轮",
+    "startMs": 591300.0,
+    "endMs": 592300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "透明的翼膜",
+    "startMs": 592633.333,
+    "endMs": 594433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这就到第三步了",
+    "startMs": 594766.667,
+    "endMs": 595866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "关键把关",
+    "startMs": 595866.667,
+    "endMs": 596733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我们第一次把关先放到预览这一步",
+    "startMs": 596933.333,
+    "endMs": 599333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "接下来它就开始做剩下的事",
+    "startMs": 600466.667,
+    "endMs": 602333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "配上中文讲解和字幕",
+    "startMs": 602666.667,
+    "endMs": 604200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "导出成片",
+    "startMs": 604533.333,
+    "endMs": 605266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "同时准备标题和简介",
+    "startMs": 605533.333,
+    "endMs": 607000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "预览做好了",
+    "startMs": 607900.0,
+    "endMs": 608300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我们打开看看啊",
+    "startMs": 608566.667,
+    "endMs": 609300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "先看看毛毛虫化蛹这一段",
+    "startMs": 609966.667,
+    "endMs": 611700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "变化能不能看清",
+    "startMs": 611966.667,
+    "endMs": 613100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "再看蝴蝶羽化",
+    "startMs": 613300.0,
+    "endMs": 614300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "身体是怎么出来的",
+    "startMs": 614766.667,
+    "endMs": 616033.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "翅膀怎么展开",
+    "startMs": 616300.0,
+    "endMs": 617166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "效果没问题了",
+    "startMs": 617566.667,
+    "endMs": 617933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我就跟它说ok发布吧",
+    "startMs": 618133.333,
+    "endMs": 620000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "然后它开始操作网页",
+    "startMs": 620300.0,
+    "endMs": 621533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我交给它的任务开始从",
+    "startMs": 621566.667,
+    "endMs": 622566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "制作内容推进到发布平台",
+    "startMs": 622766.667,
+    "endMs": 624433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "任务还差最后一步验收",
+    "startMs": 625366.667,
+    "endMs": 627100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "先检查视频是不是发",
+    "startMs": 627600.0,
+    "endMs": 629033.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "到了刚才创建的频道",
+    "startMs": 629033.333,
+    "endMs": 630366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "标题和简介有没有填对",
+    "startMs": 630966.667,
+    "endMs": 632700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "然后打开观看链接播放一下",
+    "startMs": 632900.0,
+    "endMs": 634900.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "确认别人打开后也能正常的观看",
+    "startMs": 635233.333,
+    "endMs": 637566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这就是我们开头说的三步",
+    "startMs": 638100.0,
+    "endMs": 639266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "结果说清",
+    "startMs": 639600.0,
+    "endMs": 640200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "中间放手",
+    "startMs": 640333.333,
+    "endMs": 641066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "关键把关",
+    "startMs": 641133.333,
+    "endMs": 642000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我不需要替它安排每一步",
+    "startMs": 642333.333,
+    "endMs": 644000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "但要知道自己想要什么",
+    "startMs": 644066.667,
+    "endMs": 645466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "也要检查它最后交付了什么",
+    "startMs": 645800.0,
+    "endMs": 647600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "刚才它一路挺顺",
+    "startMs": 648000.0,
+    "endMs": 649400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "但我得提醒一句",
+    "startMs": 649400.0,
+    "endMs": 650533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent有多能干",
+    "startMs": 650800.0,
+    "endMs": 651933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "闯祸就有多快",
+    "startMs": 652200.0,
+    "endMs": 653266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "记住三个翻车现场",
+    "startMs": 653466.667,
+    "endMs": 654600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "能避开大部分的坑",
+    "startMs": 654866.667,
+    "endMs": 656200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第一个发布",
+    "startMs": 656600.0,
+    "endMs": 657466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这次我们提前说好",
+    "startMs": 657733.333,
+    "endMs": 658733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "发布前先确认",
+    "startMs": 659000.0,
+    "endMs": 660133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "所以没出事",
+    "startMs": 660600.0,
+    "endMs": 661333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "可你要是没说这句话",
+    "startMs": 661533.333,
+    "endMs": 662800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它可能把没做完的视频呢",
+    "startMs": 663133.333,
+    "endMs": 665133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "直接公开出去了",
+    "startMs": 665333.333,
+    "endMs": 666133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "所以凡是公开发布发消息发邮件",
+    "startMs": 666333.333,
+    "endMs": 668933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "最后一下必须由你来确认",
+    "startMs": 669266.667,
+    "endMs": 671200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第二个删除和覆盖你让它",
+    "startMs": 671666.667,
+    "endMs": 674666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "没用的删掉",
+    "startMs": 675066.667,
+    "endMs": 675933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "它可能把重要的旧文件也删了",
+    "startMs": 675933.333,
+    "endMs": 677933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "找不回来",
+    "startMs": 678133.333,
+    "endMs": 678733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "所以删除覆盖移动文件之前",
+    "startMs": 679000.0,
+    "endMs": 680600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "先问一句",
+    "startMs": 680800.0,
+    "endMs": 681466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "要不要备份",
+    "startMs": 681733.333,
+    "endMs": 682666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第三个花钱",
+    "startMs": 683333.333,
+    "endMs": 684866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "让它下单付款之前",
+    "startMs": 685200.0,
+    "endMs": 686400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "要记住金额地址",
+    "startMs": 686733.333,
+    "endMs": 688066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "账号必须你自己确认",
+    "startMs": 688266.667,
+    "endMs": 689466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "没有商量的余地",
+    "startMs": 689800.0,
+    "endMs": 690866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "另外它还会犯错",
+    "startMs": 691733.333,
+    "endMs": 693000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "做完记得回到最初的要求检查一遍",
+    "startMs": 693333.333,
+    "endMs": 695666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "权限跟任务走",
+    "startMs": 695933.333,
+    "endMs": 697000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "无关账号呢别开放",
+    "startMs": 697133.333,
+    "endMs": 698800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "做偏了，指着具体的问题说",
+    "startMs": 699366.667,
+    "endMs": 701333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "别一句做的不好",
+    "startMs": 701333.333,
+    "endMs": 702666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "说到底要你把关的就是",
+    "startMs": 702800.0,
+    "endMs": 704266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "发布删除付款还有登录",
+    "startMs": 704600.0,
+    "endMs": 706133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "刚才我们看了完整的任务演示",
+    "startMs": 706733.333,
+    "endMs": 708300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "见识了Agent怎么帮我们干活",
+    "startMs": 708300.0,
+    "endMs": 709766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "接下来很多人会问",
+    "startMs": 710100.0,
+    "endMs": 711366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "日常想用Agent去哪找",
+    "startMs": 711700.0,
+    "endMs": 713900.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "有网页版",
+    "startMs": 714266.667,
+    "endMs": 715266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "浏览器登录就能发任务",
+    "startMs": 715266.667,
+    "endMs": 716933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "上传文件",
+    "startMs": 717266.667,
+    "endMs": 717866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "查看结果",
+    "startMs": 718066.667,
+    "endMs": 718733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "也有手机APP",
+    "startMs": 718933.333,
+    "endMs": 719933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "随时随地能发起任务",
+    "startMs": 720400.0,
+    "endMs": 721533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "补充信息",
+    "startMs": 721866.667,
+    "endMs": 722533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent也能及时收到通知",
+    "startMs": 722866.667,
+    "endMs": 724733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent需要你确认的时候",
+    "startMs": 725400.0,
+    "endMs": 726266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "也能及时收到通知",
+    "startMs": 726466.667,
+    "endMs": 727333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "还有电脑客户端",
+    "startMs": 727933.333,
+    "endMs": 728800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "刚才演示用到的Codex就是客户端",
+    "startMs": 729066.667,
+    "endMs": 731066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "如果你要处理本地文件",
+    "startMs": 731400.0,
+    "endMs": 732733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "搭配浏览器一起工作",
+    "startMs": 733066.667,
+    "endMs": 734400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "客户端就很合适",
+    "startMs": 734666.667,
+    "endMs": 735533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "懂编程的朋友还能在代码编辑器",
+    "startMs": 735933.333,
+    "endMs": 737933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "里或者终端里使用Agent",
+    "startMs": 737933.333,
+    "endMs": 739066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这种界面虽然不像聊天软件",
+    "startMs": 739866.667,
+    "endMs": 741733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "但同样可以下达指令让Agent改代码",
+    "startMs": 741933.333,
+    "endMs": 744600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "跑检查接着处理后续的工作",
+    "startMs": 745000.0,
+    "endMs": 747066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "大家不用记住所有的入口",
+    "startMs": 747466.667,
+    "endMs": 749000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "同一个Agent工具可能同时",
+    "startMs": 749266.667,
+    "endMs": 750800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "有网页APP和电脑客户端",
+    "startMs": 751200.0,
+    "endMs": 753266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "不同设备入口",
+    "startMs": 753600.0,
+    "endMs": 754233.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "方便我们随时使用",
+    "startMs": 754233.333,
+    "endMs": 755233.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "功能上呢",
+    "startMs": 755500.0,
+    "endMs": 755900.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "也会略有区别",
+    "startMs": 756100.0,
+    "endMs": 757100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你只要根据手头的任务",
+    "startMs": 757300.0,
+    "endMs": 758633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "挑顺手、能完成目标的入口就行了",
+    "startMs": 760700.0,
+    "endMs": 761933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "除了直接使用现成的Agent",
+    "startMs": 761933.333,
+    "endMs": 763466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你也可以针对固定",
+    "startMs": 763933.333,
+    "endMs": 765466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "需求创建自己的Agent",
+    "startMs": 765666.667,
+    "endMs": 767133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "不过对刚开始使用",
+    "startMs": 767933.333,
+    "endMs": 768733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent的普通人来说",
+    "startMs": 768933.333,
+    "endMs": 769866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "不用着急学这个",
+    "startMs": 770066.667,
+    "endMs": 771133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "先学会把真实任务交给现成Agent",
+    "startMs": 771400.0,
+    "endMs": 773800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "等以后发现某类任务经常重复",
+    "startMs": 774400.0,
+    "endMs": 776666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "再考虑把它做成自己的Agent",
+    "startMs": 776866.667,
+    "endMs": 778600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "了解了Agent怎么用",
+    "startMs": 778600.0,
+    "endMs": 780300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "我们按任务类型",
+    "startMs": 780300.0,
+    "endMs": 781366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "梳理几类热门的Agent",
+    "startMs": 781566.667,
+    "endMs": 782833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "国内国外好用的都会讲到",
+    "startMs": 783366.667,
+    "endMs": 785366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第一类通用Agent",
+    "startMs": 785833.333,
+    "endMs": 787100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "国内有豆包工作",
+    "startMs": 787500.0,
+    "endMs": 788566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "腾讯的WorkBuddy",
+    "startMs": 788766.667,
+    "endMs": 789633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "千问办公",
+    "startMs": 789833.333,
+    "endMs": 790433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "海外可以看ChatGPTWork",
+    "startMs": 790766.667,
+    "endMs": 793100.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "也就是Codex",
+    "startMs": 793300.0,
+    "endMs": 794166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "给它一个目标",
+    "startMs": 794566.667,
+    "endMs": 795233.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它会自己拆步骤",
+    "startMs": 795500.0,
+    "endMs": 796366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "处理任务",
+    "startMs": 796566.667,
+    "endMs": 797166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "处理资料",
+    "startMs": 797300.0,
+    "endMs": 797633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "调用工具",
+    "startMs": 797900.0,
+    "endMs": 798500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "最后交付结果",
+    "startMs": 798833.333,
+    "endMs": 799966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "像查资料做分析生成",
+    "startMs": 800233.333,
+    "endMs": 801700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "汇报就特别适合交给它们",
+    "startMs": 802033.333,
+    "endMs": 803700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第二类搜索调研Agent",
+    "startMs": 804233.333,
+    "endMs": 805766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "国内有Kimi的深度研究",
+    "startMs": 806100.0,
+    "endMs": 807500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "海外有Gemini的DeepResearch",
+    "startMs": 807833.333,
+    "endMs": 809566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "PerplexityDeepResearch适合行业研究",
+    "startMs": 810266.667,
+    "endMs": 812600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "主题调研资料梳理等需要",
+    "startMs": 812866.667,
+    "endMs": 815000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "大量检索和交叉验证的任务",
+    "startMs": 815133.333,
+    "endMs": 817400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第三类办公文档Agent",
+    "startMs": 817866.667,
+    "endMs": 819666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "国内呢有WPS的灵犀",
+    "startMs": 820200.0,
+    "endMs": 822533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "千问办公",
+    "startMs": 822800.0,
+    "endMs": 823333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "海外有微软的365",
+    "startMs": 823466.667,
+    "endMs": 825066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "可以直接生成和编辑文档表格PPT等",
+    "startMs": 825466.667,
+    "endMs": 827500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "可继续修改的办公文件",
+    "startMs": 827900.0,
+    "endMs": 829633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第四类数据分析Agent",
+    "startMs": 830000.0,
+    "endMs": 831400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "国内有KimiWork",
+    "startMs": 831400.0,
+    "endMs": 832266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "国外ChatGPTWork",
+    "startMs": 832666.667,
+    "endMs": 833733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "还有微软的也能处理数据",
+    "startMs": 834066.667,
+    "endMs": 835533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "上传数据说明你的分析需求",
+    "startMs": 835933.333,
+    "endMs": 838200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它可以清洗数据汇总计算生成图表",
+    "startMs": 838333.333,
+    "endMs": 841200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第五类图片创作Agent",
+    "startMs": 841600.0,
+    "endMs": 842933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "国内的Lovart豆包",
+    "startMs": 842933.333,
+    "endMs": 845266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "然后还有即梦",
+    "startMs": 845533.333,
+    "endMs": 846466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "国外我们有Midjourney",
+    "startMs": 846800.0,
+    "endMs": 847933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "ChatGPT的Image2",
+    "startMs": 847933.333,
+    "endMs": 848766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "NanoBanana也具备Agent能力",
+    "startMs": 848966.667,
+    "endMs": 851033.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "制作海报菜单活动",
+    "startMs": 851366.667,
+    "endMs": 852700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "宣传图就选这类工具",
+    "startMs": 852966.667,
+    "endMs": 854433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第六类影视创作Agent",
+    "startMs": 855033.333,
+    "endMs": 856700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这类就比较多了",
+    "startMs": 857166.667,
+    "endMs": 858033.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "国内有小云雀LIBTV即梦",
+    "startMs": 858300.0,
+    "endMs": 861166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "海外有RunwayAgent",
+    "startMs": 861300.0,
+    "endMs": 862433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它们已经开始把剧本角色分镜",
+    "startMs": 862966.667,
+    "endMs": 865233.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "视频生成配音和剪辑等多个",
+    "startMs": 865566.667,
+    "endMs": 867566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "环节串成了一个创作流程里",
+    "startMs": 867766.667,
+    "endMs": 869766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "然后第七类编程Agent",
+    "startMs": 870233.333,
+    "endMs": 871366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "也叫Coding Agent",
+    "startMs": 871633.333,
+    "endMs": 872633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "国内有Trae",
+    "startMs": 872933.333,
+    "endMs": 874200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "国外有Codex",
+    "startMs": 874200.0,
+    "endMs": 874933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Claude Code、Cursor",
+    "startMs": 875066.667,
+    "endMs": 876066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "描述你想要的网站或小工具",
+    "startMs": 876400.0,
+    "endMs": 878400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它可以读项目写代码",
+    "startMs": 878600.0,
+    "endMs": 880133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "跑测试持续修复bug",
+    "startMs": 880333.333,
+    "endMs": 882000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "就算不会编程",
+    "startMs": 882266.667,
+    "endMs": 883000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "也能尝试做成简单的网页",
+    "startMs": 883266.667,
+    "endMs": 885266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "大家会发现同一个工具",
+    "startMs": 885800.0,
+    "endMs": 887066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "可以适配好几种场景",
+    "startMs": 887333.333,
+    "endMs": 888600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "通用Agent也能处理文档",
+    "startMs": 888933.333,
+    "endMs": 890400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "分析数据",
+    "startMs": 890666.667,
+    "endMs": 891333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "编程Agent在权限足够的情况",
+    "startMs": 891666.667,
+    "endMs": 893333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "下也能做部分办公任务",
+    "startMs": 893333.333,
+    "endMs": 895033.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "这张工具地图只是参考，先想",
+    "startMs": 895433.333,
+    "endMs": 897766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "清楚你要做什么事",
+    "startMs": 898066.667,
+    "endMs": 899133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "再去找对应的能力",
+    "startMs": 899133.333,
+    "endMs": 900266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "不用纠结工具的固定分类",
+    "startMs": 900466.667,
+    "endMs": 902466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "看完这么多Agent工具",
+    "startMs": 902866.667,
+    "endMs": 903733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "到底怎么选",
+    "startMs": 904066.667,
+    "endMs": 904800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "我们按四类人群分开说",
+    "startMs": 905000.0,
+    "endMs": 906666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "学生上班族内容创作者",
+    "startMs": 907000.0,
+    "endMs": 908933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "还有程序员",
+    "startMs": 909133.333,
+    "endMs": 909800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "学生平时查资料写",
+    "startMs": 910400.0,
+    "endMs": 911666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "作业整理复习材料",
+    "startMs": 911866.667,
+    "endMs": 913133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "优先选择资料整理强的",
+    "startMs": 913400.0,
+    "endMs": 915133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "推荐Kimi",
+    "startMs": 915533.333,
+    "endMs": 916266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "让它检索资料",
+    "startMs": 916400.0,
+    "endMs": 917333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "过滤无效信息",
+    "startMs": 917333.333,
+    "endMs": 918200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "梳理成提纲",
+    "startMs": 918400.0,
+    "endMs": 919266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "省去翻网页复制排版的时间",
+    "startMs": 919600.0,
+    "endMs": 922200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "上班族天天处理文档表格邮件",
+    "startMs": 922466.667,
+    "endMs": 924800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "优先选文件处理强的",
+    "startMs": 925266.667,
+    "endMs": 926800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "推荐豆包工作千问办公",
+    "startMs": 927000.0,
+    "endMs": 929000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "零散文件丢进去",
+    "startMs": 929466.667,
+    "endMs": 930333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "自动提取信息",
+    "startMs": 930600.0,
+    "endMs": 931466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "汇总归档",
+    "startMs": 931733.333,
+    "endMs": 932400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "减少日常琐碎的工作",
+    "startMs": 932666.667,
+    "endMs": 934200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "那内容创作者",
+    "startMs": 934533.333,
+    "endMs": 935400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "大量图片素材呢",
+    "startMs": 935733.333,
+    "endMs": 936666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "需要改尺寸加水印分类",
+    "startMs": 936866.667,
+    "endMs": 938866.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "选擅长批量处理的",
+    "startMs": 939200.0,
+    "endMs": 940533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "推荐Lovart中文版",
+    "startMs": 940800.0,
+    "endMs": 942000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "一句话搞定批量素材处理",
+    "startMs": 942200.0,
+    "endMs": 943733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "把精力留给创作",
+    "startMs": 944000.0,
+    "endMs": 945266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "程序员直接上编程Agent",
+    "startMs": 945600.0,
+    "endMs": 946933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "推荐Codex",
+    "startMs": 947700.0,
+    "endMs": 949700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "写脚本自动化工具",
+    "startMs": 950100.0,
+    "endMs": 951366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "重复编码工作交给它",
+    "startMs": 951700.0,
+    "endMs": 952800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你提需求",
+    "startMs": 953000.0,
+    "endMs": 953733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它写代码",
+    "startMs": 953866.667,
+    "endMs": 954600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "帮你摆脱重复搬砖",
+    "startMs": 954866.667,
+    "endMs": 956400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "最后两个小提示第一",
+    "startMs": 956800.0,
+    "endMs": 958400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "工具别贪多",
+    "startMs": 958733.333,
+    "endMs": 959600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "选一个适合自己的用熟练",
+    "startMs": 959866.667,
+    "endMs": 961400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "按需入手",
+    "startMs": 961733.333,
+    "endMs": 962466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "不用跟风收集",
+    "startMs": 962600.0,
+    "endMs": 963533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第二要有心理预期",
+    "startMs": 963866.667,
+    "endMs": 965200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "长期用大多得付费",
+    "startMs": 965533.333,
+    "endMs": 967266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "别想着，一直免费用",
+    "startMs": 967400.0,
+    "endMs": 968666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "工具核心呢",
+    "startMs": 969000.0,
+    "endMs": 969600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "就是帮你省时间",
+    "startMs": 969933.333,
+    "endMs": 970800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "只要省出来的时间有价值",
+    "startMs": 971000.0,
+    "endMs": 972533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "花钱呢也是非常划算",
+    "startMs": 972800.0,
+    "endMs": 974066.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "选工具时要先懂收费模式",
+    "startMs": 974533.333,
+    "endMs": 976666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "一共大概有5种",
+    "startMs": 976666.667,
+    "endMs": 977666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "免费额度会员订阅使用额度",
+    "startMs": 978066.667,
+    "endMs": 980000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "超额加购开发者API按量计费",
+    "startMs": 980066.667,
+    "endMs": 982600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "同一个工具可能同时",
+    "startMs": 982933.333,
+    "endMs": 983933.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "拥有好几种收费模式",
+    "startMs": 984200.0,
+    "endMs": 985333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第一种免费版",
+    "startMs": 986133.333,
+    "endMs": 987400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "免费额度",
+    "startMs": 987666.667,
+    "endMs": 988400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "可以直接试用",
+    "startMs": 988733.333,
+    "endMs": 989600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "但会限制任务数量功能和每日限额",
+    "startMs": 989800.0,
+    "endMs": 993000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "新手熟悉操作也够用",
+    "startMs": 993000.0,
+    "endMs": 994700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第二种是会员订阅",
+    "startMs": 994900.0,
+    "endMs": 996033.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "按月或按年付费",
+    "startMs": 996533.333,
+    "endMs": 997700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "解锁功能与额度",
+    "startMs": 997700.0,
+    "endMs": 998966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "注意会员不等于无限使用",
+    "startMs": 999433.333,
+    "endMs": 1001433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "高级功能呢",
+    "startMs": 1001700.0,
+    "endMs": 1002433.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "可能还需要更高的套餐",
+    "startMs": 1002633.333,
+    "endMs": 1004233.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "那第三种按额度计费",
+    "startMs": 1004633.333,
+    "endMs": 1006633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "又叫积分",
+    "startMs": 1006833.333,
+    "endMs": 1007700.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent一运行就消耗额度",
+    "startMs": 1008333.333,
+    "endMs": 1009766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "不同平台积分规则各异",
+    "startMs": 1009766.667,
+    "endMs": 1011166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "不能只对比积分的数量",
+    "startMs": 1011866.667,
+    "endMs": 1013533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "拿你常用的任务实际测",
+    "startMs": 1013866.667,
+    "endMs": 1015000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "一下就知道大概的消耗",
+    "startMs": 1015266.667,
+    "endMs": 1016733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第四种超额加购",
+    "startMs": 1017133.333,
+    "endMs": 1018800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "套餐额度用完了",
+    "startMs": 1019333.333,
+    "endMs": 1020133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "可以单独买额度",
+    "startMs": 1020133.333,
+    "endMs": 1021400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "加购前看清有效期",
+    "startMs": 1021766.667,
+    "endMs": 1023200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "区分订阅自带额度",
+    "startMs": 1023200.0,
+    "endMs": 1024533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "开启自动加购的话",
+    "startMs": 1025000.0,
+    "endMs": 1026266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "设置消费上限",
+    "startMs": 1026266.667,
+    "endMs": 1027266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "防止意外扣费",
+    "startMs": 1027466.667,
+    "endMs": 1028533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "第五种API按量计费",
+    "startMs": 1028933.333,
+    "endMs": 1030533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "面向开发者",
+    "startMs": 1030800.0,
+    "endMs": 1031666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "就是把AI能力接入到自己的软件",
+    "startMs": 1032000.0,
+    "endMs": 1034200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "按调用量收费，普通用户了解即可",
+    "startMs": 1034333.333,
+    "endMs": 1036333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "上手Agent不用配置API",
+    "startMs": 1037066.667,
+    "endMs": 1038200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "最后比价别只看单价",
+    "startMs": 1039300.0,
+    "endMs": 1040533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "便宜工具如果反复返工",
+    "startMs": 1040533.333,
+    "endMs": 1042200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "成本未必低",
+    "startMs": 1042533.333,
+    "endMs": 1043400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "价格高的",
+    "startMs": 1043666.667,
+    "endMs": 1044200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "若能稳定完成高频任务",
+    "startMs": 1044333.333,
+    "endMs": 1046333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "也是值得入手的",
+    "startMs": 1046533.333,
+    "endMs": 1047733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "先用真实的任务测试效果",
+    "startMs": 1048066.667,
+    "endMs": 1049800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "再看是否长期付费",
+    "startMs": 1050066.667,
+    "endMs": 1051400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "好这节的内容到这呢",
+    "startMs": 1051933.333,
+    "endMs": 1053466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "基本就讲完了",
+    "startMs": 1053800.0,
+    "endMs": 1054466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "最后咱们把整节课从头到尾串一遍",
+    "startMs": 1054666.667,
+    "endMs": 1057266.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你只需要记住一句话",
+    "startMs": 1057466.667,
+    "endMs": 1058666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "Agent就是能替你办事的AI",
+    "startMs": 1059000.0,
+    "endMs": 1060733.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "你提需求",
+    "startMs": 1061066.667,
+    "endMs": 1061666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它干活最后交付结果",
+    "startMs": 1061933.333,
+    "endMs": 1063666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "它靠大脑记忆工具",
+    "startMs": 1064000.0,
+    "endMs": 1065466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "规划和调整这四项能力配合运转",
+    "startMs": 1066166.667,
+    "endMs": 1068366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "先观察再思考",
+    "startMs": 1068566.667,
+    "endMs": 1069900.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": true
+  },
+  {
+    "text": "最后行动",
+    "startMs": 1070300.0,
+    "endMs": 1071300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "循环往复",
+    "startMs": 1071300.0,
+    "endMs": 1072333.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "直到把事情做完",
+    "startMs": 1072333.333,
+    "endMs": 1073466.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "真正用起来",
+    "startMs": 1073633.333,
+    "endMs": 1074633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "核心就三个原则",
+    "startMs": 1074633.333,
+    "endMs": 1076133.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "结果说清",
+    "startMs": 1076166.667,
+    "endMs": 1077233.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "中间放手",
+    "startMs": 1077233.333,
+    "endMs": 1078200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "关键把关",
+    "startMs": 1078233.333,
+    "endMs": 1079533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "把目标和限制说清楚",
+    "startMs": 1079566.667,
+    "endMs": 1081500.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "中间过程放心交给它",
+    "startMs": 1081533.333,
+    "endMs": 1083566.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "登录、发布、付款这类操作由你把关",
+    "startMs": 1083600.0,
+    "endMs": 1085833.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "最后对照要求",
+    "startMs": 1085900.0,
+    "endMs": 1087366.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "验收任务才算完成",
+    "startMs": 1087366.667,
+    "endMs": 1089300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "工具不用记全",
+    "startMs": 1089333.333,
+    "endMs": 1090633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "按需要挑一个顺手的",
+    "startMs": 1090700.0,
+    "endMs": 1092400.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "学生选资料整理强的",
+    "startMs": 1092433.333,
+    "endMs": 1094166.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "上班族选文件处理强的",
+    "startMs": 1094200.0,
+    "endMs": 1095966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "创作者选批量处理强的",
+    "startMs": 1095966.667,
+    "endMs": 1098200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "程序员直接用编程 Agent",
+    "startMs": 1098233.333,
+    "endMs": 1100033.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "费用别只看单价",
+    "startMs": 1100033.333,
+    "endMs": 1101600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "真实任务试用",
+    "startMs": 1101633.333,
+    "endMs": 1102533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "好用再付费",
+    "startMs": 1102566.667,
+    "endMs": 1103633.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "还记得开头的问题吗？",
+    "startMs": 1103700.0,
+    "endMs": 1105200.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "有些事",
+    "startMs": 1105233.333,
+    "endMs": 1105966.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "不是你做不了",
+    "startMs": 1106000.0,
+    "endMs": 1106800.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "只是嫌麻烦",
+    "startMs": 1106833.333,
+    "endMs": 1108300.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "现在可以先挑一件小事试一试",
+    "startMs": 1108333.333,
+    "endMs": 1110766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "看它能不能替你办完",
+    "startMs": 1110800.0,
+    "endMs": 1112533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "不用会编程",
+    "startMs": 1112566.667,
+    "endMs": 1113533.333,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "把要求说清楚",
+    "startMs": 1113566.667,
+    "endMs": 1114666.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "让它干起来",
+    "startMs": 1114733.333,
+    "endMs": 1115600.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "试完你会发现",
+    "startMs": 1115633.333,
+    "endMs": 1116766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "不少事交给它",
+    "startMs": 1116800.0,
+    "endMs": 1118000.0,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  },
+  {
+    "text": "还真的非常省事",
+    "startMs": 1118033.333,
+    "endMs": 1119766.667,
+    "timestampMs": null,
+    "confidence": null,
+    "bakedInMaster": false
+  }
+]

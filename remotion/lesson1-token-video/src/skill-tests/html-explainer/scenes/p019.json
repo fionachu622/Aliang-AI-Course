@@ -1,0 +1,465 @@
+{
+  "id": "p019",
+  "start": 5562,
+  "duration": 404,
+  "startSeconds": 185.4,
+  "css": ".agent-html-scene{\n --bg-0:#F5F2EF; --bg-1:#EDE9E5; --bg-2:#FFFFFF;\n --text:#202833; --text-dim:#67717E; --text-muted:#8B929B;\n --accent:#2563EB; --accent-soft:#E4EDFF; --accent-border:#A8C2FB;\n --accent-glow:rgba(37,99,235,.13); --signal:#2563EB; --warn:#95682E; --ok:#2563EB;\n --line:#D8DCE1; --line-soft:rgba(55,70,88,.055); --card-bg:#FFFFFF;\n --bg-radial:radial-gradient(ellipse at 72% 42%,#E8EDF8 0%,#F5F2EF 63%);\n --mg-sub-fg:#202833; --mg-sub-stroke:#F5F2EF; --mg-track:#D8DCE1; --mg-tick:#8B929B;\n}.agent-html-scene *{box-sizing:border-box;margin:0;padding:0}.agent-html-scene{width:1920px;height:1080px;overflow:hidden;background:var(--bg-0);color:var(--text);font-family:'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;-webkit-font-smoothing:antialiased}.agent-html-scene .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);background-size:96px 96px}.agent-html-scene .top{position:absolute;left:112px;right:112px;top:64px;display:flex;justify-content:space-between;align-items:center;font-size:24px;letter-spacing:2px;color:var(--text-dim)}.agent-html-scene .top b{color:var(--accent);font-weight:600}.agent-html-scene .rule{position:absolute;left:112px;right:112px;top:116px;height:2px;background:var(--line)}.agent-html-scene .eyebrow{font-size:26px;letter-spacing:4px;color:var(--accent);font-weight:600}.agent-html-scene .stage{position:absolute;left:112px;right:112px;top:180px;height:660px}.agent-html-scene h1{font-size:100px;line-height:1.2;letter-spacing:-3px;font-weight:650}.agent-html-scene h2{font-size:64px;line-height:1.25;font-weight:600;letter-spacing:-1px}.agent-html-scene em{font-style:normal;color:var(--accent)}.agent-html-scene .dim{color:var(--text-dim)}.agent-html-scene .foot{position:absolute;left:112px;right:112px;top:851px;display:flex;justify-content:space-between;font-size:22px;color:var(--text-dim)}.agent-html-scene .focus{border:2px solid var(--accent-border);background:var(--accent-soft);box-shadow:0 10px 60px var(--accent-glow)}.agent-html-scene .panel{background:var(--card-bg);border:1px solid var(--line);border-radius:20px;padding:38px}.agent-html-scene .label{font-size:26px;color:var(--text-dim);line-height:1.5}.agent-html-scene .large{font-size:96px;font-weight:650;line-height:1.2}.agent-html-scene .body{font-size:36px;line-height:1.6}.agent-html-scene .pill{padding:10px 22px;border:1px solid var(--line);border-radius:40px;font-size:24px;color:var(--text-dim)}.agent-html-scene{width:1920px;height:1080px;font-family:'PingFang SC','Microsoft YaHei',sans-serif}.agent-html-scene .demo-title{position:absolute;left:112px;top:145px;font-size:60px}.agent-html-scene .workspace{position:absolute;left:112px;top:240px;width:1270px;height:594px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card-bg)}.agent-html-scene .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--card-bg)}.agent-html-scene .side{position:absolute;left:1430px;top:255px;width:350px}.agent-html-scene .step{border-top:2px solid var(--line);padding:24px 0;margin-bottom:18px}.agent-html-scene .step small{font-size:24px;color:var(--text-muted)}.agent-html-scene .step strong{display:block;font-size:34px;line-height:1.45;margin-top:12px;font-weight:550}.agent-html-scene .concept{position:absolute;left:112px;right:112px;top:176px}.agent-html-scene .hero{margin-top:20px;font-size:100px;line-height:1.25;font-weight:650;letter-spacing:-2px;color:var(--accent);text-shadow:0 12px 45px var(--accent-glow)}.agent-html-scene .nodes{display:flex;gap:32px;margin-top:90px}.agent-html-scene .node{width:544px;height:240px;border-top:3px solid var(--line);padding:32px 0}.agent-html-scene .node h3{font-size:44px;font-weight:550}.agent-html-scene .node p{font-size:28px;color:var(--text-dim);margin-top:24px;line-height:1.5}.agent-html-scene .stripe{height:6px;width:160px;background:var(--accent);margin-top:40px}.agent-html-scene .marker{color:var(--accent);font-size:24px;margin-bottom:18px}",
+  "nodes": [
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "grid"
+      },
+      "children": [],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "top"
+      },
+      "children": [
+        {
+          "tag": "b",
+          "attrs": {},
+          "children": [
+            "AGENT / 专题课"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "01 — 认识 Agent"
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "rule"
+      },
+      "children": [],
+      "tracks": []
+    },
+    {
+      "tag": "h2",
+      "attrs": {
+        "class": "demo-title"
+      },
+      "children": [
+        "Agent 操作日历"
+      ],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "workspace"
+      },
+      "children": [
+        {
+          "tag": "img",
+          "attrs": {
+            "class": "shot shot0",
+            "src": "clip02-05.jpg",
+            "alt": "原始录屏摘帧"
+          },
+          "children": [],
+          "tracks": []
+        },
+        {
+          "tag": "img",
+          "attrs": {
+            "class": "shot shot1",
+            "src": "clip02-07.jpg",
+            "alt": "原始录屏摘帧"
+          },
+          "children": [],
+          "tracks": [
+            {
+              "kind": "set",
+              "from": {
+                "opacity": 0
+              },
+              "to": {},
+              "at": 0,
+              "duration": 0,
+              "ease": "power1.out"
+            },
+            {
+              "kind": "to",
+              "from": {
+                "opacity": 1,
+                "duration": 0.45
+              },
+              "to": {},
+              "at": 6.9,
+              "duration": 0.45,
+              "ease": "power1.out"
+            }
+          ]
+        },
+        {
+          "tag": "img",
+          "attrs": {
+            "class": "shot shot2",
+            "src": "clip02-13.jpg",
+            "alt": "原始录屏摘帧"
+          },
+          "children": [],
+          "tracks": [
+            {
+              "kind": "set",
+              "from": {
+                "opacity": 0
+              },
+              "to": {},
+              "at": 0,
+              "duration": 0,
+              "ease": "power1.out"
+            },
+            {
+              "kind": "to",
+              "from": {
+                "opacity": 1,
+                "duration": 0.45
+              },
+              "to": {},
+              "at": 11.287,
+              "duration": 0.45,
+              "ease": "power1.out"
+            }
+          ]
+        }
+      ],
+      "tracks": [
+        {
+          "kind": "from",
+          "from": {
+            "opacity": 0,
+            "y": 14,
+            "duration": 0.55
+          },
+          "to": {},
+          "at": 0,
+          "duration": 0.55,
+          "ease": "power1.out"
+        },
+        {
+          "kind": "fromTo",
+          "from": {
+            "scale": 1
+          },
+          "to": {
+            "scale": 1.014,
+            "duration": 11.287,
+            "ease": "none"
+          },
+          "at": 0,
+          "duration": 11.287,
+          "ease": "none"
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "side"
+      },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "step step0"
+          },
+          "children": [
+            {
+              "tag": "small",
+              "attrs": {},
+              "children": [
+                "01"
+              ],
+              "tracks": []
+            },
+            {
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                "进入 iCloud"
+              ],
+              "tracks": []
+            }
+          ],
+          "tracks": [
+            {
+              "kind": "from",
+              "from": {
+                "opacity": 0,
+                "x": 18,
+                "duration": 0.55
+              },
+              "to": {},
+              "at": 1.837,
+              "duration": 0.55,
+              "ease": "power1.out"
+            },
+            {
+              "kind": "to",
+              "from": {
+                "color": "var(--accent)",
+                "duration": 0.35
+              },
+              "to": {},
+              "at": 1.837,
+              "duration": 0.35,
+              "ease": "power1.out"
+            },
+            {
+              "kind": "to",
+              "from": {
+                "color": "var(--text-dim)",
+                "duration": 0.35
+              },
+              "to": {},
+              "at": 6.9,
+              "duration": 0.35,
+              "ease": "power1.out"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "step step1"
+          },
+          "children": [
+            {
+              "tag": "small",
+              "attrs": {},
+              "children": [
+                "02"
+              ],
+              "tracks": []
+            },
+            {
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                "填写日程"
+              ],
+              "tracks": []
+            }
+          ],
+          "tracks": [
+            {
+              "kind": "from",
+              "from": {
+                "opacity": 0,
+                "x": 18,
+                "duration": 0.55
+              },
+              "to": {},
+              "at": 6.9,
+              "duration": 0.55,
+              "ease": "power1.out"
+            },
+            {
+              "kind": "to",
+              "from": {
+                "color": "var(--accent)",
+                "duration": 0.35
+              },
+              "to": {},
+              "at": 6.9,
+              "duration": 0.35,
+              "ease": "power1.out"
+            },
+            {
+              "kind": "to",
+              "from": {
+                "color": "var(--text-dim)",
+                "duration": 0.35
+              },
+              "to": {},
+              "at": 11.287,
+              "duration": 0.35,
+              "ease": "power1.out"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "step step2"
+          },
+          "children": [
+            {
+              "tag": "small",
+              "attrs": {},
+              "children": [
+                "03"
+              ],
+              "tracks": []
+            },
+            {
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                "逐条添加"
+              ],
+              "tracks": []
+            }
+          ],
+          "tracks": [
+            {
+              "kind": "from",
+              "from": {
+                "opacity": 0,
+                "x": 18,
+                "duration": 0.55
+              },
+              "to": {},
+              "at": 11.287,
+              "duration": 0.55,
+              "ease": "power1.out"
+            },
+            {
+              "kind": "to",
+              "from": {
+                "color": "var(--accent)",
+                "duration": 0.35
+              },
+              "to": {},
+              "at": 11.287,
+              "duration": 0.35,
+              "ease": "power1.out"
+            }
+          ]
+        }
+      ],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "foot"
+      },
+      "children": [
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "原始录屏摘帧 · 以原始录屏画面为准"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "15 / 35"
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    }
+  ],
+  "blocks": [
+    {
+      "text": "我点一下允许",
+      "spoken": "我点一下允许，",
+      "from": 1,
+      "to": 33,
+      "local_start_sec": 0.0,
+      "global_start_sec": 185.4,
+      "global_end_sec": 186.487,
+      "size": 44
+    },
+    {
+      "text": "你看",
+      "spoken": "你看，",
+      "from": 34,
+      "to": 55,
+      "local_start_sec": 1.087,
+      "global_start_sec": 186.487,
+      "global_end_sec": 187.237,
+      "size": 44
+    },
+    {
+      "text": "它自己打开浏览器",
+      "spoken": "它自己打开浏览器，",
+      "from": 56,
+      "to": 109,
+      "local_start_sec": 1.837,
+      "global_start_sec": 187.237,
+      "global_end_sec": 189.025,
+      "size": 44
+    },
+    {
+      "text": "进到iCloud日历",
+      "spoken": "进到 iCloud 日历，",
+      "from": 110,
+      "to": 157,
+      "local_start_sec": 3.624,
+      "global_start_sec": 189.025,
+      "global_end_sec": 190.65,
+      "size": 44
+    },
+    {
+      "text": "弹出\"添加日程\"的窗口",
+      "spoken": "弹出 \"添加日程\" 的窗口，",
+      "from": 158,
+      "to": 207,
+      "local_start_sec": 5.25,
+      "global_start_sec": 190.65,
+      "global_end_sec": 192.299,
+      "size": 44
+    },
+    {
+      "text": "选好\"生活\"日历",
+      "spoken": "选好 \"生活\" 日历，",
+      "from": 208,
+      "to": 255,
+      "local_start_sec": 6.9,
+      "global_start_sec": 192.299,
+      "global_end_sec": 193.912,
+      "size": 44
+    },
+    {
+      "text": "填上时间",
+      "spoken": "填上时间，",
+      "from": 256,
+      "to": 285,
+      "local_start_sec": 8.512,
+      "global_start_sec": 193.912,
+      "global_end_sec": 194.912,
+      "size": 44
+    },
+    {
+      "text": "提醒和备注也都设好",
+      "spoken": "提醒和备注也都设好，",
+      "from": 286,
+      "to": 339,
+      "local_start_sec": 9.512,
+      "global_start_sec": 194.912,
+      "global_end_sec": 196.687,
+      "size": 44
+    },
+    {
+      "text": "然后一条一条把安排加进去",
+      "spoken": "然后一条一条把安排加进去。",
+      "from": 340,
+      "to": 391,
+      "local_start_sec": 11.287,
+      "global_start_sec": 196.687,
+      "global_end_sec": 198.444,
+      "size": 44
+    }
+  ]
+}

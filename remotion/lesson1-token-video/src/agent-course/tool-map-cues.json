@@ -1,0 +1,155 @@
+[
+  {
+    "at": 958.97,
+    "domestic": [
+      {
+        "text": "豆包工作",
+        "at": 961.4
+      },
+      {
+        "text": "腾讯 WorkBuddy",
+        "at": 962.15
+      },
+      {
+        "text": "千问办公",
+        "at": 963.32
+      }
+    ],
+    "overseas": [
+      {
+        "text": "ChatGPT Work",
+        "at": 965.2
+      }
+    ]
+  },
+  {
+    "at": 977.37,
+    "domestic": [
+      {
+        "text": "Kimi 深度研究",
+        "at": 979.78
+      }
+    ],
+    "overseas": [
+      {
+        "text": "Gemini Deep Research",
+        "at": 982.08
+      },
+      {
+        "text": "Perplexity Deep Research",
+        "at": 983.44
+      }
+    ]
+  },
+  {
+    "at": 991.2,
+    "domestic": [
+      {
+        "text": "WPS 灵犀",
+        "at": 994.48
+      },
+      {
+        "text": "千问办公",
+        "at": 996
+      }
+    ],
+    "overseas": [
+      {
+        "text": "Microsoft 365 Copilot Agents",
+        "at": 997
+      }
+    ]
+  },
+  {
+    "at": 1002.97,
+    "domestic": [
+      {
+        "text": "Kimi Work",
+        "at": 1005.23
+      }
+    ],
+    "overseas": [
+      {
+        "text": "ChatGPT Work",
+        "at": 1006.75
+      },
+      {
+        "text": "微软 Copilot",
+        "at": 1007.54
+      }
+    ]
+  },
+  {
+    "at": 1014.57,
+    "domestic": [
+      {
+        "text": "Lovart 中文版",
+        "at": 1016.84
+      },
+      {
+        "text": "豆包",
+        "at": 1017.92
+      },
+      {
+        "text": "即梦",
+        "at": 1019.52
+      }
+    ],
+    "overseas": [
+      {
+        "text": "Midjourney",
+        "at": 1020.64
+      },
+      {
+        "text": "ChatGPT Image2",
+        "at": 1020.92
+      },
+      {
+        "text": "NanoBanana",
+        "at": 1022.38
+      }
+    ]
+  },
+  {
+    "at": 1028.17,
+    "domestic": [
+      {
+        "text": "小云雀",
+        "at": 1032.24
+      },
+      {
+        "text": "LibTV",
+        "at": 1032.84
+      },
+      {
+        "text": "即梦",
+        "at": 1033.92
+      }
+    ],
+    "overseas": [
+      {
+        "text": "Runway Agent",
+        "at": 1035.09
+      }
+    ]
+  },
+  {
+    "at": 1043.47,
+    "domestic": [
+      {
+        "text": "TRAE",
+        "at": 1046.5
+      },
+      {
+        "text": "Qcoder",
+        "at": 1046.88
+      }
+    ],
+    "overseas": [
+      {
+        "text": "Codex · Claude Code · Cursor",
+        "at": 1049.64
+      }
+    ]
+  }
+]

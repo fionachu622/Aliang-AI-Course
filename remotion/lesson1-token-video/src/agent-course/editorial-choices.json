@@ -1,0 +1,120 @@
+{
+  "clock": "original narration; narration-edit.json applies the removed title once",
+  "priority": [
+    "recording",
+    "meaningful visualization",
+    "presenter"
+  ],
+  "visuals": [
+    {
+      "start": 9.4333333333,
+      "end": 33.1666666667,
+      "scene": "opening",
+      "reason": "保留已认可的人物情境与课程路径"
+    },
+    {
+      "start": 41,
+      "end": 54.22,
+      "scene": "Agent02",
+      "reason": "需求、Agent、交付结果的关系"
+    },
+    {
+      "start": 123.28,
+      "end": 151.64,
+      "scene": "Agent04",
+      "reason": "终端与桌面入口的对照，核心任务关系不变"
+    },
+    {
+      "start": 223.6,
+      "end": 241.32,
+      "scene": "ProcessChain",
+      "reason": "随口播显示连续任务的推进，不回放上一案例结果"
+    },
+    {
+      "start": 288.1333333333,
+      "end": 297.6666666667,
+      "scene": "Agent07",
+      "reason": "把任务分到三条并行路径，随后让位给录屏"
+    },
+    {
+      "start": 377.27,
+      "end": 438.4,
+      "scene": "Agent08",
+      "reason": "四项能力逐项出现并连接，保留原布局"
+    },
+    {
+      "start": 443.5,
+      "end": 466.52,
+      "scene": "Agent09",
+      "reason": "观察、思考、行动、新结果组成反馈循环"
+    },
+    {
+      "start": 578.76,
+      "end": 585.96,
+      "scene": "ApprovalGates",
+      "reason": "预览确认和发布确认分别落在流程对应位置"
+    },
+    {
+      "start": 600.84,
+      "end": 622.04,
+      "scene": "ResearchToStory",
+      "reason": "查资料、安排内容到画面讲解逐步构建"
+    },
+    {
+      "start": 686.52,
+      "end": 700.2,
+      "scene": "PreviewRevision",
+      "reason": "预览修改与后期返工的依赖关系"
+    },
+    {
+      "start": 829.8,
+      "end": 864.68,
+      "scene": "SafetyBoundary",
+      "reason": "发布、删除、付款分别展示操作前的确认边界"
+    },
+    {
+      "start": 887.63,
+      "end": 920.6,
+      "scene": "Agent18",
+      "reason": "四种入口逐一呈现，共同连接 Agent"
+    },
+    {
+      "start": 945.52,
+      "end": 952.6,
+      "scene": "Agent19",
+      "reason": "现成工具、重复任务与定制的递进关系"
+    },
+    {
+      "start": 958.9666666667,
+      "end": 1059.9333333333,
+      "scene": "Agent20",
+      "reason": "保留本版工具表，按口播揭示每类与产品"
+    },
+    {
+      "start": 1083.44,
+      "end": 1129.92,
+      "scene": "Agent22",
+      "reason": "人群、任务、工具的对应关系"
+    },
+    {
+      "start": 1160.03,
+      "end": 1177.52,
+      "scene": "Agent23",
+      "reason": "免费额度与订阅边界比较"
+    },
+    {
+      "start": 1177.52,
+      "end": 1201.88,
+      "scene": "UsageCredits",
+      "reason": "额度消耗与加购过程；随口播切换规则提醒"
+    },
+    {
+      "start": 1206.55,
+      "end": 1208.84,
+      "scene": "Agent25",
+      "reason": "自有软件通过 API 调用并产生费用"
+    }
+  ],
+  "presenterPolicy": "上述可视化与既定录屏以外使用真人。个人经历、提醒、价值判断和过渡不强制图解；短语仅作瞬时强调，不做整页文字。 图解仅覆盖正在讲述的内容；录屏结束后的口头归纳回到真人，不另加结果总结页；转入提醒、下一主题时立即退出旧图。",
+  "seeCutStatus": "Applied editorial principles in Remotion only; dependencies installed; full SeeCut pipeline blocked by Antigravity account location eligibility after successful sign-in. No automated SeeCut review claimed."
+}

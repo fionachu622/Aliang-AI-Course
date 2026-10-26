@@ -1,0 +1,58 @@
+{
+  "title": "让 Agent 少闯祸：三个翻车现场",
+  "start": 829.8,
+  "end": 864.68,
+  "timingSource": "全课文案口播对照 P075–P077；legacy visual clock",
+  "principle": "三组横向并列，小图标辅助识别、粉色名称为主，下方仅一行短提醒；细节由口播与字幕承接。",
+  "items": [
+    {
+      "number": "1",
+      "label": "发布",
+      "at": 829.8,
+      "detailAt": 842.36,
+      "icon": "upload",
+      "lines": [
+        "你来确认"
+      ],
+      "action": "最后一步，你确认",
+      "detail": ""
+    },
+    {
+      "number": "2",
+      "label": "删除和覆盖",
+      "at": 844.68,
+      "detailAt": 854.04,
+      "icon": "folder",
+      "lines": [
+        "先问备份"
+      ],
+      "action": "先问要不要备份",
+      "detail": ""
+    },
+    {
+      "number": "3",
+      "label": "花钱",
+      "at": 856.44,
+      "detailAt": 860.68,
+      "icon": "wallet",
+      "lines": [
+        "你来确认"
+      ],
+      "action": "自己确认",
+      "detail": "金额 · 地址 · 账号"
+    }
+  ],
+  "recapAt": 862.92,
+  "handoff": "864.68秒起的检查、权限及登录提醒交由真人口播承接，不并入第三项。",
+  "motion_reference": {
+    "id": "talkcraft:numbered-step-stack",
+    "name": "编号步骤堆入",
+    "recipe": "motion-library/matching/sources/talkcraft/cards/numbered-step-stack.md",
+    "reason": "三项独立提醒按口播累积，完整集合持续可读。",
+    "adaptation": "三组固定并列，辅助图标约130px宽；操作名为粉色主层级，白色短提醒两行对齐。仅保留按口播累积的0.4秒渐显，去掉编号、横移及弹跳。",
+    "sequence": "829.8/844.68/856.44秒建立对应操作名与小图标；842.36/854.04/860.68秒补对应提醒，持续保留至864.68秒。",
+    "handoff": "前接真人举例，后按原时点回真人说明检查与权限；不提前加入登录总结。",
+    "review": "原卡与已有12帧抽样观察，非完整播放或审听。",
+    "excluded": "shotcraft轮播会隐藏已讲项；Awesome系统循环片段不适合独立提醒。"
+  }
+}

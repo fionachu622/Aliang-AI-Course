@@ -1,0 +1,184 @@
+[
+  {
+    "sceneIndex": 0,
+    "id": "Agent01",
+    "title": "从麻烦事开始",
+    "from": 0,
+    "durationInFrames": 1230
+  },
+  {
+    "sceneIndex": 1,
+    "id": "Agent02",
+    "title": "你提需求，它交付结果",
+    "from": 1230,
+    "durationInFrames": 623
+  },
+  {
+    "sceneIndex": 2,
+    "id": "Agent03",
+    "title": "从混在一起，到各归其位",
+    "from": 1853,
+    "durationInFrames": 1680
+  },
+  {
+    "sceneIndex": 3,
+    "id": "Agent04",
+    "title": "入口变了，任务关系没变",
+    "from": 3533,
+    "durationInFrames": 1463
+  },
+  {
+    "sceneIndex": 4,
+    "id": "Agent05",
+    "title": "把安排放进日历",
+    "from": 4996,
+    "durationInFrames": 1712
+  },
+  {
+    "sceneIndex": 5,
+    "id": "Agent06",
+    "title": "三张表，一份可检查的结果",
+    "from": 6708,
+    "durationInFrames": 1936
+  },
+  {
+    "sceneIndex": 6,
+    "id": "Agent07",
+    "title": "三件事，分头推进",
+    "from": 8644,
+    "durationInFrames": 2276
+  },
+  {
+    "sceneIndex": 7,
+    "id": "Agent08",
+    "title": "四项能力如何配合",
+    "from": 10920,
+    "durationInFrames": 2232
+  },
+  {
+    "sceneIndex": 8,
+    "id": "Agent09",
+    "title": "新结果，成为下一轮的依据",
+    "from": 13152,
+    "durationInFrames": 1306
+  },
+  {
+    "sceneIndex": 9,
+    "id": "Agent10",
+    "title": "从想法，到发布",
+    "from": 14458,
+    "durationInFrames": 1316
+  },
+  {
+    "sceneIndex": 10,
+    "id": "Agent11",
+    "title": "把要什么说清楚",
+    "from": 15774,
+    "durationInFrames": 2110
+  },
+  {
+    "sceneIndex": 11,
+    "id": "Agent12",
+    "title": "让各阶段连成一个过程",
+    "from": 17884,
+    "durationInFrames": 1312
+  },
+  {
+    "sceneIndex": 12,
+    "id": "Agent13",
+    "title": "发现不对，就指出哪里不对",
+    "from": 19196,
+    "durationInFrames": 918
+  },
+  {
+    "sceneIndex": 13,
+    "id": "Agent14",
+    "title": "预览时，检查什么",
+    "from": 20114,
+    "durationInFrames": 2346
+  },
+  {
+    "sceneIndex": 14,
+    "id": "Agent15",
+    "title": "从预览走到公开发布",
+    "from": 22460,
+    "durationInFrames": 920
+  },
+  {
+    "sceneIndex": 15,
+    "id": "Agent16",
+    "title": "打开链接，才看见交付",
+    "from": 23380,
+    "durationInFrames": 1249
+  },
+  {
+    "sceneIndex": 16,
+    "id": "Agent17",
+    "title": "关键操作，停下来把关",
+    "from": 24629,
+    "durationInFrames": 1873
+  },
+  {
+    "sceneIndex": 17,
+    "id": "Agent18",
+    "title": "同一种能力，不同使用入口",
+    "from": 26502,
+    "durationInFrames": 1508
+  },
+  {
+    "sceneIndex": 18,
+    "id": "Agent19",
+    "title": "先用起来，再固定重复需求",
+    "from": 28010,
+    "durationInFrames": 759
+  },
+  {
+    "sceneIndex": 19,
+    "id": "Agent20",
+    "title": "Agent 工具地图",
+    "from": 28769,
+    "durationInFrames": 3640
+  },
+  {
+    "sceneIndex": 20,
+    "id": "Agent22",
+    "title": "按自己的任务选",
+    "from": 32409,
+    "durationInFrames": 2128
+  },
+  {
+    "sceneIndex": 21,
+    "id": "Agent23",
+    "title": "会员，不等于无限",
+    "from": 34537,
+    "durationInFrames": 872
+  },
+  {
+    "sceneIndex": 22,
+    "id": "Agent24",
+    "title": "积分怎样变成消耗",
+    "from": 35409,
+    "durationInFrames": 709
+  },
+  {
+    "sceneIndex": 23,
+    "id": "Agent25",
+    "title": "按调用量计费",
+    "from": 36118,
+    "durationInFrames": 296
+  },
+  {
+    "sceneIndex": 24,
+    "id": "Agent26",
+    "title": "别只看标价",
+    "from": 36414,
+    "durationInFrames": 615
+  },
+  {
+    "sceneIndex": 25,
+    "id": "Agent27",
+    "title": "从一件小事开始",
+    "from": 37029,
+    "durationInFrames": 1762
+  }
+]

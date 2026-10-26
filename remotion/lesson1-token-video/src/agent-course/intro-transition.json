@@ -1,0 +1,9 @@
+{
+  "type": "presenter-shrink-bottom-left",
+  "shrinkFrames": 24,
+  "exitOverlapFrames": 6,
+  "exitFrames": 22,
+  "windowScale": 0.2,
+  "margin": 36,
+  "preloadFrames": 6
+}

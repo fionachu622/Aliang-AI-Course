@@ -1,0 +1,25 @@
+{
+  "source": "agent-course/preview-proxies/calendar-continuous-synced-v2.mp4",
+  "durationInFrames": 763,
+  "cutIds": [
+    "calendar-sync-input",
+    "calendar-sync-submit",
+    "calendar-sync-permission",
+    "calendar-sync-browser",
+    "calendar-sync-form",
+    "calendar-sync-time",
+    "calendar-sync-reminder",
+    "calendar-sync-remaining"
+  ],
+  "basis": "Current original-video subtitles sampled every second, source recording sampled every 0.5 s. Eight action beats; hold input/form during explanation. No audio changes.",
+  "limitation": "The edited recording omits the completed view; the review hold is extracted from the full original recording.",
+  "from": 5460,
+  "reviewHoldFrom": 6180,
+  "reviewHoldEnd": 6665,
+  "reviewHoldImage": "agent-course/media/calendar-six-created.jpg",
+  "reviewHoldSource": {
+    "path": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/02 创建日程/创建日程.mp4",
+    "seconds": 296,
+    "evidence": "Six saved calendar events visible; add-event dialog closed."
+  }
+}

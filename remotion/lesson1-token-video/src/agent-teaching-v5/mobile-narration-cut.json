@@ -1,0 +1,11 @@
+{
+  "startFrame": 21684,
+  "endFrame": 21762,
+  "removedFrames": 78,
+  "fps": 30,
+  "clock": "presenter-case-edited-v2 output clock before this cut",
+  "remove": "Agent也能及时收到通知",
+  "keep": "补充信息，Agent需要你确认的时候，也能及时收到通知。",
+  "basis": "Existing master subtitles identify false start then corrected take. Audio silencedetect -32dB/0.08s: 722.764833–723.169062 and 725.056021–725.688646; both cut points are inside pauses.",
+  "method": "Whole composition source-clock skip; video, audio, subtitles and visual cues use identical remapping. Original media retained."
+}

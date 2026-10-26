@@ -1,0 +1,624 @@
+{
+  "id": "p037",
+  "start": 13131,
+  "duration": 677,
+  "startSeconds": 437.71,
+  "css": ".agent-html-scene{\n --bg-0:#F5F2EF; --bg-1:#EDE9E5; --bg-2:#FFFFFF;\n --text:#202833; --text-dim:#67717E; --text-muted:#8B929B;\n --accent:#2563EB; --accent-soft:#E4EDFF; --accent-border:#A8C2FB;\n --accent-glow:rgba(37,99,235,.13); --signal:#2563EB; --warn:#95682E; --ok:#2563EB;\n --line:#D8DCE1; --line-soft:rgba(55,70,88,.055); --card-bg:#FFFFFF;\n --bg-radial:radial-gradient(ellipse at 72% 42%,#E8EDF8 0%,#F5F2EF 63%);\n --mg-sub-fg:#202833; --mg-sub-stroke:#F5F2EF; --mg-track:#D8DCE1; --mg-tick:#8B929B;\n}.agent-html-scene *{box-sizing:border-box;margin:0;padding:0}.agent-html-scene{width:1920px;height:1080px;overflow:hidden;background:var(--bg-0);color:var(--text);font-family:'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;-webkit-font-smoothing:antialiased}.agent-html-scene .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);background-size:96px 96px}.agent-html-scene .top{position:absolute;left:112px;right:112px;top:64px;display:flex;justify-content:space-between;align-items:center;font-size:24px;letter-spacing:2px;color:var(--text-dim)}.agent-html-scene .top b{color:var(--accent);font-weight:600}.agent-html-scene .rule{position:absolute;left:112px;right:112px;top:116px;height:2px;background:var(--line)}.agent-html-scene .eyebrow{font-size:26px;letter-spacing:4px;color:var(--accent);font-weight:600}.agent-html-scene .stage{position:absolute;left:112px;right:112px;top:180px;height:660px}.agent-html-scene h1{font-size:100px;line-height:1.2;letter-spacing:-3px;font-weight:650}.agent-html-scene h2{font-size:64px;line-height:1.25;font-weight:600;letter-spacing:-1px}.agent-html-scene em{font-style:normal;color:var(--accent)}.agent-html-scene .dim{color:var(--text-dim)}.agent-html-scene .foot{position:absolute;left:112px;right:112px;top:851px;display:flex;justify-content:space-between;font-size:22px;color:var(--text-dim)}.agent-html-scene .focus{border:2px solid var(--accent-border);background:var(--accent-soft);box-shadow:0 10px 60px var(--accent-glow)}.agent-html-scene .panel{background:var(--card-bg);border:1px solid var(--line);border-radius:20px;padding:38px}.agent-html-scene .label{font-size:26px;color:var(--text-dim);line-height:1.5}.agent-html-scene .large{font-size:96px;font-weight:650;line-height:1.2}.agent-html-scene .body{font-size:36px;line-height:1.6}.agent-html-scene .pill{padding:10px 22px;border:1px solid var(--line);border-radius:40px;font-size:24px;color:var(--text-dim)}.agent-html-scene{width:1920px;height:1080px;font-family:'PingFang SC','Microsoft YaHei',sans-serif}.agent-html-scene .heading{position:relative}.agent-html-scene .heading h1{color:var(--accent);text-shadow:0 8px 45px var(--accent-glow)}.agent-html-scene .heading h1{margin-top:18px}.agent-html-scene .diagram{width:1696px;height:470px;margin-top:30px;overflow:visible}.agent-html-scene svg rect{fill:var(--card-bg);stroke:var(--line);stroke-width:2}.agent-html-scene svg text{fill:var(--text);font-family:'PingFang SC','Microsoft YaHei',sans-serif}.agent-html-scene .nt{font-size:42px;font-weight:600}.agent-html-scene .ns{font-size:26px;fill:var(--text-dim)}.agent-html-scene .conn{fill:none;stroke:var(--accent);stroke-width:3}.agent-html-scene .big{font-size:120px;font-weight:650;fill:var(--accent)}.agent-html-scene .key rect{fill:var(--accent-soft);stroke:var(--accent-border)}.agent-html-scene .hero{font-size:100px;font-weight:650;fill:var(--accent)}.agent-html-scene .tiny{font-size:24px;fill:var(--text-dim)} ",
+  "nodes": [
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "grid"
+      },
+      "children": [],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "top"
+      },
+      "children": [
+        {
+          "tag": "b",
+          "attrs": {},
+          "children": [
+            "AGENT 专题课"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "02 / 核心工作原理"
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "rule"
+      },
+      "children": [],
+      "tracks": []
+    },
+    {
+      "tag": "main",
+      "attrs": {
+        "class": "stage"
+      },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "heading"
+          },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "eyebrow"
+              },
+              "children": [
+                "04 / 安排与修正"
+              ],
+              "tracks": []
+            },
+            {
+              "tag": "h1",
+              "attrs": {},
+              "children": [
+                "先规划，再根据结果调整"
+              ],
+              "tracks": []
+            }
+          ],
+          "tracks": [
+            {
+              "kind": "from",
+              "from": {
+                "opacity": 0,
+                "y": 18,
+                "duration": 0.65
+              },
+              "to": {},
+              "at": 0,
+              "duration": 0.65,
+              "ease": "power1.out"
+            }
+          ]
+        },
+        {
+          "tag": "svg",
+          "attrs": {
+            "viewbox": "0 0 1696 470",
+            "class": "diagram"
+          },
+          "children": [
+            {
+              "tag": "defs",
+              "attrs": {},
+              "children": [
+                {
+                  "tag": "marker",
+                  "attrs": {
+                    "id": "arrow",
+                    "markerwidth": "10",
+                    "markerheight": "10",
+                    "refx": "7",
+                    "refy": "3",
+                    "orient": "auto"
+                  },
+                  "children": [
+                    {
+                      "tag": "path",
+                      "attrs": {
+                        "d": "M0 0 L7 3 L0 6",
+                        "fill": "var(--accent)"
+                      },
+                      "children": [],
+                      "tracks": []
+                    }
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": []
+            },
+            {
+              "tag": "g",
+              "attrs": {
+                "id": "plan"
+              },
+              "children": [
+                {
+                  "tag": "rect",
+                  "attrs": {
+                    "x": "0",
+                    "y": "55",
+                    "width": "410",
+                    "height": "146",
+                    "rx": "14"
+                  },
+                  "children": [],
+                  "tracks": []
+                },
+                {
+                  "tag": "text",
+                  "attrs": {
+                    "x": "32",
+                    "y": "119",
+                    "class": "nt"
+                  },
+                  "children": [
+                    "拆分步骤"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "text",
+                  "attrs": {
+                    "x": "32",
+                    "y": "166",
+                    "class": "ns"
+                  },
+                  "children": [
+                    "先做什么 · 后做什么"
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 14,
+                    "duration": 0.65
+                  },
+                  "to": {},
+                  "at": 2.641,
+                  "duration": 0.65,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "path",
+              "attrs": {
+                "id": "a",
+                "d": "M410 128 H530",
+                "class": "conn",
+                "marker-end": "url(#arrow)"
+              },
+              "children": [],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 14,
+                    "duration": 0.65
+                  },
+                  "to": {},
+                  "at": 2.641,
+                  "duration": 0.65,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "g",
+              "attrs": {
+                "id": "run"
+              },
+              "children": [
+                {
+                  "tag": "rect",
+                  "attrs": {
+                    "x": "560",
+                    "y": "55",
+                    "width": "440",
+                    "height": "146",
+                    "rx": "14"
+                  },
+                  "children": [],
+                  "tracks": []
+                },
+                {
+                  "tag": "text",
+                  "attrs": {
+                    "x": "592",
+                    "y": "119",
+                    "class": "nt"
+                  },
+                  "children": [
+                    "执行计划"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "text",
+                  "attrs": {
+                    "x": "592",
+                    "y": "166",
+                    "class": "ns"
+                  },
+                  "children": [
+                    "一步一步往前推进"
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 14,
+                    "duration": 0.65
+                  },
+                  "to": {},
+                  "at": 5.528,
+                  "duration": 0.65,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "path",
+              "attrs": {
+                "id": "b",
+                "d": "M1000 128 H1130",
+                "class": "conn",
+                "marker-end": "url(#arrow)"
+              },
+              "children": [],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 14,
+                    "duration": 0.65
+                  },
+                  "to": {},
+                  "at": 5.528,
+                  "duration": 0.65,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "g",
+              "attrs": {
+                "id": "check"
+              },
+              "children": [
+                {
+                  "tag": "rect",
+                  "attrs": {
+                    "x": "1160",
+                    "y": "55",
+                    "width": "500",
+                    "height": "146",
+                    "rx": "14"
+                  },
+                  "children": [],
+                  "tracks": []
+                },
+                {
+                  "tag": "text",
+                  "attrs": {
+                    "x": "1192",
+                    "y": "119",
+                    "class": "nt"
+                  },
+                  "children": [
+                    "检查结果"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "text",
+                  "attrs": {
+                    "x": "1192",
+                    "y": "166",
+                    "class": "ns"
+                  },
+                  "children": [
+                    "是否符合预期"
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 14,
+                    "duration": 0.65
+                  },
+                  "to": {},
+                  "at": 5.528,
+                  "duration": 0.65,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "g",
+              "attrs": {
+                "id": "branch"
+              },
+              "children": [
+                {
+                  "tag": "path",
+                  "attrs": {
+                    "d": "M1410 201 V355 H1000",
+                    "class": "conn",
+                    "marker-end": "url(#arrow)"
+                  },
+                  "children": [],
+                  "tracks": []
+                },
+                {
+                  "tag": "text",
+                  "attrs": {
+                    "class": "tiny",
+                    "x": "1435",
+                    "y": "291"
+                  },
+                  "children": [
+                    "信息不足 / 方法不对"
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 14,
+                    "duration": 0.65
+                  },
+                  "to": {},
+                  "at": 13.316,
+                  "duration": 0.65,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "g",
+              "attrs": {
+                "id": "adjust"
+              },
+              "children": [
+                {
+                  "tag": "rect",
+                  "attrs": {
+                    "x": "560",
+                    "y": "282",
+                    "width": "440",
+                    "height": "146",
+                    "rx": "14"
+                  },
+                  "children": [],
+                  "tracks": []
+                },
+                {
+                  "tag": "text",
+                  "attrs": {
+                    "x": "592",
+                    "y": "346",
+                    "class": "nt"
+                  },
+                  "children": [
+                    "调整方法"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "text",
+                  "attrs": {
+                    "x": "592",
+                    "y": "393",
+                    "class": "ns"
+                  },
+                  "children": [
+                    "补信息 · 换方法 · 再继续"
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 14,
+                    "duration": 0.65
+                  },
+                  "to": {},
+                  "at": 19.678,
+                  "duration": 0.65,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "path",
+              "attrs": {
+                "id": "back",
+                "d": "M560 355 H210 V201",
+                "class": "conn",
+                "marker-end": "url(#arrow)"
+              },
+              "children": [],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 14,
+                    "duration": 0.65
+                  },
+                  "to": {},
+                  "at": 21.066,
+                  "duration": 0.65,
+                  "ease": "power1.out"
+                }
+              ]
+            }
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "foot"
+      },
+      "children": [
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "大模型 · 记忆 · 工具 · 规划与调整"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "037 / 039"
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    }
+  ],
+  "blocks": [
+    {
+      "text": "第四部分",
+      "spoken": "第四部分，",
+      "from": 1,
+      "to": 30,
+      "local_start_sec": 0.0,
+      "global_start_sec": 437.71,
+      "global_end_sec": 438.725,
+      "size": 44
+    },
+    {
+      "text": "规划和调整",
+      "spoken": "规划和调整。",
+      "from": 31,
+      "to": 79,
+      "local_start_sec": 1.016,
+      "global_start_sec": 438.725,
+      "global_end_sec": 440.35,
+      "size": 44
+    },
+    {
+      "text": "复杂任务往往要分成很多步",
+      "spoken": "复杂任务往往要分成很多步。",
+      "from": 80,
+      "to": 166,
+      "local_start_sec": 2.641,
+      "global_start_sec": 440.35,
+      "global_end_sec": 443.238,
+      "size": 44
+    },
+    {
+      "text": "Agent需要先想接下来怎么做、",
+      "spoken": "Agent 需要先想接下来怎么做、",
+      "from": 167,
+      "to": 257,
+      "local_start_sec": 5.528,
+      "global_start_sec": 443.238,
+      "global_end_sec": 446.263,
+      "size": 44
+    },
+    {
+      "text": "先做什么后做什么",
+      "spoken": "先做什么后做什么。",
+      "from": 258,
+      "to": 308,
+      "local_start_sec": 8.553,
+      "global_start_sec": 446.263,
+      "global_end_sec": 447.988,
+      "size": 44
+    },
+    {
+      "text": "而且计划也不是定下来就不变了",
+      "spoken": "而且计划也不是定下来就不变了。",
+      "from": 309,
+      "to": 399,
+      "local_start_sec": 10.278,
+      "global_start_sec": 447.988,
+      "global_end_sec": 451.025,
+      "size": 44
+    },
+    {
+      "text": "执行过程中发现信息不够、",
+      "spoken": "执行过程中发现信息不够、",
+      "from": 400,
+      "to": 471,
+      "local_start_sec": 13.316,
+      "global_start_sec": 451.025,
+      "global_end_sec": 453.425,
+      "size": 44
+    },
+    {
+      "text": "方法不对",
+      "spoken": "方法不对，",
+      "from": 472,
+      "to": 525,
+      "local_start_sec": 15.715,
+      "global_start_sec": 453.425,
+      "global_end_sec": 455.225,
+      "size": 44
+    },
+    {
+      "text": "或者结果和预期不一样",
+      "spoken": "或者结果和预期不一样，",
+      "from": 526,
+      "to": 590,
+      "local_start_sec": 17.515,
+      "global_start_sec": 455.225,
+      "global_end_sec": 457.388,
+      "size": 44
+    },
+    {
+      "text": "它还会及时调整",
+      "spoken": "它还会及时调整，",
+      "from": 591,
+      "to": 632,
+      "local_start_sec": 19.678,
+      "global_start_sec": 457.388,
+      "global_end_sec": 458.775,
+      "size": 44
+    },
+    {
+      "text": "再继续往下做",
+      "spoken": "再继续往下做。",
+      "from": 633,
+      "to": 665,
+      "local_start_sec": 21.066,
+      "global_start_sec": 458.775,
+      "global_end_sec": 459.865,
+      "size": 44
+    }
+  ]
+}

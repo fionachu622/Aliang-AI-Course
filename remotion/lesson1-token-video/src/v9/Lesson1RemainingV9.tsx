@@ -21,7 +21,7 @@ const clamp = {
   extrapolateRight: 'clamp' as const,
 };
 
-const Title = ({children, amount = 1}: {children: ReactNode; amount?: number}) => (
+export const Title = ({children, amount = 1}: {children: ReactNode; amount?: number}) => (
   <Layer
     amount={amount}
     fromY={-18}
@@ -40,7 +40,7 @@ const Title = ({children, amount = 1}: {children: ReactNode; amount?: number}) =
   </Layer>
 );
 
-const ChalkUnderline = ({
+export const ChalkUnderline = ({
   width,
   amount,
   color,
@@ -52,7 +52,7 @@ const ChalkUnderline = ({
   style?: CSSProperties;
 }) => <HandUnderline width={width} progress={amount} color={color} style={style} />;
 
-const Box = ({
+export const Box = ({
   text,
   amount,
   color = v9Colors.ink,
@@ -95,34 +95,56 @@ const Box = ({
   </Layer>
 );
 
-const DownArrow = ({amount, color = v9Colors.blue}: {amount: number; color?: string}) => (
-  <svg width="70" height="100" viewBox="0 0 70 100" style={{overflow: 'visible'}}>
-    <path
-      d="M 35 7 C 32 28 38 49 34 75 M 19 62 L 34 79 L 52 61"
-      fill="none"
-      stroke={color}
-      strokeWidth={4}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      pathLength={1}
-      strokeDasharray={1}
-      strokeDashoffset={1 - amount}
-    />
-    <path
-      d="M 38 10 C 35 31 40 51 37 72"
-      fill="none"
-      stroke={color}
-      strokeWidth={1.2}
-      strokeLinecap="round"
-      opacity={0.3}
-      pathLength={1}
-      strokeDasharray={1}
-      strokeDashoffset={1 - amount}
-    />
-  </svg>
-);
+export const DownArrow = ({amount, color = v9Colors.blue}: {amount: number; color?: string}) => {
+  const {visualStyle} = useVisualOptions();
+  return (
+    <svg width="70" height="100" viewBox="0 0 70 100" style={{overflow: 'visible'}}>
+      {visualStyle === 'geometric' ? (
+        <>
+          <rect x="31" y="6" width="8" height="8" fill={color} opacity={amount} />
+          <path
+            d="M 35 14 V 78 M 20 63 L 35 78 L 50 63"
+            fill="none"
+            stroke={color}
+            strokeWidth={3.2}
+            strokeLinecap="square"
+            strokeLinejoin="miter"
+            pathLength={1}
+            strokeDasharray={1}
+            strokeDashoffset={1 - amount}
+          />
+        </>
+      ) : (
+        <>
+          <path
+            d="M 35 7 C 32 28 38 49 34 75 M 19 62 L 34 79 L 52 61"
+            fill="none"
+            stroke={color}
+            strokeWidth={4}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            pathLength={1}
+            strokeDasharray={1}
+            strokeDashoffset={1 - amount}
+          />
+          <path
+            d="M 38 10 C 35 31 40 51 37 72"
+            fill="none"
+            stroke={color}
+            strokeWidth={1.2}
+            strokeLinecap="round"
+            opacity={0.3}
+            pathLength={1}
+            strokeDasharray={1}
+            strokeDashoffset={1 - amount}
+          />
+        </>
+      )}
+    </svg>
+  );
+};
 
-const TokenPiece = ({
+export const TokenPiece = ({
   children,
   amount,
   color = v9Colors.blue,
@@ -154,32 +176,43 @@ const TokenPiece = ({
   </Layer>
 );
 
-const LoopArrow = ({amount}: {amount: number}) => (
-  <svg width="1280" height="230" viewBox="0 0 1280 230" style={{overflow: 'visible'}}>
+export const LoopArrow = ({amount}: {amount: number}) => {
+  const {visualStyle} = useVisualOptions();
+  return (
+    <svg width="1280" height="230" viewBox="0 0 1280 230" style={{overflow: 'visible'}}>
     <path
-      d="M 1170 28 C 1162 164 970 205 690 203 C 402 201 151 188 112 78"
+      d={visualStyle === 'geometric' ? 'M 1170 28 V 190 H 112 V 78' : 'M 1170 28 C 1162 164 970 205 690 203 C 402 201 151 188 112 78'}
       fill="none"
       stroke={v9Colors.blue}
-      strokeWidth={3.5}
-      strokeLinecap="round"
+      strokeWidth={visualStyle === 'geometric' ? 3 : 3.5}
+      strokeLinecap={visualStyle === 'geometric' ? 'square' : 'round'}
+      strokeLinejoin={visualStyle === 'geometric' ? 'miter' : 'round'}
       pathLength={1}
       strokeDasharray={1}
       strokeDashoffset={1 - amount}
     />
     <path
-      d="M 125 101 L 108 76 L 137 70"
+      d={visualStyle === 'geometric' ? 'M 96 98 L 112 78 L 128 98' : 'M 125 101 L 108 76 L 137 70'}
       fill="none"
       stroke={v9Colors.blue}
       strokeWidth={3.5}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      strokeLinecap={visualStyle === 'geometric' ? 'square' : 'round'}
+      strokeLinejoin={visualStyle === 'geometric' ? 'miter' : 'round'}
       opacity={ease(amount, 0.72, 0.2)}
     />
   </svg>
-);
+  );
+};
 
-export const ScenePredictNext = () => {
+export const ScenePredictNext = ({
+  insightText = '预测下一个 Token',
+  insightUnderlineWidth = 720,
+}: {
+  insightText?: string;
+  insightUnderlineWidth?: number;
+} = {}) => {
   const frame = useV9SceneFrame();
+  const {visualStyle} = useVisualOptions();
   const prompt = ease(frame, 4, 22);
   const candidates = [
     ['充电器', 1, v9Colors.green],
@@ -207,8 +240,11 @@ export const ScenePredictNext = () => {
                       width: `${value * amount * 100}%`,
                       height: 7,
                       background: color,
-                      borderRadius: '45% 55% 42% 58%',
-                      transform: `rotate(${index % 2 ? 0.4 : -0.35}deg)`,
+                      borderRadius: visualStyle === 'geometric' ? 2 : '45% 55% 42% 58%',
+                      transform:
+                        visualStyle === 'geometric'
+                          ? undefined
+                          : `rotate(${index % 2 ? 0.4 : -0.35}deg)`,
                     }}
                   />
                 </div>
@@ -230,8 +266,8 @@ export const ScenePredictNext = () => {
       </Layer>
       <Layer amount={insight} fromScale={0.9} style={{position: 'absolute', left: 0, right: 0, bottom: 100, textAlign: 'center'}}>
         <div style={{display: 'inline-block', position: 'relative', fontSize: 84}}>
-          预测下一个 Token
-          <ChalkUnderline width={720} amount={insight} color={v9Colors.yellow} style={{position: 'absolute', left: 0, bottom: -24}} />
+          {insightText}
+          <ChalkUnderline width={insightUnderlineWidth} amount={insight} color={v9Colors.yellow} style={{position: 'absolute', left: 0, bottom: -24}} />
         </div>
       </Layer>
       <SceneNumber current={4} />
@@ -239,7 +275,13 @@ export const ScenePredictNext = () => {
   );
 };
 
-export const SceneGenerationLoop = () => {
+const DEFAULT_GENERATION_TOKENS = ['手机', '快', '没电', '了', '，', '我', '赶紧', '找', '充电器', '……'] as const;
+
+export const SceneGenerationLoop = ({
+  tokens = DEFAULT_GENERATION_TOKENS,
+}: {
+  tokens?: readonly string[];
+} = {}) => {
   const frame = useV9SceneFrame();
   const nodeStarts = [16, 66, 116, 166] as const;
   const nodes = [
@@ -263,7 +305,7 @@ export const SceneGenerationLoop = () => {
       <div style={{position: 'absolute', left: 320, top: 520}}><LoopArrow amount={loop} /></div>
       <Layer amount={ease(frame, 225, 22)} style={{position: 'absolute', left: 0, right: 0, bottom: 120}}>
         <div style={{display: 'flex', justifyContent: 'center', gap: 14}}>
-          {['手机', '快', '没电', '了', '，', '我', '赶紧', '找', '充电器', '……'].map((token, index) => (
+          {tokens.map((token, index) => (
             <TokenPiece key={`${token}-${index}`} amount={ease(frame, 225 + index * 5, 13)} color={index === 8 ? v9Colors.yellow : v9Colors.blue}>
               {token}
             </TokenPiece>
@@ -295,9 +337,11 @@ export const SceneStreaming = () => {
           </div>
         </RoughBox>
       </Layer>
-      <Layer amount={ease(frame, 150, 22)} style={{position: 'absolute', left: 0, right: 0, top: 700, textAlign: 'center', fontSize: 43, color: v9Colors.muted}}>
-        不是先写完，再模拟打字
-      </Layer>
+      <BoxFinePrint>
+        <Layer amount={ease(frame, 150, 22)} style={{position: 'absolute', left: 0, right: 0, top: 700, textAlign: 'center', fontSize: 43, color: v9Colors.muted}}>
+          不是先写完，再模拟打字
+        </Layer>
+      </BoxFinePrint>
       <Layer amount={takeaway} fromScale={0.9} style={{position: 'absolute', left: 0, right: 0, bottom: 105, textAlign: 'center'}}>
         <div style={{position: 'relative', display: 'inline-block', fontSize: 88}}>
           正在生成 = 正在显示
@@ -309,14 +353,20 @@ export const SceneStreaming = () => {
   );
 };
 
-export const SceneTokenDefinition = () => {
+export const SceneTokenDefinition = ({
+  showTitle = true,
+  comparisonTop = 650,
+}: {
+  showTitle?: boolean;
+  comparisonTop?: number;
+} = {}) => {
   const frame = useV9SceneFrame();
   const token = ease(frame, 5, 24);
   const unit = ease(frame, 40, 22);
   const neq = [ease(frame, 92, 18), ease(frame, 122, 18), ease(frame, 152, 18)];
   return (
     <Paper>
-      <Title amount={ease(frame, 0, 18)}>Token 到底是什么？</Title>
+      {showTitle ? <Title amount={ease(frame, 0, 18)}>Token 到底是什么？</Title> : null}
       <div style={{position: 'absolute', left: 0, right: 0, top: 260, textAlign: 'center'}}>
         <Layer amount={token} fromScale={0.82}>
           <span style={{fontSize: 190, color: v9Colors.blue}}>Token</span>
@@ -325,27 +375,39 @@ export const SceneTokenDefinition = () => {
           <div style={{fontSize: 82, marginTop: 20}}>模型处理和生成文本的 <span style={{position: 'relative', color: v9Colors.yellow}}>基本单位<Highlight progress={unit} color={v9Colors.yellow} /></span></div>
         </Layer>
       </div>
-      <div style={{position: 'absolute', left: 275, right: 275, top: 650, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 55}}>
+      <div style={{position: 'absolute', left: 275, right: 275, top: comparisonTop, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 55}}>
         {['≠ 一个汉字', '≠ 一个单词', '≠ 一个字符'].map((text, index) => (
           <Box key={text} text={text} amount={neq[index]} color={[v9Colors.magenta, v9Colors.green, v9Colors.coral][index]} width={410} height={150} fontSize={52} />
         ))}
       </div>
-      <Layer amount={ease(frame, 205, 20)} style={{position: 'absolute', left: 0, right: 0, bottom: 92, textAlign: 'center', color: v9Colors.muted, fontSize: 34}}>
-        输入 Token　·　输出 Token　·　128K Token
-      </Layer>
+      <BoxFinePrint>
+        <Layer amount={ease(frame, 205, 20)} style={{position: 'absolute', left: 0, right: 0, bottom: 92, textAlign: 'center', color: v9Colors.muted, fontSize: 34}}>
+          输入 Token　·　输出 Token　·　128K Token
+        </Layer>
+      </BoxFinePrint>
       <SceneNumber current={7} />
     </Paper>
   );
 };
 
-export const SceneTokenizer = () => {
+const DEFAULT_TOKENIZER_SENTENCE = '手机快没电了，我得赶紧找充电器。';
+const DEFAULT_TOKENIZER_PIECES = ['手机', '快', '没电', '了', '，', '我', '得', '赶紧', '找', '充电器', '。'] as const;
+
+export const SceneTokenizer = ({
+  sentence = DEFAULT_TOKENIZER_SENTENCE,
+  pieces = DEFAULT_TOKENIZER_PIECES,
+  note = '不同模型 → 切法可能不同',
+}: {
+  sentence?: string;
+  pieces?: readonly string[];
+  note?: string;
+} = {}) => {
   const frame = useV9SceneFrame();
-  const pieces = ['手机', '快', '没电', '了', '，', '我', '得', '赶紧', '找', '充电器', '。'];
   return (
     <Paper>
       <Title amount={ease(frame, 0, 18)}>正常文字，怎么变成 Token？</Title>
       <Layer amount={ease(frame, 18, 20)} style={{position: 'absolute', left: 0, right: 0, top: 240, textAlign: 'center', fontSize: 58}}>
-        手机快没电了，我得赶紧找充电器。
+        {sentence}
       </Layer>
       <div style={{position: 'absolute', left: '50%', top: 335, transform: 'translateX(-50%)'}}><DownArrow amount={ease(frame, 48, 20)} /></div>
       <div style={{position: 'absolute', left: '50%', top: 430, transform: 'translateX(-50%)'}}>
@@ -357,9 +419,11 @@ export const SceneTokenizer = () => {
           <TokenPiece key={`${piece}-${index}`} amount={ease(frame, 125 + index * 8, 12)} color={index % 3 === 0 ? v9Colors.green : v9Colors.blue}>{piece}</TokenPiece>
         ))}
       </div>
-      <Layer amount={ease(frame, 232, 20)} style={{position: 'absolute', left: 0, right: 0, bottom: 75, textAlign: 'center', fontSize: 40, color: v9Colors.yellow}}>
-        不同模型 → 切法可能不同
-      </Layer>
+      <BoxFinePrint>
+        <Layer amount={ease(frame, 232, 20)} style={{position: 'absolute', left: 0, right: 0, bottom: 75, textAlign: 'center', fontSize: 40, color: v9Colors.yellow}}>
+          {note}
+        </Layer>
+      </BoxFinePrint>
       <SceneNumber current={8} />
     </Paper>
   );
@@ -487,6 +551,7 @@ export const SceneTokenizerObserve = () => {
 
 export const SceneTokenImpact = () => {
   const frame = useV9SceneFrame();
+  const {showBoxFinePrint} = useVisualOptions();
   const items = [
     ['容量', '一次能处理多少', '128K / 1M Token', v9Colors.blue],
     ['长度', '一次能生成多少', '输出 Token', v9Colors.green],
@@ -502,10 +567,19 @@ export const SceneTokenImpact = () => {
           return (
             <Layer key={title} amount={amount} fromY={28}>
               <RoughBox width={490} height={370} color={color} progress={amount} seedKey={`token-impact-${title}`}>
-                <div style={{position: 'absolute', inset: 45, textAlign: 'center'}}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 45,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: showBoxFinePrint ? 'flex-start' : 'center',
+                    textAlign: 'center',
+                  }}
+                >
                   <div style={{fontSize: 84, color}}>{title}</div>
-                  <div style={{fontSize: 43, marginTop: 42}}>{body}</div>
                   <BoxFinePrint>
+                    <div style={{fontSize: 43, marginTop: 42}}>{body}</div>
                     <div style={{fontSize: 31, marginTop: 38, color}}>{detail}</div>
                   </BoxFinePrint>
                 </div>

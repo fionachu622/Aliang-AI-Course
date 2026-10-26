@@ -1,0 +1,49 @@
+{
+  "reference": {
+    "id": "Lesson1ChalkboardV3",
+    "title": "第一节课横向推页",
+    "source": "src/v14/Lesson1ChalkboardRevised.tsx:SlidingScene",
+    "frames": 24,
+    "fps": 30,
+    "easing": "Easing.inOut(Easing.cubic)",
+    "direction": "旧页向右，新页从左",
+    "observedFrames": [
+      780,
+      793,
+      805
+    ],
+    "review": "已抽帧查看用户指定作品并核对源码；未宣称完整播放或审听"
+  },
+  "scope": "独立课件页之间采用推页；同一舞台的渐进内容、共享对象归位、真人与真实录屏维持原有衔接。",
+  "adaptation": "上一页冻结在切换前状态，新页随当前口播时钟推进，不能提前曝光后文。背景与字幕固定。24帧的0与23帧分别为两个端点，结束后留新页阅读。",
+  "lateBoundaries": [
+    {
+      "sourceSeconds": 1160.03,
+      "outputSeconds": 984.4633
+    },
+    {
+      "sourceSeconds": 1169.5,
+      "outputSeconds": 993.9333
+    },
+    {
+      "sourceSeconds": 1180.3,
+      "outputSeconds": 1004.7333
+    },
+    {
+      "sourceSeconds": 1190.16,
+      "outputSeconds": 1014.5933
+    },
+    {
+      "sourceSeconds": 1203.93,
+      "outputSeconds": 1028.3633
+    }
+  ],
+  "excluded": {
+    "usageForms": "web/mobile/desktop/terminal是同一页的截图归位，不整页推走。",
+    "previewGateFeedback": "700.2秒源时钟配置了连续页面，但处于已精剪替换案例范围，正式画面由案例视频覆盖。",
+    "media": "转真人或录屏时不拖出退休课件。",
+    "earlyBoundaryAudit": "111.1667之前是case01-sync-10录屏，166.53处仍处于case-intro-presenter真人片段，均不启用课件推页。实际前半段连续逻辑以正式媒体区间为准，不能按旧stage标签推断。"
+  },
+  "libraryScreening": "已按三库检索。Shotcraft双门裂开会改变指定的单向推页；Awesome候选为完整作品且无精确匹配片段；Talkcraft的清单累积和焦点接力是页内组织。此处以用户指定的第一节课为直接参考，不混加其他镜头。",
+  "validation": "类型检查通过；新旧页端点与媒体/同页排除断言通过。查看第一课f780/793/805，并查看正式V5费用总览接免费额度的f29533/29540/29546/29557，以及后续四处中间帧f29830/30154/30450/30863；960×540拼图与f29830原尺寸已查看，单向运动、两页间距与字幕固定符合选型。未连续播放或审听。"
+}

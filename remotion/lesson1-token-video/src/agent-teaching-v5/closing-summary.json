@@ -1,0 +1,180 @@
+{
+  "start": 1234.3,
+  "end": 1276.6,
+  "learningGoal": "把需求交给 Agent，让能力与反馈循环完成任务；人控制边界并验收，按实际任务选择和验证工具。",
+  "reference": "学习笔记：从已知对象展开关系；第一课：稳定锚点、彩色分组、输入到输出的完整路径。",
+  "syncLevel": "ASR语义时间；保留口播，不声明逐帧精确。",
+  "sections": [
+    {
+      "id": "mechanism",
+      "start": 1234.3,
+      "end": 1246.56,
+      "title": "Agent：从需求到结果",
+      "proof": "需求与结果两端，四能力图标聚合在中央Agent下方；下层保留观察、思考、行动的反馈回路。"
+    },
+    {
+      "id": "principles",
+      "start": 1246.56,
+      "end": 1262.24,
+      "title": "交给 Agent，关键处由人把关",
+      "proof": "三栏分别对应目标、授权与关键确认；下方要求与结果对照验收。"
+    },
+    {
+      "id": "choice",
+      "start": 1262.24,
+      "end": 1276.6,
+      "title": "从自己的任务出发",
+      "proof": "四栏按人群对应任务，大字突出真实任务试用与好用再付费。"
+    }
+  ],
+  "cues": {
+    "demand": 1234.3,
+    "agent": 1235.08,
+    "result": 1236.14,
+    "brain": 1237.16,
+    "memory": 1237.72,
+    "tools": 1238.2,
+    "plan": 1238.84,
+    "observe": 1241.76,
+    "think": 1242.5,
+    "act": 1243.45,
+    "loop": 1244.24,
+    "clear": 1249.12,
+    "release": 1250.2,
+    "gate": 1251.2,
+    "limits": 1252.48,
+    "autonomy": 1254.44,
+    "approval": 1256.52,
+    "compare": 1258.8,
+    "accept": 1260.32,
+    "choose": 1263.6,
+    "student": 1265.4,
+    "office": 1267.12,
+    "creator": 1268.92,
+    "developer": 1271.16,
+    "price": 1273,
+    "trial": 1274.56,
+    "pay": 1275.48
+  },
+  "labels": {
+    "demand": "需求",
+    "agent": "Agent",
+    "result": "结果",
+    "brain": "大脑",
+    "memory": "记忆",
+    "tools": "工具",
+    "plan": "规划与调整",
+    "observe": "观察",
+    "think": "思考",
+    "act": "行动",
+    "loop": "反馈",
+    "clear": "结果说清",
+    "release": "中间放手",
+    "gate": "关键把关",
+    "limits": "目标 · 限制",
+    "autonomy": "自主执行",
+    "approval": "登录 · 发布 · 付款",
+    "compare": "对照要求",
+    "accept": "验收完成",
+    "choose": "按需选择",
+    "student": "学生",
+    "office": "上班族",
+    "creator": "创作者",
+    "developer": "程序员",
+    "trial": "真实任务试用",
+    "pay": "好用再付费",
+    "critical": "关键操作",
+    "criteria": "要求"
+  },
+  "needs": [
+    {
+      "role": "student",
+      "text": "资料整理",
+      "color": "#F0D26A"
+    },
+    {
+      "role": "office",
+      "text": "文件处理",
+      "color": "#7CC8EA"
+    },
+    {
+      "role": "creator",
+      "text": "批量处理",
+      "color": "#A4D486"
+    },
+    {
+      "role": "developer",
+      "text": "编程 Agent",
+      "color": "#F18D9E"
+    }
+  ],
+  "review": "只对已有课程知识重组，不新增人物插画，不新增收费类别，不删改原口播。",
+  "focus": {
+    "title": "这节课，记住三件事",
+    "items": [
+      {
+        "id": "agent",
+        "subject": "Agent",
+        "text": "替你办事",
+        "color": "#F0D26A",
+        "at": 1235.08
+      },
+      {
+        "id": "human",
+        "subject": "人",
+        "text": "关键把关",
+        "color": "#F18D9E",
+        "at": 1251.2
+      },
+      {
+        "id": "tool",
+        "subject": "选工具",
+        "text": "按需选择",
+        "color": "#7CC8EA",
+        "at": 1263.6
+      }
+    ],
+    "titleLayout": {
+      "fontSize": 96,
+      "x": 960,
+      "baseline": 220,
+      "anchor": "middle",
+      "reason": "用户明确指出顶部总结标题被弱化，本轮仅恢复主标题层级。"
+    }
+  },
+  "editorial_decision": {
+    "question": "整节课结束后最需要记住什么？",
+    "core_judgments": [
+      "Agent替人完成任务",
+      "关键操作由人把关",
+      "按自身任务需求选择工具"
+    ],
+    "narration_only": [
+      "四项能力",
+      "观察思考行动循环",
+      "目标限制与自主执行的细目",
+      "验收对照",
+      "四类人群及任务",
+      "价格与付费建议",
+      "真实任务试用"
+    ],
+    "organization": "三个同尺寸并列总结区，整体居中。上层彩色主体，下层白色四字判断，字号、基线、边距统一。取消主次悬殊的构图和所有图标。",
+    "adjacent": "从上一段独立结尾清晰切入；前两条分别保持约16秒和12秒；最后三条共同留存至结尾，不另加总结底栏。",
+    "motion_reference": {
+      "id": "talkcraft:numbered-step-stack",
+      "title": "编号步骤堆入",
+      "recipe": "motion-library/matching/sources/talkcraft/cards/numbered-step-stack.md",
+      "reason": "借用并列要点累积与完整集合停留，不暗示因果。",
+      "adaptation": "参考talkcraft:numbered-step-stack的独立要点累积；三处横向固定槽位，各按原cue用0.4秒显现，取消移动、编号、冲击及整组上浮。现有项持续保留，最后形成完整集合。",
+      "review": "依据12个实际抽样画面，非完整播放或审听；不借用需精确轨迹的复杂转场。"
+    },
+    "review": "已先查看独立静态稿，后查看正式V5 f31845/32275/32787/33024；覆盖首个稳定、第二组入场中、完整集合与结束状态。查看960×540拼图和原尺寸终态，三组字号、基线、留白一致，内容及边框与字幕区域无碰撞。第三项保持按需选择。类型检查通过。未连续播放或审听，不以几何检查代替用户审美确认。 2026-10-10标题单独修正：64px增至96px，基线220；已查看正式f33024原尺寸及960×540，标题与总结区间距清晰。",
+    "reference_screening": {
+      "shotcraft": "轮播与词条滚轮会隐藏前项，不用于本次持续回顾。",
+      "talkcraft": "采用numbered-step-stack的并列累积组织。",
+      "awesome": "检索到awesome:2107499968143733228，完整作品仅有抽样观察且需核对具体转场；不采用。"
+    },
+    "design_source": "frontend-design：以稳定分组和一致层级回应用户对混乱构图的纠正。",
+    "container_rationale": "三处浅色粉笔边界各自绑定主体与判断，避免标签游离；对默认不超过两组边界作有意例外。无嵌套边框，无装饰图标。"
+  }
+}

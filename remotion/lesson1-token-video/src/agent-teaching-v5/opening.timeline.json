@@ -1,0 +1,235 @@
+{
+  "hookEnd": 9.43,
+  "end": 61.76,
+  "hook": "一条视频\n讲明白 Agent",
+  "timeMap": [
+    [
+      10.7,
+      5
+    ],
+    [
+      11.96,
+      64
+    ],
+    [
+      13.48,
+      205
+    ],
+    [
+      14.33,
+      268
+    ],
+    [
+      19.3,
+      390
+    ],
+    [
+      19.5,
+      398
+    ],
+    [
+      20.16,
+      590
+    ],
+    [
+      21.02,
+      615
+    ],
+    [
+      22.92,
+      740
+    ],
+    [
+      29.53,
+      905
+    ],
+    [
+      30.76,
+      1071
+    ],
+    [
+      33.16,
+      1238
+    ],
+    [
+      41,
+      1470
+    ],
+    [
+      45.32,
+      1580
+    ],
+    [
+      46.73,
+      1770
+    ],
+    [
+      48.69,
+      1885
+    ],
+    [
+      51.72,
+      2050
+    ],
+    [
+      52.56,
+      2106
+    ],
+    [
+      53.45,
+      2162
+    ],
+    [
+      58.64,
+      2290
+    ],
+    [
+      61.76,
+      2459
+    ]
+  ],
+  "basis": "Opening visuals use absolute narration cues in opening-text.timeline.json; legacy timeMap retained as historical data only and is not rendered.",
+  "presenterSource": "agent-course/media/presenter-opening.mp4",
+  "hookVisual": "原口播真人 0–9.43 秒；9.43–19.30 秒使用用户确认的漫画场景静帧，连续原音轨不变。",
+  "handoffVisual": {
+    "start": 9.43,
+    "end": 19.3,
+    "asset": "agent-course/media/opening-approved-illustration.png",
+    "mode": "transparent-foreground-over-full-canvas-blackboard",
+    "cropSource": {
+      "x": 0,
+      "y": 0,
+      "width": 1638,
+      "height": 930
+    },
+    "basis": "人物与桌面使用已有透明场景层，居中整体缩放；背景独立铺满，Agent仍在f507出现，表情仍在f523–541切换。",
+    "agentReveal": {
+      "startFrame": 507,
+      "endFrame": 519,
+      "startSeconds": 16.9,
+      "cue": "现在，已经有这样的 AI 了，它叫 Agent",
+      "plate": "agent-course/media/opening-no-agent-plate.png",
+      "motion": {
+        "bobAmplitudePx": 6,
+        "bobPeriodFrames": 72,
+        "tiltAmplitudeDegrees": 1.15,
+        "signalStartFrame": 515,
+        "signalFadeFrames": [
+          579,
+          591
+        ],
+        "signalCycleFrames": 32,
+        "signalCount": 3,
+        "motionEndsFrame": 639
+      }
+    },
+    "reaction": {
+      "startFrame": 523,
+      "endFrame": 541,
+      "asset": "agent-course/media/opening-relieved-look.png",
+      "method": "three-pose-local-alpha-mix",
+      "note": "f515开始声波，f523–526听声抬头，f531–535转向宠物并微笑，保持到退场；仅人物与情绪符号局部混合，桌面和显示器固定。三个姿态短叠化，非骨骼动画。",
+      "foreground": "agent-course/media/opening-relieved-foreground-v2.png",
+      "intermediateForeground": "agent-course/media/opening-notice-foreground-v5.png"
+    },
+    "foreground": "agent-course/media/opening-foreground-v2.png",
+    "layout": {
+      "scale": 0.64,
+      "center": [
+        960,
+        490
+      ],
+      "background_owner": "AgentFullVisual",
+      "background_fit": "cover",
+      "agent_owner": "OpeningCoursePath",
+      "review_frames": [
+        300,
+        500,
+        519,
+        532,
+        560,
+        594,
+        603,
+        675
+      ],
+      "positioning": "horizontal flex center; foreground sized to 1228.8×691.2; top144.4px; optical center y490; no transform",
+      "regression_review_frames": [
+        300,
+        519,
+        532,
+        560,
+        594,
+        603,
+        657
+      ]
+    },
+    "transition": {
+      "reference": "http://localhost:3000/AgentOpening-First3",
+      "frames": [
+        585,
+        639
+      ],
+      "sharedClock": "openingHandoffProgress",
+      "sceneScale": [
+        0.64,
+        0.19
+      ],
+      "sceneTargetTopLeft": [
+        300,
+        365
+      ],
+      "sceneFadeFrames": [
+        608,
+        639
+      ],
+      "petSize": [
+        420,
+        430
+      ],
+      "petCenters": [
+        [
+          1560,
+          260
+        ],
+        [
+          530,
+          445
+        ]
+      ],
+      "note": "人物场景与宠物共享进度，同时向左下移动；人物终点在宠物身后，f603–608宠物遮住人物头部，在淡出前形成替人效果。整画幅宠物层保持无transform，仅宠物坐标和目录SVG组移动。",
+      "labelRevealFrame": 639,
+      "review": {
+        "result": "通过候选、正式V5原尺寸和缩小画面复核：宠物先覆盖人物头部，再由人物场景缩小淡出。浏览器f615读取的黑板与宠物整画幅容器边界完全一致，无容器transform。",
+        "halfSizeFrames": [
+          300,
+          519,
+          532,
+          560,
+          585,
+          594,
+          603,
+          608,
+          615,
+          627,
+          639,
+          657
+        ],
+        "fullSizeFrames": [
+          300,
+          519,
+          532,
+          560,
+          594,
+          608,
+          615,
+          657
+        ],
+        "videoFrames": [
+          500,
+          690
+        ]
+      }
+    }
+  },
+  "textTiming": "opening-text.timeline.json"
+}

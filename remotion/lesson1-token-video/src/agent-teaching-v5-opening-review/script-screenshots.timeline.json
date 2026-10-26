@@ -1,0 +1,92 @@
+[
+  {
+    "id": "web",
+    "label": "网页版",
+    "asset": "agent-course/script-screenshots/image1.png",
+    "width": 3072,
+    "height": 1704,
+    "start": 887.63,
+    "end": 893.03,
+    "source": "word/media/image1.png"
+  },
+  {
+    "id": "mobile",
+    "label": "手机 App",
+    "asset": "agent-course/script-screenshots/image2.png",
+    "width": 870,
+    "height": 1808,
+    "start": 893.03,
+    "end": 901.33,
+    "source": "word/media/image2.png"
+  },
+  {
+    "id": "desktop",
+    "label": "电脑客户端",
+    "asset": "agent-course/script-screenshots/image3.png",
+    "width": 3072,
+    "height": 1704,
+    "start": 901.33,
+    "end": 911.37,
+    "source": "word/media/image3.png"
+  },
+  {
+    "id": "terminal",
+    "label": "编辑器 / 终端",
+    "asset": "agent-course/script-screenshots/image4.png",
+    "width": 1552,
+    "height": 1106,
+    "start": 911.37,
+    "end": 920.6,
+    "source": "word/media/image4.png"
+  },
+  {
+    "id": "free",
+    "label": "免费额度",
+    "asset": "agent-course/script-screenshots/image5.png",
+    "width": 3072,
+    "height": 1524,
+    "start": 1160.03,
+    "end": 1169.5,
+    "source": "word/media/image5.png"
+  },
+  {
+    "id": "subscription",
+    "label": "会员订阅",
+    "asset": "agent-course/script-screenshots/image6.png",
+    "width": 3072,
+    "height": 1704,
+    "start": 1169.5,
+    "end": 1180.3,
+    "source": "word/media/image6.png"
+  },
+  {
+    "id": "credits",
+    "label": "使用额度 / 积分",
+    "asset": "agent-course/script-screenshots/image7.png",
+    "width": 3034,
+    "height": 1696,
+    "start": 1180.3,
+    "end": 1190.16,
+    "source": "word/media/image7.png"
+  },
+  {
+    "id": "topup",
+    "label": "超额加购",
+    "asset": "agent-course/script-screenshots/image8.png",
+    "width": 2664,
+    "height": 890,
+    "start": 1190.16,
+    "end": 1203.93,
+    "source": "word/media/image8.png"
+  },
+  {
+    "id": "api",
+    "label": "API 按量计费",
+    "asset": "agent-course/script-screenshots/image9.png",
+    "width": 2944,
+    "height": 1436,
+    "start": 1203.93,
+    "end": 1213.8,
+    "source": "word/media/image9.png"
+  }
+]

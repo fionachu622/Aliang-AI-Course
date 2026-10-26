@@ -1,0 +1,349 @@
+{
+  "id": "p015",
+  "start": 4316,
+  "duration": 64,
+  "startSeconds": 143.86,
+  "css": ".agent-html-scene{\n --bg-0:#F5F2EF; --bg-1:#EDE9E5; --bg-2:#FFFFFF;\n --text:#202833; --text-dim:#67717E; --text-muted:#8B929B;\n --accent:#2563EB; --accent-soft:#E4EDFF; --accent-border:#A8C2FB;\n --accent-glow:rgba(37,99,235,.13); --signal:#2563EB; --warn:#95682E; --ok:#2563EB;\n --line:#D8DCE1; --line-soft:rgba(55,70,88,.055); --card-bg:#FFFFFF;\n --bg-radial:radial-gradient(ellipse at 72% 42%,#E8EDF8 0%,#F5F2EF 63%);\n --mg-sub-fg:#202833; --mg-sub-stroke:#F5F2EF; --mg-track:#D8DCE1; --mg-tick:#8B929B;\n}.agent-html-scene *{box-sizing:border-box;margin:0;padding:0}.agent-html-scene{width:1920px;height:1080px;overflow:hidden;background:var(--bg-0);color:var(--text);font-family:'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;-webkit-font-smoothing:antialiased}.agent-html-scene .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);background-size:96px 96px}.agent-html-scene .top{position:absolute;left:112px;right:112px;top:64px;display:flex;justify-content:space-between;align-items:center;font-size:24px;letter-spacing:2px;color:var(--text-dim)}.agent-html-scene .top b{color:var(--accent);font-weight:600}.agent-html-scene .rule{position:absolute;left:112px;right:112px;top:116px;height:2px;background:var(--line)}.agent-html-scene .eyebrow{font-size:26px;letter-spacing:4px;color:var(--accent);font-weight:600}.agent-html-scene .stage{position:absolute;left:112px;right:112px;top:180px;height:660px}.agent-html-scene h1{font-size:100px;line-height:1.2;letter-spacing:-3px;font-weight:650}.agent-html-scene h2{font-size:64px;line-height:1.25;font-weight:600;letter-spacing:-1px}.agent-html-scene em{font-style:normal;color:var(--accent)}.agent-html-scene .dim{color:var(--text-dim)}.agent-html-scene .foot{position:absolute;left:112px;right:112px;top:851px;display:flex;justify-content:space-between;font-size:22px;color:var(--text-dim)}.agent-html-scene .focus{border:2px solid var(--accent-border);background:var(--accent-soft);box-shadow:0 10px 60px var(--accent-glow)}.agent-html-scene .panel{background:var(--card-bg);border:1px solid var(--line);border-radius:20px;padding:38px}.agent-html-scene .label{font-size:26px;color:var(--text-dim);line-height:1.5}.agent-html-scene .large{font-size:96px;font-weight:650;line-height:1.2}.agent-html-scene .body{font-size:36px;line-height:1.6}.agent-html-scene .pill{padding:10px 22px;border:1px solid var(--line);border-radius:40px;font-size:24px;color:var(--text-dim)}.agent-html-scene{width:1920px;height:1080px;font-family:'PingFang SC','Microsoft YaHei',sans-serif}.agent-html-scene .demo-title{position:absolute;left:112px;top:145px;font-size:60px}.agent-html-scene .workspace{position:absolute;left:112px;top:240px;width:1270px;height:594px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card-bg)}.agent-html-scene .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--card-bg)}.agent-html-scene .side{position:absolute;left:1430px;top:255px;width:350px}.agent-html-scene .step{border-top:2px solid var(--line);padding:24px 0;margin-bottom:18px}.agent-html-scene .step small{font-size:24px;color:var(--text-muted)}.agent-html-scene .step strong{display:block;font-size:34px;line-height:1.45;margin-top:12px;font-weight:550}.agent-html-scene .concept{position:absolute;left:112px;right:112px;top:176px}.agent-html-scene .hero{margin-top:20px;font-size:100px;line-height:1.25;font-weight:650;letter-spacing:-2px;color:var(--accent);text-shadow:0 12px 45px var(--accent-glow)}.agent-html-scene .nodes{display:flex;gap:32px;margin-top:90px}.agent-html-scene .node{width:544px;height:240px;border-top:3px solid var(--line);padding:32px 0}.agent-html-scene .node h3{font-size:44px;font-weight:550}.agent-html-scene .node p{font-size:28px;color:var(--text-dim);margin-top:24px;line-height:1.5}.agent-html-scene .stripe{height:6px;width:160px;background:var(--accent);margin-top:40px}.agent-html-scene .marker{color:var(--accent);font-size:24px;margin-bottom:18px}",
+  "nodes": [
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "grid"
+      },
+      "children": [],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "top"
+      },
+      "children": [
+        {
+          "tag": "b",
+          "attrs": {},
+          "children": [
+            "AGENT / 专题课"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "01 — 认识 Agent"
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "rule"
+      },
+      "children": [],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "concept"
+      },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "eyebrow"
+          },
+          "children": [
+            "第 1 章 · 第二节"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "hero"
+          },
+          "children": [
+            "Agent 能干什么"
+          ],
+          "tracks": [
+            {
+              "kind": "from",
+              "from": {
+                "opacity": 0,
+                "y": 22,
+                "duration": 0.7
+              },
+              "to": {},
+              "at": 0,
+              "duration": 0.7,
+              "ease": "power1.out"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "stripe"
+          },
+          "children": [],
+          "tracks": [
+            {
+              "kind": "from",
+              "from": {
+                "scaleX": 0,
+                "transformOrigin": "left",
+                "duration": 0.8
+              },
+              "to": {},
+              "at": 0.25,
+              "duration": 0.8,
+              "ease": "power1.out"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "nodes"
+          },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "node node0"
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "attrs": {
+                    "class": "marker"
+                  },
+                  "children": [
+                    "01"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "h3",
+                  "attrs": {},
+                  "children": [
+                    "01"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "p",
+                  "attrs": {},
+                  "children": [
+                    "操作电脑"
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 18,
+                    "duration": 0.55
+                  },
+                  "to": {},
+                  "at": 0,
+                  "duration": 0.55,
+                  "ease": "power1.out"
+                },
+                {
+                  "kind": "to",
+                  "from": {
+                    "borderColor": "var(--accent)",
+                    "duration": 0.4
+                  },
+                  "to": {},
+                  "at": 0,
+                  "duration": 0.4,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "node node1"
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "attrs": {
+                    "class": "marker"
+                  },
+                  "children": [
+                    "02"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "h3",
+                  "attrs": {},
+                  "children": [
+                    "02"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "p",
+                  "attrs": {},
+                  "children": [
+                    "连续干活"
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 18,
+                    "duration": 0.55
+                  },
+                  "to": {},
+                  "at": 0,
+                  "duration": 0.55,
+                  "ease": "power1.out"
+                },
+                {
+                  "kind": "to",
+                  "from": {
+                    "borderColor": "var(--accent)",
+                    "duration": 0.4
+                  },
+                  "to": {},
+                  "at": 0,
+                  "duration": 0.4,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "node node2"
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "attrs": {
+                    "class": "marker"
+                  },
+                  "children": [
+                    "03"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "h3",
+                  "attrs": {},
+                  "children": [
+                    "03"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "p",
+                  "attrs": {},
+                  "children": [
+                    "分工协作"
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 18,
+                    "duration": 0.55
+                  },
+                  "to": {},
+                  "at": 0,
+                  "duration": 0.55,
+                  "ease": "power1.out"
+                },
+                {
+                  "kind": "to",
+                  "from": {
+                    "borderColor": "var(--accent)",
+                    "duration": 0.4
+                  },
+                  "to": {},
+                  "at": 0,
+                  "duration": 0.4,
+                  "ease": "power1.out"
+                }
+              ]
+            }
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": [
+        {
+          "kind": "to",
+          "from": {
+            "x": 12,
+            "duration": 1,
+            "ease": "none"
+          },
+          "to": {},
+          "at": 0,
+          "duration": 1,
+          "ease": "none"
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "foot"
+      },
+      "children": [
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "概念图解 · 认识 Agent"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "11 / 35"
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    }
+  ],
+  "blocks": [
+    {
+      "text": "2Agent现在能干什么",
+      "spoken": "2. Agent 现在能干什么",
+      "from": 1,
+      "to": 51,
+      "local_start_sec": 0.0,
+      "global_start_sec": 143.86,
+      "global_end_sec": 145.575,
+      "size": 44
+    }
+  ]
+}

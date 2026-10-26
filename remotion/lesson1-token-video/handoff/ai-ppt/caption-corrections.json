@@ -1,0 +1,258 @@
+{
+  "23": {
+    "recognized": "很多人用文件做的PPT是这个样子的",
+    "corrected": "很多人用 AI 做的 PPT 是这个样子的"
+  },
+  "39": {
+    "recognized": "我手上的现在有三份产品资料",
+    "corrected": "我手上现在有三份产品资料"
+  },
+  "58": {
+    "recognized": "这样的PPT原来做新面宣传",
+    "corrected": "这样的 PPT 用来做新品宣传"
+  },
+  "61": {
+    "recognized": "不是一句话丢个A",
+    "corrected": "不是一句话丢给 AI"
+  },
+  "81": {
+    "recognized": "让A出大杠",
+    "corrected": "让 AI 出大纲"
+  },
+  "87": {
+    "recognized": "要在新民体验会上讲五分钟",
+    "corrected": "要在新品体验会上讲五分钟"
+  },
+  "101": {
+    "recognized": "心理就有底了",
+    "corrected": "心里就有底了"
+  },
+  "111": {
+    "recognized": "我把模板尝上去",
+    "corrected": "我把模板传上去"
+  },
+  "114": {
+    "recognized": "都让模板来",
+    "corrected": "都按模板来"
+  },
+  "116": {
+    "recognized": "站着好了",
+    "corrected": "生成好了"
+  },
+  "131": {
+    "recognized": "按掉用SQL",
+    "corrected": "AI 调用 Skill"
+  },
+  "136": {
+    "recognized": "前面的对话抗理的更多",
+    "corrected": "前面的对话框里的更多"
+  },
+  "138": {
+    "recognized": "就是兜包自带的PPTSQL",
+    "corrected": "就是豆包自带的 PPT Skill"
+  },
+  "145": {
+    "recognized": "叫这个硅脏PPTSQL",
+    "corrected": "叫这个 guizang PPT Skill"
+  },
+  "147": {
+    "recognized": "我们在收入框里输入",
+    "corrected": "我们在输入框里输入"
+  },
+  "149": {
+    "recognized": "硅脏PPTSQL",
+    "corrected": "guizang PPT Skill"
+  },
+  "159": {
+    "recognized": "用这个硅脏PPTSQL就行",
+    "corrected": "用这个 guizang PPT Skill 就行"
+  },
+  "174": {
+    "recognized": "删正好了",
+    "corrected": "生成好了"
+  },
+  "177": {
+    "recognized": "我们解下之后",
+    "corrected": "我们解压之后"
+  },
+  "179": {
+    "recognized": "就能在刘论期里翻页看了",
+    "corrected": "就能在浏览器里翻页看了"
+  },
+  "187": {
+    "recognized": "内板能更有设计感",
+    "corrected": "那版能更有设计感"
+  },
+  "189": {
+    "recognized": "生前业交替",
+    "corrected": "深浅页交替"
+  },
+  "200": {
+    "recognized": "来整治到了第三步",
+    "corrected": "那这就到了第三步"
+  },
+  "230": {
+    "recognized": "它在动手做",
+    "corrected": "它再动手做"
+  },
+  "233": {
+    "recognized": "光线屏显得廉价",
+    "corrected": "光线平 显得廉价"
+  },
+  "235": {
+    "recognized": "换成重黑背景",
+    "corrected": "换成纯黑背景"
+  },
+  "239": {
+    "recognized": "正正好了",
+    "corrected": "生成好了"
+  },
+  "241": {
+    "recognized": "跟刚才手机拍的原图笔",
+    "corrected": "跟刚才手机拍的原图比"
+  },
+  "259": {
+    "recognized": "指示号拿来当整页的大图",
+    "corrected": "只适合拿来当整页的大图"
+  },
+  "273": {
+    "recognized": "放在痛点印",
+    "corrected": "放在痛点页"
+  },
+  "275": {
+    "recognized": "这份耳机运在哪",
+    "corrected": "这副耳机用在哪"
+  },
+  "278": {
+    "recognized": "我们先另从一版",
+    "corrected": "我们先另存一版"
+  },
+  "283": {
+    "recognized": "甚至好了",
+    "corrected": "生成好了"
+  },
+  "287": {
+    "recognized": "自少了一页就讲一件事",
+    "corrected": "字少了 一页就讲一件事"
+  },
+  "299": {
+    "recognized": "刚才那几说都对了",
+    "corrected": "刚才那几处都对了"
+  },
+  "310": {
+    "recognized": "当做附落",
+    "corrected": "当作附录"
+  },
+  "311": {
+    "recognized": "到这图和排板都调好了",
+    "corrected": "到这图和排版都调好了"
+  },
+  "328": {
+    "recognized": "三色耳机内页",
+    "corrected": "三色耳机那页"
+  },
+  "329": {
+    "recognized": "叠制的三个盒子慢慢划开",
+    "corrected": "叠着的三个盒子慢慢滑开"
+  },
+  "331": {
+    "recognized": "其他页就简单的担入担出",
+    "corrected": "其他页就简单地淡入淡出"
+  },
+  "349": {
+    "recognized": "盛制好了",
+    "corrected": "生成好了"
+  },
+  "359": {
+    "recognized": "看着也不怎么花少",
+    "corrected": "看着也不怎么花哨"
+  },
+  "360": {
+    "recognized": "最后我们把开头一句做出来的",
+    "corrected": "最后我们把开头一句话做出来的"
+  },
+  "361": {
+    "recognized": "内板也打开",
+    "corrected": "那版也打开"
+  },
+  "362": {
+    "recognized": "和这一板放在一起",
+    "corrected": "和这一版放在一起"
+  },
+  "363": {
+    "recognized": "团聘封资料",
+    "corrected": "同一份资料"
+  },
+  "364": {
+    "recognized": "内板是手机随手拍的照片",
+    "corrected": "那版是手机随手拍的照片"
+  },
+  "366": {
+    "recognized": "这一板出来的图有质感",
+    "corrected": "这一版做出来的图有质感"
+  },
+  "367": {
+    "recognized": "图大的",
+    "corrected": "图大了"
+  },
+  "371": {
+    "recognized": "应该是拿得住",
+    "corrected": "应该是拿得出手"
+  },
+  "374": {
+    "recognized": "一条条题的要求",
+    "corrected": "一条条提的要求"
+  },
+  "380": {
+    "recognized": "把这些要求从下来",
+    "corrected": "把这些要求存下来"
+  },
+  "395": {
+    "recognized": "思调从好了",
+    "corrected": "Skill 存好了"
+  },
+  "397": {
+    "recognized": "新换一个对话",
+    "corrected": "新开一个对话"
+  },
+  "399": {
+    "recognized": "磁器充电宝",
+    "corrected": "磁吸充电宝"
+  },
+  "410": {
+    "recognized": "我们再把开头那把拿出来",
+    "corrected": "我们再把开头那版拿出来"
+  },
+  "414": {
+    "recognized": "A.M.不知道我们要什么",
+    "corrected": "AI 不知道我们要什么"
+  },
+  "420": {
+    "recognized": "一出来图大自少",
+    "corrected": "一出来图大字少"
+  },
+  "423": {
+    "recognized": "到这里这几课就讲完了",
+    "corrected": "到这里这节课就讲完了"
+  },
+  "443": {
+    "recognized": "这道方法除了做新品宣传",
+    "corrected": "这套方法除了做新品宣传"
+  },
+  "447": {
+    "recognized": "也可以用国外的Cloud或Codex来做",
+    "corrected": "也可以用国外的 Claude 或 Codex 来做"
+  },
+  "448": {
+    "recognized": "然后关于Cloud Codex的使用方法",
+    "corrected": "然后关于 Claude Codex 的使用方法"
+  },
+  "454": {
+    "recognized": "好了 这几课我们就到这里",
+    "corrected": "好了 这节课我们就到这里"
+  },
+  "456": {
+    "recognized": "我们下几课再见",
+    "corrected": "我们下节课再见"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "organization": "2×2同级分组，上排网页版/电脑客户端，下排手机App/编辑器终端；同组标签在截图正上方居中。",
+  "geometry": {
+    "centersX": [
+      570,
+      1350
+    ],
+    "labelBaselines": [
+      250,
+      620
+    ],
+    "imageTops": [
+      300,
+      670
+    ],
+    "imageHeight": 210,
+    "imageMaxWidth": 580,
+    "groupTop": [
+      194,
+      564
+    ],
+    "groupWidth": 660,
+    "groupHeight": 340,
+    "subtitleSafeBottom": 904
+  },
+  "motion_reference": {
+    "id": "shotcraft:shared-element-morph",
+    "name": "共享元素归位",
+    "recipe": ".agents/skills/video-shotcraft/references/shots/transition/transition-travel.md",
+    "reason": "同一截图由详情尺寸收进对应总览槽位，身份和标签持续可追踪。",
+    "adaptation": "同一截图与唯一标签共用归位进度；截图等比缩小，标题60→44px并移到组内上方；0.8秒无回弹归位，后0.4秒组框轻显，下一张0.3秒淡入并上移16px。删除原卡3%过冲、阴影和不相关仪表盘。 总览背景在归位开始0.35秒后才用0.35秒显现，避开当前截图与总览的早期叠压。",
+    "hold": "当前图按原口播驻留；最后918–918.8秒归位，918.8–920.6秒总览停留，随后按原镜头接下段。",
+    "replacement": "原卡特写/仪表盘卡槽换为真实使用方式截图/四个等大内容组。",
+    "adjacent": "保留章节大标题与截图身份，归位后下一张接管中央阅读区。",
+    "review_limit": "原作者卡及既有0.37/1.1/1.83/2.56/3.3/4.03秒抽帧记录；非完整播放审听。",
+    "other_libraries": "talkcraft:still-layout-relay借同级分组；不用暗化已讲标签。Awesome系统循环不符合四种并列使用方式，排除。"
+  }
+}

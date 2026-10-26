@@ -1,0 +1,197 @@
+{
+  "repository": "fionachu622/Aliang-AI-Course",
+  "release": "ai-ppt-materials-2026-10-27",
+  "mode": "720P proxies; original 2K videos remain local",
+  "assets": [
+    {
+      "asset": "presenter-opening.mp4",
+      "role": "proxy",
+      "public": "presenter-opening.mp4",
+      "original": "local opening derivative: presenter-opening.mp4",
+      "bytes": 564721,
+      "sha256": "e5800ca2d6bb1721ff8dcaed265901f07fe7873b7cfb650ebb9517d4d031aa90"
+    },
+    {
+      "asset": "presenter.mp4",
+      "role": "proxy",
+      "public": "presenter.mp4",
+      "original": "02 2k-口播.mp4",
+      "bytes": 70366166,
+      "sha256": "0ef73c75f6dfc9344f771bf4223c858095783c305221c026104a08fc53f3cff0"
+    },
+    {
+      "asset": "screen-01.mp4",
+      "role": "proxy",
+      "public": "screen-01.mp4",
+      "original": "03 录屏 MP4/01 一句话生成PPT_粗剪_原画质.mp4",
+      "bytes": 7037698,
+      "sha256": "0830cfc93081dcbe1b93332eca01cb07b53681dae8cea691a8db1b3f63fa5141"
+    },
+    {
+      "asset": "screen-02.mp4",
+      "role": "proxy",
+      "public": "screen-02.mp4",
+      "original": "03 录屏 MP4/02 预览一句话版_不够吸引人_粗剪_原画质.mp4",
+      "bytes": 4403267,
+      "sha256": "c1090c8c0dc50e6c88f8cf11441042905c8cd48867e52c2a9cd063938e4873ff"
+    },
+    {
+      "asset": "screen-03.mp4",
+      "role": "proxy",
+      "public": "screen-03.mp4",
+      "original": "03 录屏 MP4/03 生成大纲-按公司模板生成-查看生成效果_粗剪_原画质.mp4",
+      "bytes": 23766311,
+      "sha256": "bb854a826dba372a6dfce8e0e2c999997c449f01d5aeb2c90cce1329421ba68d"
+    },
+    {
+      "asset": "screen-04-1.mp4",
+      "role": "proxy",
+      "public": "screen-04-1.mp4",
+      "original": "03 录屏 MP4/04-1 使用skill生成PPT_粗剪_原画质.mp4",
+      "bytes": 7220056,
+      "sha256": "02b4b1f6219981760084bfa9c5c6cede6480d25685d0ce237c382c04a0a7d019"
+    },
+    {
+      "asset": "screen-04-2.mp4",
+      "role": "proxy",
+      "public": "screen-04-2.mp4",
+      "original": "03 录屏 MP4/04-2 guizang skill 选风格_粗剪_原画质.mp4",
+      "bytes": 2562955,
+      "sha256": "94b6a6254a888048ef4fb03a46bcecd8e48d5ee5e27d57413fb373dece4102cb"
+    },
+    {
+      "asset": "screen-05.mp4",
+      "role": "proxy",
+      "public": "screen-05.mp4",
+      "original": "03 录屏 MP4/05 预览skill生成的PPT_引出第3步_粗剪_原画质.mp4",
+      "bytes": 8105006,
+      "sha256": "9edf96beb54671e2c36ee2dad8a3d93e62852d5de101c431be2044d6fd221b7c"
+    },
+    {
+      "asset": "screen-06.mp4",
+      "role": "proxy",
+      "public": "screen-06.mp4",
+      "original": "03 录屏 MP4/06 第3步1_粗剪_原画质.mp4",
+      "bytes": 17875877,
+      "sha256": "9e53475b598566d5fbdb4c494109639cf0fe3fc09ad7996b13736a7e676bd500"
+    },
+    {
+      "asset": "screen-07.mp4",
+      "role": "proxy",
+      "public": "screen-07.mp4",
+      "original": "03 录屏 MP4/07 第3步2_粗剪_原画质.mp4",
+      "bytes": 6499413,
+      "sha256": "ba262c59c95b98249bc3fed991db029a6d65ed6a2ab5cb710196cea91b77b39e"
+    },
+    {
+      "asset": "screen-08.mp4",
+      "role": "proxy",
+      "public": "screen-08.mp4",
+      "original": "03 录屏 MP4/08 第3步3_粗剪_原画质.mp4",
+      "bytes": 9345134,
+      "sha256": "b4747260d54c56b919b73fd9a3145ee758e45b4efd580a6e627763fafe8388a6"
+    },
+    {
+      "asset": "screen-09.mp4",
+      "role": "proxy",
+      "public": "screen-09.mp4",
+      "original": "03 录屏 MP4/09 第3步4_粗剪_原画质.mp4",
+      "bytes": 11521141,
+      "sha256": "78394f9cad274342655e562a026d4613684e3bee146e3fd43de61cc06237928c"
+    },
+    {
+      "asset": "screen-10.mp4",
+      "role": "proxy",
+      "public": "screen-10.mp4",
+      "original": "03 录屏 MP4/10 第3步5_粗剪_原画质.mp4",
+      "bytes": 7610571,
+      "sha256": "59ed68d5892051f5164674b3ae9fc16b8a7f6a41379411aa62f279709d2cc956"
+    },
+    {
+      "asset": "screen-11.mp4",
+      "role": "proxy",
+      "public": "screen-11.mp4",
+      "original": "03 录屏 MP4/11 第3步6_粗剪_原画质.mp4",
+      "bytes": 7387072,
+      "sha256": "67b3d9a5b957950c94b9a58df4b7ace57abec1981c2d19ada6607ceb033845b6"
+    },
+    {
+      "asset": "screen-12.mp4",
+      "role": "proxy",
+      "public": "screen-12.mp4",
+      "original": "03 录屏 MP4/12 第3步8、9_粗剪_原画质.mp4",
+      "bytes": 24734936,
+      "sha256": "8a9b737de709b19ac735ca5f62bb7cd31223d637436e329308f5140f3ed6759b"
+    },
+    {
+      "asset": "screen-13.mp4",
+      "role": "proxy",
+      "public": "screen-13.mp4",
+      "original": "03 录屏 MP4/13 第4步动画1_粗剪_原画质.mp4",
+      "bytes": 9827158,
+      "sha256": "d0ffdf5295db1bf670ae13a3a5cbbd3c94a3e0a1d46c0fcf20b73a8938f3bc73"
+    },
+    {
+      "asset": "screen-14.mp4",
+      "role": "proxy",
+      "public": "screen-14.mp4",
+      "original": "03 录屏 MP4/14 第4步动画2_粗剪_原画质.mp4",
+      "bytes": 10354851,
+      "sha256": "468cea0b4a384449bda2cd767b97132242cce211d057b0852732f7f0684e5ae4"
+    },
+    {
+      "asset": "screen-15.mp4",
+      "role": "proxy",
+      "public": "screen-15.mp4",
+      "original": "03 录屏 MP4/15 终版初版对比_粗剪_原画质.mp4",
+      "bytes": 10876502,
+      "sha256": "62d99eca605bb1a4989acafc68d611adc9fff9483eb9e225aad53686ef7c68e1"
+    },
+    {
+      "asset": "screen-16.mp4",
+      "role": "proxy",
+      "public": "screen-16.mp4",
+      "original": "03 录屏 MP4/16 创建skill生成充电宝PPT_粗剪_原画质.mp4",
+      "bytes": 22262027,
+      "sha256": "e8e142f17ecab8e4e91e9f2d07f9e23d45271517f338ec3125e2183c054dd0ba"
+    },
+    {
+      "asset": "screen-17.mp4",
+      "role": "proxy",
+      "public": "screen-17.mp4",
+      "original": "03 录屏 MP4/17 查看充电宝PPT效果_粗剪_原画质.mp4",
+      "bytes": 6085075,
+      "sha256": "8625004ef4a36263454d7a66e5675d9daf729ca7bb76e909e71dd7c269ed32e2"
+    },
+    {
+      "asset": "screen-opening-left.mp4",
+      "role": "proxy",
+      "public": "screen-opening-left.mp4",
+      "original": "local opening derivative: screen-opening-left.mp4",
+      "bytes": 584987,
+      "sha256": "6541e4913f34d977d703589b2fefe528093a701fc701860bb0071c79b36579ae"
+    },
+    {
+      "asset": "screen-opening-right.mp4",
+      "role": "proxy",
+      "public": "screen-opening-right.mp4",
+      "original": "local opening derivative: screen-opening-right.mp4",
+      "bytes": 484020,
+      "sha256": "7a8904a235686194def3f252392014e531883a44ac8548234e60ea35f96c77b0"
+    },
+    {
+      "asset": "images-ppt-originals.zip",
+      "role": "documents",
+      "public": null,
+      "bytes": 36054916,
+      "sha256": "d247fa89d3f85cfbe6d581793d78bc57521523336fc3acfe9d79824cdffc40ff"
+    },
+    {
+      "asset": "course-fonts.zip",
+      "role": "fonts",
+      "public": null,
+      "bytes": 55145694,
+      "sha256": "97eb9c093bb14f34ea878e4a7fb1636bbc5bfc69d1b39a2e594bf81f6658cd2d"
+    }
+  ]
+}

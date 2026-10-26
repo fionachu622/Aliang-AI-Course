@@ -1,0 +1,872 @@
+[
+  {
+    "file": "presenter-opening.mp4",
+    "originalBytes": 3100321,
+    "proxyBytes": 564721,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "233"
+        }
+      ],
+      "format": {
+        "duration": "7.766667"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "233"
+        }
+      ],
+      "format": {
+        "duration": "7.766016"
+      }
+    }
+  },
+  {
+    "file": "presenter.mp4",
+    "originalBytes": 1800186890,
+    "proxyBytes": 70366166,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "23863"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "nb_read_packets": "34259"
+        }
+      ],
+      "format": {
+        "duration": "795.433333"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "23863"
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "nb_read_packets": "34259"
+        }
+      ],
+      "format": {
+        "duration": "795.445011"
+      }
+    }
+  },
+  {
+    "file": "screen-01.mp4",
+    "originalBytes": 129571353,
+    "proxyBytes": 7037698,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "3003"
+        }
+      ],
+      "format": {
+        "duration": "100.100000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "3003"
+        }
+      ],
+      "format": {
+        "duration": "100.100000"
+      }
+    }
+  },
+  {
+    "file": "screen-02.mp4",
+    "originalBytes": 63394360,
+    "proxyBytes": 4403267,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "1215"
+        }
+      ],
+      "format": {
+        "duration": "40.500000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "1215"
+        }
+      ],
+      "format": {
+        "duration": "40.500000"
+      }
+    }
+  },
+  {
+    "file": "screen-03.mp4",
+    "originalBytes": 430437034,
+    "proxyBytes": 23766311,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "9522"
+        }
+      ],
+      "format": {
+        "duration": "317.400000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "9522"
+        }
+      ],
+      "format": {
+        "duration": "317.400000"
+      }
+    }
+  },
+  {
+    "file": "screen-04-1.mp4",
+    "originalBytes": 86504305,
+    "proxyBytes": 7220056,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2826"
+        }
+      ],
+      "format": {
+        "duration": "94.200000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2826"
+        }
+      ],
+      "format": {
+        "duration": "94.200000"
+      }
+    }
+  },
+  {
+    "file": "screen-04-2.mp4",
+    "originalBytes": 52828656,
+    "proxyBytes": 2562955,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "624"
+        }
+      ],
+      "format": {
+        "duration": "20.800000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "624"
+        }
+      ],
+      "format": {
+        "duration": "20.800000"
+      }
+    }
+  },
+  {
+    "file": "screen-05.mp4",
+    "originalBytes": 182231923,
+    "proxyBytes": 8105006,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "3717"
+        }
+      ],
+      "format": {
+        "duration": "123.900000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "3717"
+        }
+      ],
+      "format": {
+        "duration": "123.900000"
+      }
+    }
+  },
+  {
+    "file": "screen-06.mp4",
+    "originalBytes": 335777087,
+    "proxyBytes": 17875877,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "4560"
+        }
+      ],
+      "format": {
+        "duration": "152.000000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "4560"
+        }
+      ],
+      "format": {
+        "duration": "152.000000"
+      }
+    }
+  },
+  {
+    "file": "screen-07.mp4",
+    "originalBytes": 89952660,
+    "proxyBytes": 6499413,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2397"
+        }
+      ],
+      "format": {
+        "duration": "79.900000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2397"
+        }
+      ],
+      "format": {
+        "duration": "79.900000"
+      }
+    }
+  },
+  {
+    "file": "screen-08.mp4",
+    "originalBytes": 203935594,
+    "proxyBytes": 9345134,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2892"
+        }
+      ],
+      "format": {
+        "duration": "96.400000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2892"
+        }
+      ],
+      "format": {
+        "duration": "96.400000"
+      }
+    }
+  },
+  {
+    "file": "screen-09.mp4",
+    "originalBytes": 278271100,
+    "proxyBytes": 11521141,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "3351"
+        }
+      ],
+      "format": {
+        "duration": "111.700000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "3351"
+        }
+      ],
+      "format": {
+        "duration": "111.700000"
+      }
+    }
+  },
+  {
+    "file": "screen-10.mp4",
+    "originalBytes": 147998932,
+    "proxyBytes": 7610571,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2454"
+        }
+      ],
+      "format": {
+        "duration": "81.800000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2454"
+        }
+      ],
+      "format": {
+        "duration": "81.800000"
+      }
+    }
+  },
+  {
+    "file": "screen-11.mp4",
+    "originalBytes": 153765219,
+    "proxyBytes": 7387072,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2268"
+        }
+      ],
+      "format": {
+        "duration": "75.600000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2268"
+        }
+      ],
+      "format": {
+        "duration": "75.600000"
+      }
+    }
+  },
+  {
+    "file": "screen-12.mp4",
+    "originalBytes": 478449943,
+    "proxyBytes": 24734936,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "6480"
+        }
+      ],
+      "format": {
+        "duration": "216.000000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "6480"
+        }
+      ],
+      "format": {
+        "duration": "216.000000"
+      }
+    }
+  },
+  {
+    "file": "screen-13.mp4",
+    "originalBytes": 153842241,
+    "proxyBytes": 9827158,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "3111"
+        }
+      ],
+      "format": {
+        "duration": "103.700000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "3111"
+        }
+      ],
+      "format": {
+        "duration": "103.700000"
+      }
+    }
+  },
+  {
+    "file": "screen-14.mp4",
+    "originalBytes": 214286249,
+    "proxyBytes": 10354851,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2454"
+        }
+      ],
+      "format": {
+        "duration": "81.800000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2454"
+        }
+      ],
+      "format": {
+        "duration": "81.800000"
+      }
+    }
+  },
+  {
+    "file": "screen-15.mp4",
+    "originalBytes": 322256658,
+    "proxyBytes": 10876502,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "4509"
+        }
+      ],
+      "format": {
+        "duration": "150.300000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "4509"
+        }
+      ],
+      "format": {
+        "duration": "150.300000"
+      }
+    }
+  },
+  {
+    "file": "screen-16.mp4",
+    "originalBytes": 407698993,
+    "proxyBytes": 22262027,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "8136"
+        }
+      ],
+      "format": {
+        "duration": "271.200000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "8136"
+        }
+      ],
+      "format": {
+        "duration": "271.200000"
+      }
+    }
+  },
+  {
+    "file": "screen-17.mp4",
+    "originalBytes": 205940049,
+    "proxyBytes": 6085075,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 2596,
+          "height": 1440,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2667"
+        }
+      ],
+      "format": {
+        "duration": "88.900000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "2667"
+        }
+      ],
+      "format": {
+        "duration": "88.900000"
+      }
+    }
+  },
+  {
+    "file": "screen-opening-left.mp4",
+    "originalBytes": 788975,
+    "proxyBytes": 584987,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "195"
+        }
+      ],
+      "format": {
+        "duration": "6.500000"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1298,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "195"
+        }
+      ],
+      "format": {
+        "duration": "6.500000"
+      }
+    }
+  },
+  {
+    "file": "screen-opening-right.mp4",
+    "originalBytes": 953086,
+    "proxyBytes": 484020,
+    "original": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "194"
+        }
+      ],
+      "format": {
+        "duration": "6.466667"
+      }
+    },
+    "proxy": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1280,
+          "height": 720,
+          "r_frame_rate": "30/1",
+          "nb_read_packets": "194"
+        }
+      ],
+      "format": {
+        "duration": "6.466667"
+      }
+    }
+  }
+]

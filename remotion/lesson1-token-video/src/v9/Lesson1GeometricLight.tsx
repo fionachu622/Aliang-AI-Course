@@ -8,6 +8,7 @@ export const Lesson1GeometricLight = () => (
     showBoxFinePrint={false}
     showContextRecap={false}
     showSceneNumbers={false}
+    visualStyle="geometric"
   >
     <Lesson1OpeningV9 timingMode="voiceover" />
   </VisualBackgroundProvider>

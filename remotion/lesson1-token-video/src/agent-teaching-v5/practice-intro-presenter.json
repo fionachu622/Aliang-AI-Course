@@ -1,0 +1,84 @@
+{
+  "clock": "presenter source frames, 30 fps; before the edited butterfly case",
+  "fromFrame": 14383,
+  "endFrame": 15282,
+  "openingCue": "我平时喜欢看动物冷知识，也想做一个自己的账号",
+  "closingCue": "这里用的工具是 Codex，发布平台是 YouTube。账号我已经登录好了。",
+  "recordingCue": "接下来，我先让 Agent 帮我设计频道名称",
+  "reason": "动机、任务范围和三步方法由真人连续讲述；实际操作开始才展示录屏，避免任务启动页面长时间定格。",
+  "timingSource": "remaining-editorial.storyboard.json: legacy 480.88–510.84 seconds, minus 43 frames; rounded to the 30 fps frame grid",
+  "audioPolicy": "不修改口播、语速、课程时长或已对齐的制作视频案例",
+  "keywordOverlay": {
+    "question": "怎样把视频制作这件事交给 Agent？",
+    "throughline": "从多项制作工作，过渡到交代目标、放手执行、关键把关的三条原则。",
+    "timingSource": "output/第2课-Agent音画对齐/transcript.json：逐词 ASR 时间减43/30秒，以30fps向上取整",
+    "design": "回退至暖白贴纸之前：任务段固定右侧图形+单个关键词，随口播替换；原则段无底色，提示词/动作词分层、编号及细手绘线，右侧渐暗。保留查找资料、编写讲解、上传发布的新措辞。",
+    "groups": [
+      {
+        "id": "tasks",
+        "endFrame": 14942,
+        "items": [
+          {
+            "text": "创建频道",
+            "fromFrame": 14697,
+            "legacySeconds": 491.33
+          },
+          {
+            "text": "查找资料",
+            "fromFrame": 14723,
+            "legacySeconds": 492.19
+          },
+          {
+            "text": "编写讲解",
+            "fromFrame": 14751,
+            "legacySeconds": 493.11
+          },
+          {
+            "text": "制作画面",
+            "fromFrame": 14771,
+            "legacySeconds": 493.77
+          },
+          {
+            "text": "上传发布",
+            "fromFrame": 14812,
+            "legacySeconds": 495.15
+          }
+        ]
+      },
+      {
+        "id": "principles",
+        "endFrame": 15185,
+        "items": [
+          {
+            "text": "结果说清",
+            "fromFrame": 15019,
+            "legacySeconds": 502.04
+          },
+          {
+            "text": "中间放手",
+            "fromFrame": 15045,
+            "legacySeconds": 502.92
+          },
+          {
+            "text": "关键把关",
+            "fromFrame": 15080,
+            "legacySeconds": 504.07
+          }
+        ]
+      }
+    ],
+    "visualReview": {
+      "status": "reviewed rollback composite frames",
+      "frames": [
+        14835,
+        15100
+      ],
+      "checks": [
+        "已恢复贴纸前单图标关键词和无底色原则排版",
+        "新措辞无溢出",
+        "音画锚点未改变"
+      ],
+      "timingChanged": false
+    }
+  }
+}

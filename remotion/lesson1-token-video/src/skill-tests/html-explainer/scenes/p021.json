@@ -1,0 +1,459 @@
+{
+  "id": "p021",
+  "start": 6493,
+  "duration": 595,
+  "startSeconds": 216.43,
+  "css": ".agent-html-scene{\n --bg-0:#F5F2EF; --bg-1:#EDE9E5; --bg-2:#FFFFFF;\n --text:#202833; --text-dim:#67717E; --text-muted:#8B929B;\n --accent:#2563EB; --accent-soft:#E4EDFF; --accent-border:#A8C2FB;\n --accent-glow:rgba(37,99,235,.13); --signal:#2563EB; --warn:#95682E; --ok:#2563EB;\n --line:#D8DCE1; --line-soft:rgba(55,70,88,.055); --card-bg:#FFFFFF;\n --bg-radial:radial-gradient(ellipse at 72% 42%,#E8EDF8 0%,#F5F2EF 63%);\n --mg-sub-fg:#202833; --mg-sub-stroke:#F5F2EF; --mg-track:#D8DCE1; --mg-tick:#8B929B;\n}.agent-html-scene *{box-sizing:border-box;margin:0;padding:0}.agent-html-scene{width:1920px;height:1080px;overflow:hidden;background:var(--bg-0);color:var(--text);font-family:'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;-webkit-font-smoothing:antialiased}.agent-html-scene .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);background-size:96px 96px}.agent-html-scene .top{position:absolute;left:112px;right:112px;top:64px;display:flex;justify-content:space-between;align-items:center;font-size:24px;letter-spacing:2px;color:var(--text-dim)}.agent-html-scene .top b{color:var(--accent);font-weight:600}.agent-html-scene .rule{position:absolute;left:112px;right:112px;top:116px;height:2px;background:var(--line)}.agent-html-scene .eyebrow{font-size:26px;letter-spacing:4px;color:var(--accent);font-weight:600}.agent-html-scene .stage{position:absolute;left:112px;right:112px;top:180px;height:660px}.agent-html-scene h1{font-size:100px;line-height:1.2;letter-spacing:-3px;font-weight:650}.agent-html-scene h2{font-size:64px;line-height:1.25;font-weight:600;letter-spacing:-1px}.agent-html-scene em{font-style:normal;color:var(--accent)}.agent-html-scene .dim{color:var(--text-dim)}.agent-html-scene .foot{position:absolute;left:112px;right:112px;top:851px;display:flex;justify-content:space-between;font-size:22px;color:var(--text-dim)}.agent-html-scene .focus{border:2px solid var(--accent-border);background:var(--accent-soft);box-shadow:0 10px 60px var(--accent-glow)}.agent-html-scene .panel{background:var(--card-bg);border:1px solid var(--line);border-radius:20px;padding:38px}.agent-html-scene .label{font-size:26px;color:var(--text-dim);line-height:1.5}.agent-html-scene .large{font-size:96px;font-weight:650;line-height:1.2}.agent-html-scene .body{font-size:36px;line-height:1.6}.agent-html-scene .pill{padding:10px 22px;border:1px solid var(--line);border-radius:40px;font-size:24px;color:var(--text-dim)}.agent-html-scene{width:1920px;height:1080px;font-family:'PingFang SC','Microsoft YaHei',sans-serif}.agent-html-scene .demo-title{position:absolute;left:112px;top:145px;font-size:60px}.agent-html-scene .workspace{position:absolute;left:112px;top:240px;width:1270px;height:594px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card-bg)}.agent-html-scene .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--card-bg)}.agent-html-scene .side{position:absolute;left:1430px;top:255px;width:350px}.agent-html-scene .step{border-top:2px solid var(--line);padding:24px 0;margin-bottom:18px}.agent-html-scene .step small{font-size:24px;color:var(--text-muted)}.agent-html-scene .step strong{display:block;font-size:34px;line-height:1.45;margin-top:12px;font-weight:550}.agent-html-scene .concept{position:absolute;left:112px;right:112px;top:176px}.agent-html-scene .hero{margin-top:20px;font-size:100px;line-height:1.25;font-weight:650;letter-spacing:-2px;color:var(--accent);text-shadow:0 12px 45px var(--accent-glow)}.agent-html-scene .nodes{display:flex;gap:32px;margin-top:90px}.agent-html-scene .node{width:544px;height:240px;border-top:3px solid var(--line);padding:32px 0}.agent-html-scene .node h3{font-size:44px;font-weight:550}.agent-html-scene .node p{font-size:28px;color:var(--text-dim);margin-top:24px;line-height:1.5}.agent-html-scene .stripe{height:6px;width:160px;background:var(--accent);margin-top:40px}.agent-html-scene .marker{color:var(--accent);font-size:24px;margin-bottom:18px}",
+  "nodes": [
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "grid"
+      },
+      "children": [],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "top"
+      },
+      "children": [
+        {
+          "tag": "b",
+          "attrs": {},
+          "children": [
+            "AGENT / 专题课"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "01 — 认识 Agent"
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "rule"
+      },
+      "children": [],
+      "tracks": []
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "concept"
+      },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "eyebrow"
+          },
+          "children": [
+            "能力 02"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "hero"
+          },
+          "children": [
+            "围绕目标连续干活"
+          ],
+          "tracks": [
+            {
+              "kind": "from",
+              "from": {
+                "opacity": 0,
+                "y": 22,
+                "duration": 0.7
+              },
+              "to": {},
+              "at": 0,
+              "duration": 0.7,
+              "ease": "power1.out"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "stripe"
+          },
+          "children": [],
+          "tracks": [
+            {
+              "kind": "from",
+              "from": {
+                "scaleX": 0,
+                "transformOrigin": "left",
+                "duration": 0.8
+              },
+              "to": {},
+              "at": 0.25,
+              "duration": 0.8,
+              "ease": "power1.out"
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "attrs": {
+            "class": "nodes"
+          },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "node node0"
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "attrs": {
+                    "class": "marker"
+                  },
+                  "children": [
+                    "01"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "h3",
+                  "attrs": {},
+                  "children": [
+                    "安排步骤"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "p",
+                  "attrs": {},
+                  "children": [
+                    "完整工作拆成多步"
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 18,
+                    "duration": 0.55
+                  },
+                  "to": {},
+                  "at": 9.33,
+                  "duration": 0.55,
+                  "ease": "power1.out"
+                },
+                {
+                  "kind": "to",
+                  "from": {
+                    "borderColor": "var(--accent)",
+                    "duration": 0.4
+                  },
+                  "to": {},
+                  "at": 9.33,
+                  "duration": 0.4,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "node node1"
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "attrs": {
+                    "class": "marker"
+                  },
+                  "children": [
+                    "02"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "h3",
+                  "attrs": {},
+                  "children": [
+                    "执行一部分"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "p",
+                  "attrs": {},
+                  "children": [
+                    "读取资料，处理文件"
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 18,
+                    "duration": 0.55
+                  },
+                  "to": {},
+                  "at": 11.242,
+                  "duration": 0.55,
+                  "ease": "power1.out"
+                },
+                {
+                  "kind": "to",
+                  "from": {
+                    "borderColor": "var(--accent)",
+                    "duration": 0.4
+                  },
+                  "to": {},
+                  "at": 11.242,
+                  "duration": 0.4,
+                  "ease": "power1.out"
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "node node2"
+              },
+              "children": [
+                {
+                  "tag": "div",
+                  "attrs": {
+                    "class": "marker"
+                  },
+                  "children": [
+                    "03"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "h3",
+                  "attrs": {},
+                  "children": [
+                    "继续下一步"
+                  ],
+                  "tracks": []
+                },
+                {
+                  "tag": "p",
+                  "attrs": {},
+                  "children": [
+                    "持续向目标推进"
+                  ],
+                  "tracks": []
+                }
+              ],
+              "tracks": [
+                {
+                  "kind": "from",
+                  "from": {
+                    "opacity": 0,
+                    "y": 18,
+                    "duration": 0.55
+                  },
+                  "to": {},
+                  "at": 12.217,
+                  "duration": 0.55,
+                  "ease": "power1.out"
+                },
+                {
+                  "kind": "to",
+                  "from": {
+                    "borderColor": "var(--accent)",
+                    "duration": 0.4
+                  },
+                  "to": {},
+                  "at": 12.217,
+                  "duration": 0.4,
+                  "ease": "power1.out"
+                }
+              ]
+            }
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": [
+        {
+          "kind": "to",
+          "from": {
+            "x": 12,
+            "duration": 18.18,
+            "ease": "none"
+          },
+          "to": {},
+          "at": 0,
+          "duration": 18.18,
+          "ease": "none"
+        }
+      ]
+    },
+    {
+      "tag": "div",
+      "attrs": {
+        "class": "foot"
+      },
+      "children": [
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "概念图解 · 认识 Agent"
+          ],
+          "tracks": []
+        },
+        {
+          "tag": "span",
+          "attrs": {},
+          "children": [
+            "17 / 35"
+          ],
+          "tracks": []
+        }
+      ],
+      "tracks": []
+    }
+  ],
+  "blocks": [
+    {
+      "text": "第二个",
+      "spoken": "第二个，",
+      "from": 1,
+      "to": 24,
+      "local_start_sec": 0.0,
+      "global_start_sec": 216.43,
+      "global_end_sec": 217.222,
+      "size": 44
+    },
+    {
+      "text": "是围绕一个目标",
+      "spoken": "是围绕一个目标，",
+      "from": 25,
+      "to": 64,
+      "local_start_sec": 0.792,
+      "global_start_sec": 217.222,
+      "global_end_sec": 218.56,
+      "size": 44
+    },
+    {
+      "text": "连续干活",
+      "spoken": "连续干活。",
+      "from": 65,
+      "to": 110,
+      "local_start_sec": 2.13,
+      "global_start_sec": 218.56,
+      "global_end_sec": 220.097,
+      "size": 44
+    },
+    {
+      "text": "有些任务要查很多资料、",
+      "spoken": "有些任务要查很多资料、",
+      "from": 111,
+      "to": 175,
+      "local_start_sec": 3.667,
+      "global_start_sec": 220.097,
+      "global_end_sec": 222.248,
+      "size": 44
+    },
+    {
+      "text": "处理很多文件",
+      "spoken": "处理很多文件，",
+      "from": 176,
+      "to": 230,
+      "local_start_sec": 5.817,
+      "global_start_sec": 222.248,
+      "global_end_sec": 224.085,
+      "size": 44
+    },
+    {
+      "text": "一两步做不完",
+      "spoken": "一两步做不完。",
+      "from": 231,
+      "to": 280,
+      "local_start_sec": 7.655,
+      "global_start_sec": 224.085,
+      "global_end_sec": 225.76,
+      "size": 44
+    },
+    {
+      "text": "Agent会自己安排步骤",
+      "spoken": "Agent 会自己安排步骤，",
+      "from": 281,
+      "to": 337,
+      "local_start_sec": 9.33,
+      "global_start_sec": 225.76,
+      "global_end_sec": 227.673,
+      "size": 44
+    },
+    {
+      "text": "做完一部分",
+      "spoken": "做完一部分，",
+      "from": 338,
+      "to": 367,
+      "local_start_sec": 11.242,
+      "global_start_sec": 227.673,
+      "global_end_sec": 228.648,
+      "size": 44
+    },
+    {
+      "text": "接着处理下一部分",
+      "spoken": "接着处理下一部分。",
+      "from": 368,
+      "to": 420,
+      "local_start_sec": 12.217,
+      "global_start_sec": 228.648,
+      "global_end_sec": 230.423,
+      "size": 44
+    },
+    {
+      "text": "也就是说",
+      "spoken": "也就是说，",
+      "from": 421,
+      "to": 451,
+      "local_start_sec": 13.992,
+      "global_start_sec": 230.423,
+      "global_end_sec": 231.472,
+      "size": 44
+    },
+    {
+      "text": "你可以把一段完整的工作交给它",
+      "spoken": "你可以把一段完整的工作交给它，",
+      "from": 452,
+      "to": 545,
+      "local_start_sec": 15.043,
+      "global_start_sec": 231.472,
+      "global_end_sec": 234.61,
+      "size": 44
+    },
+    {
+      "text": "让它自己往前推进",
+      "spoken": "让它自己往前推进。",
+      "from": 546,
+      "to": 582,
+      "local_start_sec": 18.18,
+      "global_start_sec": 234.61,
+      "global_end_sec": 235.834,
+      "size": 44
+    }
+  ]
+}

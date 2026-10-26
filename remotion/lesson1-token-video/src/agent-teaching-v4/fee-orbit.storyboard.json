@@ -1,0 +1,11 @@
+{
+  "reference": "https://vincentwei1021.github.io/video-shotcraft/library.html",
+  "recipe": "orbit-ring-title-open",
+  "visualThesis": "五种收费方式属于同一个工具成本概览；同一工具可能同时采用多种方式。",
+  "sourceScene": "remaining-editorial.storyboard.json:fee-overview",
+  "policy": "沿用五个原始名称及 cue；五张 16:9 卡只平移和缩放，语义内容按口播揭示。",
+  "ring": {"cx": 960, "cy": 445, "rx": 665, "ry": 265, "speed": 0.3, "depthScale": 0.09, "width": 350, "height": 196.875, "expandFrames": 21, "playStartFrame": 24},
+  "title": {"leadFrame": 10.5, "blurFrames": 27, "slideFrames": 9, "letterStaggerFrames": 1, "markerFrame": 40, "fontSize": 68, "exitFrames": 10},
+  "footer": {"text": "同一个工具，可能同时采用多种收费方式", "at": 1156.12},
+  "adaptation": "五张而非八张；椭圆压至 665×265 半径，为课程底部说明留空间；整段保持 8.8 秒，标题在镜头末段退场。"
+}

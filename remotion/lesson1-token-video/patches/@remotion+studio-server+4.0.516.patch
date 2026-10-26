@@ -1,0 +1,29 @@
+diff --git a/node_modules/@remotion/studio-server/dist/preview-server/routes/apply-codemod.js b/node_modules/@remotion/studio-server/dist/preview-server/routes/apply-codemod.js
+index a72494c..e2e5205 100644
+--- a/node_modules/@remotion/studio-server/dist/preview-server/routes/apply-codemod.js
++++ b/node_modules/@remotion/studio-server/dist/preview-server/routes/apply-codemod.js
+@@ -79,6 +79,9 @@ const getCodemodLogMessage = (codemod) => {
+     if (codemod.type === 'delete-folder') {
+         return `Deleted folder "${getFolderPath(codemod.parentName, codemod.folderName)}"`;
+     }
++    if (codemod.type === 'reorder-sidebar-item') {
++        return `Reordered ${codemod.itemType} "${codemod.itemId}" ${codemod.position} "${codemod.targetId}"`;
++    }
+     if (codemod.changes.length === 1) {
+         return `Updated visual control "${codemod.changes[0].id}"`;
+     }
+@@ -163,6 +166,14 @@ const getCodemodUndoDescription = (codemod) => {
+             entryType: codemod.type,
+         };
+     }
++    if (codemod.type === 'reorder-sidebar-item') {
++        const label = `${codemod.itemType} "${codemod.itemId}" ${codemod.position} "${codemod.targetId}"`;
++        return {
++            undoMessage: `↩️  Reorder of ${label}`,
++            redoMessage: `↪️  Reorder of ${label}`,
++            entryType: codemod.type,
++        };
++    }
+     return {
+         undoMessage: '↩️  Visual control change',
+         redoMessage: '↪️  Visual control change',

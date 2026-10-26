@@ -1,0 +1,45 @@
+{
+  "clock": "原口播时钟，播放器统一扣除43帧；不改音轨",
+  "cycle": {
+    "stage": "Agent09",
+    "focus_cues": [
+      443.5,
+      445.73,
+      449,
+      450.63
+    ],
+    "feedback_at": 453.4,
+    "feedback_duration": 0.8,
+    "settle_at": 455.4,
+    "recap": "不重复循环强调"
+  },
+  "chapter": {
+    "transition": "章节标题从中央落到正文左上角并保留；示例图标在落位过程中退场",
+    "dock_duration": 0.65,
+    "docked_scale": 0.24,
+    "anchor": [
+      260,
+      76
+    ],
+    "visibility": "录屏、原始截图、工具地图时隐藏，以保持证据画面清晰"
+  },
+  "identity": {
+    "reference": "Lesson1ChalkboardV3 / RevisedScenes abbreviationMorph",
+    "agent_at": 41.0666667,
+    "move_left_at": 41.5,
+    "equals_at": 42.15,
+    "chinese_at": 42.53,
+    "dock_at": 43.35,
+    "dock_duration": 0.8,
+    "initial_center": [
+      960,
+      540
+    ],
+    "docked_center": [
+      960,
+      255
+    ],
+    "definition_at": 46.34,
+    "handoff_to_workflow_at": 51.72
+  }
+}

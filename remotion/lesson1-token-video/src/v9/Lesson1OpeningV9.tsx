@@ -3,9 +3,7 @@ import {
   AbsoluteFill,
   Sequence,
   interpolate,
-  spring,
-  useCurrentFrame,
-  useVideoConfig,
+  interpolateColors,
 } from 'remotion';
 import {FPS} from '../timeline';
 import {
@@ -42,82 +40,15 @@ import {
   easeInOut,
   fadeOut,
   useV9SceneFrame,
+  useVisualOptions,
   v9Colors,
   v9Fonts,
-  type V9MotionStyle,
 } from './VisualV9';
 
 const clamp = {
   extrapolateLeft: 'clamp' as const,
   extrapolateRight: 'clamp' as const,
 };
-
-const APPLE_TRANSITION_FRAMES = Math.round(FPS * 0.4);
-
-const AppleSceneMotion = ({
-  durationInFrames,
-  children,
-}: {
-  durationInFrames: number;
-  children: ReactNode;
-}) => {
-  const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const springConfig = {
-    damping: 30,
-    stiffness: 180,
-    mass: 1,
-    overshootClamping: true,
-  };
-  const enter = spring({
-    frame,
-    fps,
-    durationInFrames: APPLE_TRANSITION_FRAMES,
-    config: springConfig,
-  });
-  const exit =
-    frame < durationInFrames
-      ? 0
-      : spring({
-          frame: frame - durationInFrames,
-          fps,
-          durationInFrames: APPLE_TRANSITION_FRAMES,
-          config: springConfig,
-        });
-  const visibility = enter * (1 - exit);
-  const y = (1 - visibility) * 8;
-  const scale = 0.996 + visibility * 0.004;
-
-  return (
-    <AbsoluteFill
-      style={{
-        opacity: visibility,
-        transform: `translate3d(0, ${y}px, 0) scale(${scale})`,
-        transformOrigin: '50% 50%',
-        willChange: 'transform, opacity',
-      }}
-    >
-      {children}
-    </AbsoluteFill>
-  );
-};
-
-const SceneMotion = ({
-  motionStyle,
-  durationInFrames,
-  children,
-}: {
-  motionStyle: V9MotionStyle;
-  durationInFrames: number;
-  children: ReactNode;
-}) =>
-  motionStyle === 'apple' ? (
-    <AppleSceneMotion durationInFrames={durationInFrames}>
-      {children}
-    </AppleSceneMotion>
-  ) : (
-    <>{children}</>
-  );
 
 const Center = ({children, style}: {children: ReactNode; style?: CSSProperties}) => (
   <div
@@ -197,14 +128,112 @@ const SimpleBox = ({
   </RoughBox>
 );
 
-const SceneQuestion = () => {
+const USAGE_EXAMPLES = [
+  ['写文章', 160],
+  ['总结资料', 174],
+  ['修改文案', 188],
+  ['解释问题', 202],
+  ['复杂任务', 216],
+] as const;
+
+const UsageExampleList = ({
+  frame,
+  exitProgress,
+}: {
+  frame: number;
+  exitProgress: number;
+}) => (
+  <div
+    style={{
+      position: 'absolute',
+      left: '50%',
+      top: 750,
+      width: 1540,
+      textAlign: 'center',
+      opacity: 1 - exitProgress,
+      transform: 'translateX(-50%)',
+    }}
+  >
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(5, 1fr)',
+        alignItems: 'center',
+      }}
+    >
+      {USAGE_EXAMPLES.map(([label, start]) => {
+        const amount = ease(frame, start, 10);
+        const settle = ease(frame, start + 10, 12);
+        return (
+          <Layer key={label} amount={amount} fromY={14}>
+            <div
+              style={{
+                color: interpolateColors(
+                  settle,
+                  [0, 1],
+                  [v9Colors.yellow, v9Colors.ink],
+                ),
+                fontSize: 54,
+                lineHeight: 1,
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {label}
+            </div>
+          </Layer>
+        );
+      })}
+    </div>
+  </div>
+);
+
+export const SceneQuestion = ({
+  showBrands = true,
+  brandFadeStart = 75,
+  brandFadeDuration = 28,
+  brandMinimumOpacity = 0.13,
+  dimContextOnQuestion = true,
+  transformContextOnQuestion = true,
+  showQuestionMark = true,
+  showArrowQuestionMark = false,
+  showQuestionText = true,
+  questionTop = 600,
+  showUsageExamples = false,
+  questionStart = 182,
+  usageExitStart,
+  usageExitDuration,
+  contentOffsetY = 0,
+}: {
+  showBrands?: boolean;
+  brandFadeStart?: number;
+  brandFadeDuration?: number;
+  brandMinimumOpacity?: number;
+  dimContextOnQuestion?: boolean;
+  transformContextOnQuestion?: boolean;
+  showQuestionMark?: boolean;
+  showArrowQuestionMark?: boolean;
+  showQuestionText?: boolean;
+  questionTop?: number;
+  showUsageExamples?: boolean;
+  questionStart?: number;
+  usageExitStart?: number;
+  usageExitDuration?: number;
+  contentOffsetY?: number;
+} = {}) => {
   const frame = useV9SceneFrame();
-  const brandFade = fadeOut(frame, 75, 28);
+  const {visualStyle} = useVisualOptions();
+  const brandFade = fadeOut(frame, brandFadeStart, brandFadeDuration);
   const input = ease(frame, 72, 20);
   const arrow = ease(frame, 98, 30);
   const answer = ease(frame, 120, 20);
-  const question = ease(frame, 182, 24);
-  const contextOpacity = interpolate(question, [0, 1], [1, 0.22], clamp);
+  const question = ease(frame, questionStart, 24);
+  const usageExit =
+    usageExitStart === undefined || usageExitDuration === undefined
+      ? question
+      : ease(frame, usageExitStart, usageExitDuration);
+  const contextOpacity = dimContextOnQuestion
+    ? interpolate(question, [0, 1], [1, 0.22], clamp)
+    : 1;
   const questionMarkScale = interpolate(question, [0, 1], [0.5, 1], clamp);
 
   return (
@@ -212,19 +241,30 @@ const SceneQuestion = () => {
       <div
         style={{
           position: 'absolute',
-          left: '50%',
-          top: 320,
-          display: 'flex',
-          gap: 82,
-          alignItems: 'center',
-          transform: `translateX(-50%) translateY(${-question * 76}px) scale(${1 - question * 0.12})`,
-          opacity: Math.max(0.13, brandFade),
+          inset: 0,
+          transform: `translateY(${contentOffsetY}px)`,
         }}
       >
-        <Brand text="ChatGPT" amount={ease(frame, 8, 18)} color={v9Colors.blue} />
-        <Brand text="DeepSeek" amount={ease(frame, 27, 18)} color={v9Colors.green} />
-        <Brand text="豆包" amount={ease(frame, 46, 18)} color={v9Colors.magenta} />
-      </div>
+      {showBrands ? (
+        <div
+          style={{
+            position: 'absolute',
+            left: '50%',
+            top: 320,
+            display: 'flex',
+            gap: 82,
+            alignItems: 'center',
+            transform: transformContextOnQuestion
+              ? `translateX(-50%) translateY(${-question * 76}px) scale(${1 - question * 0.12})`
+              : 'translateX(-50%)',
+            opacity: Math.max(brandMinimumOpacity, brandFade),
+          }}
+        >
+          <Brand text="ChatGPT" amount={ease(frame, 8, 18)} color={v9Colors.blue} />
+          <Brand text="DeepSeek" amount={ease(frame, 27, 18)} color={v9Colors.green} />
+          <Brand text="豆包" amount={ease(frame, 46, 18)} color={v9Colors.magenta} />
+        </div>
+      ) : null}
 
       <div
         style={{
@@ -248,30 +288,58 @@ const SceneQuestion = () => {
         </Layer>
       </div>
 
-      <Layer
+      {showUsageExamples ? (
+        <UsageExampleList frame={frame} exitProgress={usageExit} />
+      ) : null}
+
+      {showArrowQuestionMark ? (
+        <Layer
+          amount={question}
+          fromScale={0.72}
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            top: 365,
+            textAlign: 'center',
+            color: v9Colors.magenta,
+            fontSize: 156,
+            lineHeight: 1,
+          }}
+        >
+          ？
+        </Layer>
+      ) : null}
+
+      {showQuestionText ? <Layer
         amount={question}
         fromScale={0.84}
         style={{
           position: 'absolute',
           left: 0,
           right: 0,
-          top: 600,
+          top: questionTop,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           gap: 12,
         }}
       >
-        <div
-          style={{
-            fontSize: 120,
-            lineHeight: 0.72,
-            color: v9Colors.magenta,
-            transform: `scale(${questionMarkScale}) rotate(-5deg)`,
-          }}
-        >
-          ？
-        </div>
+        {showQuestionMark ? (
+          <div
+            style={{
+              fontSize: 120,
+              lineHeight: 0.72,
+              color: v9Colors.magenta,
+              transform:
+                visualStyle === 'geometric'
+                  ? `scale(${questionMarkScale})`
+                  : `scale(${questionMarkScale}) rotate(-5deg)`,
+            }}
+          >
+            ？
+          </div>
+        ) : null}
         <div
           style={{
             position: 'relative',
@@ -285,8 +353,9 @@ const SceneQuestion = () => {
           中间发生了什么？
           <HandUnderline width={960} progress={question} color={v9Colors.magenta} style={{position: 'absolute', left: 16, bottom: -8}} />
         </div>
-      </Layer>
+      </Layer> : null}
       <SceneNumber current={1} />
+      </div>
     </Paper>
   );
 };
@@ -299,8 +368,10 @@ const FeatureWord = ({
   text: string;
   amount: number;
   color: string;
-}) => (
-  <Layer amount={amount} fromY={26} fromScale={0.9}>
+}) => {
+  const {visualStyle} = useVisualOptions();
+  return (
+    <Layer amount={amount} fromY={26} fromScale={0.9}>
     <div
       style={{
         position: 'relative',
@@ -310,7 +381,7 @@ const FeatureWord = ({
         fontSize: 62,
         lineHeight: 1,
         textAlign: 'center',
-        transform: 'rotate(-.4deg)',
+        transform: visualStyle === 'geometric' ? undefined : 'rotate(-.4deg)',
       }}
     >
       {text}
@@ -321,46 +392,62 @@ const FeatureWord = ({
         style={{position: 'absolute', left: 32, bottom: -2}}
       />
     </div>
-  </Layer>
-);
+    </Layer>
+  );
+};
 
-const CurvedAnnotationArrow = ({progress}: {progress: number}) => (
-  <svg width="360" height="130" viewBox="0 0 360 130" style={{overflow: 'visible'}}>
+const CurvedAnnotationArrow = ({progress}: {progress: number}) => {
+  const {visualStyle} = useVisualOptions();
+  const primaryPath =
+    visualStyle === 'geometric'
+      ? 'M 336 25 H 238 V 80 H 32'
+      : 'M 336 25 C 300 17, 276 34, 246 49 C 216 65, 201 76, 174 82 C 139 91, 112 103, 82 91 C 63 84, 50 75, 32 79';
+  const arrowPath =
+    visualStyle === 'geometric'
+      ? 'M 54 62 L 32 80 L 54 98'
+      : 'M 58 61 Q 46 68 31 79 Q 44 85 61 89';
+  return (
+    <svg width="360" height="130" viewBox="0 0 360 130" style={{overflow: 'visible'}}>
     <path
-      d="M 336 25 C 300 17, 276 34, 246 49 C 216 65, 201 76, 174 82 C 139 91, 112 103, 82 91 C 63 84, 50 75, 32 79"
+      d={primaryPath}
       fill="none"
       stroke={v9Colors.green}
-      strokeWidth={3.4}
-      strokeLinecap="round"
+      strokeWidth={visualStyle === 'geometric' ? 3 : 3.4}
+      strokeLinecap={visualStyle === 'geometric' ? 'square' : 'round'}
+      strokeLinejoin={visualStyle === 'geometric' ? 'miter' : 'round'}
       pathLength={1}
       strokeDasharray={1}
       strokeDashoffset={1 - progress}
     />
+    {visualStyle === 'hand' ? (
+      <path
+        d="M 332 29 C 284 24, 252 52, 217 68 C 168 90, 112 101, 38 82"
+        fill="none"
+        stroke={v9Colors.green}
+        strokeWidth={1.2}
+        strokeLinecap="round"
+        pathLength={1}
+        strokeDasharray={1}
+        strokeDashoffset={1 - progress}
+        opacity={0.28}
+      />
+    ) : null}
     <path
-      d="M 332 29 C 284 24, 252 52, 217 68 C 168 90, 112 101, 38 82"
+      d={arrowPath}
       fill="none"
       stroke={v9Colors.green}
-      strokeWidth={1.2}
-      strokeLinecap="round"
-      pathLength={1}
-      strokeDasharray={1}
-      strokeDashoffset={1 - progress}
-      opacity={0.28}
-    />
-    <path
-      d="M 58 61 Q 46 68 31 79 Q 44 85 61 89"
-      fill="none"
-      stroke={v9Colors.green}
-      strokeWidth={3.4}
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      strokeWidth={visualStyle === 'geometric' ? 3 : 3.4}
+      strokeLinecap={visualStyle === 'geometric' ? 'square' : 'round'}
+      strokeLinejoin={visualStyle === 'geometric' ? 'miter' : 'round'}
       opacity={ease(progress, 0.72, 0.2)}
     />
   </svg>
-);
+  );
+};
 
-const SceneProductModel = () => {
+export const SceneProductModel = () => {
   const frame = useV9SceneFrame();
+  const {visualStyle} = useVisualOptions();
   const shell = ease(frame, 0, 34);
   const title = ease(frame, 20, 20);
   const features = ['聊天', '文件', '搜索', '语音'] as const;
@@ -440,7 +527,7 @@ const SceneProductModel = () => {
               fromX={36}
               style={{position: 'absolute', right: 82, bottom: 15}}
             >
-              <div style={{fontSize: 54, color: v9Colors.green, transform: 'rotate(-3deg)'}}>
+              <div style={{fontSize: 54, color: v9Colors.green, transform: visualStyle === 'geometric' ? undefined : 'rotate(-3deg)'}}>
                 核心能力之一
               </div>
               <CurvedAnnotationArrow progress={annotation} />
@@ -485,8 +572,9 @@ const FlowWord = ({
   </Layer>
 );
 
-const SceneLlmActions = () => {
+export const SceneLlmActions = () => {
   const frame = useV9SceneFrame();
+  const {visualStyle} = useVisualOptions();
   const name = ease(frame, 4, 20);
   const subtitle = ease(frame, 42, 20);
   const move = easeInOut(frame, 88, 30);
@@ -559,7 +647,7 @@ const SceneLlmActions = () => {
           gap: 22,
         }}
       >
-        <div style={{fontSize: 160, lineHeight: 0.8, color: v9Colors.magenta, transform: 'rotate(-5deg)'}}>？</div>
+        <div style={{fontSize: 160, lineHeight: 0.8, color: v9Colors.magenta, transform: visualStyle === 'geometric' ? undefined : 'rotate(-5deg)'}}>？</div>
         <div style={{position: 'relative', fontSize: 118, lineHeight: 1.1, padding: '0 18px 25px'}}>
           它怎么做到的？
           <HandUnderline width={760} progress={question} color={v9Colors.green} style={{position: 'absolute', left: 8, bottom: -6}} />
@@ -572,11 +660,10 @@ const SceneLlmActions = () => {
 
 export const Lesson1OpeningV9 = ({
   timingMode = 'preview',
-  motionStyle = 'legacy',
 }: {
   timingMode?: 'preview' | 'voiceover';
-  motionStyle?: V9MotionStyle;
 }) => {
+  const {handFontFamily, visualStyle} = useVisualOptions();
   const scenes = timingMode === 'voiceover' ? V9_VOICEOVER_SCENES : V9_SCENES;
   const sceneStarts =
     timingMode === 'voiceover' ? V9_VOICEOVER_SCENE_STARTS : V9_SCENE_STARTS;
@@ -599,48 +686,31 @@ export const Lesson1OpeningV9 = ({
     <AbsoluteFill
   style={{
   background: v9Colors.paper,
-  fontFamily: v9Fonts.hand,
+  fontFamily: visualStyle === 'geometric' ? v9Fonts.geometric : handFontFamily,
+  fontWeight: visualStyle === 'geometric' ? 600 : undefined,
   }}>
-      <Sequence
-        from={start1}
-        durationInFrames={scene1.durationInFrames + (motionStyle === 'apple' ? APPLE_TRANSITION_FRAMES : 0)}
-        premountFor={FPS}
-      >
+      <Sequence from={start1} durationInFrames={scene1.durationInFrames} premountFor={FPS}>
         <V9SceneTimingProvider
           designDurationInFrames={V9_SCENES[0].durationInFrames}
           durationInFrames={scene1.durationInFrames}
         >
-          <SceneMotion motionStyle={motionStyle} durationInFrames={scene1.durationInFrames}>
-            <SceneQuestion />
-          </SceneMotion>
+          <SceneQuestion />
         </V9SceneTimingProvider>
       </Sequence>
-      <Sequence
-        from={start2}
-        durationInFrames={scene2.durationInFrames + (motionStyle === 'apple' ? APPLE_TRANSITION_FRAMES : 0)}
-        premountFor={FPS}
-      >
+      <Sequence from={start2} durationInFrames={scene2.durationInFrames} premountFor={FPS}>
         <V9SceneTimingProvider
           designDurationInFrames={V9_SCENES[1].durationInFrames}
           durationInFrames={scene2.durationInFrames}
         >
-          <SceneMotion motionStyle={motionStyle} durationInFrames={scene2.durationInFrames}>
-            <SceneProductModel />
-          </SceneMotion>
+          <SceneProductModel />
         </V9SceneTimingProvider>
       </Sequence>
-      <Sequence
-        from={start3}
-        durationInFrames={scene3.durationInFrames + (motionStyle === 'apple' ? APPLE_TRANSITION_FRAMES : 0)}
-        premountFor={FPS}
-      >
+      <Sequence from={start3} durationInFrames={scene3.durationInFrames} premountFor={FPS}>
         <V9SceneTimingProvider
           designDurationInFrames={V9_SCENES[2].durationInFrames}
           durationInFrames={scene3.durationInFrames}
         >
-          <SceneMotion motionStyle={motionStyle} durationInFrames={scene3.durationInFrames}>
-            <SceneLlmActions />
-          </SceneMotion>
+          <SceneLlmActions />
         </V9SceneTimingProvider>
       </Sequence>
       {remaining.map((Scene, index) => {
@@ -648,36 +718,22 @@ export const Lesson1OpeningV9 = ({
         const scene = scenes[sceneIndex];
         const start = sceneStarts[sceneIndex];
         return (
-          <Sequence
-            key={scene.id}
-            from={start}
-            durationInFrames={
-              scene.durationInFrames +
-              (motionStyle === 'apple' && sceneIndex < scenes.length - 1
-                ? APPLE_TRANSITION_FRAMES
-                : 0)
-            }
-            premountFor={FPS}
-          >
+          <Sequence key={scene.id} from={start} durationInFrames={scene.durationInFrames} premountFor={FPS}>
             <V9SceneTimingProvider
               designDurationInFrames={V9_SCENES[sceneIndex].durationInFrames}
               durationInFrames={scene.durationInFrames}
             >
-              <SceneMotion motionStyle={motionStyle} durationInFrames={scene.durationInFrames}>
-                <Scene />
-              </SceneMotion>
+              <Scene />
             </V9SceneTimingProvider>
           </Sequence>
         );
       })}
 
-      {motionStyle === 'legacy'
-        ? sceneStarts.slice(1).map((start, index) => (
-            <Sequence key={`wipe-${index + 2}`} from={start - 12} durationInFrames={24} premountFor={FPS}>
-              <PaperWipe />
-            </Sequence>
-          ))
-        : null}
+      {sceneStarts.slice(1).map((start, index) => (
+        <Sequence key={`wipe-${index + 2}`} from={start - 12} durationInFrames={24} premountFor={FPS}>
+          <PaperWipe />
+        </Sequence>
+      ))}
     </AbsoluteFill>
   );
 };

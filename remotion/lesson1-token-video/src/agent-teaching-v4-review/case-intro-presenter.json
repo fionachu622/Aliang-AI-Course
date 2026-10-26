@@ -1,0 +1,9 @@
+{
+  "from": 4799,
+  "durationInFrames": 197,
+  "source": "agent-course/recorded/presenter.mp4",
+  "preview": "agent-course/media/presenter-case-intro-synced.mp4",
+  "text": "讲到这里，你可能会问：今天的 Agent 到底能干什么？接下来，我用几个真实案例带你看看。",
+  "timingBasis": "Sequence uses original editorial clock (4799); presenter source is already title-cut and matches narration exactly. Source trim = 4799 - 43 = 4756. Waveform correlation at zero offset = 1.0.",
+  "sourceFrom": 4756
+}

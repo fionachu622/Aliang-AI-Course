@@ -1,0 +1,173 @@
+[
+  {
+    "id": "recording-19",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/创建频道 2.mp4",
+    "start": 4,
+    "end": 7.0,
+    "rate": 1,
+    "masterStart": 510.06666666666666,
+    "masterEnd": 513.7333333333333
+  },
+  {
+    "id": "recording-20",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/创建频道 2.mp4",
+    "start": 24,
+    "end": 27.6,
+    "rate": 1,
+    "masterStart": 513.7333333333333,
+    "masterEnd": 517.3666666666667
+  },
+  {
+    "id": "recording-21",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/创建频道 2.mp4",
+    "start": 30,
+    "end": 32.43333333333333,
+    "rate": 1,
+    "masterStart": 517.3666666666667,
+    "masterEnd": 519.8
+  },
+  {
+    "id": "recording-21-result",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/创建频道 2.mp4",
+    "start": 249,
+    "end": 252.0,
+    "rate": 1,
+    "masterStart": 519.8,
+    "masterEnd": 524.3666666666667
+  },
+  {
+    "id": "recording-22",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+    "start": 5,
+    "end": 11.0,
+    "rate": 1,
+    "masterStart": 540.5666666666667,
+    "masterEnd": 554.5666666666667
+  },
+  {
+    "id": "recording-23",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+    "start": 12,
+    "end": 16.5,
+    "rate": 1,
+    "masterStart": 594.7,
+    "masterEnd": 599.4
+  },
+  {
+    "id": "recording-23-preview",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+    "start": 530,
+    "end": 535.0,
+    "rate": 1,
+    "masterStart": 634.3,
+    "masterEnd": 643.5666666666667
+  },
+  {
+    "id": "recording-24",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+    "start": 540,
+    "end": 545.0,
+    "rate": 1,
+    "masterStart": 643.5666666666667,
+    "masterEnd": 649.1
+  },
+  {
+    "id": "recording-25",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/butterfly-preview-export.mp4",
+    "start": 2,
+    "end": 12.0,
+    "rate": 1,
+    "masterStart": 655.7333333333333,
+    "masterEnd": 668.1333333333333
+  },
+  {
+    "id": "recording-25-pupation",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/butterfly-preview-export.mp4",
+    "start": 25,
+    "end": 28.9,
+    "rate": 1,
+    "masterStart": 668.1333333333333,
+    "masterEnd": 672.0333333333333
+  },
+  {
+    "id": "recording-26",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/butterfly-preview-export.mp4",
+    "start": 58,
+    "end": 60.8,
+    "rate": 1,
+    "masterStart": 672.0333333333333,
+    "masterEnd": 674.8333333333334
+  },
+  {
+    "id": "recording-26-wings",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/butterfly-preview-export.mp4",
+    "start": 76,
+    "end": 78.8,
+    "rate": 1,
+    "masterStart": 674.8333333333334,
+    "masterEnd": 677.6333333333333
+  },
+  {
+    "id": "recording-26-replay",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/Aliang-AI-Course/remotion/lesson1-token-video/public/agent-course/media/butterfly-preview-export.mp4",
+    "start": 58,
+    "end": 61.8,
+    "rate": 0.75,
+    "masterStart": 677.6333333333333,
+    "masterEnd": 682.7
+  },
+  {
+    "id": "recording-27",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+    "start": 2797,
+    "end": 2802.0,
+    "rate": 1,
+    "masterStart": 741.4,
+    "masterEnd": 747.1666666666666
+  },
+  {
+    "id": "recording-28",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+    "start": 2690,
+    "end": 2697.0,
+    "rate": 1,
+    "masterStart": 747.1666666666666,
+    "masterEnd": 755.3333333333334
+  },
+  {
+    "id": "recording-29",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+    "start": 2992,
+    "end": 3003.0,
+    "rate": 1,
+    "masterStart": 755.3333333333334,
+    "masterEnd": 766.9333333333333
+  },
+  {
+    "id": "recording-30",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+    "start": 3008,
+    "end": 3014.0,
+    "rate": 1,
+    "masterStart": 766.9333333333333,
+    "masterEnd": 773.7333333333333
+  },
+  {
+    "id": "recording-31",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+    "start": 3055,
+    "end": 3063.0,
+    "rate": 1,
+    "masterStart": 773.7333333333333,
+    "masterEnd": 783.3333333333334
+  },
+  {
+    "id": "recording-32",
+    "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/05 youtube 内容制作/制作视频 2.mp4",
+    "start": 3080,
+    "end": 3093.6,
+    "rate": 1,
+    "masterStart": 783.3333333333334,
+    "masterEnd": 796.9333333333333
+  }
+]

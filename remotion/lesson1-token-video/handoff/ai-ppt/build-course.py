@@ -1,0 +1,86 @@
+from pathlib import Path
+import json,math
+R=Path(__file__).resolve().parents[2];W=R/'work/ai-ppt';D=R/'src/ai-ppt'
+tr=json.loads((W/'transcript.json').read_text())
+scenes=[]
+def shot(at,file,start,end=None,zoom=1,cx=.5,cy=.5,label='',mark=None,kind='screen'):
+ return dict(at=at,kind=kind,file=file,sourceStart=start,sourceEnd=end,zoom=zoom,cx=cx,cy=cy,label=label,mark=mark)
+def still(at,file,time,zoom=1,cx=.5,cy=.5,label='',mark=None):return shot(at,file,time,None,zoom,cx,cy,label,mark)
+def image(at,file,label=''):return dict(at=at,kind='image',file=file,label=label)
+def special(at,kind,label=''):return dict(at=at,kind=kind,label=label)
+def add(title,chapter,a,b,shots,exclude=[]):
+ scenes.append(dict(id=f's{len(scenes)+1:02}',title=title,chapter=chapter,sourceStart=a,sourceEnd=b,shots=shots,exclude=exclude))
+P=lambda a:special(a,'presenter')
+add('同一份资料，两种结果','开场',62.02,69.8,[special(62.02,'opening')])
+add('差别在做法','开场',69.8,76.82,[P(69.8)])
+add('准备产品资料','一句话生成',100.31,115.15,[shot(100.31,'01',12,18,1.5,.59,.43,'产品资料'),still(107.13,'01',16,1.8,.66,.39,'三份产品资料'),still(109.39,'08',68,1.65,.65,.52,'产品照片'),still(111.33,'03',202.5,1.7,.52,.43,'公司 PPT 模板')])
+add('一句话生成','一句话生成',115.57,125.29,[shot(115.57,'01',20,27,1.5,.5,.78,'更多技能 → PPT'),shot(120.79,'01',12,18,1.5,.6,.43,'上传资料'),shot(122.45,'01',30,36,1.9,.5,.83,'帮我做个产品宣传 PPT')])
+add('看看第一版','一句话生成',126.33,143.15,[shot(126.33,'02',5,14,1.6,.78,.57,'一句话生成的结果'),still(133.13,'02',25,1.75,.78,.58,'内容基本准确'),still(136.13,'02',33,2,.83,.58,'手机随手拍的产品图',[.83,.50,.13,.30]),still(138.11,'02',25,1.8,.78,.58,'缺少动画与设计')])
+add('五步方法','方法总览',149.73,167.07,[P(149.73),special(160.35,'presenter-steps')],[(155.85,160.35)])
+add('第一步：定大纲','01 定大纲',167.73,176.41,[P(167.73)])
+add('先让 AI 出大纲','01 定大纲',176.41,184.15,[shot(176.41,'03',4,18,1.2,.5,.6,'新开对话 · 上传资料'),still(181.41,'03',40,1.7,.49,.79,'先出大纲')])
+add('提示词的五块内容','01 定大纲',184.57,205.01,[still(184.57,'03',41,1.8,.49,.79,'任务',[.18,.74,.58,.025]),still(189.47,'03',41,1.9,.49,.80,'背景',[.18,.767,.58,.027]),still(194.95,'03',41,1.9,.49,.82,'目标',[.18,.797,.58,.028]),still(199.17,'03',41,1.9,.49,.84,'输出',[.18,.827,.58,.028]),still(201.05,'03',41,1.9,.49,.86,'要求',[.18,.858,.58,.065])],[(191.01,192.83)])
+add('检查并确认大纲','01 定大纲',205.79,215.29,[shot(205.79,'03',92,115,1.5,.49,.42,'逐页检查大纲')])
+add('先定大纲，再动手','01 定大纲',216.09,221.87,[P(216.09)])
+add('第二步：套模板','02 套模板',222.85,238.26,[P(222.85)])
+add('用公司模板','02 套模板',238.26,247.88,[shot(238.26,'03',201,206,1.45,.5,.46,'上传公司模板'),shot(241.72,'03',215,224,1.7,.49,.83,'logo · 配色 · 字体 · 版式')])
+add('文字可以直接编辑','02 套模板',248.6,255.56,[shot(248.6,'03',282,289,1.25,.57,.58,'检查公司模板'),shot(252.12,'03',265,275,1.2,.57,.55,'文字可编辑')])
+add('没有公司模板怎么办','02 套模板',256.2,260.84,[P(256.2)])
+add('Skill 像一本工作手册','02 套模板',260.84,275.14,[special(260.84,'handbook')])
+add('我们已经用过 Skill','02 套模板',275.7,283.18,[shot(275.7,'01',20,27,1.6,.49,.82,'更多技能 → PPT'),still(280.16,'01',26.4,1.8,.49,.82,'豆包自带的 PPT Skill')])
+add('安装别人的 Skill','02 套模板',285.74,303.24,[P(285.74),special(293.08,'install')])
+add('调用 guizang Skill','02 套模板',307.03,324.17,[still(307.03,'04-1',42,1.8,.49,.86,'已安装，可以直接调用'),shot(313.65,'04-1',47,55,1.8,.49,.82,'用 guizang-ppt-skill'),shot(318.85,'04-1',60,77,1.8,.49,.84,'只换版式 · 保持大纲内容')],[(309.21,313.65)])
+add('选择主题色','02 套模板',325.03,341.52,[shot(325.03,'04-2',2,8,1.5,.5,.46,'电子杂志风'),shot(329.83,'04-2',9,16,1.6,.5,.57,'五套主题色'),still(332.03,'04-2',17.5,1.7,.52,.67,'墨水经典'),still(338.2,'04-2',17.5,1.85,.52,.69,'墨黑 + 暖米白')],[(336.54,338.2)])
+add('打开网页版 PPT','02 套模板',341.92,351.34,[shot(341.92,'05',10,17,1.45,.5,.48,'下载压缩包'),shot(345.6,'05',27,40,1.4,.55,.46,'解压 → index.html'),shot(348.86,'05',41,49,1,.5,.5,'浏览器翻页预览')])
+add('版式更有设计感','02 套模板',364.06,372.98,[shot(364.06,'05',42,51,1.05,.5,.53,'更大的标题'),shot(367.88,'05',56,65,1.05,.5,.53,'大数字 · 深浅交替'),shot(371.52,'05',76,80,1.05,.5,.53,'留白')])
+add('仍要保留公司的风格','02 套模板',372.98,386.06,[still(372.98,'05',62.5,1.18,.65,.58,'照片被截断',[.58,.39,.29,.48]),still(375.54,'05',82.5,1.05,.5,.53,'配色发生了变化'),P(377.1)])
+add('第三步：调版式','03 调版式',387.82,399.88,[P(387.82)])
+add('先定设计方向','03 调版式',402.84,420.78,[shot(402.84,'06',43,54,1.8,.49,.83,'先定方向'),still(408.9,'06',58,1.6,.51,.81,'记住什么 · 参考谁 · 重点页'),shot(415.84,'06',88,106,1.5,.5,.43,'检查方案'),still(418.94,'06',103,1.5,.5,.4,'方向定了，再做素材')])
+add('列素材清单','03 调版式',421.68,432.96,[shot(421.68,'07',17,25,1.8,.49,.84,'每页需要什么图'),shot(426.76,'07',38,67,1.5,.49,.49,'检查素材清单')])
+add('制作产品主视觉','03 调版式',433.56,447.04,[still(433.56,'08',68,1.7,.65,.51,'手机拍摄原图'),shot(439.02,'08',32,43,1.45,.5,.78,'纯黑背景 · 侧面打光'),still(443.62,'08',43,1.6,.49,.83,'外形和 logo 不能改',[.25,.79,.62,.08])])
+add('主视觉效果','03 调版式',447.54,454.94,[shot(447.54,'08',87,94,1.6,.5,.57,'生成的两张主视觉'),image(451.18,'ai-ppt/image-03.jpg','背景干净，产品更有质感')])
+add('制作细节特写','03 调版式',455.42,472.56,[image(455.42,'ai-ppt/image-03.jpg','主视觉看整体'),image(457.04,'ai-ppt/image-05.jpg','细节看特写'),image(461.62,'ai-ppt/image-07.jpg','麦克风孔'),image(463.9,'ai-ppt/image-06.jpg','硅胶耳塞'),image(467.62,'ai-ppt/image-05.jpg','细节必须和原图一致')])
+add('单独抠出耳机','03 调版式',474.46,498.4,[image(474.46,'ai-ppt/image-06.jpg','带黑色背景的特写'),image(479.4,'ai-ppt/image-07.jpg','适合整页大图'),image(481.94,'ai-ppt/image-18.png','单独放一副耳机'),shot(492,'10',38,49,1.4,.5,.77,'去掉背景'),image(496.9,'ai-ppt/image-18.png','透明背景 · 边缘干净')],[(485.22,492)])
+add('补齐使用场景','03 调版式',498.4,509.14,[image(498.4,'ai-ppt/image-10.jpg','地铁通勤'),image(503.96,'ai-ppt/image-09.jpg','办公室开会'),image(506.98,'ai-ppt/image-10.jpg','让观众看懂使用场景')])
+add('开始重新排版','03 调版式',509.88,519.02,[shot(509.88,'12',23,35,1.7,.44,.82,'重新排版'),still(514.7,'12',42,1.65,.48,.81,'一页一件事 · 图大 · 字少')])
+add('检查新版','03 调版式',526.26,532.16,[shot(526.26,'12',98,111,1.15,.57,.57,'逐页检查')])
+add('圈出问题再修改','03 调版式',532.16,546.3,[still(532.16,'12',113.5,1.15,.56,.58,'地铁图被压扁',[.27,.38,.33,.43]),still(535.5,'12',113.5,1.15,.56,.58,'办公室场景缺失',[.64,.38,.29,.43]),still(537.36,'12',102.5,1.15,.56,.58,'第 4 页：手机原图',[.59,.4,.29,.4]),still(538.05,'12',93.5,1.15,.56,.58,'第 8 页：手机原图',[.33,.31,.43,.34]),still(538.72,'12',90.5,1.15,.56,.58,'第 9 页：手机原图',[.60,.38,.28,.42]),shot(539.36,'12',130,136,1.7,.45,.82,'哪一页 · 哪里不对 · 改成什么')])
+add('核对修改结果','03 调版式',547.16,550.88,[still(547.16,'12',154.25,1.1,.56,.57,'场景图已修正'),still(548.86,'12',160.75,1.1,.56,.57,'卡片文字精简')])
+add('参数表放到最后','03 调版式',551.28,562.46,[shot(551.28,'12',178,188,1.7,.45,.83,'把参数表移到最后'),shot(557,'12',199,214,1.1,.55,.55,'正文保留重点 · 参数作附录')],[(556.88,558.74)])
+add('图片和版式准备好了','03 调版式',562.46,565.4,[still(562.46,'12',167.5,1.05,.55,.55,'下一步：加动画')])
+add('第四步：加动画','04 加动画',565.4,575.62,[P(565.4)])
+add('页面之间如何切换','04 加动画',576.02,594.9,[shot(576.02,'13',48,58,1.7,.45,.82,'页面切换'),still(581.18,'13',55,1.6,.45,.8,'页面内的内容登场'),shot(588.84,'15',59,66.7,1,.5,.5,'三色耳机展开'),still(592.66,'13',55,1.7,.45,.83,'其他页淡入淡出')],[(582.62,584.56)])
+add('封面与价格页动画','04 加动画',595.82,613.96,[shot(595.82,'14',22,26,1.75,.45,.81,'先做重点页'),shot(602.76,'15',22,31.7,1,.5,.5,'封面：由近及远'),shot(607.56,'15',67,72.2,1,.5,.5,'原价 → 划掉 → 新价格')])
+add('其他页面轻一点','04 加动画',614.52,621.44,[shot(614.52,'14',42,50,1.7,.45,.83,'其他页的动画不能抢重点')])
+add('进入放映模式','04 加动画',623.29,629.85,[shot(623.29,'15',16,22,1,.5,.5,'编辑界面 → 放映')])
+add('检查完整效果','04 加动画',629.85,637.75,[shot(629.85,'15',24,32,1,.5,.5,'封面'),shot(632,'15',59,66.7,1,.5,.5,'三色耳机'),shot(634,'15',67,72.5,1,.5,.5,'价格')])
+add('和一句话版本比较','04 加动画',638.81,654.93,[special(638.81,'compare-earbuds')])
+add('下次还要重说吗','05 做 Skill',660.23,666.17,[P(660.23)])
+add('第五步：做 Skill','05 做 Skill',666.97,675.35,[P(666.97)])
+add('整理成自己的 Skill','05 做 Skill',675.35,682.11,[shot(675.35,'16',40,46,1.75,.48,.81,'把一路提的要求存下来')])
+add('保存的是做法','05 做 Skill',682.77,692.21,[P(682.77)])
+add('换个产品再试一次','05 做 Skill',692.85,705.81,[shot(692.85,'16',92,100,1.2,.5,.6,'新开对话'),shot(696,'16',107,120,1.3,.6,.48,'上传充电宝资料'),shot(698.57,'16',121,126,1.45,.48,.79,'调用自己的 Skill'),shot(702,'16',129,136,1.8,.5,.83,'帮我做个产品宣传 PPT')])
+add('打开充电宝 PPT','05 做 Skill',706.45,708.73,[shot(706.45,'17',7,16,1,.5,.5,'打开新产品的 PPT')])
+add('要求被复用了','05 做 Skill',709.33,713.71,[shot(709.33,'17',17,22,1,.5,.5,'成品放映'),shot(711.1,'17',32,37,1,.5,.5,'版式和动画随新产品调整')])
+add('有没有 Skill 的差别','05 做 Skill',714.23,736.73,[special(714.23,'compare-power')])
+add('五步回顾','课程总结',737.31,757.23,[special(737.31,'steps')])
+add('一步步打磨','课程总结',760.01,765.83,[P(760.01)])
+add('自己动手试一试','课程总结',766.27,790.28,[P(766.27)])
+# Round all edits to original 30fps. Remove long non-speech gaps while preserving 0.4s breathing room.
+F=30
+for scene in scenes:
+ a,b=scene['sourceStart'],scene['sourceEnd'];cuts=list(scene.pop('exclude'))
+ relevant=[x for x in tr if x['end']>a and x['start']<b]
+ for left,right in zip(relevant,relevant[1:]):
+  if right['start']-left['end']>1.0:cuts.append((left['end']+.20,right['start']-.20))
+ spans=[(round(a*F),round(b*F))]
+ for lo,hi in sorted(cuts):
+  lo,hi=round(lo*F),round(hi*F);spans=[pair for x,y in spans for pair in ([(x,y)] if hi<=x or lo>=y else [(x,min(y,lo)),(max(x,hi),y)]) if pair[1]>pair[0]]
+ scene['audio']=[dict(sourceStart=x,sourceEnd=y) for x,y in spans]
+ scene['durationInFrames']=sum(y-x for x,y in spans)
+ scene['sourceStartFrame']=round(a*F)
+ scene['sourceEndFrame']=round(b*F)
+# Source-time keyed cues preserve correspondence after trimming pauses.
+(D/'timeline.ts').write_text('''// Source selections are in seconds; audio cuts are original 30 fps frames.\n// User chose actual spoken version over the earlier 45-paragraph script.\nexport type Shot = {at:number;kind:string;file?:string;sourceStart?:number;sourceEnd?:number|null;zoom?:number;cx?:number;cy?:number;label?:string;mark?:number[]|null};\nexport type Scene = {id:string;title:string;chapter:string;sourceStart:number;sourceEnd:number;sourceStartFrame:number;sourceEndFrame:number;durationInFrames:number;audio:{sourceStart:number;sourceEnd:number}[];shots:Shot[]};\nexport const FPS=30;\nexport const scenes:Scene[] = '''+json.dumps(scenes,ensure_ascii=False,indent=2)+''';\nexport const TOTAL_FRAMES=scenes.reduce((n,s)=>n+s.durationInFrames,0);\nexport const sourceToFrame=(scene:Scene,seconds:number)=>{let at=0;for(const c of scene.audio){if(seconds*FPS<c.sourceStart)return at;if(seconds*FPS<c.sourceEnd)return at+Math.round(seconds*FPS)-c.sourceStart;at+=c.sourceEnd-c.sourceStart;}return at;};\nexport const frameToSource=(scene:Scene,frame:number)=>{let at=0;for(const c of scene.audio){const d=c.sourceEnd-c.sourceStart;if(frame<at+d)return (c.sourceStart+frame-at)/FPS;at+=d;}return scene.sourceEnd;};\n''')
+(W/'actual-edit-scenes.json').write_text(json.dumps(scenes,ensure_ascii=False,indent=2))
+print(len(scenes),'scenes',sum(s['durationInFrames'] for s in scenes)/F,'seconds')

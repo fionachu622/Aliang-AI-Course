@@ -1,0 +1,46 @@
+{
+  "original": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例准备/04 多 Agent 分工干活/多 Agent 分工.mp4",
+  "basis": "Native-speed excerpts matched to existing narration cues; waiting omitted, final evidence held.",
+  "clips": [
+    {
+      "id": "recording-14",
+      "rawStart": 40,
+      "rawEnd": 45
+    },
+    {
+      "id": "recording-15",
+      "rawStart": 84,
+      "rawEnd": 87.76666666666667
+    },
+    {
+      "id": "recording-16",
+      "rawStart": 370,
+      "rawEnd": 372.9
+    },
+    {
+      "id": "recording-17",
+      "rawStart": 414,
+      "rawEnd": 415.5
+    },
+    {
+      "id": "recording-18",
+      "rawStart": 492,
+      "rawEnd": 497.73333333333335
+    },
+    {
+      "id": "recording-18-summary",
+      "rawStart": 504,
+      "rawEnd": 508
+    },
+    {
+      "id": "recording-18-confirm",
+      "rawStart": 510,
+      "rawEnd": 512
+    },
+    {
+      "id": "recording-18-result",
+      "rawStart": 519,
+      "rawEnd": 519.1
+    }
+  ]
+}

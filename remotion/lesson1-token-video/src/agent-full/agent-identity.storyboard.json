@@ -1,0 +1,23 @@
+{
+  "clock": "原口播时钟，播放器统一扣除43帧；不改音轨",
+  "identity": {
+    "reference": "Lesson1ChalkboardV3 / RevisedScenes abbreviationMorph",
+    "agent_at": 41.0666667,
+    "move_left_at": 41.5,
+    "equals_at": 42.15,
+    "chinese_at": 42.53,
+    "dock_at": 43.35,
+    "dock_duration": 0.8,
+    "initial_center": [
+      960,
+      540
+    ],
+    "docked_center": [
+      960,
+      255
+    ],
+    "definition_at": 46.34,
+    "handoff_to_workflow_at": 51.72
+  },
+  "source": "AgentMotionV2；同步名称对应镜头，First3为后续主编辑页面"
+}

@@ -1,0 +1,9 @@
+{
+  "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/口播精剪.mp4",
+  "audio": "agent-course/media/narration-title-cut.m4a",
+  "durationSeconds": 1291.586757,
+  "durationInFrames": 38748,
+  "cutAtFrame": 1189,
+  "removedFrames": 43,
+  "basis": "Waveform alignment: unchanged before 39.6333 s; new audio matches old +1.43333 s after cut. Editorial cue files retain original clock; visual Sequence applies single shift."
+}

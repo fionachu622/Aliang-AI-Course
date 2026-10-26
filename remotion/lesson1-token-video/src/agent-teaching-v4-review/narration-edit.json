@@ -1,0 +1,12 @@
+{
+  "source": "/Users/sniper/work/0自媒体/自媒体项目/03课程/AI课程资料/02 Agent 专题课/案例成片/口播精剪_完整课程_播放修正版_v2.mp4",
+  "audio": "agent-course/recorded/presenter-case-edited-v2.mp4",
+  "durationSeconds": 1120,
+  "durationInFrames": 33600,
+  "cutAtFrame": 1189,
+  "removedFrames": 43,
+  "basis": "Edited presenter master v2. Only the butterfly production case was cut/reordered. Legacy visuals retain their source clock; the edited case uses its paired continuous recording. cutAtFrame/removedFrames describe the pre-existing legacy cue offset only.",
+  "video": "agent-course/recorded/presenter-case-edited-v2.mp4",
+  "renderAudio": "agent-course/recorded/presenter-case-edited-v2-audio.m4a",
+  "previewVideo": "agent-course/preview-proxies/presenter-case-edited-preview-v2.mp4"
+}

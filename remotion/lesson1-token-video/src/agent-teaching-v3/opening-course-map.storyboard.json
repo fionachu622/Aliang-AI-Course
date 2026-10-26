@@ -1,0 +1,59 @@
+{
+  "purpose": "课程学习路线：左侧Agent作为主节点，右侧纵向三部分",
+  "subtitle_safe_top": 900,
+  "clock": "原口播时钟；本段位于删标题之前",
+  "cues": [
+    {
+      "frame": 639,
+      "spoken": "原口播继续，无新增文字",
+      "visual": "Agent 落位后，三条分支及标题以灰度同时出现"
+    },
+    {
+      "frame": 663,
+      "spoken": "最基础的概念",
+      "visual": "认识 Agent 分支沿连线和卡片轮廓描亮；不展示定义或结果关系"
+    },
+    {
+      "frame": 718,
+      "spoken": "完整实战",
+      "visual": "使用实战分支沿连线和卡片轮廓描亮"
+    },
+    {
+      "frame": 897,
+      "spoken": "实用工具",
+      "visual": "Agent 工具介绍分支沿连线和卡片轮廓描亮"
+    },
+    {
+      "frame": 918,
+      "spoken": "可以上手",
+      "visual": "保持三条课程路线标题，不增加解释小字"
+    }
+  ],
+  "constraints": [
+    "三条分支先以灰度同屏展示，口播点名时依次描亮并转彩色",
+    "不出现品牌、具体案例、编造步骤",
+    "保留开场Agent移动与下一页承接"
+  ],
+  "voiceover_only": [
+    "不会编程，也能跟着学"
+  ],
+  "layout": "左侧小 Agent；右侧三行图标+标题先以灰度同屏展示，口播点名后沿圆端曲线分支和手绘轮廓依次转蓝/粉/绿；当前项轻微呼吸高亮；不显示解释小字",
+  "horizontal_offset": 90,
+  "layout_note": "整组可见内容向右90px，按Agent实际像素边界与右侧框边界居中；随入场move完成，下一页初始Agent x530承接",
+  "layout_metrics": {
+    "row_centers_y": [
+      230,
+      450,
+      670
+    ],
+    "frame_height_approx": 120,
+    "clear_gap_approx": 100,
+    "subtitle_safe_top": 900
+  },
+  "chapter_labels": [
+    {"title": "认识 Agent"},
+    {"title": "Agent 使用实战"},
+    {"title": "Agent 工具介绍"}
+  ],
+  "scope_note": "目录参考正式章节名；不提前展示能力、原理、风险把关、选型或收费等口播尚未展开的细目"
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "start": 0,
+    "end": 62.02,
+    "reason": "多次开头试录及额外课程介绍；正式对比开场从62.02开始",
+    "status": "proposed-needs-listening"
+  },
+  {
+    "start": 77.74,
+    "end": 100.31,
+    "reason": "任务介绍多次起句；保留100.31起完整一次",
+    "status": "proposed-needs-listening"
+  },
+  {
+    "start": 155.85,
+    "end": 160.35,
+    "reason": "五步枚举第一次不完整；保留160.35起完整枚举",
+    "status": "proposed-needs-listening"
+  },
+  {
+    "start": 191.01,
+    "end": 192.83,
+    "reason": "背景句起句重说；保留192.83起完整句",
+    "status": "proposed-needs-listening"
+  },
+  {
+    "start": 283.7,
+    "end": 285.74,
+    "reason": "Skill不一定起句重说",
+    "status": "proposed-needs-listening"
+  },
+  {
+    "start": 303.64,
+    "end": 307.03,
+    "reason": "电脑已安装起句重说",
+    "status": "proposed-needs-listening"
+  },
+  {
+    "start": 309.21,
+    "end": 313.65,
+    "reason": "调用方法起句重说",
+    "status": "proposed-needs-listening"
+  },
+  {
+    "start": 336.54,
+    "end": 338.2,
+    "reason": "墨黑配暖米白重复一次",
+    "status": "proposed-needs-listening"
+  },
+  {
+    "start": 353.36,
+    "end": 364.06,
+    "reason": "对比观察多次起句；保留364.06起完整一次",
+    "status": "proposed-needs-listening"
+  },
+  {
+    "start": 386.68,
+    "end": 387.82,
+    "reason": "第三步调版式起句重说",
+    "status": "proposed-needs-listening"
+  },
+  {
+    "start": 485.22,
+    "end": 492.0,
+    "reason": "上传耳机照片起句重说",
+    "status": "proposed-needs-listening"
+  },
+  {
+    "start": 654.93,
+    "end": 659.47,
+    "reason": "重点一个一个出来重复尾句",
+    "status": "proposed-needs-listening"
+  },
+  {
+    "start": 758.11,
+    "end": 760.01,
+    "reason": "结尾总结起句重说",
+    "status": "proposed-needs-listening"
+  }
+]
