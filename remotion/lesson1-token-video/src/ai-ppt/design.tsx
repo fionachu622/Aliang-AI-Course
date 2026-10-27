@@ -1,21 +1,24 @@
-// Visual language for the AI生成PPT course (v5): a clean, light "studio" look
-// used by current tutorial channels — warm off-white stage, floating white cards with
-// soft shadows, bold sans type, one blue accent plus highlighter yellow, springy pop-ins.
+// Visual language for the AI生成PPT course (v6), modelled on the reference explainer
+// "从 LLM 到 Agent Skill": a flat warm-grey stage with a faint grain, flat dark panels,
+// white bold type, yellow-green subtitles and arrows, green tags, red call-out boxes.
+// No drop shadows, no glass, no gradients. Elements build up in step with the narration.
 import React from 'react';
 import {AbsoluteFill, Easing, interpolate} from 'remotion';
 
 export const C = {
-  bg: '#F4F2EC',
-  ink: '#14161A',
-  inkSoft: '#5E636B',
-  inkFaint: 'rgba(20,22,26,.12)',
-  card: '#FFFFFF',
-  blue: '#2F6BFF',
-  blueSoft: '#E6EDFF',
-  orange: '#FF6B3D',
-  yellow: '#FFD84D',
-  green: '#16B27A',
-  dark: '#15171B',
+  bg: '#535154', // stage
+  panel: '#3F3E41', // flat panels on the stage
+  panelHi: '#4A494C',
+  deep: '#2C2B2E', // keyword cards
+  line: 'rgba(255,255,255,.16)',
+  ink: '#FFFFFF',
+  inkSoft: 'rgba(255,255,255,.66)',
+  inkDim: 'rgba(255,255,255,.3)',
+  accent: '#D2E01A', // subtitles, arrows, emphasis
+  green: '#2E7A45', // tags
+  blue: '#2D5E8C', // user message bubble
+  red: '#E8473F', // call-out boxes
+  dark: '#1C1B1D',
 };
 
 export const FONT = {
@@ -29,57 +32,56 @@ export const ease = (v: number, a: number, b: number) =>
   interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.22, 1, 0.36, 1)});
 export const easeInOut = (v: number, a: number, b: number) =>
   interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.65, 0, 0.35, 1)});
-/** Springy pop with a small overshoot, for chips and cards. */
+/** Gentle settle with a very small overshoot. */
 export const pop = (v: number, a: number, b: number) =>
-  interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.34, 1.56, 0.64, 1)});
+  interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.3, 1.25, 0.6, 1)});
 export const lerp = (p: number, a: number, b: number) => a + (b - a) * p;
 
-/** The stage behind every non-presenter shot: warm paper, soft colour glows, faint dot grid. */
+const GRAIN = `url("data:image/svg+xml;utf8,${encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.09 0"/></filter><rect width="240" height="240" filter="url(#n)"/></svg>',
+)}")`;
+
+/** Flat grey stage with a faint grain, behind every diagram. */
 export const Stage: React.FC<{children?: React.ReactNode}> = ({children}) => (
   <AbsoluteFill style={{background: C.bg, color: C.ink, fontFamily: FONT.sans}}>
-    <AbsoluteFill style={{background: 'radial-gradient(900px 600px at 8% 0%, rgba(47,107,255,.10), transparent 70%), radial-gradient(900px 700px at 100% 100%, rgba(255,107,61,.09), transparent 70%)'}} />
-    <AbsoluteFill style={{backgroundImage: 'radial-gradient(rgba(20,22,26,.07) 1.4px, transparent 1.5px)', backgroundSize: '30px 30px'}} />
+    <AbsoluteFill style={{backgroundImage: GRAIN, opacity: 0.9}} />
     {children}
   </AbsoluteFill>
 );
 
-/** Floating white card with a soft shadow. */
-export const Card: React.FC<{style?: React.CSSProperties; children?: React.ReactNode; radius?: number}> = ({style, children, radius = 24}) => (
-  <div style={{position: 'absolute', background: C.card, borderRadius: radius, boxShadow: '0 2px 6px rgba(20,24,40,.06), 0 28px 70px rgba(20,24,40,.16)', border: '1px solid rgba(20,22,26,.06)', overflow: 'hidden', ...style}}>{children}</div>
+/** Flat panel. */
+export const Card: React.FC<{style?: React.CSSProperties; children?: React.ReactNode; radius?: number}> = ({style, children, radius = 18}) => (
+  <div style={{position: 'absolute', background: C.panel, borderRadius: radius, overflow: 'hidden', ...style}}>{children}</div>
 );
 
-/** Dark pill label with a coloured dot. Pops in. */
-export const Chip: React.FC<{text: string; progress: number; x: number; y: number; color?: string; anchor?: 'left' | 'right'}> = ({text, progress, x, y, color = C.blue, anchor = 'left'}) => {
-  if (!text) return null;
+/** Small green (or other) label tag, as used on the reference diagrams. */
+export const Tag: React.FC<{text: string; color?: string; size?: number; style?: React.CSSProperties}> = ({text, color = C.green, size = 30, style}) => (
+  <div style={{display: 'inline-block', padding: `${size * 0.28}px ${size * 0.6}px`, borderRadius: 6, background: color, color: '#fff', fontSize: size, fontWeight: 800, whiteSpace: 'nowrap', lineHeight: 1.2, ...style}}>{text}</div>
+);
+
+/** Big keyword card: dark rounded block, white bold word. */
+export const KeyCard: React.FC<{text: string; size?: number; style?: React.CSSProperties}> = ({text, size = 88, style}) => (
+  <div style={{display: 'inline-block', padding: `${size * 0.32}px ${size * 0.62}px`, borderRadius: size * 0.26, background: C.deep, color: '#fff', fontSize: size, fontWeight: 900, lineHeight: 1.1, whiteSpace: 'nowrap', ...style}}>{text}</div>
+);
+
+/** Thin arrow that draws from (x1,y1) to (x2,y2). */
+export const Arrow: React.FC<{x1: number; y1: number; x2: number; y2: number; progress: number; color?: string; width?: number; dashed?: boolean}> = ({x1, y1, x2, y2, progress, color = C.accent, width = 4, dashed}) => {
+  if (progress < 0.01) return null;
+  const len = Math.hypot(x2 - x1, y2 - y1);
+  const ex = x1 + (x2 - x1) * progress, ey = y1 + (y2 - y1) * progress;
+  const ang = Math.atan2(y2 - y1, x2 - x1);
+  const h = 16;
+  const p1 = [ex - h * Math.cos(ang - 0.45), ey - h * Math.sin(ang - 0.45)];
+  const p2 = [ex - h * Math.cos(ang + 0.45), ey - h * Math.sin(ang + 0.45)];
   return (
-    <div style={{position: 'absolute', [anchor]: x, top: y, transform: `scale(${0.6 + 0.4 * progress})`, transformOrigin: anchor === 'left' ? '0 50%' : '100% 50%', opacity: Math.min(1, progress * 1.6)}}>
-      <div style={{display: 'flex', alignItems: 'center', gap: 14, padding: '14px 26px 14px 20px', borderRadius: 999, background: C.dark, color: '#fff', fontSize: 34, fontWeight: 700, letterSpacing: 0.5, whiteSpace: 'nowrap', boxShadow: '0 12px 30px rgba(20,24,40,.28)'}}>
-        <span style={{width: 14, height: 14, borderRadius: 7, background: color, boxShadow: `0 0 0 5px ${color}33`}} />
-        {text}
-      </div>
-    </div>
+    <svg style={{position: 'absolute', left: 0, top: 0, overflow: 'visible', pointerEvents: 'none'}} width={1} height={1}>
+      <line x1={x1} y1={y1} x2={ex} y2={ey} stroke={color} strokeWidth={width} strokeLinecap="round" strokeDasharray={dashed ? '10 10' : undefined} />
+      {len * progress > h && <path d={`M${p1[0]} ${p1[1]} L${ex} ${ey} L${p2[0]} ${p2[1]}`} stroke={color} strokeWidth={width} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
+    </svg>
   );
 };
 
-/** Small step navigator: 5 segments, the current one filled. */
-export const StepNav: React.FC<{chapter: string; progress: number}> = ({chapter, progress}) => {
-  const m = chapter.match(/^0(\d) (.+)$/);
-  if (!m) return null;
-  const cur = Number(m[1]);
-  return (
-    <div style={{position: 'absolute', right: 70, top: 26, display: 'flex', alignItems: 'center', gap: 14, opacity: progress, fontFamily: FONT.sans}}>
-      <div style={{fontSize: 24, fontWeight: 700, color: C.inkSoft, letterSpacing: 1}}>STEP {cur}/5</div>
-      <div style={{display: 'flex', gap: 6}}>
-        {[1, 2, 3, 4, 5].map((i) => <div key={i} style={{width: i === cur ? 40 : 18, height: 8, borderRadius: 4, background: i < cur ? 'rgba(47,107,255,.35)' : i === cur ? C.blue : C.inkFaint}} />)}
-      </div>
-      <div style={{fontSize: 26, fontWeight: 800, color: C.ink}}>{m[2]}</div>
-    </div>
-  );
-};
-
-/** Highlight on top of media: translucent yellow marker plus a rounded blue outline. Coordinates in px. */
-export const MarkBox: React.FC<{x: number; y: number; w: number; h: number; progress: number; stroke?: number}> = ({x, y, w, h, progress, stroke = 4}) => (
-  <div style={{position: 'absolute', left: x - 8, top: y - 6, width: w + 16, height: h + 12, borderRadius: 12, background: `rgba(255,216,77,${0.32 * progress})`, mixBlendMode: 'multiply'}}>
-    <div style={{position: 'absolute', inset: -stroke, borderRadius: 14, border: `${stroke}px solid ${C.orange}`, opacity: progress, transform: `scale(${1.08 - 0.08 * progress})`}} />
-  </div>
+/** Red call-out box on top of media. Coordinates in px. */
+export const MarkBox: React.FC<{x: number; y: number; w: number; h: number; progress: number; stroke?: number}> = ({x, y, w, h, progress, stroke = 5}) => (
+  <div style={{position: 'absolute', left: x - 8, top: y - 6, width: w + 16, height: h + 12, borderRadius: 10, border: `${stroke}px solid ${C.red}`, opacity: Math.min(1, progress * 1.4), transform: `scale(${1.06 - 0.06 * progress})`}} />
 );

@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Audio, Freeze, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Scene, Shot, scenes, FPS, chunkFrames, dubAt, frameToSource, sourceToFrame} from './timeline';
 import captions from './captions.json';
-import {Compare, CropVideo, Handbook, InstallCard, Opening, Steps, StepsStrip} from './Animations';
+import {Compare, CropVideo, Handbook, InstallCard, Opening, Steps, StepsIntro} from './Animations';
 import {C, Card, FONT, MarkBox, Stage, ease, easeInOut, lerp, pop} from './design';
 
 const screen = (id: string) => staticFile(`ai-ppt/screen-${id === '16' ? '16-v4' : id}.mp4`);
@@ -66,8 +66,8 @@ const ScreenShot: React.FC<{shot: Shot; duration: number; prev?: Shot}> = ({shot
   const glide = prev?.kind === 'screen' && prev.file === shot.file;
   const settle = easeInOut(f, 0, glide ? 16 : 20);
   const drift = interpolate(f, [20, Math.max(21, duration)], [0, 1], clamp);
-  const fromZoom = glide ? Math.max(1, prev!.zoom ?? 1) * 1.035 : Math.max(1, target * 0.9);
-  const zoom = lerp(settle, fromZoom, target) * (1 + 0.035 * drift);
+  const fromZoom = glide ? Math.max(1, prev!.zoom ?? 1) * 1.012 : Math.max(1, target * 0.95);
+  const zoom = lerp(settle, fromZoom, target) * (1 + 0.012 * drift);
   const cx = clampCentre(lerp(settle, glide ? prev!.cx ?? 0.5 : shot.cx ?? 0.5, shot.cx ?? 0.5), zoom);
   const cy = clampCentre(lerp(settle, glide ? prev!.cy ?? 0.5 : shot.cy ?? 0.5, shot.cy ?? 0.5), zoom);
   const tx = (0.5 - cx) * VW * zoom;
@@ -159,7 +159,7 @@ const PresenterVideo: React.FC<{scene: Scene; sceneIndex: number; forceWide?: bo
 
 const PresenterTake: React.FC<{start: number; duration: number; close: boolean}> = ({start, duration, close}) => {
   const f = useCurrentFrame();
-  const push = interpolate(f, [0, Math.max(1, duration)], [1, 1.03], clamp);
+  const push = interpolate(f, [0, Math.max(1, duration)], [1, 1.015], clamp);
   const base = close ? 1.24 : 1.0;
   return (
     <AbsoluteFill style={{transform: `scale(${base * push})`, transformOrigin: close ? '57% 30%' : '55% 45%'}}>
@@ -168,13 +168,18 @@ const PresenterTake: React.FC<{start: number; duration: number; close: boolean}>
   );
 };
 
+// Subtitles as in the reference: yellow-green bold text, no box, a thin dark outline so it
+// reads on both the grey stage and white app screens.
+const OUTLINE = [[-2, -2], [2, -2], [-2, 2], [2, 2], [0, -3], [0, 3], [-3, 0], [3, 0]].map(([x, y]) => `${x}px ${y}px 0 rgba(24,24,26,.92)`).join(', ');
+const SUB_STYLE: React.CSSProperties = {fontFamily: FONT.sans, color: C.accent, fontSize: 46, lineHeight: 1.3, fontWeight: 800, letterSpacing: 1.5, textAlign: 'center', textShadow: `${OUTLINE}, 0 4px 12px rgba(0,0,0,.45)`};
+
 const Subtitle: React.FC<{sourceTime: number}> = ({sourceTime}) => {
   // Timestamps stay relative to the original narration, even across removed retakes.
   const c = captions.find((x) => sourceTime * 1000 >= x.startMs && sourceTime * 1000 < x.endMs - 150);
   if (!c) return null;
   return (
-    <div style={{position: 'absolute', bottom: 40, left: 120, right: 120, display: 'flex', justifyContent: 'center', pointerEvents: 'none'}}>
-      <div style={{fontFamily: FONT.sans, color: '#fff', fontSize: 42, lineHeight: 1.35, fontWeight: 700, letterSpacing: 1, textAlign: 'center', background: 'rgba(20,22,26,.82)', padding: '10px 28px', borderRadius: 14}}>{c.text}</div>
+    <div style={{position: 'absolute', bottom: 44, left: 120, right: 120, display: 'flex', justifyContent: 'center', pointerEvents: 'none'}}>
+      <div style={SUB_STYLE}>{c.text}</div>
     </div>
   );
 };
@@ -201,8 +206,8 @@ const DubSubtitle: React.FC<{text: string; progress: number}> = ({text, progress
   let acc = 0;
   const current = parts.find((s) => (acc += s.length) / total > progress) ?? parts[parts.length - 1];
   return (
-    <div style={{position: 'absolute', bottom: 40, left: 120, right: 120, display: 'flex', justifyContent: 'center', pointerEvents: 'none'}}>
-      <div style={{fontFamily: FONT.sans, color: '#fff', fontSize: 42, lineHeight: 1.35, fontWeight: 700, letterSpacing: 1, textAlign: 'center', background: 'rgba(20,22,26,.82)', padding: '10px 28px', borderRadius: 14}}>{current}</div>
+    <div style={{position: 'absolute', bottom: 44, left: 120, right: 120, display: 'flex', justifyContent: 'center', pointerEvents: 'none'}}>
+      <div style={SUB_STYLE}>{current}</div>
     </div>
   );
 };
@@ -232,12 +237,8 @@ export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, d
           // These use the scene's own clock so spoken cue anchors survive cuts.
           const inner =
             shot.kind === 'opening' ? <Opening scene={scene} /> :
-            shot.kind === 'presenter' || shot.kind === 'presenter-steps' ? (
-              <AbsoluteFill>
-                <PresenterVideo scene={scene} sceneIndex={idx} forceWide={shot.kind === 'presenter-steps'} />
-                {shot.kind === 'presenter-steps' && <StepsStrip scene={scene} />}
-              </AbsoluteFill>
-            ) :
+            shot.kind === 'presenter' ? <PresenterVideo scene={scene} sceneIndex={idx} /> :
+            shot.kind === 'presenter-steps' ? <StepsIntro scene={scene} /> :
             shot.kind === 'handbook' ? <Handbook scene={scene} /> :
             shot.kind === 'steps' ? <Steps scene={scene} /> :
             shot.kind === 'install' ? <InstallCard scene={scene} /> :
