@@ -519,6 +519,11 @@ export const scenes:Scene[] = [
         "at": 222.85,
         "kind": "presenter",
         "label": ""
+      },
+      {
+        "at": 235.8,
+        "kind": "ch-template",
+        "label": "章节开头"
       }
     ],
     "audio": [
@@ -1034,6 +1039,11 @@ export const scenes:Scene[] = [
         "at": 387.82,
         "kind": "presenter",
         "label": ""
+      },
+      {
+        "at": 394.54,
+        "kind": "ch-layout",
+        "label": "章节开头"
       }
     ],
     "audio": [
@@ -1730,6 +1740,11 @@ export const scenes:Scene[] = [
         "at": 565.4,
         "kind": "presenter",
         "label": ""
+      },
+      {
+        "at": 572.48,
+        "kind": "ch-anim",
+        "label": "章节开头"
       }
     ],
     "audio": [
@@ -2037,6 +2052,11 @@ export const scenes:Scene[] = [
         "at": 666.97,
         "kind": "presenter",
         "label": ""
+      },
+      {
+        "at": 672.89,
+        "kind": "ch-skill",
+        "label": "章节开头"
       }
     ],
     "audio": [

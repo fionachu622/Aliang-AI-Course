@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Audio, Freeze, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Scene, Shot, scenes, FPS, chunkFrames, dubAt, frameToSource, sourceToFrame} from './timeline';
 import captions from './captions.json';
-import {Compare, CropVideo, Handbook, InstallCard, Opening, PipelineMap, Steps, StepsIntro} from './Animations';
+import {ChapterAnim, ChapterLayout, ChapterSkill, ChapterTemplate, Compare, CropVideo, Handbook, InstallCard, Opening, PipelineMap, Steps, StepsIntro} from './Animations';
 import {C, Card, ChalkFonts, FONT, MarkBox, Stage, ease, easeInOut, lerp, pop} from './design';
 
 const screen = (id: string) => staticFile(`ai-ppt/screen-${id === '16' ? '16-v4' : id}.mp4`);
@@ -238,6 +238,10 @@ export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, d
             shot.kind === 'presenter' ? <PresenterVideo scene={scene} sceneIndex={idx} /> :
             shot.kind === 'presenter-steps' ? <StepsIntro scene={scene} /> :
             shot.kind === 'map' ? <PipelineMap scene={scene} step={shot.step ?? 1} /> :
+            shot.kind === 'ch-template' ? <ChapterTemplate scene={scene} /> :
+            shot.kind === 'ch-layout' ? <ChapterLayout scene={scene} /> :
+            shot.kind === 'ch-anim' ? <ChapterAnim scene={scene} /> :
+            shot.kind === 'ch-skill' ? <ChapterSkill scene={scene} /> :
             shot.kind === 'handbook' ? <Handbook scene={scene} /> :
             shot.kind === 'steps' ? <Steps scene={scene} /> :
             shot.kind === 'install' ? <InstallCard scene={scene} /> :
