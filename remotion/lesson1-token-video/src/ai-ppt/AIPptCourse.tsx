@@ -3,7 +3,7 @@ import {AbsoluteFill, Audio, Freeze, Img, OffthreadVideo, Sequence, interpolate,
 import {Scene, Shot, scenes, FPS, chunkFrames, dubAt, frameToSource, sourceToFrame} from './timeline';
 import captions from './captions.json';
 import {Compare, CropVideo, Handbook, InstallCard, Opening, Steps, StepsIntro} from './Animations';
-import {C, Card, FONT, MarkBox, Stage, ease, easeInOut, lerp, pop} from './design';
+import {C, Card, ChalkFonts, FONT, MarkBox, Stage, ease, easeInOut, lerp, pop} from './design';
 
 const screen = (id: string) => staticFile(`ai-ppt/screen-${id === '16' ? '16-v4' : id}.mp4`);
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
@@ -100,7 +100,7 @@ const ScreenTrio: React.FC<{shot: Shot; duration: number}> = ({shot, duration}) 
         const hl = ease(f, i * step + 5, i * step + 14);
         return (
           <div key={i} style={{position: 'absolute', left: x0 + i * (w + gap), top: y0, width: w, opacity: Math.min(1, p * 1.5), transform: `translateY(${(1 - p) * 30}px)`}}>
-            <Card radius={18} style={{position: 'relative', width: w, height: h}}>
+            <Card k={`trio-${i}`} progress={p} style={{position: 'relative', width: w, height: h}}>
               <CropVideo file={it.file} start={it.sourceStart} crop={it.crop} still />
               <MarkBox x={((mx - cx) / cw) * w} y={((my - cy) / ch) * h} w={(mw / cw) * w} h={(mh / ch) * h} progress={hl} stroke={3} />
             </Card>
@@ -168,10 +168,8 @@ const PresenterTake: React.FC<{start: number; duration: number; close: boolean}>
   );
 };
 
-// Subtitles as in the reference: yellow-green bold text, no box, a thin dark outline so it
-// reads on both the grey stage and white app screens.
-const OUTLINE = [[-2, -2], [2, -2], [-2, 2], [2, 2], [0, -3], [0, 3], [-3, 0], [3, 0]].map(([x, y]) => `${x}px ${y}px 0 rgba(24,24,26,.92)`).join(', ');
-const SUB_STYLE: React.CSSProperties = {fontFamily: FONT.sans, color: C.accent, fontSize: 46, lineHeight: 1.3, fontWeight: 800, letterSpacing: 1.5, textAlign: 'center', textShadow: `${OUTLINE}, 0 4px 12px rgba(0,0,0,.45)`};
+// Subtitles as in the chalkboard lessons: warm white sans with a dark outline, no box.
+const SUB_STYLE: React.CSSProperties = {fontFamily: FONT.ui, color: '#FFFDF7', fontSize: 46, lineHeight: 1.35, fontWeight: 600, letterSpacing: 1, textAlign: 'center', WebkitTextStroke: '6px rgba(12,14,15,.72)', paintOrder: 'stroke fill', textShadow: '0 3px 14px rgba(0,0,0,.55)'} as React.CSSProperties;
 
 const Subtitle: React.FC<{sourceTime: number}> = ({sourceTime}) => {
   // Timestamps stay relative to the original narration, even across removed retakes.
@@ -223,7 +221,7 @@ export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, d
   const activeKind = [...scene.shots].reverse().find((s) => sourceToFrame(scene, s.at) <= frame)?.kind;
   let offset = 0;
   return (
-    <AbsoluteFill style={{fontFamily: FONT.sans, background: C.bg}}>
+    <AbsoluteFill style={{fontFamily: FONT.sans, background: C.board}}>
       {scene.shots.map((shot, i) => {
         const from = sourceToFrame(scene, shot.at);
         const end = i + 1 < scene.shots.length ? sourceToFrame(scene, scene.shots[i + 1].at) : scene.durationInFrames;
@@ -266,7 +264,7 @@ export const AIPptCourse: React.FC<{sceneId?: string; debug?: boolean}> = ({scen
   const selected = sceneId ? scenes.filter((s) => s.id === sceneId) : scenes;
   return (
     <AbsoluteFill>
-      <style>{`*{box-sizing:border-box}`}</style>
+      <ChalkFonts />
       {selected.map((scene) => {
         const from = at;
         at += scene.durationInFrames;

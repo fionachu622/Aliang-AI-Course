@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Freeze, OffthreadVideo, Sequence, staticFile, useCurrentFrame} from 'remotion';
 import {Scene, FPS, frameToSource, sourceToFrame} from './timeline';
-import {Arrow, C, Card, FONT, KeyCard, MarkBox, Stage, Tag, ease, easeInOut, lerp, pop} from './design';
+import {Arrow, C, Card, ChalkRect, FONT, Frame, KeyCard, MarkBox, Stage, Tag, ease, easeInOut, lerp, pop, textW} from './design';
 
 const screen = (id: string) => staticFile(`ai-ppt/screen-${id === '16' ? '16-v4' : id}.mp4`);
 
@@ -102,7 +102,9 @@ export const Opening: React.FC<{scene: Scene}> = ({scene}) => {
 };
 
 
-// ---------------- Shared helpers for the diagram scenes ----------------
+// ---------------- Shared helpers for the board scenes ----------------
+// Organisation follows the reference explainer: one idea per board, parts drawn on in the
+// order they are spoken, relations shown by position and arrows, the other side steps back.
 type Beat = {at: number; start: number; len: number};
 /** Plays short pieces of a recording on spoken cues; between cues it holds the last frame. */
 const ClipTrack: React.FC<{scene: Scene; file: string; crop?: number[]; beats: Beat[]; poster: number}> = ({scene, file, crop, beats, poster}) => {
@@ -113,10 +115,9 @@ const ClipTrack: React.FC<{scene: Scene; file: string; crop?: number[]; beats: B
       {beats.map((b, i) => {
         const from = froms[i];
         const until = i + 1 < beats.length ? froms[i + 1] : scene.durationInFrames;
-        const len = Math.round(b.len * FPS);
         return (
           <Sequence key={i} from={from} durationInFrames={Math.max(1, until - from)} premountFor={30}>
-            <PlayThenHold file={file} crop={crop} start={b.start} len={len} />
+            <PlayThenHold file={file} crop={crop} start={b.start} len={Math.round(b.len * FPS)} />
           </Sequence>
         );
       })}
@@ -129,29 +130,47 @@ const PlayThenHold: React.FC<{file: string; crop?: number[]; start: number; len:
   return <CropVideo file={file} start={start + (len - 1) / FPS} crop={crop} still />;
 };
 
-/** Simple flat person icon. */
-const PersonIcon: React.FC<{size: number}> = ({size}) => (
-  <svg width={size} height={size} viewBox="0 0 100 100">
-    <circle cx="50" cy="32" r="19" fill="#E9E6E1" />
-    <path d="M14 96 C14 66 30 56 50 56 C70 56 86 66 86 96 Z" fill="#BDB9B3" />
+/** Chalk stroke path that draws itself. */
+const Stroke: React.FC<{d: string; progress: number; color?: string; width?: number}> = ({d, progress, color = C.ink, width = 3.4}) => (
+  <path d={d} stroke={color} strokeWidth={width} fill="none" strokeLinecap="round" strokeLinejoin="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - progress} />
+);
+
+/** Chalk line drawing of a person. */
+const PersonIcon: React.FC<{size: number; progress?: number}> = ({size, progress = 1}) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" style={{overflow: 'visible'}}>
+    <Stroke d="M50 14 C61 14 68 22 68 32 C68 43 60 50 50 50 C39 50 32 43 32 32 C32 21 40 14 51 15" progress={ease(progress, 0, 0.6)} />
+    <Stroke d="M16 94 C17 70 31 58 50 58 C69 58 83 70 84 94" progress={ease(progress, 0.4, 1)} />
   </svg>
 );
-/** Flat AI icon: dark tile with a four-point spark. */
-const AiIcon: React.FC<{size: number}> = ({size}) => (
-  <div style={{width: size, height: size, borderRadius: size * 0.22, background: C.deep, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-    <svg width={size * 0.56} height={size * 0.56} viewBox="-50 -50 100 100"><path d="M0 -46 C6 -10 10 -6 46 0 C10 6 6 10 0 46 C-6 10 -10 6 -46 0 C-10 -6 -6 -10 0 -46Z" fill={C.accent} /></svg>
+/** Chalk AI mark: a framed four-point spark. */
+const AiIcon: React.FC<{size: number; progress?: number}> = ({size, progress = 1}) => (
+  <div style={{position: 'relative', width: size, height: size}}>
+    <ChalkRect w={size} h={size} k="ai-icon" color={C.yellow} progress={progress} />
+    <svg width={size} height={size} viewBox="-50 -50 100 100" style={{position: 'absolute', inset: 0}}>
+      <Stroke d="M0 -30 C4 -7 7 -4 30 0 C7 4 4 7 0 30 C-4 7 -7 4 -30 0 C-7 -4 -4 -7 0 -30Z" progress={ease(progress, 0.3, 1)} color={C.yellow} width={4} />
+    </svg>
   </div>
+);
+/** Chalk tick in a chalk circle. */
+const Tick: React.FC<{progress: number; size?: number}> = ({progress, size = 40}) => (
+  <svg width={size} height={size} viewBox="0 0 40 40" style={{overflow: 'visible', flex: 'none'}}>
+    <circle cx="20" cy="20" r="16" stroke={C.inkDim} strokeWidth={3} fill="none" />
+    <Stroke d="M10 21 L17 28 L31 11" progress={progress} color={C.green} width={4.5} />
+  </svg>
 );
 
 // ---------------- Two-version comparison (s44, s52) ----------------
-const PANE = {w: 860, h: 484, y: 300, lx: 70, rx: 990};
+const PANE = {w: 860, h: 484, y: 320, lx: 70, rx: 990};
 const ONE_LINE_CROP = [0.585, 0.35, 0.4, 0.435]; // the slide inside recording 02
 const PHOTO = [0.62, 0.11, 0.33, 0.72]; // phone photo on that slide, relative to the pane
 
-const Pane: React.FC<{x: number; enter: number; focus: number; dim: number; tag: string; tagColor: string; children: React.ReactNode}> = ({x, enter, focus, dim, tag, tagColor, children}) => (
-  <div style={{position: 'absolute', left: x, top: PANE.y, width: PANE.w, opacity: enter * (1 - 0.62 * dim), transform: `translateY(${(1 - enter) * 30}px) scale(${1 + 0.03 * focus - 0.02 * dim})`, transformOrigin: '50% 50%'}}>
-    <div style={{position: 'absolute', left: 0, top: -76}}><Tag text={tag} color={tagColor} size={32} /></div>
-    <div style={{position: 'relative', width: PANE.w, height: PANE.h, borderRadius: 12, overflow: 'hidden', background: '#000'}}>{children}</div>
+const Pane: React.FC<{x: number; enter: number; focus: number; dim: number; tag: string; tagColor: string; k: string; children: React.ReactNode}> = ({x, enter, focus, dim, tag, tagColor, k, children}) => (
+  <div style={{position: 'absolute', left: x, top: PANE.y, width: PANE.w, height: PANE.h, transform: `scale(${1 + 0.03 * focus - 0.02 * dim})`, transformOrigin: '50% 50%'}}>
+    <div style={{position: 'absolute', left: 4, top: -86, opacity: 1 - 0.55 * dim}}><Tag text={tag} color={tagColor} size={44} progress={ease(enter, 0.3, 1)} /></div>
+    <Card k={k} progress={enter} style={{left: 0, top: 0, width: PANE.w, height: PANE.h}}>
+      <div style={{position: 'absolute', inset: 0, opacity: ease(enter, 0.4, 1)}}>{children}</div>
+      <div style={{position: 'absolute', inset: 0, background: `rgba(22,24,26,${0.62 * dim})`}} />
+    </Card>
   </div>
 );
 
@@ -165,21 +184,21 @@ export const Compare: React.FC<{scene: Scene; mode: string}> = ({scene, mode}) =
     : {leftIn: 638.9, rightIn: 641.65, left: 644.07, mark: 644.07, right: 646.63, both: 652.41};
   const leftOn = t >= cue.left && t < cue.right;
   const rightOn = t >= cue.right && t < cue.both;
-  const sw = (on: boolean, a: number) => (on ? ease(t, a, a + 0.4) : 0);
-  const leftFocus = sw(leftOn, cue.left), rightFocus = sw(rightOn, cue.right);
+  const leftFocus = leftOn ? ease(t, cue.left, cue.left + 0.4) : 0;
+  const rightFocus = rightOn ? ease(t, cue.right, cue.right + 0.4) : 0;
   const leftDim = rightOn ? ease(t, cue.right, cue.right + 0.4) : 0;
   const rightDim = leftOn ? ease(t, cue.left, cue.left + 0.4) : 0;
-  const mark = t >= cue.mark && t < cue.right ? ease(t, cue.mark + 0.1, cue.mark + 0.5) : 0;
+  const mark = t >= cue.mark && t < cue.right ? ease(t, cue.mark + 0.1, cue.mark + 0.7) : 0;
   const beats: Beat[] = power
     ? [{at: 723.33, start: 15.0, len: 4.0}, {at: 726.37, start: 43.0, len: 1.9}, {at: 728.29, start: 35.0, len: 3.6}, {at: 731.9, start: 47.0, len: 2.6}]
     : [{at: 646.63, start: 22.45, len: 1.15}, {at: 649.05, start: 63.25, len: 1.35}, {at: 650.55, start: 69.7, len: 2.0}];
   return (
     <Stage>
-      <Pane x={PANE.lx} enter={ease(t, cue.leftIn, cue.leftIn + 0.5)} focus={leftFocus} dim={leftDim} tag="一句话" tagColor="#6E6C70">
+      <Pane k="cmp-left" x={PANE.lx} enter={ease(t, cue.leftIn, cue.leftIn + 0.7)} focus={leftFocus} dim={leftDim} tag="一句话" tagColor={C.pink}>
         <CropVideo file="02" start={25} crop={ONE_LINE_CROP} still />
-        <MarkBox x={PHOTO[0] * PANE.w} y={PHOTO[1] * PANE.h} w={PHOTO[2] * PANE.w} h={PHOTO[3] * PANE.h} progress={mark} />
+        <MarkBox x={PHOTO[0] * PANE.w} y={PHOTO[1] * PANE.h} w={PHOTO[2] * PANE.w} h={PHOTO[3] * PANE.h} progress={mark} stroke={5} />
       </Pane>
-      <Pane x={PANE.rx} enter={ease(t, cue.rightIn, cue.rightIn + 0.5)} focus={rightFocus} dim={rightDim} tag={power ? '一句话 + Skill' : '一步步提要求'} tagColor={C.green}>
+      <Pane k="cmp-right" x={PANE.rx} enter={ease(t, cue.rightIn, cue.rightIn + 0.7)} focus={rightFocus} dim={rightDim} tag={power ? '一句话 + Skill' : '一步步提要求'} tagColor={C.green}>
         <ClipTrack scene={scene} file={power ? '17' : '15'} beats={beats} poster={power ? 19 : 24.5} />
       </Pane>
     </Stage>
@@ -189,26 +208,24 @@ export const Compare: React.FC<{scene: Scene; mode: string}> = ({scene, mode}) =
 // ---------------- Skill = a work handbook (s16) ----------------
 export const Handbook: React.FC<{scene: Scene}> = ({scene}) => {
   const t = frameToSource(scene, useCurrentFrame());
-  const P = {x: 600, y: 170, w: 1200, h: 640};
-  const keyIn = pop(t, 260.9, 261.4);
-  const dock = easeInOut(t, 262.66, 263.3); // "Skill" card docks onto the handbook
-  const panel = ease(t, 262.75, 263.3);
-  const who = pop(t, 262.9, 263.5);
+  const P = {x: 600, y: 150, w: 1200, h: 690};
+  const keyIn = ease(t, 260.9, 261.6);
+  const dock = easeInOut(t, 262.66, 263.3); // "Skill" moves onto the handbook as its title
+  const panel = ease(t, 262.75, 263.6);
+  const who = ease(t, 262.9, 263.8);
   const row = (a: number, i: number) => ease(t, a + i * 0.25, a + i * 0.25 + 0.4);
-  const flash = t >= 267.32 && t < 268.6 ? Math.sin(Math.PI * ease(t, 267.32, 268.4)) : 0;
-  const tpl = (i: number) => pop(t, 268.7 + i * 0.22, 269.2 + i * 0.22);
+  const ring = t >= 267.32 ? ease(t, 267.32, 268.2) : 0; // "都写在里面"
+  const tpl = (i: number) => ease(t, 268.7 + i * 0.22, 269.3 + i * 0.22);
   const toAi = easeInOut(t, 270.24, 270.8);
   const read = ease(t, 272.4, 273.0);
-  const tick = (i: number) => pop(t, 273.98 + i * 0.18, 274.3 + i * 0.18);
-  const kx = lerp(dock, 960, P.x + 40), ky = lerp(dock, 470, P.y + 40), ks = lerp(dock, 1.4, 0.62);
-  const col = (x: number, title: string, items: string[], at: number, base: number) => (
+  const tick = (i: number) => ease(t, 273.98 + i * 0.16, 274.35 + i * 0.16);
+  const kx = lerp(dock, 960, P.x + 40), ky = lerp(dock, 470, P.y + 34), ks = lerp(dock, 1.3, 0.6);
+  const col = (x: number, title: string, color: string, items: string[], at: number, base: number) => (
     <div style={{position: 'absolute', left: x, top: P.y + 170}}>
-      <div style={{opacity: ease(t, at, at + 0.35)}}><Tag text={title} size={34} /></div>
+      <Tag text={title} color={color} size={44} progress={ease(t, at, at + 0.5)} />
       {items.map((s, i) => (
-        <div key={s} style={{display: 'flex', alignItems: 'center', gap: 18, marginTop: 30, fontSize: 38, fontWeight: 700, opacity: row(at + 0.2, i), transform: `translateX(${(1 - row(at + 0.2, i)) * -14}px)`}}>
-          <span style={{position: 'relative', width: 40, height: 40, borderRadius: 20, border: `3px solid ${C.inkDim}`, display: 'inline-block'}}>
-            <span style={{position: 'absolute', inset: -3, borderRadius: 20, background: C.accent, transform: `scale(${tick(base + i)})`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: C.dark, fontSize: 26, fontWeight: 900}}>✓</span>
-          </span>
+        <div key={s} style={{display: 'flex', alignItems: 'center', gap: 18, marginTop: 28, fontSize: 42, opacity: row(at + 0.2, i), transform: `translateX(${(1 - row(at + 0.2, i)) * -14}px)`}}>
+          <Tick progress={tick(base + i)} />
           {s}
         </div>
       ))}
@@ -216,35 +233,34 @@ export const Handbook: React.FC<{scene: Scene}> = ({scene}) => {
   );
   return (
     <Stage>
-      {/* the handbook */}
-      <div style={{position: 'absolute', left: P.x, top: P.y, width: P.w, height: P.h, borderRadius: 20, background: C.panel, opacity: panel, outline: flash > 0 ? `4px solid rgba(210,224,26,${flash})` : 'none', outlineOffset: 6}} />
-      {panel > 0 && col(P.x + 60, '活儿怎么干', ['先定大纲', '再套模板、调版式', '最后加动画'], 265.02, 0)}
-      {panel > 0 && col(P.x + 640, '按什么要求干', ['数字以资料为准', '图要大，字要少', '重点用动画演出来'], 266.26, 3)}
+      <Frame k="handbook" x={P.x} y={P.y} w={P.w} h={P.h} progress={panel} />
+      {ring > 0 && <ChalkRect w={P.w + 40} h={P.h + 40} k="handbook-ring" color={C.yellow} progress={ring} width={3} style={{left: P.x - 20, top: P.y - 20, opacity: 1 - ease(t, 268.6, 269.2)}} />}
+      {panel > 0 && col(P.x + 60, '活儿怎么干', C.yellow, ['先定大纲', '再套模板、调版式', '最后加动画'], 265.02, 0)}
+      {panel > 0 && col(P.x + 640, '按什么要求干', C.blue, ['数字以资料为准', '图要大，字要少', '重点用动画演出来'], 266.26, 3)}
       {/* templates that come with it */}
-      {[0, 1, 2].map((i) => {
-        const p = tpl(i);
-        return (
-          <div key={i} style={{position: 'absolute', left: P.x + 60 + i * 200, top: P.y + P.h - 130, width: 176, height: 99, borderRadius: 8, background: C.panelHi, border: `2px solid ${C.line}`, opacity: p, transform: `translateY(${(1 - p) * 20}px)`}}>
-            <div style={{margin: '16px 14px 0', width: 70, height: 12, borderRadius: 3, background: C.inkDim}} />
-            <div style={{margin: '10px 14px 0', width: 120, height: 8, borderRadius: 3, background: C.line}} />
-            <div style={{margin: '8px 14px 0', width: 100, height: 8, borderRadius: 3, background: C.line}} />
-          </div>
-        );
-      })}
-      <div style={{position: 'absolute', left: P.x + 660, top: P.y + P.h - 104, fontSize: 32, fontWeight: 700, color: C.inkSoft, opacity: tpl(2)}}>模板</div>
-      {/* keyword card: "Skill" first on its own, then it becomes the handbook's title */}
-      <div style={{position: 'absolute', left: kx, top: ky, transform: `translate(${-50 * (1 - dock)}%, ${-50 * (1 - dock)}%) scale(${ks * (0.8 + 0.2 * keyIn)})`, transformOrigin: dock > 0.5 ? '0 0' : '50% 50%', opacity: keyIn}}>
-        <KeyCard text="Skill" size={96} />
+      {[0, 1, 2].map((i) => (
+        <div key={i} style={{position: 'absolute', left: P.x + 60 + i * 200, top: P.y + P.h - 136, width: 176, height: 99}}>
+          <ChalkRect w={176} h={99} k={`tpl-${i}`} progress={tpl(i)} width={2.6} />
+          <svg width={176} height={99} style={{position: 'absolute', inset: 0}}>
+            <Stroke d="M18 26 H86" progress={ease(tpl(i), 0.5, 1)} color={C.yellow} width={4} />
+            <Stroke d="M18 52 H150 M18 72 H124" progress={ease(tpl(i), 0.6, 1)} color={C.inkDim} width={3} />
+          </svg>
+        </div>
+      ))}
+      <div style={{position: 'absolute', left: P.x + 660, top: P.y + P.h - 112, fontSize: 40, color: C.inkSoft, opacity: tpl(2)}}>模板</div>
+      {/* key word first on its own, then it becomes the handbook's title */}
+      <div style={{position: 'absolute', left: kx, top: ky, transform: `translate(${-50 * (1 - dock)}%, ${-50 * (1 - dock)}%) scale(${ks})`, transformOrigin: '0 0'}}>
+        <KeyCard text="Skill" size={96} progress={keyIn} />
       </div>
       {/* who reads it: a new colleague, then the AI */}
-      <div style={{position: 'absolute', left: 240, top: 360, width: 220, textAlign: 'center', opacity: who, transform: `scale(${0.85 + 0.15 * who})`}}>
+      <div style={{position: 'absolute', left: 240, top: 350, width: 220, textAlign: 'center'}}>
         <div style={{position: 'relative', width: 180, height: 180, margin: '0 auto'}}>
-          <div style={{position: 'absolute', inset: 0, opacity: 1 - toAi}}><PersonIcon size={180} /></div>
-          <div style={{position: 'absolute', inset: 0, opacity: toAi, transform: `scale(${0.8 + 0.2 * toAi})`}}><AiIcon size={180} /></div>
+          <div style={{position: 'absolute', inset: 0, opacity: 1 - toAi}}><PersonIcon size={180} progress={who} /></div>
+          {toAi > 0 && <div style={{position: 'absolute', inset: 0}}><AiIcon size={180} progress={toAi} /></div>}
         </div>
-        <div style={{marginTop: 20, fontSize: 38, fontWeight: 800}}>{toAi > 0.5 ? 'AI' : '新同事'}</div>
+        <div style={{marginTop: 22, fontSize: 46, opacity: who, color: toAi > 0.5 ? C.yellow : C.ink}}>{toAi > 0.5 ? 'AI' : '新同事'}</div>
       </div>
-      <Arrow x1={470} y1={450} x2={P.x - 24} y2={450} progress={read} />
+      <Arrow x1={478} y1={440} x2={P.x - 26} y2={440} progress={read} />
     </Stage>
   );
 };
@@ -252,36 +268,37 @@ export const Handbook: React.FC<{scene: Scene}> = ({scene}) => {
 // ---------------- Five steps (s06 intro, s53 recap) ----------------
 const STEP_NAMES = ['定大纲', '套模板', '调版式', '加动画', '做 Skill'];
 const STEP_DESC = ['先把内容理清楚', '把风格统一起来', '提升设计感', '把重点突出出来', '把要求存下来'];
-const NODE = {w: 270, h: 150, gap: 90, y: 400};
+const NODE = {w: 270, h: 160, gap: 90, y: 400};
 const nodeX = (i: number) => (1920 - (NODE.w * 5 + NODE.gap * 4)) / 2 + i * (NODE.w + NODE.gap);
 
 const StepsFlow: React.FC<{t: number; ghostAt: number; triggers: number[]; descs?: boolean; loopAt?: number}> = ({t, ghostAt, triggers, descs, loopAt}) => {
   const cur = triggers.filter((x) => t >= x).length - 1;
-  const loop = loopAt != null ? easeInOut(t, loopAt, loopAt + 0.8) : 0;
-  const L = {x1: nodeX(4) + NODE.w / 2, x2: nodeX(0) + NODE.w / 2, top: NODE.y - 90};
-  const loopLen = 90 + (L.x1 - L.x2) + 90;
+  const loop = loopAt != null ? easeInOut(t, loopAt, loopAt + 0.9) : 0;
+  const L = {x1: nodeX(4) + NODE.w / 2, x2: nodeX(0) + NODE.w / 2, top: NODE.y - 96};
   return (
     <Stage>
       {STEP_NAMES.map((n, i) => {
-        const ghost = ease(t, ghostAt + i * 0.12, ghostAt + i * 0.12 + 0.4);
-        const lit = ease(t, triggers[i], triggers[i] + 0.35);
+        const ghost = ease(t, ghostAt + i * 0.12, ghostAt + i * 0.12 + 0.5);
+        const lit = ease(t, triggers[i], triggers[i] + 0.4);
         const isCur = i === cur && loop === 0;
         const x = nodeX(i);
         return (
           <React.Fragment key={n}>
-            <div style={{position: 'absolute', left: x, top: NODE.y, width: NODE.w, height: NODE.h, borderRadius: 16, background: C.panel, opacity: ghost * (0.35 + 0.65 * lit), outline: isCur ? `4px solid ${C.accent}` : 'none', outlineOffset: 0, transform: `scale(${1 + 0.04 * (isCur ? lit : 0)})`}}>
-              <div style={{position: 'absolute', left: 20, top: 16, fontFamily: FONT.num, fontSize: 28, fontWeight: 800, color: lit > 0.5 ? C.accent : C.inkDim}}>0{i + 1}</div>
-              <div style={{position: 'absolute', left: 0, right: 0, top: 58, textAlign: 'center', fontSize: 50, fontWeight: 900}}>{n}</div>
+            <div style={{position: 'absolute', left: x, top: NODE.y, width: NODE.w, height: NODE.h, opacity: 0.32 + 0.68 * lit, transform: `scale(${1 + 0.05 * (isCur ? lit : 0)})`}}>
+              <ChalkRect w={NODE.w} h={NODE.h} k={`node-${i}`} color={C.ink} progress={ghost} fill={C.panel} />
+              {isCur && <ChalkRect w={NODE.w + 22} h={NODE.h + 22} k={`node-hl-${i}`} color={C.yellow} progress={lit} width={3.6} style={{left: -11, top: -11}} />}
+              <div style={{position: 'absolute', left: 22, top: 14, fontSize: 32, color: lit > 0.5 ? C.yellow : C.inkDim, opacity: ghost}}>0{i + 1}</div>
+              <div style={{position: 'absolute', left: 0, right: 0, top: 62, textAlign: 'center', fontSize: 56, fontWeight: 700, opacity: ghost}}>{n}</div>
             </div>
-            {i < 4 && <Arrow x1={x + NODE.w + 14} y1={NODE.y + NODE.h / 2} x2={x + NODE.w + NODE.gap - 14} y2={NODE.y + NODE.h / 2} progress={ease(t, triggers[i + 1] - 0.15, triggers[i + 1] + 0.2)} />}
-            {descs && <div style={{position: 'absolute', left: x - 20, width: NODE.w + 40, top: NODE.y + NODE.h + 34, textAlign: 'center', fontSize: 36, fontWeight: 700, color: C.inkSoft, opacity: ease(t, triggers[i] + 0.9, triggers[i] + 1.3)}}>{STEP_DESC[i]}</div>}
+            {i < 4 && <Arrow x1={x + NODE.w + 14} y1={NODE.y + NODE.h / 2} x2={x + NODE.w + NODE.gap - 12} y2={NODE.y + NODE.h / 2} progress={ease(t, triggers[i + 1] - 0.2, triggers[i + 1] + 0.25)} />}
+            {descs && <div style={{position: 'absolute', left: x - 30, width: NODE.w + 60, top: NODE.y + NODE.h + 36, textAlign: 'center', fontSize: 40, color: C.inkSoft, opacity: ease(t, triggers[i] + 0.9, triggers[i] + 1.4)}}>{STEP_DESC[i]}</div>}
           </React.Fragment>
         );
       })}
       {loop > 0 && (
         <svg style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}} width={1} height={1}>
-          <path d={`M${L.x1} ${NODE.y - 14} V${L.top} H${L.x2} V${NODE.y - 18}`} stroke={C.accent} strokeWidth={4} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={`${loopLen * loop} 9999`} />
-          {loop > 0.97 && <path d={`M${L.x2 - 14} ${NODE.y - 34} L${L.x2} ${NODE.y - 18} L${L.x2 + 14} ${NODE.y - 34}`} stroke={C.accent} strokeWidth={4} fill="none" strokeLinecap="round" strokeLinejoin="round" />}
+          <Stroke d={`M${L.x1} ${NODE.y - 18} C${L.x1} ${L.top} ${L.x1 - 40} ${L.top} ${L.x1 - 90} ${L.top} L${L.x2 + 90} ${L.top} C${L.x2 + 40} ${L.top} ${L.x2} ${L.top} ${L.x2} ${NODE.y - 22}`} progress={loop} color={C.yellow} width={3.6} />
+          {loop > 0.95 && <Stroke d={`M${L.x2 - 14} ${NODE.y - 38} L${L.x2} ${NODE.y - 22} L${L.x2 + 14} ${NODE.y - 38}`} progress={1} color={C.yellow} width={3.6} />}
         </svg>
       )}
     </Stage>
@@ -304,43 +321,49 @@ export const Steps: React.FC<{scene: Scene}> = ({scene}) => {
 export const InstallCard: React.FC<{scene: Scene}> = ({scene}) => {
   const f = useCurrentFrame();
   const t = frameToSource(scene, f);
-  const P = {x: 260, y: 90, w: 1400, h: 790};
+  const P = {x: 230, y: 80, w: 1460, h: 800};
   const command = '安装这个 skill：guizang-ppt-skill';
   const count = Math.floor(ease(t, 297.25, 300.4) * command.length);
-  const panel = ease(t, 293.1, 293.5);
-  const card = pop(t, 293.15, 293.7);
+  const panel = ease(t, 293.1, 293.8);
+  const card = ease(t, 293.2, 294.0);
   const up = easeInOut(t, 295.92, 296.6);
-  const input = ease(t, 296.3, 296.8);
+  const input = ease(t, 296.2, 296.9);
   const sent = t >= 300.7;
-  const bubble = pop(t, 300.7, 301.1);
-  const reply = pop(t, 301.5, 301.9);
+  const bubble = ease(t, 300.7, 301.2);
+  const reply = ease(t, 301.5, 302.0);
   const cx = P.x + P.w / 2;
+  const cmdW = textW(command, 42) + 70, replyText = '已安装 guizang-ppt-skill', replyW = textW(replyText, 42) + 70;
   return (
     <Stage>
-      <div style={{position: 'absolute', left: P.x, top: P.y, width: P.w, height: P.h, borderRadius: 22, background: C.panel, opacity: panel}} />
+      <Frame k="install-panel" x={P.x} y={P.y} w={P.w} h={P.h} progress={panel} />
       {/* the skill being recommended */}
-      <div style={{position: 'absolute', left: cx, top: lerp(up, 430, P.y + 70), transform: `translate(-50%, 0) scale(${lerp(up, 1, 0.62) * (0.85 + 0.15 * card)})`, transformOrigin: '50% 0', opacity: card, display: 'flex', alignItems: 'center', gap: 24}}>
-        <Tag text="Skill" size={44} />
-        <KeyCard text="guizang-ppt-skill" size={76} />
-        <div style={{width: 64, height: 64, borderRadius: 32, background: C.green, color: '#fff', fontSize: 40, fontWeight: 900, display: 'flex', alignItems: 'center', justifyContent: 'center', transform: `scale(${reply})`}}>✓</div>
+      <div style={{position: 'absolute', left: cx, top: lerp(up, 380, P.y + 50), transform: `translate(-50%, 0) scale(${lerp(up, 1, 0.62)})`, transformOrigin: '50% 0', display: 'flex', alignItems: 'center', gap: 28}}>
+        <Tag text="Skill" color={C.green} size={52} progress={card} />
+        <KeyCard text="guizang-ppt-skill" size={76} progress={card} />
+        <svg width={64} height={64} viewBox="0 0 40 40" style={{overflow: 'visible'}}><Stroke d="M8 21 L17 30 L33 9" progress={reply} color={C.green} width={5} /></svg>
       </div>
       {/* message sent */}
-      <div style={{position: 'absolute', right: 1920 - (P.x + P.w - 50), top: 330, display: 'flex', alignItems: 'center', gap: 22, opacity: bubble, transform: `translateY(${(1 - bubble) * 60}px)`}}>
-        <div style={{padding: '22px 34px', borderRadius: 10, background: C.blue, fontSize: 40, fontWeight: 800}}>{command}</div>
-        <div style={{width: 76, height: 76, borderRadius: 38, overflow: 'hidden', background: '#E9E6E1'}}><PersonIcon size={76} /></div>
+      <div style={{position: 'absolute', left: P.x + P.w - 50 - 100 - cmdW, top: 330, width: cmdW, height: 96, opacity: bubble, transform: `translateY(${(1 - bubble) * 50}px)`}}>
+        <ChalkRect w={cmdW} h={96} k="bubble-me" color={C.blue} progress={bubble} fill="rgba(124,200,234,.08)" />
+        <div style={{position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 42, whiteSpace: 'nowrap'}}>{command}</div>
       </div>
+      <div style={{position: 'absolute', left: P.x + P.w - 50 - 76, top: 338, opacity: bubble}}><PersonIcon size={76} progress={bubble} /></div>
       {/* reply */}
-      <div style={{position: 'absolute', left: P.x + 50, top: 470, display: 'flex', alignItems: 'center', gap: 22, opacity: reply, transform: `translateY(${(1 - reply) * 30}px)`}}>
-        <AiIcon size={76} />
-        <div style={{padding: '22px 34px', borderRadius: 10, background: C.green, fontSize: 40, fontWeight: 800}}>已安装 guizang-ppt-skill</div>
+      <div style={{position: 'absolute', left: P.x + 50, top: 474, opacity: reply}}><AiIcon size={76} progress={reply} /></div>
+      <div style={{position: 'absolute', left: P.x + 50 + 100, top: 464, width: replyW, height: 96, opacity: reply, transform: `translateY(${(1 - reply) * 30}px)`}}>
+        <ChalkRect w={replyW} h={96} k="bubble-ai" color={C.green} progress={reply} fill="rgba(164,212,134,.08)" />
+        <div style={{position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 42, whiteSpace: 'nowrap'}}>{replyText}</div>
       </div>
       {/* input box */}
-      <div style={{position: 'absolute', left: P.x + 50, top: P.y + P.h - 150, width: P.w - 100, height: 104, borderRadius: 14, background: C.deep, opacity: input, border: `2px solid ${count > 0 && !sent ? C.accent : C.line}`, display: 'flex', alignItems: 'center', padding: '0 34px', fontSize: 40, fontWeight: 700}}>
-        {sent || count === 0 ? <span style={{color: C.inkDim}}>发消息或创建任务…</span> : command.slice(0, count)}
-        {!sent && <span style={{opacity: Math.floor(f / 14) % 2 ? 0 : 1, color: C.accent, marginLeft: 4}}>|</span>}
-        <div style={{marginLeft: 'auto', width: 60, height: 60, borderRadius: 30, background: count > 0 && !sent ? C.accent : C.panelHi, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-          <svg width="30" height="30" viewBox="0 0 34 34"><path d="M17 28 V6 M7 15 L17 5 L27 15" stroke={count > 0 && !sent ? C.dark : '#fff'} strokeWidth={4} fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      <div style={{position: 'absolute', left: P.x + 50, top: P.y + P.h - 160, width: P.w - 100, height: 110}}>
+        <ChalkRect w={P.w - 100} h={110} k="input" color={count > 0 && !sent ? C.yellow : C.inkSoft} progress={input} fill="rgba(0,0,0,.18)" />
+        <div style={{position: 'absolute', left: 40, top: 0, bottom: 0, display: 'flex', alignItems: 'center', fontSize: 44, opacity: input, whiteSpace: 'nowrap'}}>
+          {sent || count === 0 ? <span style={{color: C.inkDim}}>发消息或创建任务…</span> : command.slice(0, count)}
+          {!sent && <span style={{opacity: Math.floor(f / 14) % 2 ? 0 : 1, color: C.yellow, marginLeft: 4}}>|</span>}
         </div>
+        <svg width={60} height={60} viewBox="0 0 34 34" style={{position: 'absolute', right: 34, top: 25, opacity: input}}>
+          <Stroke d="M17 28 V6 M7 15 L17 5 L27 15" progress={1} color={count > 0 && !sent ? C.yellow : C.inkSoft} width={3.4} />
+        </svg>
       </div>
     </Stage>
   );
