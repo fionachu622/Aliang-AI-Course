@@ -28,56 +28,67 @@ const MediaCard: React.FC<{x: number; y: number; w: number; h: number; active: b
 );
 
 // ---------------- Opening: presenter full screen, two frosted-glass "phones" browsing both decks ----------------
-type FeedPage = {file: string; start: number; crop?: number[]; live?: boolean; frames?: number};
-// One-sentence deck: static pages, flipped quickly.
-const LEFT_PAGES: FeedPage[] = [22, 9.5, 8, 11, 14, 12.5, 22].map((s) => ({file: '02', start: s, crop: [0.585, 0.35, 0.4, 0.435], frames: 33}));
-// Finished deck: each page stays until its animation has played (source seconds from recording 15).
+// The frame being talked about is highlighted and turns its pages; the other one waits.
+type FeedPage = {file: string; start: number; crop?: number[]; live?: boolean; frames: number; poster?: number};
+// One-sentence deck: static pages.
+const LEFT_PAGES: FeedPage[] = [22, 9.5, 8, 11, 14].map((s) => ({file: '02', start: s, crop: [0.585, 0.35, 0.4, 0.435], frames: 33}));
+// Finished deck: the pages whose animation sells the difference (recording 15, source seconds).
 const RIGHT_PAGES: FeedPage[] = [
-  {file: '15', start: 22.0, live: true, frames: 60}, // cover: product pulls back from close-up
-  {file: '15', start: 62.9, live: true, frames: 66}, // three stacked boxes slide apart
-  {file: '15', start: 69.6, live: true, frames: 56}, // original price struck out, new price lands
-  {file: '15', start: 41.0, live: true, frames: 40}, // 32h page
+  {file: '15', start: 22.45, live: true, frames: 34, poster: 24.5}, // cover: product pulls back from close-up
+  {file: '15', start: 63.25, live: true, frames: 40}, // three stacked boxes slide apart
+  {file: '15', start: 69.7, live: true, frames: 60}, // original price struck out, new price lands
 ];
+const FLIP = 14;
 
-/** A vertical feed of slides that scrolls up one page at a time. Only the top slide plays. */
-const SlideFeed: React.FC<{pages: FeedPage[]; width: number}> = ({pages, width}) => {
-  const f = useCurrentFrame();
+/**
+ * Stack of slides; only the top one is "open". At each page turn the top slide flips up
+ * and away like a page, and the rest move up. Runs only between runFrom and runTo.
+ */
+const SlideFeed: React.FC<{pages: FeedPage[]; width: number; runFrom: number; runTo: number}> = ({pages, width, runFrom, runTo}) => {
+  const frame = useCurrentFrame();
+  const f = Math.max(0, Math.min(frame, runTo) - runFrom);
+  const running = frame >= runFrom && frame < runTo;
   const h = Math.round((width * 9) / 16), gap = 18;
-  const starts = pages.reduce<number[]>((acc, p, i) => [...acc, i === 0 ? 0 : acc[i - 1] + (pages[i - 1].frames ?? 33)], []);
+  const starts = pages.reduce<number[]>((acc, p, i) => [...acc, i === 0 ? 0 : acc[i - 1] + pages[i - 1].frames], []);
   let k = 0;
   while (k + 1 < pages.length && f >= starts[k + 1]) k++;
-  const slide = k === 0 ? 1 : easeInOut(f - starts[k], 0, 12);
-  const y = -(k - 1 + slide) * (h + gap);
+  const turn = k === 0 ? 1 : easeInOut(f - starts[k], 0, FLIP);
   return (
-    <div style={{position: 'absolute', inset: 0, overflow: 'hidden'}}>
-      <div style={{position: 'absolute', left: 0, top: k === 0 ? 0 : y, width}}>
-        {pages.map((p, i) => {
-          if (i < k - 1 || i > k + 3) return null;
-          const focus = i === k;
-          return (
-            <div key={i} style={{position: 'absolute', top: i * (h + gap), width, height: h, borderRadius: 16, overflow: 'hidden', boxShadow: '0 10px 26px rgba(0,0,0,.25)', opacity: focus ? 1 : 0.72, transform: `scale(${focus ? 1 : 0.96})`}}>
-              {p.live && focus ? (
-                <Sequence from={starts[i]} premountFor={20}><CropVideo file={p.file} start={p.start} crop={p.crop} /></Sequence>
-              ) : (
-                <CropVideo file={p.file} start={p.start} crop={p.crop} still />
-              )}
-            </div>
-          );
-        })}
-      </div>
+    <div style={{position: 'absolute', inset: 0, perspective: 1100}}>
+      {pages.map((p, i) => {
+        const slot = i - k + (1 - turn); // 0 = top
+        if (i < k - 1 || slot > 3) return null;
+        const leaving = i === k - 1;
+        const top = slot * (h + gap);
+        const focus = i === k;
+        return (
+          <div key={i} style={{position: 'absolute', left: 0, top: leaving ? 0 : top, width, height: h, borderRadius: 16, overflow: 'hidden', boxShadow: '0 10px 26px rgba(0,0,0,.25)', transformOrigin: '50% 0%',
+            transform: leaving ? `rotateX(${turn * 100}deg) translateY(${-turn * 30}px)` : `scale(${focus ? 1 : 0.95})`,
+            opacity: leaving ? 1 - ease(turn, 0.5, 1) : focus ? 1 : 0.7, zIndex: leaving ? 5 : 4 - Math.round(slot)}}>
+            {p.live && focus && running ? (
+              <Sequence from={runFrom + starts[i]} premountFor={20}><CropVideo file={p.file} start={p.start} crop={p.crop} /></Sequence>
+            ) : (
+              <CropVideo file={p.file} start={p.live && focus && frame >= runTo ? p.start + Math.min(p.frames, f - starts[i]) / FPS : p.poster ?? p.start} crop={p.crop} still />
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 };
 
-const GlassPhone: React.FC<{x: number; enter: number; active: boolean; tone: 'grey' | 'blue'; pages: FeedPage[]; startAt: number}> = ({x, enter, active, tone, pages, startAt}) => {
+const GlassPhone: React.FC<{x: number; enter: number; state: 'active' | 'waiting' | 'done'; tone: 'grey' | 'blue'; pages: FeedPage[]; runFrom: number; runTo: number; switchAt: number}> = ({x, enter, state, tone, pages, runFrom, runTo, switchAt}) => {
+  const f = useCurrentFrame();
   const w = 470, h = 860, pad = 24;
-  const glow = tone === 'blue' ? 'rgba(47,107,255,.55)' : 'rgba(255,255,255,.55)';
+  const glowCol = tone === 'blue' ? '47,107,255' : '255,255,255';
+  const on = state === 'active' ? ease(f, switchAt, switchAt + 10) : 0;
+  const dim = state === 'done' ? 0.5 : state === 'waiting' ? 0.78 : 1;
   return (
-    <div style={{position: 'absolute', left: x, top: 110, width: w, height: h, opacity: Math.min(1, enter * 1.4) * (active || tone === 'blue' ? 1 : 0.55), transform: `translateY(${(1 - enter) * 120}px) scale(${active ? 1.03 : 0.95})`, transformOrigin: '50% 50%', filter: active || tone === 'blue' ? undefined : 'saturate(.35)'}}>
-      <div style={{position: 'absolute', inset: 0, borderRadius: 52, background: 'linear-gradient(160deg, rgba(255,255,255,.34), rgba(255,255,255,.12))', backdropFilter: 'blur(28px) saturate(1.6)', WebkitBackdropFilter: 'blur(28px) saturate(1.6)', border: '1.5px solid rgba(255,255,255,.6)', boxShadow: `0 30px 80px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.7)${active ? `, 0 0 0 4px ${glow}, 0 0 60px ${glow}` : ''}`}} />
+    <div style={{position: 'absolute', left: x, top: 110, width: w, height: h, opacity: Math.min(1, enter * 1.4) * dim, transform: `translateY(${(1 - enter) * 120}px) scale(${0.95 + 0.08 * on})`, transformOrigin: '50% 50%', filter: state === 'done' ? 'saturate(.35)' : undefined}}>
+      <div style={{position: 'absolute', inset: 0, borderRadius: 52, background: 'linear-gradient(160deg, rgba(255,255,255,.34), rgba(255,255,255,.12))', backdropFilter: 'blur(28px) saturate(1.6)', WebkitBackdropFilter: 'blur(28px) saturate(1.6)', border: `${1.5 + 3 * on}px solid rgba(${on > 0 ? glowCol : '255,255,255'},${0.6 + 0.3 * on})`, boxShadow: `0 30px 80px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.7), 0 0 ${70 * on}px rgba(${glowCol},${0.6 * on})`}} />
       <div style={{position: 'absolute', left: w / 2 - 60, top: 16, width: 120, height: 10, borderRadius: 5, background: 'rgba(255,255,255,.7)'}} />
       <div style={{position: 'absolute', left: pad, top: 44, width: w - pad * 2, bottom: pad, borderRadius: 26, overflow: 'hidden'}}>
-        <Sequence from={startAt} premountFor={30}><SlideFeed pages={pages} width={w - pad * 2} /></Sequence>
+        <SlideFeed pages={pages} width={w - pad * 2} runFrom={runFrom} runTo={runTo} />
       </div>
     </div>
   );
@@ -86,17 +97,22 @@ const GlassPhone: React.FC<{x: number; enter: number; active: boolean; tone: 'gr
 export const Opening: React.FC<{scene: Scene}> = ({scene}) => {
   const f = useCurrentFrame();
   const t = frameToSource(scene, f);
-  const reveal = sourceToFrame(scene, 63.1);
-  const rightOn = t >= 67.5;
+  const at = (s: number) => sourceToFrame(scene, s);
+  const reveal = at(63.1);
+  const leftTalk = at(63.3); // 很多人用 AI 做的 PPT 是这个样子的
+  const sameData = at(66.56); // 但是同一份的资料
+  const rightTalk = at(67.64); // 换一个方法已经能做成这样子了
   const leftEnter = pop(f, reveal, reveal + 20);
   const rightEnter = pop(f, reveal + 6, reveal + 26);
   const dim = ease(f, reveal, reveal + 14);
+  const leftState = t < 66.56 ? 'active' : 'done';
+  const rightState = t >= 67.64 ? 'active' : 'waiting';
   return (
     <AbsoluteFill style={{background: C.dark}}>
       <OffthreadVideo pauseWhenBuffering src={staticFile('ai-ppt/presenter-opening.mp4')} muted volume={0} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       <AbsoluteFill style={{background: `rgba(10,12,16,${0.18 * dim})`}} />
-      <GlassPhone x={110} enter={leftEnter} active={!rightOn} tone="grey" pages={LEFT_PAGES} startAt={reveal} />
-      <GlassPhone x={1340} enter={rightEnter} active={rightOn} tone="blue" pages={RIGHT_PAGES} startAt={reveal + 6} />
+      <GlassPhone x={110} enter={leftEnter} state={leftState} tone="grey" pages={LEFT_PAGES} runFrom={leftTalk} runTo={sameData} switchAt={leftTalk} />
+      <GlassPhone x={1340} enter={rightEnter} state={rightState} tone="blue" pages={RIGHT_PAGES} runFrom={sameData} runTo={scene.durationInFrames} switchAt={rightTalk} />
     </AbsoluteFill>
   );
 };
