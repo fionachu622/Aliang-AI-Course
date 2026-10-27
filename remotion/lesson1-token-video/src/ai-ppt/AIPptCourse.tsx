@@ -3,15 +3,16 @@ import {AbsoluteFill, Audio, Freeze, Img, OffthreadVideo, Sequence, interpolate,
 import {Scene, Shot, scenes, FPS, chunkFrames, dubAt, frameToSource, sourceToFrame} from './timeline';
 import captions from './captions.json';
 import {Compare, CropVideo, Handbook, InstallCard, Opening, Steps, StepsStrip} from './Animations';
-import {C, Card, Chip, FONT, MarkBox, Stage, StepNav, ease, easeInOut, lerp, pop} from './design';
+import {C, Card, FONT, MarkBox, Stage, ease, easeInOut, lerp, pop} from './design';
 
 const screen = (id: string) => staticFile(`ai-ppt/screen-${id === '16' ? '16-v4' : id}.mp4`);
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
-// Every recording and product image sits in the same floating window on the stage,
-// so the eye never has to re-find the content. Subtitles live in the strip below it.
-export const WIN = {x: 190, y: 78, w: 1540, h: 854};
-const CHIP_POS = {x: WIN.x - 22, y: WIN.y - 30};
+// Recordings fill the whole 1920×1080 frame. They are 1298×720 (a touch wider than 16:9),
+// so the media box keeps that aspect at full height and loses ~13 px on each side (cover fit).
+const VH = 1080;
+const VW = Math.round(VH * (1298 / 720));
+const VX = (1920 - VW) / 2;
 
 /** Keep the zoomed view inside the picture (no empty borders). */
 const clampCentre = (c: number, zoom: number) => {
@@ -69,22 +70,18 @@ const ScreenShot: React.FC<{shot: Shot; duration: number; prev?: Shot}> = ({shot
   const zoom = lerp(settle, fromZoom, target) * (1 + 0.035 * drift);
   const cx = clampCentre(lerp(settle, glide ? prev!.cx ?? 0.5 : shot.cx ?? 0.5, shot.cx ?? 0.5), zoom);
   const cy = clampCentre(lerp(settle, glide ? prev!.cy ?? 0.5 : shot.cy ?? 0.5, shot.cy ?? 0.5), zoom);
-  const tx = (0.5 - cx) * WIN.w * zoom;
-  const ty = (0.5 - cy) * WIN.h * zoom;
-  const enter = glide ? 1 : ease(f, 0, 10);
+  const tx = (0.5 - cx) * VW * zoom;
+  const ty = (0.5 - cy) * VH * zoom;
   const m = shot.mark;
   // Short shots (e.g. quick page cuts) still finish their highlight.
   const hl = ease(f, Math.min(8, duration * 0.1), Math.min(22, Math.max(6, duration * 0.5)));
   return (
-    <Stage>
-      <Card radius={22} style={{left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, background: '#fff', transform: `translateY(${(1 - enter) * 30}px) scale(${0.97 + 0.03 * enter})`, opacity: glide ? 1 : Math.min(1, enter * 1.4)}}>
-        <div style={{position: 'absolute', inset: 0, transform: `translate(${tx}px, ${ty}px) scale(${zoom})`, transformOrigin: '50% 50%'}}>
-          <ScreenMedia file={shot.file!} start={sourceStart} end={moving ? shot.sourceEnd! : null} duration={duration} />
-          {m && <MarkBox x={m[0] * WIN.w} y={m[1] * WIN.h} w={m[2] * WIN.w} h={m[3] * WIN.h} progress={hl} stroke={4 / zoom} />}
-        </div>
-      </Card>
-      <Chip text={shot.label ?? ''} progress={pop(f, Math.min(4, duration * 0.06), Math.min(18, Math.max(5, duration * 0.4)))} x={CHIP_POS.x} y={CHIP_POS.y} color={m ? C.orange : C.blue} />
-    </Stage>
+    <AbsoluteFill style={{background: '#000', overflow: 'hidden'}}>
+      <div style={{position: 'absolute', left: VX, top: 0, width: VW, height: VH, transform: `translate(${tx}px, ${ty}px) scale(${zoom})`, transformOrigin: '50% 50%'}}>
+        <ScreenMedia file={shot.file!} start={sourceStart} end={moving ? shot.sourceEnd! : null} duration={duration} />
+        {m && <MarkBox x={m[0] * VW} y={m[1] * VH} w={m[2] * VW} h={m[3] * VH} progress={hl} stroke={4 / zoom} />}
+      </div>
+    </AbsoluteFill>
   );
 };
 
@@ -92,11 +89,10 @@ const ScreenShot: React.FC<{shot: Shot; duration: number; prev?: Shot}> = ({shot
 const ScreenTrio: React.FC<{shot: Shot; duration: number}> = ({shot, duration}) => {
   const f = useCurrentFrame();
   const items = shot.items ?? [];
-  const w = 540, h = 304, gap = 50, x0 = (1920 - (w * items.length + gap * (items.length - 1))) / 2, y0 = 340;
+  const w = 580, h = 322, gap = 40, x0 = (1920 - (w * items.length + gap * (items.length - 1))) / 2, y0 = (1080 - h) / 2 - 40;
   const step = Math.min(8, duration / (items.length + 2));
   return (
     <Stage>
-      <div style={{position: 'absolute', left: 0, right: 0, top: 170, textAlign: 'center', fontSize: 60, fontWeight: 900, opacity: ease(f, 0, 8)}}>{shot.label}</div>
       {items.map((it, i) => {
         const p = pop(f, i * step, i * step + 10);
         const [cx, cy, cw, ch] = it.crop;
@@ -108,7 +104,6 @@ const ScreenTrio: React.FC<{shot: Shot; duration: number}> = ({shot, duration}) 
               <CropVideo file={it.file} start={it.sourceStart} crop={it.crop} still />
               <MarkBox x={((mx - cx) / cw) * w} y={((my - cy) / ch) * h} w={(mw / cw) * w} h={(mh / ch) * h} progress={hl} stroke={3} />
             </Card>
-            <div style={{marginTop: 30, textAlign: 'center'}}><span style={{display: 'inline-block', padding: '10px 28px', borderRadius: 999, background: C.orange, color: '#fff', fontSize: 34, fontWeight: 800}}>{it.label}</span></div>
           </div>
         );
       })}
@@ -118,36 +113,11 @@ const ScreenTrio: React.FC<{shot: Shot; duration: number}> = ({shot, duration}) 
 
 const ProductImage: React.FC<{shot: Shot; duration: number}> = ({shot, duration}) => {
   const f = useCurrentFrame();
-  const enter = ease(f, 0, 12);
   const scale = interpolate(f, [0, Math.max(1, duration)], [1.0, 1.05], clamp);
   return (
-    <Stage>
-      <Card radius={22} style={{left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, background: '#0B0C0E', opacity: Math.min(1, enter * 1.4), transform: `translateY(${(1 - enter) * 30}px) scale(${0.97 + 0.03 * enter})`}}>
-        <Img src={staticFile(shot.file!)} style={{width: '100%', height: '100%', objectFit: 'contain', transform: `scale(${scale})`}} />
-      </Card>
-      <Chip text={shot.label ?? ''} progress={pop(f, 4, 18)} x={CHIP_POS.x} y={CHIP_POS.y} color={C.yellow} />
-    </Stage>
-  );
-};
-
-const CN_NUM: Record<string, string> = {一: '01', 二: '02', 三: '03', 四: '04', 五: '05'};
-/** Lower-left title card for the first presenter shot of each step. */
-const ChapterCard: React.FC<{title: string}> = ({title}) => {
-  const f = useCurrentFrame();
-  const m = title.match(/^第(.)步：(.+)$/);
-  if (!m) return null;
-  const inP = pop(f, 6, 24);
-  const outP = 1 - ease(f, 110, 126);
-  return (
-    <div style={{position: 'absolute', left: 80, top: 640, opacity: Math.min(1, inP * 1.5) * outP, transform: `translateX(${(1 - inP) * -60}px)`}}>
-      <div style={{display: 'flex', alignItems: 'stretch', borderRadius: 26, overflow: 'hidden', boxShadow: '0 24px 60px rgba(20,24,40,.3)', fontFamily: FONT.sans}}>
-        <div style={{background: C.blue, color: '#fff', padding: '22px 30px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-          <div style={{fontSize: 22, fontWeight: 800, letterSpacing: 3, opacity: 0.85}}>STEP</div>
-          <div style={{fontFamily: FONT.num, fontSize: 84, fontWeight: 900, lineHeight: 1}}>{CN_NUM[m[1]] ?? m[1]}</div>
-        </div>
-        <div style={{background: '#fff', color: C.ink, padding: '22px 40px', display: 'flex', alignItems: 'center', fontSize: 72, fontWeight: 900}}>{m[2]}</div>
-      </div>
-    </div>
+    <AbsoluteFill style={{background: '#0B0C0E', overflow: 'hidden'}}>
+      <Img src={staticFile(shot.file!)} style={{width: '100%', height: '100%', objectFit: 'contain', transform: `scale(${scale})`}} />
+    </AbsoluteFill>
   );
 };
 
@@ -266,7 +236,6 @@ export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, d
               <AbsoluteFill>
                 <PresenterVideo scene={scene} sceneIndex={idx} forceWide={shot.kind === 'presenter-steps'} />
                 {shot.kind === 'presenter-steps' && <StepsStrip scene={scene} />}
-                {i === 0 && <ChapterCard title={scene.title} />}
               </AbsoluteFill>
             ) :
             shot.kind === 'handbook' ? <Handbook scene={scene} /> :
@@ -285,7 +254,6 @@ export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, d
         return <Sequence key={`voice-${i}`} from={from} durationInFrames={d} premountFor={fps} name={`口播 ${c.sourceStart / fps}s`}><Audio src={staticFile('ai-ppt/presenter.mp4')} startFrom={c.sourceStart} endAt={c.sourceEnd} volume={1} /></Sequence>;
       })}
       {dub && <DubCard dub={dub.dub} offset={dub.offset} length={dub.length} />}
-      {/^0\d /.test(scene.chapter) && ['screen', 'image', 'screen-trio'].includes(activeKind ?? '') && !dub && <StepNav chapter={scene.chapter} progress={1} />}
       {dub?.dub.file ? <DubSubtitle text={dub.dub.text} progress={dub.offset / dub.length} /> : <Subtitle sourceTime={sourceTime} />}
       {debug && <div style={{position: 'absolute', left: 24, bottom: 18, background: '#000a', color: 'white', fontSize: 20, padding: 8, fontFamily: FONT.sans}}>{scene.id} / 源 {sourceTime.toFixed(2)}s</div>}
     </AbsoluteFill>
