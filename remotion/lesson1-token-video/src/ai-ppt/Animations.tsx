@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Freeze, OffthreadVideo, Sequence, staticFile, useCurrentFrame} from 'remotion';
 import {Scene, FPS, frameToSource, sourceToFrame} from './timeline';
-import {C, Card, FONT, Stage, ease, easeInOut, lerp, pop} from './design';
+import {C, Card, FONT, Stage, ease, easeInOut, pop} from './design';
 
 const screen = (id: string) => staticFile(`ai-ppt/screen-${id}.mp4`);
 
@@ -27,36 +27,73 @@ const MediaCard: React.FC<{x: number; y: number; w: number; h: number; active: b
   </div>
 );
 
-// ---------------- Opening: presenter in a centre card, both real results either side ----------------
+// ---------------- Opening: presenter full screen, two frosted-glass "phones" browsing both decks ----------------
+type FeedPage = {file: string; start: number; crop?: number[]; live?: boolean};
+const LEFT_PAGES: FeedPage[] = [22, 9.5, 8, 11, 14, 12.5, 22].map((s) => ({file: '02', start: s, crop: [0.585, 0.35, 0.4, 0.435]}));
+const RIGHT_PAGES: FeedPage[] = [22.1, 35.5, 41, 53, 65.5, 69.8, 76].map((s) => ({file: '15', start: s, live: true}));
+
+/** A vertical feed of slides that scrolls up one page every `every` frames. Only the top slide plays. */
+const SlideFeed: React.FC<{pages: FeedPage[]; every: number; width: number}> = ({pages, every, width}) => {
+  const f = useCurrentFrame();
+  const h = Math.round((width * 9) / 16), gap = 18;
+  const k = Math.floor(f / every);
+  const local = f - k * every;
+  const slide = easeInOut(local, 0, 14);
+  const y = -(k - 1 + slide) * (h + gap);
+  return (
+    <div style={{position: 'absolute', inset: 0, overflow: 'hidden'}}>
+      <div style={{position: 'absolute', left: 0, top: k === 0 ? 0 : y, width}}>
+        {pages.map((p, i) => {
+          if (i < k - 1 || i > k + 3) return null;
+          const focus = i === k;
+          return (
+            <div key={i} style={{position: 'absolute', top: i * (h + gap), width, height: h, borderRadius: 16, overflow: 'hidden', boxShadow: '0 10px 26px rgba(0,0,0,.25)', opacity: focus ? 1 : 0.72, transform: `scale(${focus ? 1 : 0.96})`}}>
+              {p.live && focus ? (
+                <Sequence from={k * every} premountFor={20}><CropVideo file={p.file} start={p.start} crop={p.crop} /></Sequence>
+              ) : (
+                <CropVideo file={p.file} start={p.start} crop={p.crop} still />
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+const GlassPhone: React.FC<{x: number; enter: number; active: boolean; tone: 'grey' | 'blue'; title: string; sub: string; pages: FeedPage[]; startAt: number}> = ({x, enter, active, tone, title, sub, pages, startAt}) => {
+  const w = 470, h = 860, pad = 24;
+  const glow = tone === 'blue' ? 'rgba(47,107,255,.55)' : 'rgba(255,255,255,.55)';
+  return (
+    <div style={{position: 'absolute', left: x, top: 110, width: w, height: h, opacity: Math.min(1, enter * 1.4) * (active ? 1 : 0.62), transform: `translateY(${(1 - enter) * 120}px) scale(${active ? 1 : 0.93})`, transformOrigin: '50% 50%', filter: active ? undefined : 'saturate(.5)'}}>
+      <div style={{position: 'absolute', inset: 0, borderRadius: 52, background: 'linear-gradient(160deg, rgba(255,255,255,.34), rgba(255,255,255,.12))', backdropFilter: 'blur(28px) saturate(1.6)', WebkitBackdropFilter: 'blur(28px) saturate(1.6)', border: '1.5px solid rgba(255,255,255,.6)', boxShadow: `0 30px 80px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.7)${active ? `, 0 0 0 4px ${glow}, 0 0 60px ${glow}` : ''}`}} />
+      <div style={{position: 'absolute', left: w / 2 - 60, top: 16, width: 120, height: 10, borderRadius: 5, background: 'rgba(255,255,255,.7)'}} />
+      <div style={{position: 'absolute', left: pad, top: 48, right: pad, textAlign: 'center'}}>
+        <Pill text={title} tone={tone === 'blue' ? 'blue' : 'dark'} style={{fontSize: 34, padding: '10px 28px'}} />
+        <div style={{marginTop: 12, fontSize: 26, fontWeight: 700, color: '#fff', textShadow: '0 2px 8px rgba(0,0,0,.45)'}}>{sub}</div>
+      </div>
+      <div style={{position: 'absolute', left: pad, top: 190, width: w - pad * 2, bottom: pad, borderRadius: 26, overflow: 'hidden'}}>
+        <Sequence from={startAt} premountFor={30}><SlideFeed pages={pages} every={33} width={w - pad * 2} /></Sequence>
+      </div>
+    </div>
+  );
+};
+
 export const Opening: React.FC<{scene: Scene}> = ({scene}) => {
   const f = useCurrentFrame();
   const t = frameToSource(scene, f);
   const reveal = sourceToFrame(scene, 63.1);
-  const p = easeInOut(f, reveal, reveal + 20);
   const rightOn = t >= 67.5;
-  const leftEnter = pop(f, reveal + 8, reveal + 26);
-  const rightEnter = pop(f, reveal + 14, reveal + 32);
-  // presenter frame: full screen → tall centre card
-  const box = {x: lerp(p, 0, 700), y: lerp(p, 0, 150), w: lerp(p, 1920, 520), h: lerp(p, 1080, 780)};
-  const s = box.h / 1080;
-  const personX = lerp(p, 0.5, 0.58);
-  const remain = (scene.durationInFrames - reveal) / FPS;
+  const leftEnter = pop(f, reveal, reveal + 20);
+  const rightEnter = pop(f, reveal + 6, reveal + 26);
+  const dim = ease(f, reveal, reveal + 14);
   return (
-    <Stage>
-      <Sequence from={reveal} premountFor={30}>
-        <MediaCard x={70} y={300} w={580} h={326} tone="grey" active={!rightOn} dimmed={rightOn} enter={leftEnter} title="只发一句话" sub="手机原图 · 没有动画">
-          <CropVideo file="opening-left" start={0} crop={[0.585, 0.35, 0.4, 0.435]} rate={Math.min(1, 6.4 / remain)} />
-        </MediaCard>
-        <MediaCard x={1270} y={300} w={580} h={326} tone="blue" active={rightOn} dimmed={!rightOn && t < 66.4 && rightEnter > 0.99} enter={rightEnter} title="一步步提要求" sub="产品大图 · 动画演出重点">
-          <CropVideo file="opening-right" start={0} rate={Math.min(1, 6.35 / remain)} />
-        </MediaCard>
-      </Sequence>
-      <div style={{position: 'absolute', left: box.x, top: box.y, width: box.w, height: box.h, overflow: 'hidden', borderRadius: p * 32, boxShadow: p > 0 ? '0 30px 80px rgba(20,24,40,.25)' : undefined}}>
-        <div style={{position: 'absolute', left: box.w / 2 - personX * 1920 * s, top: 0, width: 1920 * s, height: 1080 * s}}>
-          <OffthreadVideo pauseWhenBuffering src={staticFile('ai-ppt/presenter-opening.mp4')} muted volume={0} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-        </div>
-      </div>
-    </Stage>
+    <AbsoluteFill style={{background: C.dark}}>
+      <OffthreadVideo pauseWhenBuffering src={staticFile('ai-ppt/presenter-opening.mp4')} muted volume={0} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+      <AbsoluteFill style={{background: `rgba(10,12,16,${0.18 * dim})`}} />
+      <GlassPhone x={110} enter={leftEnter} active={!rightOn} tone="grey" title="只发一句话" sub="手机原图 · 没有动画" pages={LEFT_PAGES} startAt={reveal} />
+      <GlassPhone x={1340} enter={rightEnter} active={rightOn} tone="blue" title="一步步提要求" sub="产品大图 · 动画演出重点" pages={RIGHT_PAGES} startAt={reveal + 6} />
+    </AbsoluteFill>
   );
 };
 
