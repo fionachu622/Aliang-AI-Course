@@ -520,46 +520,36 @@ const chalkEllipse = (cx: number, cy: number, rx: number, ry: number) => {
   return d;
 };
 
-/** s12 套模板: the company template comes down on the outline like a mould; lifted, the outline is the first version. */
+/** s12 套模板: the first version itself. Its cover comes up full size; the next pages fan out from behind it,
+ * all in the company template — the deck is the picture, chalk only names it. */
+const FIRST_CROP = [0.2215, 0.2085, 0.6745, 0.6875]; // the slide inside recording 03 (editor at 146%)
+const FIRST_PAGES = [{start: 283, tilt: -7, x: -560}, {start: 284, tilt: 6, x: 560}];
 export const ChapterTemplate: React.FC<{scene: Scene}> = ({scene}) => {
   const t = frameToSource(scene, useCurrentFrame());
-  const W = 1000, H = 562, X = 460, Y = 150;
-  const fall = interpolate(t, [235.95, 236.55], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(0.55, 0, 1, 0.45)});
-  const hit = t >= 236.55 ? Math.max(0, 1 - (t - 236.55) / 0.35) : 0; // impact, decays
-  const lift = easeInOut(t, 236.9, 237.45);
-  const pressed = t >= 236.55;
-  const moldY = t < 236.55 ? lerp(fall, -700, 0) : lerp(lift, 0, -760);
-  const shake = hit * Math.sin((t - 236.55) * 70) * 7;
-  const punch = 1 + 0.035 * Math.sin(Math.PI * Math.min(1, Math.max(0, (t - 236.55) / 0.17)));
+  const W = 1100, H = Math.round((W * 9) / 16), CX = 960, CY = 490;
+  const rise = ease(t, 235.8, 236.25);
+  const fan = easeInOut(t, 236.35, 237.05);
+  const word = ease(t, 237.2, 237.8);
+  const card: React.CSSProperties = {position: 'absolute', borderRadius: 10, overflow: 'hidden', boxShadow: '0 30px 80px rgba(0,0,0,.6), 0 4px 14px rgba(0,0,0,.35)'};
   return (
     <Stage>
-      <AbsoluteFill style={{transform: `translateY(${shake}px) scale(${punch})`}}>
-        <div style={{position: 'absolute', left: X, top: Y, width: W, height: H, transform: 'rotate(-1.2deg)'}}>
-          <Page p={pressed ? PAGE.first : PAGE.outline} style={{inset: 0}} />
-          {/* shadow of the mould before it lands */}
-          {!pressed && <div style={{position: 'absolute', inset: 0, borderRadius: 8, background: `rgba(0,0,0,${0.45 * fall})`}} />}
+      {FIRST_PAGES.map((p, i) => {
+        const w = W * 0.72, h = H * 0.72;
+        return (
+          <div key={i} style={{...card, left: CX - w / 2 + p.x * fan, top: CY - h / 2 + 30 * fan, width: w, height: h, transform: `rotate(${p.tilt * fan}deg)`, opacity: fan > 0.01 ? 1 : 0}}>
+            <CropVideo file="03" start={p.start} crop={[FIRST_CROP[0] + 0.012, FIRST_CROP[1], FIRST_CROP[2] - 0.012, FIRST_CROP[3]]} still />
+          </div>
+        );
+      })}
+      <div style={{...card, left: CX - W / 2, top: CY - H / 2 + (1 - rise) * 40, width: W, height: H, opacity: rise}}>
+        <CropVideo file="03" start={263} crop={FIRST_CROP} still />
+      </div>
+      {word > 0 && (
+        <div style={{position: 'absolute', left: CX - W / 2, top: CY - H / 2 - 104, fontSize: 64, color: C.green, opacity: word, whiteSpace: 'nowrap'}}>
+          ② 第一版
+          <ChalkUnderline w={textW('② 第一版', 64) + 10} color={C.green} progress={ease(word, 0.3, 1)} style={{left: -4, bottom: -8}} />
         </div>
-        {/* chalk dust on impact */}
-        {hit > 0 && Array.from({length: 10}, (_, i) => {
-          const a = (i / 10) * Math.PI * 2 + 0.3, r0 = 560, r1 = r0 + 120 * (1 - hit);
-          const cx = X + W / 2, cy = Y + H / 2;
-          return <svg key={i} style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}} width={1} height={1}><line x1={cx + Math.cos(a) * r0 * 0.95} y1={cy + Math.sin(a) * r0 * 0.55} x2={cx + Math.cos(a) * r1 * 0.95} y2={cy + Math.sin(a) * r1 * 0.55} stroke={C.ink} strokeWidth={4} strokeLinecap="round" opacity={hit} /></svg>;
-        })}
-        {/* the mould: the company template's skeleton in chalk */}
-        <div style={{position: 'absolute', left: X - 20, top: Y - 20 + moldY, width: W + 40, height: H + 40, transform: `scale(${1 + 0.06 * (1 - fall) * (pressed ? 0 : 1)})`, opacity: t < 235.95 ? ease(t, 235.8, 235.95) : 1}}>
-          <ChalkRect w={W + 40} h={H + 40} k="mould" color={C.green} width={6} fill="rgba(36,39,42,.92)" />
-          <ChalkRect w={150} h={60} k="mould-logo" color={C.green} width={3} style={{left: W - 150, top: 46}} />
-          <div style={{position: 'absolute', left: W - 150, top: 46, width: 150, height: 60, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 30, color: C.green}}>LOGO</div>
-          <svg width={W + 40} height={H + 40} style={{position: 'absolute', inset: 0}}>
-            <Stroke d="M70 90 H520" progress={1} color={C.green} width={10} />
-            <Stroke d="M70 150 H360 M70 330 H460 M70 380 H420 M70 430 H440" progress={1} color={C.green} width={4} />
-            <Stroke d="M600 200 H930 V500 H600 Z" progress={1} color={C.green} width={4} />
-            <Stroke d="M70 540 H970" progress={1} color={C.green} width={3} />
-          </svg>
-          <div style={{position: 'absolute', left: 70, top: 200, fontSize: 48, color: C.green}}>公司模板</div>
-        </div>
-      </AbsoluteFill>
-      <ResultWord n={2} text="第一版" color={C.green} x={960} y={770} progress={ease(t, 237.35, 237.9)} align="center" />
+      )}
     </Stage>
   );
 };
