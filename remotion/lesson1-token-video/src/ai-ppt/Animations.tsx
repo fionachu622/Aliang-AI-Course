@@ -61,18 +61,14 @@ const SlideFeed: React.FC<{pages: FeedPage[]; every: number; width: number}> = (
   );
 };
 
-const GlassPhone: React.FC<{x: number; enter: number; active: boolean; tone: 'grey' | 'blue'; title: string; sub: string; pages: FeedPage[]; startAt: number}> = ({x, enter, active, tone, title, sub, pages, startAt}) => {
+const GlassPhone: React.FC<{x: number; enter: number; active: boolean; tone: 'grey' | 'blue'; pages: FeedPage[]; startAt: number}> = ({x, enter, active, tone, pages, startAt}) => {
   const w = 470, h = 860, pad = 24;
   const glow = tone === 'blue' ? 'rgba(47,107,255,.55)' : 'rgba(255,255,255,.55)';
   return (
     <div style={{position: 'absolute', left: x, top: 110, width: w, height: h, opacity: Math.min(1, enter * 1.4) * (active ? 1 : 0.62), transform: `translateY(${(1 - enter) * 120}px) scale(${active ? 1 : 0.93})`, transformOrigin: '50% 50%', filter: active ? undefined : 'saturate(.5)'}}>
       <div style={{position: 'absolute', inset: 0, borderRadius: 52, background: 'linear-gradient(160deg, rgba(255,255,255,.34), rgba(255,255,255,.12))', backdropFilter: 'blur(28px) saturate(1.6)', WebkitBackdropFilter: 'blur(28px) saturate(1.6)', border: '1.5px solid rgba(255,255,255,.6)', boxShadow: `0 30px 80px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.7)${active ? `, 0 0 0 4px ${glow}, 0 0 60px ${glow}` : ''}`}} />
       <div style={{position: 'absolute', left: w / 2 - 60, top: 16, width: 120, height: 10, borderRadius: 5, background: 'rgba(255,255,255,.7)'}} />
-      <div style={{position: 'absolute', left: pad, top: 48, right: pad, textAlign: 'center'}}>
-        <Pill text={title} tone={tone === 'blue' ? 'blue' : 'dark'} style={{fontSize: 34, padding: '10px 28px'}} />
-        <div style={{marginTop: 12, fontSize: 26, fontWeight: 700, color: '#fff', textShadow: '0 2px 8px rgba(0,0,0,.45)'}}>{sub}</div>
-      </div>
-      <div style={{position: 'absolute', left: pad, top: 190, width: w - pad * 2, bottom: pad, borderRadius: 26, overflow: 'hidden'}}>
+      <div style={{position: 'absolute', left: pad, top: 44, width: w - pad * 2, bottom: pad, borderRadius: 26, overflow: 'hidden'}}>
         <Sequence from={startAt} premountFor={30}><SlideFeed pages={pages} every={33} width={w - pad * 2} /></Sequence>
       </div>
     </div>
@@ -91,8 +87,8 @@ export const Opening: React.FC<{scene: Scene}> = ({scene}) => {
     <AbsoluteFill style={{background: C.dark}}>
       <OffthreadVideo pauseWhenBuffering src={staticFile('ai-ppt/presenter-opening.mp4')} muted volume={0} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       <AbsoluteFill style={{background: `rgba(10,12,16,${0.18 * dim})`}} />
-      <GlassPhone x={110} enter={leftEnter} active={!rightOn} tone="grey" title="只发一句话" sub="手机原图 · 没有动画" pages={LEFT_PAGES} startAt={reveal} />
-      <GlassPhone x={1340} enter={rightEnter} active={rightOn} tone="blue" title="一步步提要求" sub="产品大图 · 动画演出重点" pages={RIGHT_PAGES} startAt={reveal + 6} />
+      <GlassPhone x={110} enter={leftEnter} active={!rightOn} tone="grey" pages={LEFT_PAGES} startAt={reveal} />
+      <GlassPhone x={1340} enter={rightEnter} active={rightOn} tone="blue" pages={RIGHT_PAGES} startAt={reveal + 6} />
     </AbsoluteFill>
   );
 };
