@@ -554,108 +554,88 @@ export const ChapterTemplate: React.FC<{scene: Scene}> = ({scene}) => {
   );
 };
 
-/** s24 调版式: a chalk line swept across the page; behind it the phone photo becomes a big image and the text shrinks. */
+const PRICE_CROP = [0.2173, 0.2056, 0.6849, 0.6944]; // the slide inside recording 12 (editor view)
+const DECK_CARD: React.CSSProperties = {position: 'absolute', borderRadius: 10, overflow: 'hidden', boxShadow: '0 30px 80px rgba(0,0,0,.6), 0 4px 14px rgba(0,0,0,.35)'};
+/** Hand-written chapter result above a card. */
+const CardWord: React.FC<{text: string; color: string; x: number; y: number; progress: number}> = ({text, color, x, y, progress}) => progress <= 0 ? null : (
+  <div style={{position: 'absolute', left: x, top: y, fontSize: 64, color, opacity: progress, whiteSpace: 'nowrap'}}>
+    {text}
+    <ChalkUnderline w={textW(text, 64) + 10} color={color} progress={ease(progress, 0.3, 1)} style={{left: -4, bottom: -8}} />
+  </div>
+);
+
+/** s24 调版式: the same price page before and after. The new page slides in over the old one, which steps back. */
 export const ChapterLayout: React.FC<{scene: Scene}> = ({scene}) => {
   const t = frameToSource(scene, useCurrentFrame());
-  const W = 1400, H = 788, X = 260, Y = 110;
-  const wipe = easeInOut(t, 396.2, 397.9);
-  const pan = lerp(easeInOut(t, 396.0, 398.1), 160, -60); // the camera follows the chalk from left to right
-  const zoom = 1.12 - 0.12 * easeInOut(t, 398.0, 398.7); // then settles back to the whole page
-  const lineX = X + W * wipe;
-  const circle = ease(t, 398.06, 398.7);
+  const W = 1180, H = Math.round((W * 9) / 16), CY = 500;
+  const rise = ease(t, 394.54, 395.0);
+  const swap = easeInOut(t, 396.3, 397.1);
+  const word = ease(t, 396.9, 397.5);
+  const ring = ease(t, 398.06, 398.7);
+  // the old page: centred, then steps back to the left
+  const oldS = lerp(swap, 1, 0.62), oldCX = lerp(swap, 960, 470), oldCY = lerp(swap, CY, CY + 40);
+  // the new page: comes in from the right and settles right of centre
+  const newCX = lerp(swap, 2400, 1080);
+  const nx = newCX - W / 2, ny = CY - H / 2;
   return (
     <Stage>
-      <AbsoluteFill style={{transform: `scale(${zoom}) translateX(${pan * (zoom - 1) / 0.12}px)`, transformOrigin: '50% 50%'}}>
-        <Page p={PAGE.priceBefore} style={{left: X, top: Y, width: W, height: H}} />
-        <div style={{position: 'absolute', left: X, top: Y, width: W, height: H, clipPath: `inset(0 ${(1 - wipe) * 100}% 0 0)`}}>
-          <Page p={PAGE.priceAfter} style={{inset: 0, boxShadow: 'none'}} />
+      <div style={{...DECK_CARD, left: oldCX - W / 2, top: oldCY - H / 2 + (1 - rise) * 40, width: W, height: H, opacity: rise, transform: `scale(${oldS}) rotate(${-5 * swap}deg)`}}>
+        <CropVideo file="12" start={90.5} crop={PRICE_CROP} still />
+        <div style={{position: 'absolute', inset: 0, background: `rgba(20,22,24,${0.38 * swap})`}} />
+      </div>
+      {swap > 0.01 && (
+        <div style={{...DECK_CARD, left: nx, top: ny, width: W, height: H}}>
+          <CropVideo file="12" start={160} crop={PRICE_CROP} still />
         </div>
-        {wipe > 0 && wipe < 1 && (
-          <svg style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}} width={1} height={1}>
-            <path d={`M ${lineX} ${Y - 30} C ${lineX + 6} ${Y + H * 0.3} ${lineX - 6} ${Y + H * 0.7} ${lineX} ${Y + H + 30}`} stroke={C.yellow} strokeWidth={7} fill="none" strokeLinecap="round" />
-            <rect x={lineX - 14} y={Y - 92} width={28} height={70} rx={6} fill={C.ink} transform={`rotate(18 ${lineX} ${Y - 40})`} />
-          </svg>
-        )}
-        {circle > 0 && (
-          <svg style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}} width={1} height={1}>
-            <Stroke d={chalkEllipse(X + W * 0.2, Y + H * 0.43, W * 0.17, H * 0.14)} progress={circle} color={C.yellow} width={6} />
-          </svg>
-        )}
-      </AbsoluteFill>
-      <ResultWord n={3} text="图大字少" color={C.yellow} x={1700} y={918} progress={ease(t, 396.4, 397.0)} align="center" />
+      )}
+      {ring > 0 && (
+        <svg style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}} width={1} height={1}>
+          <Stroke d={chalkEllipse(nx + W * 0.185, ny + H * 0.375, W * 0.165, H * 0.14)} progress={ring} color={C.yellow} width={6} />
+        </svg>
+      )}
+      <CardWord text="③ 图大字少" color={C.yellow} x={nx} y={ny - 104} progress={word} />
     </Stage>
   );
 };
 
-/** s38 加动画: the finished cover plays its animations; a chalk timeline below gets a keyframe each time something moves. */
+/** s38 加动画: the finished deck presenting itself — the board dims like the lights going down, and its animations play. */
 export const ChapterAnim: React.FC<{scene: Scene}> = ({scene}) => {
   const t = frameToSource(scene, useCurrentFrame());
-  const W = 1200, H = 675, X = 360, Y = 60;
+  const W = 1340, H = Math.round((W * 9) / 16), X = (1920 - W) / 2, Y = 90;
   const beats: Beat[] = [{at: 572.55, start: 22.45, len: 1.15}, {at: 573.75, start: 63.25, len: 1.35}, {at: 574.65, start: 69.7, len: 1.0}];
-  const T0 = 572.5, T1 = 575.6, LX0 = X, LX1 = X + W, LY = Y + H + 70;
-  const head = interpolate(t, [T0, T1], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const line = ease(t, 572.48, 572.8);
+  const lights = ease(t, 572.48, 573.2);
+  const rise = ease(t, 572.48, 572.9);
+  const word = ease(t, 574.2, 574.8);
   return (
     <Stage>
-      <div style={{position: 'absolute', left: X, top: Y, width: W, height: H, borderRadius: 8, overflow: 'hidden', boxShadow: '0 22px 60px rgba(0,0,0,.55)'}}>
+      <AbsoluteFill style={{background: `rgba(8,9,10,${0.55 * lights})`}} />
+      <div style={{...DECK_CARD, left: X, top: Y + (1 - rise) * 30, width: W, height: H, opacity: rise, boxShadow: `0 30px 90px rgba(0,0,0,.7), 0 0 ${120 * lights}px rgba(245,241,232,${0.08 * lights})`}}>
         <ClipTrack scene={scene} file="15" beats={beats} poster={22.45} />
       </div>
-      <svg style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}} width={1} height={1}>
-        <Stroke d={`M ${LX0} ${LY} L ${LX1} ${LY}`} progress={line} color={C.ink} width={4} />
-        {beats.map((b, i) => {
-          const x = lerp((b.at - T0) / (T1 - T0), LX0, LX1);
-          const p = pop(t, b.at, b.at + 0.25);
-          return p > 0 && <path key={i} d={`M ${x} ${LY - 22 * p} L ${x + 18 * p} ${LY} L ${x} ${LY + 22 * p} L ${x - 18 * p} ${LY} Z`} fill={C.pink} stroke={C.pink} strokeWidth={2} />;
-        })}
-        {line > 0.5 && <line x1={lerp(head, LX0, LX1)} y1={LY - 40} x2={lerp(head, LX0, LX1)} y2={LY + 40} stroke={C.yellow} strokeWidth={5} strokeLinecap="round" />}
-      </svg>
-      <ResultWord n={4} text="能直接讲" color={C.pink} x={LX1 - textW('④ 能直接讲', 64) - 10} y={LY + 40} progress={ease(t, 574.2, 574.8)} />
+      <CardWord text="④ 能直接讲" color={C.pink} x={X} y={Y + H + 26} progress={word} />
     </Stage>
   );
 };
 
-/** s46 做 Skill: the requirements from the earlier chapters, as chalk notes, fly into a handbook that closes as the Skill. */
-const NOTES: {text: string; color: string; x: number; y: number; r: number}[] = [
-  {text: '先出大纲', color: C.blue, x: 150, y: 140, r: -6},
-  {text: '按公司模板', color: C.green, x: 1440, y: 150, r: 5},
-  {text: '图大字少', color: C.yellow, x: 170, y: 700, r: 4},
-  {text: '重点用动画', color: C.pink, x: 1420, y: 690, r: -5},
-];
+/** s46 做 Skill: the real Skill the AI wrote — its folder — comes up and is written out line by line. */
+const SKILL_CROP = [0.1914, 0.3592, 0.6172, 0.3211]; // file tree of the finished Skill, recording 16 at 80 s
 export const ChapterSkill: React.FC<{scene: Scene}> = ({scene}) => {
   const t = frameToSource(scene, useCurrentFrame());
-  const BX = 960, BY = 470; // book centre
-  const pull = 1.18 - 0.18 * easeInOut(t, 672.9, 673.9);
-  const close = easeInOut(t, 673.85, 674.25);
-  const title = ease(t, 674.2, 674.7);
+  const W = 1500, H = Math.round(W * (0.3211 * 710) / (0.6172 * 1280)), X = (1920 - W) / 2, Y = 230;
+  const rise = ease(t, 672.89, 673.3);
+  const write = easeInOut(t, 673.05, 674.1);
+  const pull = 1.06 - 0.06 * easeInOut(t, 672.9, 674.3);
+  const word = ease(t, 673.75, 674.35);
   return (
     <Stage>
-      <AbsoluteFill style={{transform: `scale(${pull})`, transformOrigin: '50% 45%'}}>
-        {/* the handbook: open, then the left page folds over */}
-        <svg style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}} width={1} height={1}>
-          <g opacity={1 - close}>
-            <Stroke d={`M ${BX} ${BY - 150} C ${BX - 90} ${BY - 190} ${BX - 230} ${BY - 190} ${BX - 330} ${BY - 160} V ${BY + 170} C ${BX - 230} ${BY + 140} ${BX - 90} ${BY + 140} ${BX} ${BY + 180} Z`} progress={1} color={C.coral} width={5} />
-            <Stroke d={`M ${BX} ${BY - 150} C ${BX + 90} ${BY - 190} ${BX + 230} ${BY - 190} ${BX + 330} ${BY - 160} V ${BY + 170} C ${BX + 230} ${BY + 140} ${BX + 90} ${BY + 140} ${BX} ${BY + 180} Z`} progress={1} color={C.coral} width={5} />
-          </g>
-          <g opacity={close}>
-            <Stroke d={`M ${BX - 200} ${BY - 170} H ${BX + 200} V ${BY + 180} H ${BX - 200} Z M ${BX - 168} ${BY - 170} V ${BY + 180}`} progress={1} color={C.coral} width={6} />
-          </g>
-        </svg>
-        {title > 0 && <div style={{position: 'absolute', left: BX - 140, top: BY - 70, width: 340, textAlign: 'center', fontSize: 104, color: C.coral, opacity: title}}>Skill</div>}
-        {/* the notes */}
-        {NOTES.map((n, i) => {
-          const fly = easeInOut(t, 672.95 + i * 0.16, 673.65 + i * 0.16);
-          if (fly >= 1) return null;
-          const w = textW(n.text, 50) + 70;
-          const x = lerp(fly, n.x, BX - w / 2 + (i % 2 ? 60 : -60)), y = lerp(fly, n.y, BY - 50) - Math.sin(Math.PI * fly) * 120;
-          return (
-            <div key={i} style={{position: 'absolute', left: x, top: y, width: w, height: 100, transform: `rotate(${n.r * (1 - fly)}deg) scale(${1 - 0.55 * fly})`, opacity: 1 - ease(fly, 0.8, 1)}}>
-              <ChalkRect w={w} h={100} k={`note-${i}`} color={n.color} fill="rgba(36,39,42,.9)" />
-              <div style={{position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 50, color: n.color, whiteSpace: 'nowrap'}}>{n.text}</div>
-            </div>
-          );
-        })}
+      <AbsoluteFill style={{transform: `scale(${pull})`}}>
+        <div style={{...DECK_CARD, left: X, top: Y + (1 - rise) * 30, width: W, height: H, opacity: rise, background: '#F5F5F5'}}>
+          <div style={{position: 'absolute', inset: 0, clipPath: `inset(0 0 ${(1 - write) * 100}% 0)`}}>
+            <CropVideo file="16" start={80} crop={SKILL_CROP} still />
+          </div>
+        </div>
+        <CardWord text="⑤ 自己的 Skill" color={C.coral} x={X} y={Y - 104} progress={word} />
       </AbsoluteFill>
-      <ResultWord n={5} text="自己的 Skill" color={C.coral} x={960} y={790} progress={ease(t, 674.35, 674.9)} align="center" />
     </Stage>
   );
 };
