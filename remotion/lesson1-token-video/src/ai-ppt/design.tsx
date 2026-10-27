@@ -41,12 +41,14 @@ export const ChalkFonts: React.FC = () => (
 );
 
 const clampOpt = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
+// Snap to exact 0 / 1 outside the range, so "not started" really is 0 (bezier easing leaves ~1e-17).
+const snap = (v: number, a: number, b: number, r: number) => (v <= a ? 0 : v >= b ? 1 : r);
 export const ease = (v: number, a: number, b: number) =>
-  interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.22, 1, 0.36, 1)});
+  snap(v, a, b, interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.22, 1, 0.36, 1)}));
 export const easeInOut = (v: number, a: number, b: number) =>
-  interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.65, 0, 0.35, 1)});
+  snap(v, a, b, interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.65, 0, 0.35, 1)}));
 export const pop = (v: number, a: number, b: number) =>
-  interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.3, 1.25, 0.6, 1)});
+  snap(v, a, b, interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.3, 1.25, 0.6, 1)}));
 export const lerp = (p: number, a: number, b: number) => a + (b - a) * p;
 
 /** Chalkboard page; text inside inherits the chalk lettering. */
@@ -113,16 +115,12 @@ export const Frame: React.FC<{x: number; y: number; w: number; h: number; progre
   <ChalkRect w={w} h={h} k={k} color={color} progress={progress} width={width} fill={fill} style={{left: x, top: y}} />
 );
 
-/** Media in a chalk frame (used for recordings shown on the board). */
-export const Card: React.FC<{style?: React.CSSProperties; children?: React.ReactNode; radius?: number; k?: string; progress?: number; color?: string}> = ({style, children, radius = 10, k = 'card', progress = 1, color = C.ink}) => {
-  const w = Number(style?.width ?? 0), h = Number(style?.height ?? 0);
-  return (
-    <div style={{position: 'absolute', ...style}}>
-      <div style={{position: 'absolute', inset: 0, borderRadius: radius, overflow: 'hidden', background: '#000'}}>{children}</div>
-      {w > 0 && h > 0 && <ChalkRect w={w + 28} h={h + 28} k={k} color={color} progress={progress} style={{left: -14, top: -14}} />}
-    </div>
-  );
-};
+/** Media placed on the board: rounded corners and a soft shadow, no frame. */
+export const Card: React.FC<{style?: React.CSSProperties; children?: React.ReactNode; radius?: number; k?: string; progress?: number; color?: string}> = ({style, children, radius = 12}) => (
+  <div style={{position: 'absolute', ...style}}>
+    <div style={{position: 'absolute', inset: 0, borderRadius: radius, overflow: 'hidden', background: '#000', boxShadow: '0 18px 44px rgba(0,0,0,.45)'}}>{children}</div>
+  </div>
+);
 
 /** Hand-drawn arrow from (x1,y1) to (x2,y2), same stroke as the token lesson's HandArrow. */
 export const Arrow: React.FC<{x1: number; y1: number; x2: number; y2: number; progress: number; color?: string; width?: number; bend?: number}> = ({x1, y1, x2, y2, progress, color = C.blue, width = 4, bend = 4}) => {
@@ -155,7 +153,7 @@ export const ChalkUnderline: React.FC<{w: number; color?: string; progress?: num
 );
 
 /** Rough width of a line of chalk text. */
-export const textW = (s: string, size: number) => Array.from(s).reduce((n, ch) => n + (/[　-鿿＀-￯]/.test(ch) ? size : ch === ' ' ? size * 0.3 : size * 0.56), 0);
+export const textW = (s: string, size: number) => Array.from(s).reduce((n, ch) => n + (/[　-鿿＀-￯]/.test(ch) ? size : ch === ' ' ? size * 0.28 : size * 0.44), 0);
 
 /** Coloured chalk label with an underline, for naming a column or a side. */
 export const Tag: React.FC<{text: string; color?: string; size?: number; progress?: number; style?: React.CSSProperties}> = ({text, color = C.yellow, size = 40, progress = 1, style}) => (
