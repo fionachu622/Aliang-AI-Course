@@ -3,7 +3,7 @@ import {AbsoluteFill, Freeze, OffthreadVideo, Sequence, staticFile, useCurrentFr
 import {Scene, FPS, frameToSource, sourceToFrame} from './timeline';
 import {C, Card, FONT, Stage, ease, easeInOut, pop} from './design';
 
-const screen = (id: string) => staticFile(`ai-ppt/screen-${id}.mp4`);
+const screen = (id: string) => staticFile(`ai-ppt/screen-${id === '16' ? '16-v4' : id}.mp4`);
 
 /** A recording cropped to a normalized region [x, y, w, h]. */
 export const CropVideo: React.FC<{file: string; start: number; crop?: number[]; still?: boolean; rate?: number}> = ({file, start, crop = [0, 0, 1, 1], still = false, rate = 1}) => {

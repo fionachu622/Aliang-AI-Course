@@ -5,7 +5,7 @@ import captions from './captions.json';
 import {Compare, CropVideo, Handbook, InstallCard, Opening, Steps, StepsStrip} from './Animations';
 import {C, Card, Chip, FONT, MarkBox, Stage, StepNav, ease, easeInOut, lerp, pop} from './design';
 
-const screen = (id: string) => staticFile(`ai-ppt/screen-${id}.mp4`);
+const screen = (id: string) => staticFile(`ai-ppt/screen-${id === '16' ? '16-v4' : id}.mp4`);
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
 // Every recording and product image sits in the same floating window on the stage,

@@ -39,7 +39,7 @@ import {
   AgentWhiteboard,
   AGENT_WHITEBOARD_DURATION,
 } from './agent-whiteboard/AgentWhiteboard';
-import {Composition, Folder} from 'remotion';
+import {Composition, Folder, OffthreadVideo, staticFile} from 'remotion';
 import {Lesson1ChalkboardShotcraft} from './shotcraft/Lesson1ChalkboardShotcraft';
 import {Lesson1} from './Lesson1';
 import {Lesson1Silent} from './Lesson1Silent';
@@ -89,12 +89,15 @@ import {
   IAN_BLACKBOX_TOTAL_FRAMES,
 } from './ian-blackbox/storyboard';
 
+const Screen16Review = () => <OffthreadVideo src={staticFile('ai-ppt/screen-16-v4.mp4')} pauseWhenBuffering style={{width: '100%', height: '100%'}} />;
+
 export const RemotionRoot = () => {
   return (
     <>
       <Folder name="Aliang-AI-Course">
         <Folder name="AI生成PPT">
           <Composition id="AIPptCourse" component={AIPptCourse} durationInFrames={AI_PPT_DURATION} fps={30} width={1920} height={1080} />
+          <Composition id="AIPpt-Screen16-Review" component={Screen16Review} durationInFrames={8136} fps={30} width={2596} height={1440} />
           <Folder name="逐段检查">
             <Composition id="AIPpt-s01" component={AIPptCourse} durationInFrames={aiPptScenes[0].durationInFrames} fps={30} width={1920} height={1080} defaultProps={{sceneId: 's01', debug: true}} />
             <Composition id="AIPpt-s02" component={AIPptCourse} durationInFrames={aiPptScenes[1].durationInFrames} fps={30} width={1920} height={1080} defaultProps={{sceneId: 's02', debug: true}} />
