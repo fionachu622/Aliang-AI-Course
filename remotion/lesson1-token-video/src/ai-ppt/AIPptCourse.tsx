@@ -2,6 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Audio, Freeze, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {Scene, Shot, scenes, FPS, chunkFrames, dubAt, frameToSource, sourceToFrame} from './timeline';
 import captions from './captions.json';
+import {CompareSkillPaths, CompareStacks, HandbookBoard, InstallBoard, RecapLayers} from './Explainers';
 import {ChapterAnim, ChapterLayout, ChapterSkill, ChapterTemplate, Compare, CropVideo, Handbook, InstallCard, Opening, PipelineMap, Steps, StepsIntro} from './Animations';
 import {C, Card, ChalkFonts, FONT, MarkBox, Stage, ease, easeInOut, lerp, pop} from './design';
 
@@ -242,10 +243,11 @@ export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, d
             shot.kind === 'ch-layout' ? <ChapterLayout scene={scene} /> :
             shot.kind === 'ch-anim' ? <ChapterAnim scene={scene} /> :
             shot.kind === 'ch-skill' ? <ChapterSkill scene={scene} /> :
-            shot.kind === 'handbook' ? <Handbook scene={scene} /> :
-            shot.kind === 'steps' ? <Steps scene={scene} /> :
-            shot.kind === 'install' ? <InstallCard scene={scene} /> :
-            <Compare scene={scene} mode={shot.kind} />;
+            shot.kind === 'handbook' ? <HandbookBoard scene={scene} /> :
+            shot.kind === 'steps' ? <RecapLayers scene={scene} /> :
+            shot.kind === 'install' ? <InstallBoard scene={scene} /> :
+            shot.kind === 'compare-power' ? <CompareSkillPaths scene={scene} /> :
+            <CompareStacks scene={scene} />;
           visual = <Sequence from={-from} durationInFrames={scene.durationInFrames + from}>{inner}</Sequence>;
         }
         return <Sequence key={i} from={from} durationInFrames={dur} premountFor={fps} name={`${scene.id} · ${shot.label || shot.kind}`}>{visual}</Sequence>;

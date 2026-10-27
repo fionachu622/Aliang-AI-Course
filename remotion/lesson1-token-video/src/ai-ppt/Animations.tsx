@@ -105,9 +105,9 @@ export const Opening: React.FC<{scene: Scene}> = ({scene}) => {
 // ---------------- Shared helpers for the board scenes ----------------
 // Organisation follows the reference explainer: one idea per board, parts drawn on in the
 // order they are spoken, relations shown by position and arrows, the other side steps back.
-type Beat = {at: number; start: number; len: number};
+export type Beat = {at: number; start: number; len: number};
 /** Plays short pieces of a recording on spoken cues; between cues it holds the last frame. */
-const ClipTrack: React.FC<{scene: Scene; file: string; crop?: number[]; beats: Beat[]; poster: number}> = ({scene, file, crop, beats, poster}) => {
+export const ClipTrack: React.FC<{scene: Scene; file: string; crop?: number[]; beats: Beat[]; poster: number}> = ({scene, file, crop, beats, poster}) => {
   const froms = beats.map((b) => sourceToFrame(scene, b.at));
   return (
     <AbsoluteFill>
@@ -131,7 +131,7 @@ const PlayThenHold: React.FC<{file: string; crop?: number[]; start: number; len:
 };
 
 /** Chalk stroke path that draws itself. */
-const Stroke: React.FC<{d: string; progress: number; color?: string; width?: number}> = ({d, progress, color = C.ink, width = 3.4}) => (
+export const Stroke: React.FC<{d: string; progress: number; color?: string; width?: number}> = ({d, progress, color = C.ink, width = 3.4}) => (
   <path d={d} stroke={color} strokeWidth={width} fill="none" strokeLinecap="round" strokeLinejoin="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - progress} />
 );
 
@@ -377,19 +377,19 @@ export const InstallCard: React.FC<{scene: Scene}> = ({scene}) => {
 // top: the outline, the template, the big images, the animation, and the Skill card that stores them.
 // s06 pulls the stack apart as the steps are named; each chapter start lifts that chapter's sheet out.
 type Sheet = {name: string; file?: string; start?: number; crop?: number[]; color: string; result: string};
-const SHEETS: Sheet[] = [
+export const SHEETS: Sheet[] = [
   {name: '定大纲', file: '03', start: 112, crop: [0.12, 0.06, 0.6, 0.6], color: C.blue, result: '文字稿'},
   {name: '套模板', file: '03', start: 286, crop: [0.22, 0.14, 0.74, 0.74], color: C.green, result: '第一版'},
   {name: '调版式', file: '12', start: 160, crop: [0.2, 0.14, 0.76, 0.76], color: C.yellow, result: '图大字少'},
   {name: '加动画', file: '15', start: 24.5, crop: [0, 0, 1, 1], color: C.pink, result: '能直接讲'},
   {name: '做 Skill', color: C.coral, result: '自己的 Skill'},
 ];
-const SW = 640, SH = 360, GAP = 105;
-const STACK = {left: 260, top: 60, baseY: 470};
+export const SW = 640, SH = 360, GAP = 105;
+export const STACK = {left: 260, top: 60, baseY: 470};
 const TILT = 'rotateX(58deg) rotateZ(-30deg)';
 
 /** One sheet of the stack. `flat` 0 → 1 turns it from lying in the stack to facing the viewer. */
-const SheetView: React.FC<{i: number; y: number; flat: number; dx?: number; dy?: number; scale?: number; dim: number; opacity?: number; outline?: string; front?: boolean}> = ({i, y, flat, dx = 0, dy = 0, scale = 1, dim, opacity = 1, outline, front}) => {
+export const SheetView: React.FC<{i: number; y: number; flat: number; dx?: number; dy?: number; scale?: number; dim: number; opacity?: number; outline?: string; front?: boolean}> = ({i, y, flat, dx = 0, dy = 0, scale = 1, dim, opacity = 1, outline, front}) => {
   const sh = SHEETS[i];
   const tf = `translate3d(${dx}px, ${y + dy}px, 0) rotateX(${58 * (1 - flat)}deg) rotateZ(${-30 * (1 - flat)}deg) scale(${scale})`;
   return (
@@ -424,7 +424,7 @@ const SheetLabel: React.FC<{i: number; y: number; progress: number; color: strin
 };
 
 /** Screen-space y of sheet i when the gaps below it have opened by `open[k]`. */
-const sheetY = (i: number, open: number[]) => STACK.baseY - GAP * open.slice(0, i).reduce((a, b) => a + b, 0);
+export const sheetY = (i: number, open: number[]) => STACK.baseY - GAP * open.slice(0, i).reduce((a, b) => a + b, 0);
 
 /** s06: the finished cover tilts into a sheet and comes apart into five layers as the steps are named. */
 export const StepsIntro: React.FC<{scene: Scene}> = ({scene}) => {
@@ -510,7 +510,7 @@ const ResultWord: React.FC<{n: number; text: string; color: string; x: number; y
   );
 };
 /** Rough chalk ellipse that draws itself. */
-const chalkEllipse = (cx: number, cy: number, rx: number, ry: number) => {
+export const chalkEllipse = (cx: number, cy: number, rx: number, ry: number) => {
   let d = '';
   for (let i = 0; i <= 46; i++) {
     const a = -Math.PI * 0.62 + (i / 40) * Math.PI * 2;
@@ -522,7 +522,7 @@ const chalkEllipse = (cx: number, cy: number, rx: number, ry: number) => {
 
 /** s12 套模板: the first version itself. Its cover comes up full size; the next pages fan out from behind it,
  * all in the company template — the deck is the picture, chalk only names it. */
-const FIRST_CROP = [0.2215, 0.2085, 0.6745, 0.6875]; // the slide inside recording 03 (editor at 146%)
+export const FIRST_CROP = [0.2215, 0.2085, 0.6745, 0.6875]; // the slide inside recording 03 (editor at 146%)
 const FIRST_PAGES = [{start: 283, tilt: -7, x: -560}, {start: 284, tilt: 6, x: 560}];
 export const ChapterTemplate: React.FC<{scene: Scene}> = ({scene}) => {
   const t = frameToSource(scene, useCurrentFrame());

@@ -41,12 +41,14 @@ export const ChalkFonts: React.FC = () => (
 );
 
 const clampOpt = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
+// Snap to exact 0 / 1 outside the range, so "not started" really is 0 (bezier easing leaves ~1e-17).
+const snap = (v: number, a: number, b: number, r: number) => (v <= a ? 0 : v >= b ? 1 : r);
 export const ease = (v: number, a: number, b: number) =>
-  interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.22, 1, 0.36, 1)});
+  snap(v, a, b, interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.22, 1, 0.36, 1)}));
 export const easeInOut = (v: number, a: number, b: number) =>
-  interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.65, 0, 0.35, 1)});
+  snap(v, a, b, interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.65, 0, 0.35, 1)}));
 export const pop = (v: number, a: number, b: number) =>
-  interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.3, 1.25, 0.6, 1)});
+  snap(v, a, b, interpolate(v, [a, b], [0, 1], {...clampOpt, easing: Easing.bezier(0.3, 1.25, 0.6, 1)}));
 export const lerp = (p: number, a: number, b: number) => a + (b - a) * p;
 
 /** Chalkboard page; text inside inherits the chalk lettering. */
