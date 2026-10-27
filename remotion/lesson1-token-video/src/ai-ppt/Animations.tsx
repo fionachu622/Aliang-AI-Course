@@ -28,17 +28,25 @@ const MediaCard: React.FC<{x: number; y: number; w: number; h: number; active: b
 );
 
 // ---------------- Opening: presenter full screen, two frosted-glass "phones" browsing both decks ----------------
-type FeedPage = {file: string; start: number; crop?: number[]; live?: boolean};
-const LEFT_PAGES: FeedPage[] = [22, 9.5, 8, 11, 14, 12.5, 22].map((s) => ({file: '02', start: s, crop: [0.585, 0.35, 0.4, 0.435]}));
-const RIGHT_PAGES: FeedPage[] = [22.1, 35.5, 41, 53, 65.5, 69.8, 76].map((s) => ({file: '15', start: s, live: true}));
+type FeedPage = {file: string; start: number; crop?: number[]; live?: boolean; frames?: number};
+// One-sentence deck: static pages, flipped quickly.
+const LEFT_PAGES: FeedPage[] = [22, 9.5, 8, 11, 14, 12.5, 22].map((s) => ({file: '02', start: s, crop: [0.585, 0.35, 0.4, 0.435], frames: 33}));
+// Finished deck: each page stays until its animation has played (source seconds from recording 15).
+const RIGHT_PAGES: FeedPage[] = [
+  {file: '15', start: 22.0, live: true, frames: 60}, // cover: product pulls back from close-up
+  {file: '15', start: 62.9, live: true, frames: 66}, // three stacked boxes slide apart
+  {file: '15', start: 69.6, live: true, frames: 56}, // original price struck out, new price lands
+  {file: '15', start: 41.0, live: true, frames: 40}, // 32h page
+];
 
-/** A vertical feed of slides that scrolls up one page every `every` frames. Only the top slide plays. */
-const SlideFeed: React.FC<{pages: FeedPage[]; every: number; width: number}> = ({pages, every, width}) => {
+/** A vertical feed of slides that scrolls up one page at a time. Only the top slide plays. */
+const SlideFeed: React.FC<{pages: FeedPage[]; width: number}> = ({pages, width}) => {
   const f = useCurrentFrame();
   const h = Math.round((width * 9) / 16), gap = 18;
-  const k = Math.floor(f / every);
-  const local = f - k * every;
-  const slide = easeInOut(local, 0, 14);
+  const starts = pages.reduce<number[]>((acc, p, i) => [...acc, i === 0 ? 0 : acc[i - 1] + (pages[i - 1].frames ?? 33)], []);
+  let k = 0;
+  while (k + 1 < pages.length && f >= starts[k + 1]) k++;
+  const slide = k === 0 ? 1 : easeInOut(f - starts[k], 0, 12);
   const y = -(k - 1 + slide) * (h + gap);
   return (
     <div style={{position: 'absolute', inset: 0, overflow: 'hidden'}}>
@@ -49,7 +57,7 @@ const SlideFeed: React.FC<{pages: FeedPage[]; every: number; width: number}> = (
           return (
             <div key={i} style={{position: 'absolute', top: i * (h + gap), width, height: h, borderRadius: 16, overflow: 'hidden', boxShadow: '0 10px 26px rgba(0,0,0,.25)', opacity: focus ? 1 : 0.72, transform: `scale(${focus ? 1 : 0.96})`}}>
               {p.live && focus ? (
-                <Sequence from={k * every} premountFor={20}><CropVideo file={p.file} start={p.start} crop={p.crop} /></Sequence>
+                <Sequence from={starts[i]} premountFor={20}><CropVideo file={p.file} start={p.start} crop={p.crop} /></Sequence>
               ) : (
                 <CropVideo file={p.file} start={p.start} crop={p.crop} still />
               )}
@@ -65,11 +73,11 @@ const GlassPhone: React.FC<{x: number; enter: number; active: boolean; tone: 'gr
   const w = 470, h = 860, pad = 24;
   const glow = tone === 'blue' ? 'rgba(47,107,255,.55)' : 'rgba(255,255,255,.55)';
   return (
-    <div style={{position: 'absolute', left: x, top: 110, width: w, height: h, opacity: Math.min(1, enter * 1.4) * (active ? 1 : 0.62), transform: `translateY(${(1 - enter) * 120}px) scale(${active ? 1 : 0.93})`, transformOrigin: '50% 50%', filter: active ? undefined : 'saturate(.5)'}}>
+    <div style={{position: 'absolute', left: x, top: 110, width: w, height: h, opacity: Math.min(1, enter * 1.4) * (active || tone === 'blue' ? 1 : 0.55), transform: `translateY(${(1 - enter) * 120}px) scale(${active ? 1.03 : 0.95})`, transformOrigin: '50% 50%', filter: active || tone === 'blue' ? undefined : 'saturate(.35)'}}>
       <div style={{position: 'absolute', inset: 0, borderRadius: 52, background: 'linear-gradient(160deg, rgba(255,255,255,.34), rgba(255,255,255,.12))', backdropFilter: 'blur(28px) saturate(1.6)', WebkitBackdropFilter: 'blur(28px) saturate(1.6)', border: '1.5px solid rgba(255,255,255,.6)', boxShadow: `0 30px 80px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.7)${active ? `, 0 0 0 4px ${glow}, 0 0 60px ${glow}` : ''}`}} />
       <div style={{position: 'absolute', left: w / 2 - 60, top: 16, width: 120, height: 10, borderRadius: 5, background: 'rgba(255,255,255,.7)'}} />
       <div style={{position: 'absolute', left: pad, top: 44, width: w - pad * 2, bottom: pad, borderRadius: 26, overflow: 'hidden'}}>
-        <Sequence from={startAt} premountFor={30}><SlideFeed pages={pages} every={33} width={w - pad * 2} /></Sequence>
+        <Sequence from={startAt} premountFor={30}><SlideFeed pages={pages} width={w - pad * 2} /></Sequence>
       </div>
     </div>
   );
