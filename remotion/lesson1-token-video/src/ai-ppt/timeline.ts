@@ -2270,11 +2270,6 @@ export const scenes:Scene[] = [
     "shots": [
       {
         "at": 737.31,
-        "kind": "presenter",
-        "label": ""
-      },
-      {
-        "at": 739.85,
         "kind": "steps",
         "label": ""
       }
