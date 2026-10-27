@@ -1,6 +1,6 @@
 // Source selections are in seconds; audio cuts are original 30 fps frames.
 // User chose actual spoken version over the earlier 45-paragraph script.
-export type Shot = {at:number;kind:string;file?:string;sourceStart?:number;sourceEnd?:number|null;zoom?:number;cx?:number;cy?:number;label?:string;mark?:number[]|null;items?:{file:string;sourceStart:number;crop:number[];mark:number[];label:string}[]};
+export type Shot = {at:number;kind:string;file?:string;sourceStart?:number;sourceEnd?:number|null;zoom?:number;cx?:number;cy?:number;label?:string;step?:number;mark?:number[]|null;items?:{file:string;sourceStart:number;crop:number[];mark:number[];label:string}[]};
 // A dub replaces the spoken words in [sourceStart, sourceEnd) with a re-voiced line (cloned voice) and covers the picture with a chalk card.
 // Until `file` is set, the original audio plays under the card. Card line `at` values are fractions (0–1) of the dub.
 export type Dub = {file?:string|null;frames?:number;text:string;card:{kicker:string;lines:{text:string;at:number;big?:boolean}[]}};
@@ -288,6 +288,12 @@ export const scenes:Scene[] = [
         "at": 167.73,
         "kind": "presenter",
         "label": ""
+      },
+      {
+        "at": 173.47,
+        "kind": "map",
+        "step": 1,
+        "label": "主图：第一步"
       }
     ],
     "audio": [

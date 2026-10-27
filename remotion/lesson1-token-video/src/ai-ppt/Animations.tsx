@@ -277,7 +277,6 @@ export const Handbook: React.FC<{scene: Scene}> = ({scene}) => {
 // ---------------- Five steps (s06 intro, s53 recap) ----------------
 const STEP_NAMES = ['定大纲', '套模板', '调版式', '加动画', '做 Skill'];
 const STEP_DESC = ['先把内容理清楚', '把风格统一起来', '提升设计感', '把重点突出出来', '把要求存下来'];
-const STEP_COLORS = [C.blue, C.green, C.yellow, C.pink, C.coral];
 const NODE = {w: 270, h: 160, gap: 90, y: 400};
 const nodeX = (i: number) => (1920 - (NODE.w * 5 + NODE.gap * 4)) / 2 + i * (NODE.w + NODE.gap);
 
@@ -312,12 +311,6 @@ const StepsFlow: React.FC<{t: number; ghostAt: number; triggers: number[]; descs
       )}
     </Stage>
   );
-};
-
-/** s06: the five steps named one after another. */
-export const StepsIntro: React.FC<{scene: Scene}> = ({scene}) => {
-  const t = frameToSource(scene, useCurrentFrame());
-  return <StepsFlow t={t} ghostAt={160.4} triggers={[161.99, 162.8, 163.75, 164.5, 165.21]} />;
 };
 
 /** s53: recap, each step lights up with what it does; the Skill loops back for next time. */
@@ -374,6 +367,104 @@ export const InstallCard: React.FC<{scene: Scene}> = ({scene}) => {
           <Stroke d="M17 28 V6 M7 15 L17 5 L27 15" progress={1} color={count > 0 && !sent ? C.yellow : C.inkSoft} width={3.4} />
         </svg>
       </div>
+    </Stage>
+  );
+};
+
+// ---------------- The course's main diagram: the five-step pipeline ----------------
+// Organised the way the reference explainer keeps one diagram for the whole lesson:
+// the same map comes back at every chapter, the step being started lights up, and what
+// that step produces (a real frame of the result) drops into the row below it. Earlier
+// results stay, so the map fills up as the deck evolves from 资料 to a finished PPT.
+const MAP = {y: 330, h: 140, w: 250, gap: 66, x0: 330, outY: 590};
+const stepX = (i: number) => MAP.x0 + i * (MAP.w + MAP.gap);
+const STEP_COLORS = [C.blue, C.green, C.yellow, C.pink, C.coral];
+const MAP_STEPS = ['定大纲', '套模板', '调版式', '加动画', '做 Skill'];
+const OUTPUTS: {label: string; file: string; start: number; crop: number[]}[] = [
+  {label: '文字稿', file: '03', start: 112, crop: [0.12, 0.06, 0.6, 0.6]},
+  {label: '第一版', file: '03', start: 286, crop: [0.22, 0.14, 0.74, 0.74]},
+  {label: '图大字少', file: '12', start: 160, crop: [0.2, 0.14, 0.76, 0.76]},
+  {label: '能直接讲', file: '15', start: 24.5, crop: [0, 0, 1, 1]},
+  {label: '自己的 Skill', file: '16-x', start: 44, crop: [0, 0.45, 0.55, 0.55]},
+];
+// When each chapter says "我们会得到……" (source seconds).
+const OUT_AT: Record<number, number> = {1: 174.49, 2: 236.6, 3: 395.38, 4: 573.38, 5: 673.65};
+
+const MapStep: React.FC<{i: number; enter: number; lit: number; focus: number}> = ({i, enter, lit, focus}) => (
+  <div style={{position: 'absolute', left: stepX(i), top: MAP.y, width: MAP.w, height: MAP.h, opacity: 0.4 + 0.6 * lit, transform: `scale(${1 + 0.1 * focus})`, transformOrigin: '50% 50%'}}>
+    <ChalkRect w={MAP.w} h={MAP.h} k={`map-step-${i}`} color={lit > 0.5 ? STEP_COLORS[i] : C.muted} progress={enter} />
+    <div style={{position: 'absolute', left: 0, right: 0, top: 18, textAlign: 'center', fontSize: 30, color: lit > 0.5 ? STEP_COLORS[i] : C.muted, opacity: enter}}>{'①②③④⑤'[i]}</div>
+    <div style={{position: 'absolute', left: 0, right: 0, top: 58, textAlign: 'center', fontSize: 52, color: lit > 0.5 ? STEP_COLORS[i] : C.muted, opacity: enter}}>{MAP_STEPS[i]}</div>
+  </div>
+);
+
+const MapOutput: React.FC<{i: number; progress: number; focus: number}> = ({i, progress, focus}) => {
+  if (progress <= 0) return null;
+  const o = OUTPUTS[i];
+  const w = MAP.w, h = Math.round((w * 9) / 16);
+  const file = o.file === '16-x' ? '16' : o.file;
+  return (
+    <>
+      <Arrow x1={stepX(i) + w / 2} y1={MAP.y + MAP.h + 14} x2={stepX(i) + w / 2} y2={MAP.outY - 16} progress={ease(progress, 0, 0.5)} color={STEP_COLORS[i]} bend={0} />
+      <div style={{position: 'absolute', left: stepX(i), top: MAP.outY, width: w, opacity: ease(progress, 0.35, 0.9), transform: `translateY(${(1 - ease(progress, 0.35, 1)) * -16}px) scale(${1 + 0.1 * focus})`, transformOrigin: '50% 0'}}>
+        <div style={{position: 'relative', width: w, height: h, borderRadius: 10, overflow: 'hidden', boxShadow: '0 12px 30px rgba(0,0,0,.45)'}}>
+          <CropVideo file={file} start={o.start} crop={o.crop} still />
+        </div>
+        <div style={{marginTop: 16, textAlign: 'center', fontSize: 40, color: STEP_COLORS[i]}}>{o.label}</div>
+      </div>
+    </>
+  );
+};
+
+/** The 资料 the whole pipeline starts from. */
+const MapSource: React.FC<{enter: number}> = ({enter}) => (
+  <>
+    <div style={{position: 'absolute', left: 70, top: MAP.y, width: 190, height: MAP.h}}>
+      <ChalkRect w={190} h={MAP.h} k="map-source" color={C.ink} progress={enter} />
+      <div style={{position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 52, opacity: enter}}>资料</div>
+    </div>
+    <Arrow x1={272} y1={MAP.y + MAP.h / 2} x2={MAP.x0 - 12} y2={MAP.y + MAP.h / 2} progress={ease(enter, 0.4, 1)} />
+  </>
+);
+
+/** s06: the map is first drawn — 资料 on the left, then the five steps as they are named. */
+export const StepsIntro: React.FC<{scene: Scene}> = ({scene}) => {
+  const t = frameToSource(scene, useCurrentFrame());
+  const triggers = [161.99, 162.8, 163.75, 164.5, 165.21];
+  return (
+    <Stage>
+      <MapSource enter={ease(t, 160.4, 161.2)} />
+      {MAP_STEPS.map((_, i) => {
+        const p = ease(t, triggers[i], triggers[i] + 0.45);
+        return (
+          <React.Fragment key={i}>
+            <MapStep i={i} enter={p} lit={p} focus={0} />
+            {i < 4 && <Arrow x1={stepX(i) + MAP.w + 10} y1={MAP.y + MAP.h / 2} x2={stepX(i + 1) - 10} y2={MAP.y + MAP.h / 2} progress={ease(t, triggers[i + 1] - 0.2, triggers[i + 1] + 0.2)} />}
+          </React.Fragment>
+        );
+      })}
+    </Stage>
+  );
+};
+
+/** Chapter start: the same map, step `step` lights up and its result drops in below it. */
+export const PipelineMap: React.FC<{scene: Scene; step: number}> = ({scene, step}) => {
+  const t = frameToSource(scene, useCurrentFrame());
+  const n = step - 1;
+  const shotStart = scene.shots.find((s) => s.kind === 'map')?.at ?? scene.sourceStart;
+  const focus = easeInOut(t, shotStart + 0.1, shotStart + 0.5);
+  const out = ease(t, OUT_AT[step], OUT_AT[step] + 0.8);
+  return (
+    <Stage>
+      <MapSource enter={1} />
+      {MAP_STEPS.map((_, i) => (
+        <React.Fragment key={i}>
+          <MapStep i={i} enter={1} lit={i < n ? 0.75 : i === n ? focus : 0} focus={i === n ? focus : 0} />
+          {i < 4 && <Arrow x1={stepX(i) + MAP.w + 10} y1={MAP.y + MAP.h / 2} x2={stepX(i + 1) - 10} y2={MAP.y + MAP.h / 2} progress={1} color={i < n ? C.blue : C.muted} />}
+          {i < n && <div style={{opacity: 0.75}}><MapOutput i={i} progress={1} focus={0} /></div>}
+        </React.Fragment>
+      ))}
+      <MapOutput i={n} progress={out} focus={out * 0.6} />
     </Stage>
   );
 };
