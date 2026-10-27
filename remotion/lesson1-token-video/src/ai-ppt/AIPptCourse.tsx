@@ -30,7 +30,7 @@ const videoStyle: React.CSSProperties = {width: '100%', height: '100%', objectFi
  */
 const ScreenMedia: React.FC<{file: string; start: number; end: number | null; duration: number}> = ({file, start, end, duration}) => {
   const src = screen(file);
-  if (end == null) return <Freeze frame={0}><OffthreadVideo src={src} muted volume={0} startFrom={Math.round(start * FPS)} style={videoStyle} /></Freeze>;
+  if (end == null) return <Freeze frame={0}><OffthreadVideo pauseWhenBuffering src={src} muted volume={0} startFrom={Math.round(start * FPS)} style={videoStyle} /></Freeze>;
   const secs = duration / FPS;
   const natural = (end - start) / secs;
   if (natural > MAX_RATE) {
@@ -38,8 +38,8 @@ const ScreenMedia: React.FC<{file: string; start: number; end: number | null; du
     const tailStart = end - ((duration - half) / FPS) * MAX_RATE;
     return (
       <>
-        <Sequence durationInFrames={half} premountFor={FPS}><OffthreadVideo src={src} muted volume={0} startFrom={Math.round(start * FPS)} playbackRate={MAX_RATE} style={videoStyle} /></Sequence>
-        <Sequence from={half} premountFor={FPS}><OffthreadVideo src={src} muted volume={0} startFrom={Math.round(tailStart * FPS)} playbackRate={MAX_RATE} style={videoStyle} /></Sequence>
+        <Sequence durationInFrames={half} premountFor={FPS}><OffthreadVideo pauseWhenBuffering src={src} muted volume={0} startFrom={Math.round(start * FPS)} playbackRate={MAX_RATE} style={videoStyle} /></Sequence>
+        <Sequence from={half} premountFor={FPS}><OffthreadVideo pauseWhenBuffering src={src} muted volume={0} startFrom={Math.round(tailStart * FPS)} playbackRate={MAX_RATE} style={videoStyle} /></Sequence>
       </>
     );
   }
@@ -47,12 +47,12 @@ const ScreenMedia: React.FC<{file: string; start: number; end: number | null; du
     const play = Math.round((end - start) * FPS);
     return (
       <>
-        <Sequence durationInFrames={play} premountFor={FPS}><OffthreadVideo src={src} muted volume={0} startFrom={Math.round(start * FPS)} style={videoStyle} /></Sequence>
-        <Sequence from={play}><Freeze frame={0}><OffthreadVideo src={src} muted volume={0} startFrom={Math.round(end * FPS) - 1} style={videoStyle} /></Freeze></Sequence>
+        <Sequence durationInFrames={play} premountFor={FPS}><OffthreadVideo pauseWhenBuffering src={src} muted volume={0} startFrom={Math.round(start * FPS)} style={videoStyle} /></Sequence>
+        <Sequence from={play}><Freeze frame={0}><OffthreadVideo pauseWhenBuffering src={src} muted volume={0} startFrom={Math.round(end * FPS) - 1} style={videoStyle} /></Freeze></Sequence>
       </>
     );
   }
-  return <OffthreadVideo src={src} muted volume={0} startFrom={Math.round(start * FPS)} playbackRate={natural} style={videoStyle} />;
+  return <OffthreadVideo pauseWhenBuffering src={src} muted volume={0} startFrom={Math.round(start * FPS)} playbackRate={natural} style={videoStyle} />;
 };
 
 const ScreenShot: React.FC<{shot: Shot; duration: number; prev?: Shot}> = ({shot, duration, prev}) => {
@@ -200,7 +200,7 @@ const PresenterTake: React.FC<{start: number; duration: number; close: boolean}>
   const base = close ? 1.24 : 1.0;
   return (
     <AbsoluteFill style={{transform: `scale(${base * push})`, transformOrigin: close ? '57% 30%' : '55% 45%'}}>
-      <OffthreadVideo muted volume={0} src={staticFile('ai-ppt/presenter.mp4')} startFrom={start} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+      <OffthreadVideo pauseWhenBuffering muted volume={0} src={staticFile('ai-ppt/presenter.mp4')} startFrom={start} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
     </AbsoluteFill>
   );
 };

@@ -8,7 +8,7 @@ const screen = (id: string) => staticFile(`ai-ppt/screen-${id}.mp4`);
 /** A recording cropped to a normalized region [x, y, w, h]. */
 export const CropVideo: React.FC<{file: string; start: number; crop?: number[]; still?: boolean; rate?: number}> = ({file, start, crop = [0, 0, 1, 1], still = false, rate = 1}) => {
   const [x, y, w, h] = crop;
-  const v = <OffthreadVideo src={screen(file)} startFrom={Math.round(start * FPS)} muted volume={0} playbackRate={rate} style={{position: 'absolute', width: `${100 / w}%`, height: `${100 / h}%`, left: `${(-x / w) * 100}%`, top: `${(-y / h) * 100}%`, objectFit: 'fill'}} />;
+  const v = <OffthreadVideo pauseWhenBuffering src={screen(file)} startFrom={Math.round(start * FPS)} muted volume={0} playbackRate={rate} style={{position: 'absolute', width: `${100 / w}%`, height: `${100 / h}%`, left: `${(-x / w) * 100}%`, top: `${(-y / h) * 100}%`, objectFit: 'fill'}} />;
   return <AbsoluteFill style={{overflow: 'hidden', background: '#000'}}>{still ? <Freeze frame={0}>{v}</Freeze> : v}</AbsoluteFill>;
 };
 
@@ -47,7 +47,7 @@ export const Opening: React.FC<{scene: Scene}> = ({scene}) => {
       </Sequence>
       <div style={{position: 'absolute', left: stripX, top: 0, width: stripW, height: 1080, overflow: 'hidden', borderRadius: split * 6, boxShadow: split > 0 ? '0 0 50px rgba(0,0,0,.55)' : undefined}}>
         <div style={{position: 'absolute', left: -stripX + shift, top: 0, width: 1920, height: 1080}}>
-          <OffthreadVideo src={staticFile('ai-ppt/presenter-opening.mp4')} muted volume={0} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+          <OffthreadVideo pauseWhenBuffering src={staticFile('ai-ppt/presenter-opening.mp4')} muted volume={0} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
         </div>
       </div>
     </Board>
