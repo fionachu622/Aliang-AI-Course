@@ -3,15 +3,15 @@ import {AbsoluteFill, Audio, Freeze, Img, OffthreadVideo, Sequence, interpolate,
 import {Scene, Shot, scenes, FPS, chunkFrames, dubAt, frameToSource, sourceToFrame} from './timeline';
 import captions from './captions.json';
 import {Compare, CropVideo, Handbook, InstallCard, Opening, Steps, StepsStrip} from './Animations';
-import {Board, C, ChalkRect, ChalkUnderline, FONT, Tag, ease, easeInOut, lerp, roughRectPath} from './design';
+import {C, Card, Chip, FONT, MarkBox, Stage, StepNav, ease, easeInOut, lerp, pop} from './design';
 
 const screen = (id: string) => staticFile(`ai-ppt/screen-${id}.mp4`);
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
-// Every recording and product image sits in the same "monitor" on the board,
+// Every recording and product image sits in the same floating window on the stage,
 // so the eye never has to re-find the content. Subtitles live in the strip below it.
-export const WIN = {x: 160, y: 40, w: 1600, h: 888};
-const TAG_POS = {x: WIN.x - 28, y: WIN.y + 36};
+export const WIN = {x: 190, y: 78, w: 1540, h: 854};
+const CHIP_POS = {x: WIN.x - 22, y: WIN.y - 30};
 
 /** Keep the zoomed view inside the picture (no empty borders). */
 const clampCentre = (c: number, zoom: number) => {
@@ -71,26 +71,20 @@ const ScreenShot: React.FC<{shot: Shot; duration: number; prev?: Shot}> = ({shot
   const cy = clampCentre(lerp(settle, glide ? prev!.cy ?? 0.5 : shot.cy ?? 0.5, shot.cy ?? 0.5), zoom);
   const tx = (0.5 - cx) * WIN.w * zoom;
   const ty = (0.5 - cy) * WIN.h * zoom;
-  const enter = glide ? 1 : ease(f, 0, 8);
+  const enter = glide ? 1 : ease(f, 0, 10);
   const m = shot.mark;
-  // Short shots (e.g. the three quick page cuts in s34) still finish their highlight.
-  const circle = ease(f, Math.min(8, duration * 0.1), Math.min(24, Math.max(6, duration * 0.55)));
+  // Short shots (e.g. quick page cuts) still finish their highlight.
+  const hl = ease(f, Math.min(8, duration * 0.1), Math.min(22, Math.max(6, duration * 0.5)));
   return (
-    <Board>
-      <div style={{position: 'absolute', left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, borderRadius: 14, overflow: 'hidden', background: '#fff', boxShadow: '0 24px 60px rgba(0,0,0,.5)'}}>
+    <Stage>
+      <Card radius={22} style={{left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, background: '#fff', transform: `translateY(${(1 - enter) * 30}px) scale(${0.97 + 0.03 * enter})`, opacity: glide ? 1 : Math.min(1, enter * 1.4)}}>
         <div style={{position: 'absolute', inset: 0, transform: `translate(${tx}px, ${ty}px) scale(${zoom})`, transformOrigin: '50% 50%'}}>
           <ScreenMedia file={shot.file!} start={sourceStart} end={moving ? shot.sourceEnd! : null} duration={duration} />
-          {m && (
-            <svg viewBox={`0 0 ${WIN.w} ${WIN.h}`} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
-              <rect x={m[0] * WIN.w - 8} y={m[1] * WIN.h - 6} width={m[2] * WIN.w + 16} height={m[3] * WIN.h + 12} rx={8} fill="#F0C85A" opacity={0.2 * circle} />
-              <path transform={`translate(${m[0] * WIN.w - 12} ${m[1] * WIN.h - 10})`} d={roughRectPath(m[2] * WIN.w + 24, m[3] * WIN.h + 20, `${shot.file}-${shot.at}`, 1.6)} fill="none" stroke="#E8A93A" strokeWidth={4.5 / zoom} strokeLinecap="round" strokeLinejoin="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - circle} />
-            </svg>
-          )}
+          {m && <MarkBox x={m[0] * WIN.w} y={m[1] * WIN.h} w={m[2] * WIN.w} h={m[3] * WIN.h} progress={hl} stroke={4 / zoom} />}
         </div>
-        <AbsoluteFill style={{background: C.board, opacity: 1 - enter}} />
-      </div>
-      <Tag text={shot.label ?? ''} progress={ease(f, Math.min(6, duration * 0.08), Math.min(20, Math.max(5, duration * 0.4)))} x={TAG_POS.x} y={TAG_POS.y} color={m ? '#E8A93A' : C.yellow} />
-    </Board>
+      </Card>
+      <Chip text={shot.label ?? ''} progress={pop(f, Math.min(4, duration * 0.06), Math.min(18, Math.max(5, duration * 0.4)))} x={CHIP_POS.x} y={CHIP_POS.y} color={m ? C.orange : C.blue} />
+    </Stage>
   );
 };
 
@@ -98,62 +92,61 @@ const ScreenShot: React.FC<{shot: Shot; duration: number; prev?: Shot}> = ({shot
 const ScreenTrio: React.FC<{shot: Shot; duration: number}> = ({shot, duration}) => {
   const f = useCurrentFrame();
   const items = shot.items ?? [];
-  const w = 560, h = 315, gap = 60, x0 = (1920 - (w * items.length + gap * (items.length - 1))) / 2, y0 = 370;
+  const w = 540, h = 304, gap = 50, x0 = (1920 - (w * items.length + gap * (items.length - 1))) / 2, y0 = 340;
   const step = Math.min(8, duration / (items.length + 2));
   return (
-    <Board>
-      <div className="chalk" style={{position: 'absolute', left: 0, right: 0, top: 210, textAlign: 'center', fontSize: 58, opacity: ease(f, 0, 8)}}>{shot.label}</div>
+    <Stage>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 170, textAlign: 'center', fontSize: 60, fontWeight: 900, opacity: ease(f, 0, 8)}}>{shot.label}</div>
       {items.map((it, i) => {
-        const p = ease(f, i * step, i * step + 8);
+        const p = pop(f, i * step, i * step + 10);
         const [cx, cy, cw, ch] = it.crop;
         const [mx, my, mw, mh] = it.mark;
         const hl = ease(f, i * step + 5, i * step + 14);
         return (
-          <div key={i} style={{position: 'absolute', left: x0 + i * (w + gap), top: y0, width: w, opacity: p, transform: `translateY(${(1 - p) * 20}px)`}}>
-            <div style={{position: 'relative', width: w, height: h, borderRadius: 8, overflow: 'hidden', boxShadow: '0 18px 40px rgba(0,0,0,.45)'}}>
+          <div key={i} style={{position: 'absolute', left: x0 + i * (w + gap), top: y0, width: w, opacity: Math.min(1, p * 1.5), transform: `translateY(${(1 - p) * 30}px)`}}>
+            <Card radius={18} style={{position: 'relative', width: w, height: h}}>
               <CropVideo file={it.file} start={it.sourceStart} crop={it.crop} still />
-              <svg viewBox={`0 0 ${w} ${h}`} style={{position: 'absolute', inset: 0}}>
-                <rect x={((mx - cx) / cw) * w - 4} y={((my - cy) / ch) * h - 4} width={(mw / cw) * w + 8} height={(mh / ch) * h + 8} rx={6} fill="#F0C85A" opacity={0.2 * hl} />
-                <path transform={`translate(${((mx - cx) / cw) * w - 6} ${((my - cy) / ch) * h - 6})`} d={roughRectPath((mw / cw) * w + 12, (mh / ch) * h + 12, `trio${i}`, 1.4)} fill="none" stroke="#E8A93A" strokeWidth={3.5} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - hl} />
-              </svg>
-            </div>
-            <div className="chalk" style={{marginTop: 30, textAlign: 'center', fontSize: 42, color: C.yellow}}>{it.label}</div>
+              <MarkBox x={((mx - cx) / cw) * w} y={((my - cy) / ch) * h} w={(mw / cw) * w} h={(mh / ch) * h} progress={hl} stroke={3} />
+            </Card>
+            <div style={{marginTop: 30, textAlign: 'center'}}><span style={{display: 'inline-block', padding: '10px 28px', borderRadius: 999, background: C.orange, color: '#fff', fontSize: 34, fontWeight: 800}}>{it.label}</span></div>
           </div>
         );
       })}
-    </Board>
+    </Stage>
   );
 };
 
 const ProductImage: React.FC<{shot: Shot; duration: number}> = ({shot, duration}) => {
   const f = useCurrentFrame();
-  const enter = ease(f, 0, 14);
+  const enter = ease(f, 0, 12);
   const scale = interpolate(f, [0, Math.max(1, duration)], [1.0, 1.05], clamp);
   return (
-    <Board>
-      <div style={{position: 'absolute', left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, borderRadius: 10, overflow: 'hidden', background: '#0b0c0d', opacity: enter, boxShadow: '0 24px 60px rgba(0,0,0,.5)'}}>
+    <Stage>
+      <Card radius={22} style={{left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, background: '#0B0C0E', opacity: Math.min(1, enter * 1.4), transform: `translateY(${(1 - enter) * 30}px) scale(${0.97 + 0.03 * enter})`}}>
         <Img src={staticFile(shot.file!)} style={{width: '100%', height: '100%', objectFit: 'contain', transform: `scale(${scale})`}} />
-      </div>
-      <ChalkRect w={WIN.w + 32} h={WIN.h + 32} k={`img-${shot.at}`} color={C.ink} progress={ease(f, 2, 22)} width={3} style={{left: WIN.x - 16, top: WIN.y - 16}} />
-      <Tag text={shot.label ?? ''} progress={ease(f, 8, 22)} x={TAG_POS.x} y={TAG_POS.y} />
-    </Board>
+      </Card>
+      <Chip text={shot.label ?? ''} progress={pop(f, 4, 18)} x={CHIP_POS.x} y={CHIP_POS.y} color={C.yellow} />
+    </Stage>
   );
 };
 
-/** Chapter card for the first presenter shot of each step. */
+const CN_NUM: Record<string, string> = {一: '01', 二: '02', 三: '03', 四: '04', 五: '05'};
+/** Lower-left title card for the first presenter shot of each step. */
 const ChapterCard: React.FC<{title: string}> = ({title}) => {
   const f = useCurrentFrame();
-  const m = title.match(/^(第.步)：(.+)$/);
+  const m = title.match(/^第(.)步：(.+)$/);
   if (!m) return null;
-  const inP = ease(f, 6, 22);
-  const outP = 1 - ease(f, 108, 124);
-  const p = inP * outP;
+  const inP = pop(f, 6, 24);
+  const outP = 1 - ease(f, 110, 126);
   return (
-    <div style={{position: 'absolute', left: 90, top: 300, width: 460, height: 300, opacity: p, transform: `translateX(${(1 - inP) * -40}px)`}}>
-      <div style={{position: 'absolute', inset: 0, borderRadius: 16, overflow: 'hidden', boxShadow: '0 18px 44px rgba(0,0,0,.4)'}}><Board /></div>
-      <ChalkRect w={460} h={300} k={title} color={C.ink} progress={inP} width={3.4} />
-      <div className="chalk" style={{position: 'absolute', left: 48, top: 54, fontSize: 40, color: C.yellow}}>{m[1]}</div>
-      <div className="chalk" style={{position: 'absolute', left: 46, top: 118, fontSize: 92, color: C.ink}}>{m[2]}</div>
+    <div style={{position: 'absolute', left: 80, top: 640, opacity: Math.min(1, inP * 1.5) * outP, transform: `translateX(${(1 - inP) * -60}px)`}}>
+      <div style={{display: 'flex', alignItems: 'stretch', borderRadius: 26, overflow: 'hidden', boxShadow: '0 24px 60px rgba(20,24,40,.3)', fontFamily: FONT.sans}}>
+        <div style={{background: C.blue, color: '#fff', padding: '22px 30px', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+          <div style={{fontSize: 22, fontWeight: 800, letterSpacing: 3, opacity: 0.85}}>STEP</div>
+          <div style={{fontFamily: FONT.num, fontSize: 84, fontWeight: 900, lineHeight: 1}}>{CN_NUM[m[1]] ?? m[1]}</div>
+        </div>
+        <div style={{background: '#fff', color: C.ink, padding: '22px 40px', display: 'flex', alignItems: 'center', fontSize: 72, fontWeight: 900}}>{m[2]}</div>
+      </div>
     </div>
   );
 };
@@ -172,9 +165,9 @@ const PresenterVideo: React.FC<{scene: Scene; sceneIndex: number; forceWide?: bo
   let offset = 0;
   let n = sceneIndex;
   return (
-    <AbsoluteFill style={{background: '#101917'}}>
+    <AbsoluteFill style={{background: C.dark}}>
       {scene.audio.flatMap((c, i) => {
-        // Re-voiced lines are covered by a chalk card, so the presenter is not shown there.
+        // Re-voiced lines are covered by a title card, so the presenter is not shown there.
         if (c.dub) { offset += chunkFrames(c); return []; }
         return (
         takeSegments(c.sourceStart, c.sourceEnd).map(([s, e], k) => {
@@ -210,35 +203,26 @@ const Subtitle: React.FC<{sourceTime: number}> = ({sourceTime}) => {
   const c = captions.find((x) => sourceTime * 1000 >= x.startMs && sourceTime * 1000 < x.endMs - 150);
   if (!c) return null;
   return (
-    <div style={{position: 'absolute', bottom: 34, left: 120, right: 120, display: 'flex', justifyContent: 'center', pointerEvents: 'none'}}>
-      <div style={{fontFamily: FONT.ui, color: '#FFFDF7', fontSize: 46, lineHeight: 1.35, fontWeight: 600, letterSpacing: 1, textAlign: 'center', WebkitTextStroke: '6px rgba(12,14,15,.72)', paintOrder: 'stroke fill', textShadow: '0 3px 14px rgba(0,0,0,.55)'}}>{c.text}</div>
+    <div style={{position: 'absolute', bottom: 40, left: 120, right: 120, display: 'flex', justifyContent: 'center', pointerEvents: 'none'}}>
+      <div style={{fontFamily: FONT.sans, color: '#fff', fontSize: 42, lineHeight: 1.35, fontWeight: 700, letterSpacing: 1, textAlign: 'center', background: 'rgba(20,22,26,.82)', padding: '10px 28px', borderRadius: 14}}>{c.text}</div>
     </div>
   );
 };
 
-/** Full-screen chalk card shown while a re-voiced line plays. */
-const DubCard: React.FC<{dub: NonNullable<ReturnType<typeof dubAt>>['dub']; offset: number; length: number}> = ({dub, offset, length}) => {
-  const p = offset / length;
-  const enter = ease(offset, 0, 10);
-  return (
-    <AbsoluteFill style={{opacity: enter}}>
-      <Board>
-        <div className="chalk" style={{position: 'absolute', left: 260, top: 300, fontSize: 40, color: C.yellow}}>{dub.card.kicker}</div>
-        <div style={{position: 'absolute', left: 260, top: 380}}>
-          {dub.card.lines.map((l, i) => {
-            const q = ease(p * length, l.at * length, l.at * length + 10);
-            return (
-              <div key={i} className="chalk" style={{fontSize: l.big ? 88 : 54, marginTop: l.big ? 46 : 22, color: l.big ? C.ink : C.inkSoft, opacity: q, transform: `translateY(${(1 - q) * 14}px)`}}>
-                {l.text}
-                {l.big && <div style={{position: 'relative', height: 18}}><ChalkUnderline w={Math.min(1200, l.text.length * 80)} color={C.yellow} progress={ease(p * length, l.at * length + 8, l.at * length + 26)} style={{left: 0, top: 0}} /></div>}
-              </div>
-            );
-          })}
-        </div>
-      </Board>
-    </AbsoluteFill>
-  );
-};
+/** Full-screen title card shown while a re-voiced line plays (currently unused). */
+const DubCard: React.FC<{dub: NonNullable<ReturnType<typeof dubAt>>['dub']; offset: number; length: number}> = ({dub, offset, length}) => (
+  <AbsoluteFill style={{opacity: ease(offset, 0, 10)}}>
+    <Stage>
+      <div style={{position: 'absolute', left: 260, top: 300, fontSize: 34, fontWeight: 800, color: C.blue}}>{dub.card.kicker}</div>
+      <div style={{position: 'absolute', left: 260, top: 370}}>
+        {dub.card.lines.map((l, i) => {
+          const q = ease(offset, l.at * length, l.at * length + 10);
+          return <div key={i} style={{fontSize: l.big ? 84 : 50, fontWeight: l.big ? 900 : 700, marginTop: l.big ? 40 : 18, color: l.big ? C.ink : C.inkSoft, opacity: q, transform: `translateY(${(1 - q) * 14}px)`}}>{l.text}</div>;
+        })}
+      </div>
+    </Stage>
+  </AbsoluteFill>
+);
 
 /** Subtitles for a re-voiced line: its clauses in turn, paced by character count. */
 const DubSubtitle: React.FC<{text: string; progress: number}> = ({text, progress}) => {
@@ -247,8 +231,8 @@ const DubSubtitle: React.FC<{text: string; progress: number}> = ({text, progress
   let acc = 0;
   const current = parts.find((s) => (acc += s.length) / total > progress) ?? parts[parts.length - 1];
   return (
-    <div style={{position: 'absolute', bottom: 34, left: 120, right: 120, display: 'flex', justifyContent: 'center', pointerEvents: 'none'}}>
-      <div style={{fontFamily: FONT.ui, color: '#FFFDF7', fontSize: 46, lineHeight: 1.35, fontWeight: 600, letterSpacing: 1, textAlign: 'center', WebkitTextStroke: '6px rgba(12,14,15,.72)', paintOrder: 'stroke fill', textShadow: '0 3px 14px rgba(0,0,0,.55)'}}>{current}</div>
+    <div style={{position: 'absolute', bottom: 40, left: 120, right: 120, display: 'flex', justifyContent: 'center', pointerEvents: 'none'}}>
+      <div style={{fontFamily: FONT.sans, color: '#fff', fontSize: 42, lineHeight: 1.35, fontWeight: 700, letterSpacing: 1, textAlign: 'center', background: 'rgba(20,22,26,.82)', padding: '10px 28px', borderRadius: 14}}>{current}</div>
     </div>
   );
 };
@@ -261,9 +245,10 @@ export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, d
   const sourceTime = frameToSource(scene, frame);
   const idx = sceneIndexOf(scene);
   const dub = dubAt(scene, frame);
+  const activeKind = [...scene.shots].reverse().find((s) => sourceToFrame(scene, s.at) <= frame)?.kind;
   let offset = 0;
   return (
-    <AbsoluteFill className="aippt-chalk" style={{fontFamily: FONT.ui, background: C.board}}>
+    <AbsoluteFill style={{fontFamily: FONT.sans, background: C.bg}}>
       {scene.shots.map((shot, i) => {
         const from = sourceToFrame(scene, shot.at);
         const end = i + 1 < scene.shots.length ? sourceToFrame(scene, scene.shots[i + 1].at) : scene.durationInFrames;
@@ -300,8 +285,9 @@ export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, d
         return <Sequence key={`voice-${i}`} from={from} durationInFrames={d} premountFor={fps} name={`口播 ${c.sourceStart / fps}s`}><Audio src={staticFile('ai-ppt/presenter.mp4')} startFrom={c.sourceStart} endAt={c.sourceEnd} volume={1} /></Sequence>;
       })}
       {dub && <DubCard dub={dub.dub} offset={dub.offset} length={dub.length} />}
+      {/^0\d /.test(scene.chapter) && ['screen', 'image', 'screen-trio'].includes(activeKind ?? '') && !dub && <StepNav chapter={scene.chapter} progress={1} />}
       {dub?.dub.file ? <DubSubtitle text={dub.dub.text} progress={dub.offset / dub.length} /> : <Subtitle sourceTime={sourceTime} />}
-      {debug && <div style={{position: 'absolute', right: 24, top: 18, background: '#000a', color: 'white', fontSize: 20, padding: 8, fontFamily: FONT.ui}}>{scene.id} / 源 {sourceTime.toFixed(2)}s</div>}
+      {debug && <div style={{position: 'absolute', left: 24, bottom: 18, background: '#000a', color: 'white', fontSize: 20, padding: 8, fontFamily: FONT.sans}}>{scene.id} / 源 {sourceTime.toFixed(2)}s</div>}
     </AbsoluteFill>
   );
 };
@@ -310,10 +296,8 @@ export const AIPptCourse: React.FC<{sceneId?: string; debug?: boolean}> = ({scen
   let at = 0;
   const selected = sceneId ? scenes.filter((s) => s.id === sceneId) : scenes;
   return (
-    <AbsoluteFill className="aippt-chalk">
-      <style>{`@font-face{font-family:"PPT Chalk";src:url("${staticFile('fonts/HanziPenSC-Regular.otf')}")}
-        *{box-sizing:border-box}
-        .aippt-chalk .chalk{font-family:${FONT.chalk};font-weight:600;-webkit-text-stroke:.6px currentColor;paint-order:stroke fill;text-shadow:0 0 .6px rgba(255,255,255,.45)}`}</style>
+    <AbsoluteFill>
+      <style>{`*{box-sizing:border-box}`}</style>
       {selected.map((scene) => {
         const from = at;
         at += scene.durationInFrames;
