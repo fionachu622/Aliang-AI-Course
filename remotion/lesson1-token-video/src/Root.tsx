@@ -1,4 +1,4 @@
-import {AIPptCourse, ANIM_REVIEW_DURATION, ANIM_REVIEW_IDS} from './ai-ppt/AIPptCourse';
+import {AIPptCourse} from './ai-ppt/AIPptCourse';
 import {TOTAL_FRAMES as AI_PPT_DURATION, scenes as aiPptScenes} from './ai-ppt/timeline';
 import {AgentHuashuWhiteboard} from './skill-tests/huashu-art-motion/AgentHuashuWhiteboard';
 import {
@@ -97,7 +97,6 @@ export const RemotionRoot = () => {
       <Folder name="Aliang-AI-Course">
         <Folder name="AI生成PPT">
           <Composition id="AIPptCourse" component={AIPptCourse} durationInFrames={AI_PPT_DURATION} fps={30} width={1920} height={1080} />
-          <Composition id="AIPpt-AnimReview" component={AIPptCourse} durationInFrames={ANIM_REVIEW_DURATION} fps={30} width={1920} height={1080} defaultProps={{sceneIds: ANIM_REVIEW_IDS, debug: true}} />
           <Composition id="AIPpt-Screen16-Review" component={Screen16Review} durationInFrames={8136} fps={30} width={2596} height={1440} />
           <Folder name="逐段检查">
             <Composition id="AIPpt-s01" component={AIPptCourse} durationInFrames={aiPptScenes[0].durationInFrames} fps={30} width={1920} height={1080} defaultProps={{sceneId: 's01', debug: true}} />

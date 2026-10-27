@@ -266,13 +266,9 @@ export const CourseScene: React.FC<{scene: Scene; debug?: boolean}> = ({scene, d
   );
 };
 
-// Every scene that carries a designed animation, played back to back for review in one composition.
-export const ANIM_REVIEW_IDS = ['s01', 's06', 's07', 's12', 's16', 's18', 's24', 's38', 's44', 's46', 's52', 's53'];
-export const ANIM_REVIEW_DURATION = scenes.filter((s) => ANIM_REVIEW_IDS.includes(s.id)).reduce((n, s) => n + s.durationInFrames, 0);
-
-export const AIPptCourse: React.FC<{sceneId?: string; sceneIds?: string[]; debug?: boolean}> = ({sceneId, sceneIds, debug = false}) => {
+export const AIPptCourse: React.FC<{sceneId?: string; debug?: boolean}> = ({sceneId, debug = false}) => {
   let at = 0;
-  const selected = sceneId ? scenes.filter((s) => s.id === sceneId) : sceneIds ? scenes.filter((s) => sceneIds.includes(s.id)) : scenes;
+  const selected = sceneId ? scenes.filter((s) => s.id === sceneId) : scenes;
   return (
     <AbsoluteFill>
       <ChalkFonts />
